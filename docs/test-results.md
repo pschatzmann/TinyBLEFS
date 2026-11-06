@@ -14,8 +14,8 @@ Status of version 0.1 (proof of concept), tested on 2026-11-06. Three levels of 
 |---|---|
 | `test_loopback` | Protocol, fragmentation (20-byte packets), server, client, mounts, copy, locking, read-only, path jail, logger, batched directory listing (150 entries in 7 requests instead of 151) and its fallback to a server without it; several clients on one server: 3 clients in threads on a shared link (replies broadcast, sender unknown): concurrent transfers, refused 4th client, private file handles, expiry and rejoin, keep-alive, locks across sessions, concurrent appenders |
 | `test_cli` | All commands of the Linux tool over a loopback link with two servers |
-| `test_arduinofs` | `ArduinoFsBackend` with a mock `FS`: POSIX fast path vs generic API (121 entries: about 1-2 ms and no `File` opened, against about 100-150 ms and 7,600 opens) |
-| `test_tinyfat` | `TinyFatBackend` on a TinyFATFS RAM disk through the full server/client path |
+| `test_arduinofs` | [`ArduinoFsBackend`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1ArduinoFsBackend.html) with a mock `FS`: POSIX fast path vs generic API (121 entries: about 1-2 ms and no `File` opened, against about 100-150 ms and 7,600 opens) |
+| `test_tinyfat` | [`TinyFatBackend`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1TinyFatBackend.html) on a TinyFATFS RAM disk through the full server/client path |
 
 ## Compile checks
 
@@ -84,7 +84,7 @@ Fixed:
 | NimBLE servers did not advertise their name, so `scan(..., namePrefix)` and `tinyblefs -p` never found them | Name added to the scan response |
 | BlueZ reports a bogus ATT MTU of 65533 for the ESP32-S3; the Linux client sent 4 KB as one packet | MTU limited to 517 |
 | A transient send failure (D-Bus timeout) aborted a whole transfer | Idempotent requests are retried once after a failed send |
-| `FsFile` of the library clashed with SdFat's `FsFile` (Pico W SD variant did not build) | Only the public class names are imported into the global scope |
+| [`FsFile`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FsFile.html) of the library clashed with SdFat's `FsFile` (Pico W SD variant did not build) | Only the public class names are imported into the global scope |
 | NimBLE sent 514-byte packets, but an ATT attribute value is at most 512 bytes, so every message longer than 512 bytes (chunks of about 500 bytes or more) failed with a timeout | Packets limited to 512 bytes |
 | Large stack buffers in `Receiver::poll()` and the ArduinoBLE handlers (UNO R4 has a very small stack) | Moved off the stack |
 | A NimBLE server stays invisible to scans when the PC holds a stale connection to it (it accepts one connection and stops advertising) | Not a library bug: the tool disconnects when it exits cleanly; after an interrupted run use `bluetoothctl disconnect <address>` (see below) |

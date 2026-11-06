@@ -8,11 +8,11 @@ FileClient client(transport, 5000);    // request timeout in ms
 transport.connect(address);
 ```
 
-`FileClient` settings: `setTimeout(ms)`, `setChunkSize(bytes)` (data per request and read-ahead size, default 400; larger values are much faster on a good link: 4000 gave 50 KB/s between two ESP32 boards, if the server has the RAM for the answer), `setIdleCallback(fn, ctx)` (called while waiting for an answer).
+[`FileClient`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FileClient.html) settings: `setTimeout(ms)`, `setChunkSize(bytes)` (data per request and read-ahead size, default 400; larger values are much faster on a good link: 4000 gave 50 KB/s between two ESP32 boards, if the server has the RAM for the answer), `setIdleCallback(fn, ctx)` (called while waiting for an answer).
 
 ## Mounts
 
-`Mounts` maps `/<name>/path` to the right server.
+[`Mounts`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1Mounts.html) maps `/<name>/path` to the right server.
 
 ```cpp
 Mounts mounts;
@@ -24,7 +24,7 @@ Names are limited to 16 characters of `A-Z a-z 0-9 - _` (others become `_`). A d
 
 | Method | Description |
 |---|---|
-| `open(path, mode="r")` | Returns a `RemoteFile` (modes `r`, `r+`, `w`, `a`) |
+| `open(path, mode="r")` | Returns a [`RemoteFile`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1RemoteFile.html) (modes `r`, `r+`, `w`, `a`) |
 | `openWait(path, mode, timeoutMs=5000, retryMs=100)` | Like `open`, but retries while the file is locked by another client (see below) |
 | `exists`, `stat(path, isDir, size)` | Type and size |
 | `list(path, entries)` | `std::vector<DirEntry>` without opening the entries, fetched in batches (one request returns about 28 entries with the default chunk size); `"/"` lists the mounts |
@@ -33,7 +33,7 @@ Names are limited to 16 characters of `A-Z a-z 0-9 - _` (others become `_`). A d
 | `copy(from, to)` | File or directory tree, also between servers; overwrites files |
 | `names()`, `get(name)`, `unmount(name)` | Manage mounts |
 
-`RemoteFS` offers the same methods for a single server without the `/<name>` prefix. To use several servers, mount one `FileClient` per server in the same `Mounts`.
+[`RemoteFS`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1RemoteFS.html) offers the same methods for a single server without the `/<name>` prefix. To use several servers, mount one `FileClient` per server in the same `Mounts`.
 
 ## File
 

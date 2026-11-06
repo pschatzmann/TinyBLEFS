@@ -30,7 +30,7 @@ The file system is given to the constructor, so any file system can be shared: L
 
 ## File locking
 
-The server protects files from concurrent access (all clients of a `FileServer` share one lock table):
+The server protects files from concurrent access (all clients of a [`FileServer`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FileServer.html) share one lock table):
 
 - any number of readers, **one writer at a time** (open for write, append, create or truncate);
 - opening with mode `w` (truncate) needs a file that is not open at all;

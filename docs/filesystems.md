@@ -8,10 +8,10 @@ FileServer server(backend, transport, "name");
 
 | Backend (`TinyBLEFS/backends/`) | Shares | Platforms |
 |---|---|---|
-| `ArduinoFS.h`: `ArduinoFsBackend<FS>` | Any Arduino `FS` class with string open modes: **LittleFS, SPIFFS, FFat, SD, SD_MMC** (ESP32), **LittleFS, FatFS, SDFS** (RP2040 / Pico W) | ESP32, RP2040 |
-| `TinyFATFS.h`: `TinyFatBackend` | A FAT volume of the [TinyFATFS](https://github.com/pschatzmann/TinyFATFS) library: **RAM disk, SD card (SPI), SD_MMC (experimental), disk image file, ...** | Boards supported by TinyFATFS (ESP32, RP2040, ...), Linux |
-| `StdFilesystem.h`: `StdFilesystemBackend` | A directory of the host (`std::filesystem`) | Linux, macOS, Windows |
-| your own `FsBackend` | Anything else (see [below](#your-own-file-system)) | any |
+| `ArduinoFS.h`: [`ArduinoFsBackend<FS>`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1ArduinoFsBackend.html) | Any Arduino `FS` class with string open modes: **LittleFS, SPIFFS, FFat, SD, SD_MMC** (ESP32), **LittleFS, FatFS, SDFS** (RP2040 / Pico W) | ESP32, RP2040 |
+| `TinyFATFS.h`: [`TinyFatBackend`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1TinyFatBackend.html) | A FAT volume of the [TinyFATFS](https://github.com/pschatzmann/TinyFATFS) library: **RAM disk, SD card (SPI), SD_MMC (experimental), disk image file, ...** | Boards supported by TinyFATFS (ESP32, RP2040, ...), Linux |
+| `StdFilesystem.h`: [`StdFilesystemBackend`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1StdFilesystemBackend.html) | A directory of the host (`std::filesystem`) | Linux, macOS, Windows |
+| your own [`FsBackend`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FsBackend.html) | Anything else (see [below](#your-own-file-system)) | any |
 
 ## Verification status
 
@@ -62,7 +62,7 @@ void loop() { server.poll(); }
 
 Declare the backend after the `#include` of the file system and before the server.
 
-**Open files.** The ESP32 limits the number of simultaneously open files of each file system (the `maxOpenFiles` argument of `begin()`: 10 for LittleFS, SPIFFS and FFat, **5 for SD and SD_MMC**). A `FileServer` can hold up to `maxSessions × maxHandles` files (default 1 × 4), and one more is used while a directory is listed. Raise the limit of the file system or lower the server's.
+**Open files.** The ESP32 limits the number of simultaneously open files of each file system (the `maxOpenFiles` argument of `begin()`: 10 for LittleFS, SPIFFS and FFat, **5 for SD and SD_MMC**). A [`FileServer`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FileServer.html) can hold up to `maxSessions × maxHandles` files (default 1 × 4), and one more is used while a directory is listed. Raise the limit of the file system or lower the server's.
 
 **Fast directory listing.** On the ESP32 the backend lists directories with the POSIX functions of the virtual file system (`opendir`/`readdir`/`stat` below `FS::mountpoint()`) and keeps the directory open between the requests of a listing, while the generic Arduino API opens a `File` object for every entry it skips (a mock file system listed 121 entries about 70 times faster). Define `TINYBLEFS_ARDUINOFS_NO_POSIX` before the include to switch this off.
 
@@ -279,7 +279,7 @@ Directory listings of this backend re-read the directory for each entry on the s
 
 ## Your own file system
 
-Derive from `FsBackend` (`TinyBLEFS/FsBackend.h`) and from `FsFile` for open files:
+Derive from `FsBackend` (`TinyBLEFS/FsBackend.h`) and from [`FsFile`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FsFile.html) for open files:
 
 ```cpp
 class MyFile : public FsFile {

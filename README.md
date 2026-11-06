@@ -66,8 +66,8 @@ void setup() {
 | Chapter | Content |
 |---|---|
 | [Getting started](docs/getting-started.md) | Installation, requirements, examples |
-| [Client API](docs/client-api.md) | `Mounts`, `RemoteFS`, `RemoteFile`, `copy()` |
-| [Server API](docs/server-api.md) | `FileServer`, file system backends, security |
+| [Client API](docs/client-api.md) | [`Mounts`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1Mounts.html), [`RemoteFS`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1RemoteFS.html), [`RemoteFile`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1RemoteFile.html), `copy()` |
+| [Server API](docs/server-api.md) | [`FileServer`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FileServer.html), file system backends, security |
 | [File systems](docs/filesystems.md) | LittleFS, SPIFFS, FFat, SD, SD_MMC, FatFS, TinyFATFS, Linux: code per platform |
 | [Several clients](docs/sessions.md) | `maxSessions`, sessions, keep-alive, limits |
 | [Transports](docs/transports.md) | BLE adapters, limits, writing your own |

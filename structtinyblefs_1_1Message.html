@@ -97,13 +97,16 @@ $(document).ready(function(){initNavTree('structtinyblefs_1_1Message.html',''); 
 </div><!--header-->
 <div class="contents">
 
+<p>A decoded protocol message: operation, request id, status and payload.  
+ <a href="structtinyblefs_1_1Message.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Protocol_8h_source.html">Protocol.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for tinyblefs::Message:</div>
 <div class="dyncontent">
 <div class="center"><img src="structtinyblefs_1_1Message__coll__graph.png" border="0" usemap="#atinyblefs_1_1Message_coll__map" alt="Collaboration graph"/></div>
 <map name="atinyblefs_1_1Message_coll__map" id="atinyblefs_1_1Message_coll__map">
-<area shape="rect" title=" " alt="" coords="16,143,150,260"/>
+<area shape="rect" title="A decoded protocol message: operation, request id, status and payload." alt="" coords="16,143,150,260"/>
 <area shape="rect" title=" " alt="" coords="5,5,160,78"/>
 <area shape="poly" title=" " alt="" coords="84,75,85,127,80,126,82,80"/>
 </map>
@@ -112,17 +115,22 @@ Collaboration diagram for tinyblefs::Message:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ab9e20012117ac66fc72dcd33a50b2455" id="r_ab9e20012117ac66fc72dcd33a50b2455"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinyblefs_1_1Message.html#ab9e20012117ac66fc72dcd33a50b2455">op</a> = 0</td></tr>
+<tr class="memdesc:ab9e20012117ac66fc72dcd33a50b2455"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operation code (Op)  <br /></td></tr>
 <tr class="separator:ab9e20012117ac66fc72dcd33a50b2455"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c4c23c989655cd1cc50ffedb0db9390" id="r_a4c4c23c989655cd1cc50ffedb0db9390"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinyblefs_1_1Message.html#a4c4c23c989655cd1cc50ffedb0db9390">reqId</a> = 0</td></tr>
+<tr class="memdesc:a4c4c23c989655cd1cc50ffedb0db9390"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request id, copied into the reply.  <br /></td></tr>
 <tr class="separator:a4c4c23c989655cd1cc50ffedb0db9390"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31d8ae3d42dae42980595cfb8ce1baca" id="r_a31d8ae3d42dae42980595cfb8ce1baca"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinyblefs_1_1Message.html#a31d8ae3d42dae42980595cfb8ce1baca">status</a> = 0</td></tr>
+<tr class="memdesc:a31d8ae3d42dae42980595cfb8ce1baca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status (Status); 0 in requests.  <br /></td></tr>
 <tr class="separator:a31d8ae3d42dae42980595cfb8ce1baca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1606656b6296286d38c43aac856d75eb" id="r_a1606656b6296286d38c43aac856d75eb"><td class="memItemLeft" align="right" valign="top">std::vector&lt; uint8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinyblefs_1_1Message.html#a1606656b6296286d38c43aac856d75eb">payload</a></td></tr>
+<tr class="memdesc:a1606656b6296286d38c43aac856d75eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operation specific data.  <br /></td></tr>
 <tr class="separator:a1606656b6296286d38c43aac856d75eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="Protocol_8h_source.html#l00124">124</a> of file <a class="el" href="Protocol_8h_source.html">Protocol.h</a>.</p>
+<div class="textblock"><p>A decoded protocol message: operation, request id, status and payload. </p>
+
+<p class="definition">Definition at line <a class="el" href="Protocol_8h_source.html#l00128">128</a> of file <a class="el" href="Protocol_8h_source.html">Protocol.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="ab9e20012117ac66fc72dcd33a50b2455" name="ab9e20012117ac66fc72dcd33a50b2455"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab9e20012117ac66fc72dcd33a50b2455">&#9670;&#160;</a></span>op</h2>
@@ -136,7 +144,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Protocol_8h_source.html#l00125">125</a> of file <a class="el" href="Protocol_8h_source.html">Protocol.h</a>.</p>
+<p>Operation code (Op) </p>
+
+<p class="definition">Definition at line <a class="el" href="Protocol_8h_source.html#l00130">130</a> of file <a class="el" href="Protocol_8h_source.html">Protocol.h</a>.</p>
 
 </div>
 </div>
@@ -152,7 +162,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Protocol_8h_source.html#l00128">128</a> of file <a class="el" href="Protocol_8h_source.html">Protocol.h</a>.</p>
+<p>Operation specific data. </p>
+
+<p class="definition">Definition at line <a class="el" href="Protocol_8h_source.html#l00136">136</a> of file <a class="el" href="Protocol_8h_source.html">Protocol.h</a>.</p>
 
 </div>
 </div>
@@ -168,7 +180,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Protocol_8h_source.html#l00126">126</a> of file <a class="el" href="Protocol_8h_source.html">Protocol.h</a>.</p>
+<p>Request id, copied into the reply. </p>
+
+<p class="definition">Definition at line <a class="el" href="Protocol_8h_source.html#l00132">132</a> of file <a class="el" href="Protocol_8h_source.html">Protocol.h</a>.</p>
 
 </div>
 </div>
@@ -184,7 +198,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Protocol_8h_source.html#l00127">127</a> of file <a class="el" href="Protocol_8h_source.html">Protocol.h</a>.</p>
+<p>Status (Status); 0 in requests. </p>
+
+<p class="definition">Definition at line <a class="el" href="Protocol_8h_source.html#l00134">134</a> of file <a class="el" href="Protocol_8h_source.html">Protocol.h</a>.</p>
 
 </div>
 </div>

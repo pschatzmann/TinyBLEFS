@@ -142,30 +142,30 @@ $(document).ready(function(){initNavTree('RingQueue_8h_source.html',''); initRes
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordflow">return</span> n;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  }</div>
 </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classtinyblefs_1_1RingQueueT.html#aad753e83eaed43121c0bd5eb49ccfd5a">   43</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtinyblefs_1_1RingQueueT.html#aad753e83eaed43121c0bd5eb49ccfd5a">clear</a>() { tail_ = head_; }</div>
-<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classtinyblefs_1_1RingQueueT.html#a9f95398b10702f437e9465acf23af950">   46</a></span>  uint32_t <a class="code hl_function" href="classtinyblefs_1_1RingQueueT.html#a9f95398b10702f437e9465acf23af950">takeDropped</a>() {</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    uint32_t n = dropped_;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    dropped_ = 0;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">return</span> n;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classtinyblefs_1_1RingQueueT.html#aad753e83eaed43121c0bd5eb49ccfd5a">   44</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtinyblefs_1_1RingQueueT.html#aad753e83eaed43121c0bd5eb49ccfd5a">clear</a>() { tail_ = head_; }</div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classtinyblefs_1_1RingQueueT.html#a9f95398b10702f437e9465acf23af950">   47</a></span>  uint32_t <a class="code hl_function" href="classtinyblefs_1_1RingQueueT.html#a9f95398b10702f437e9465acf23af950">takeDropped</a>() {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    uint32_t n = dropped_;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    dropped_ = 0;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">return</span> n;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  }</div>
 </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  uint8_t buf_[Slots][Size];</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  uint16_t len_[Slots];</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keyword">volatile</span> <span class="keywordtype">size_t</span> head_ = 0, tail_ = 0;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keyword">volatile</span> uint32_t dropped_ = 0;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>};</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  uint8_t buf_[Slots][Size];</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  uint16_t len_[Slots];</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keyword">volatile</span> <span class="keywordtype">size_t</span> head_ = 0, tail_ = 0;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keyword">volatile</span> uint32_t dropped_ = 0;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>};</div>
 </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="namespacetinyblefs.html#ad0c78159b2cbc43d0f339bf8e6c4093b">   60</a></span><span class="keyword">using </span><a class="code hl_class" href="classtinyblefs_1_1RingQueueT.html">RingQueue</a> = <a class="code hl_class" href="classtinyblefs_1_1RingQueueT.html">RingQueueT&lt;TINYBLEFS_RX_SLOTS, TINYBLEFS_RX_PACKET&gt;</a>;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}  <span class="comment">// namespace tinyblefs</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="namespacetinyblefs.html#ad0c78159b2cbc43d0f339bf8e6c4093b">   61</a></span><span class="keyword">using </span><a class="code hl_class" href="classtinyblefs_1_1RingQueueT.html">RingQueue</a> = <a class="code hl_class" href="classtinyblefs_1_1RingQueueT.html">RingQueueT&lt;TINYBLEFS_RX_SLOTS, TINYBLEFS_RX_PACKET&gt;</a>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}  <span class="comment">// namespace tinyblefs</span></div>
 <div class="ttc" id="aclasstinyblefs_1_1RingQueueT_html"><div class="ttname"><a href="classtinyblefs_1_1RingQueueT.html">tinyblefs::RingQueueT</a></div><div class="ttdoc">Slots: number of packets that can be buffered, Size: bytes of the largest packet.</div><div class="ttdef"><b>Definition</b> <a href="RingQueue_8h_source.html#l00020">RingQueue.h:20</a></div></div>
-<div class="ttc" id="aclasstinyblefs_1_1RingQueueT_html_a9f95398b10702f437e9465acf23af950"><div class="ttname"><a href="classtinyblefs_1_1RingQueueT.html#a9f95398b10702f437e9465acf23af950">tinyblefs::RingQueueT::takeDropped</a></div><div class="ttdeci">uint32_t takeDropped()</div><div class="ttdef"><b>Definition</b> <a href="RingQueue_8h_source.html#l00046">RingQueue.h:46</a></div></div>
+<div class="ttc" id="aclasstinyblefs_1_1RingQueueT_html_a9f95398b10702f437e9465acf23af950"><div class="ttname"><a href="classtinyblefs_1_1RingQueueT.html#a9f95398b10702f437e9465acf23af950">tinyblefs::RingQueueT::takeDropped</a></div><div class="ttdeci">uint32_t takeDropped()</div><div class="ttdoc">Number of packets lost since the last call (queue full / packet too large).</div><div class="ttdef"><b>Definition</b> <a href="RingQueue_8h_source.html#l00047">RingQueue.h:47</a></div></div>
 <div class="ttc" id="aclasstinyblefs_1_1RingQueueT_html_aa0c73fa157d7ca913f4234c859f65f14"><div class="ttname"><a href="classtinyblefs_1_1RingQueueT.html#aa0c73fa157d7ca913f4234c859f65f14">tinyblefs::RingQueueT::push</a></div><div class="ttdeci">bool push(const uint8_t *d, size_t n)</div><div class="ttdoc">Returns false (packet dropped) when full or too large.</div><div class="ttdef"><b>Definition</b> <a href="RingQueue_8h_source.html#l00023">RingQueue.h:23</a></div></div>
-<div class="ttc" id="aclasstinyblefs_1_1RingQueueT_html_aad753e83eaed43121c0bd5eb49ccfd5a"><div class="ttname"><a href="classtinyblefs_1_1RingQueueT.html#aad753e83eaed43121c0bd5eb49ccfd5a">tinyblefs::RingQueueT::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdef"><b>Definition</b> <a href="RingQueue_8h_source.html#l00043">RingQueue.h:43</a></div></div>
+<div class="ttc" id="aclasstinyblefs_1_1RingQueueT_html_aad753e83eaed43121c0bd5eb49ccfd5a"><div class="ttname"><a href="classtinyblefs_1_1RingQueueT.html#aad753e83eaed43121c0bd5eb49ccfd5a">tinyblefs::RingQueueT::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Removes all packets.</div><div class="ttdef"><b>Definition</b> <a href="RingQueue_8h_source.html#l00044">RingQueue.h:44</a></div></div>
 <div class="ttc" id="aclasstinyblefs_1_1RingQueueT_html_aee8cac616afe0fe7abb6d10441ad6308"><div class="ttname"><a href="classtinyblefs_1_1RingQueueT.html#aee8cac616afe0fe7abb6d10441ad6308">tinyblefs::RingQueueT::pop</a></div><div class="ttdeci">size_t pop(uint8_t *out, size_t max)</div><div class="ttdoc">Copies the oldest packet; returns its length, or 0 if empty.</div><div class="ttdef"><b>Definition</b> <a href="RingQueue_8h_source.html#l00035">RingQueue.h:35</a></div></div>
 <div class="ttc" id="anamespacetinyblefs_html"><div class="ttname"><a href="namespacetinyblefs.html">tinyblefs</a></div><div class="ttdef"><b>Definition</b> <a href="ArduinoBLE_8h_source.html#l00024">ArduinoBLE.h:24</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

@@ -128,8 +128,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7569ce9e45ee8500ba986a7770421131" id="r_a7569ce9e45ee8500ba986a7770421131"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1NimBLEClientTransport.html#a7569ce9e45ee8500ba986a7770421131">~NimBLEClientTransport</a> () override</td></tr>
 <tr class="separator:a7569ce9e45ee8500ba986a7770421131"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3eae1c2af398f73771b0cb1e6d9cff9" id="r_ad3eae1c2af398f73771b0cb1e6d9cff9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1NimBLEClientTransport.html#ad3eae1c2af398f73771b0cb1e6d9cff9">connect</a> (const NimBLEAddress &amp;address)</td></tr>
+<tr class="memdesc:ad3eae1c2af398f73771b0cb1e6d9cff9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connects to a device found by <a class="el" href="classtinyblefs_1_1NimBLEClientTransport.html#a252b107edfe493e1f106108eebd8a405" title="Scans for devices that advertise the TinyBLEFS service.">scan()</a> and discovers the file service.  <br /></td></tr>
 <tr class="separator:ad3eae1c2af398f73771b0cb1e6d9cff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c68e66a0942640d2d46916a2507acb5" id="r_a7c68e66a0942640d2d46916a2507acb5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1NimBLEClientTransport.html#a7c68e66a0942640d2d46916a2507acb5">disconnect</a> ()</td></tr>
+<tr class="memdesc:a7c68e66a0942640d2d46916a2507acb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disconnects from the server.  <br /></td></tr>
 <tr class="separator:a7c68e66a0942640d2d46916a2507acb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79f3de9864c565258f9a0a3441d64c66" id="r_a79f3de9864c565258f9a0a3441d64c66"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1NimBLEClientTransport.html#a79f3de9864c565258f9a0a3441d64c66">mtu</a> () const override</td></tr>
 <tr class="memdesc:a79f3de9864c565258f9a0a3441d64c66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of bytes per packet (ATT MTU - 3)  <br /></td></tr>
@@ -138,6 +140,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a7690a481f60a21df3bc74af7c48fa2eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends one packet (&lt;= <a class="el" href="classtinyblefs_1_1NimBLEClientTransport.html#a79f3de9864c565258f9a0a3441d64c66" title="Maximum number of bytes per packet (ATT MTU - 3)">mtu()</a>); returns false on failure.  <br /></td></tr>
 <tr class="separator:a7690a481f60a21df3bc74af7c48fa2eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27cf170550b5c64b7b2d29b04decc30c" id="r_a27cf170550b5c64b7b2d29b04decc30c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1NimBLEClientTransport.html#a27cf170550b5c64b7b2d29b04decc30c">receive</a> (uint8_t *buf, size_t max) override</td></tr>
+<tr class="memdesc:a27cf170550b5c64b7b2d29b04decc30c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non blocking: copies the next received packet and returns its length, or 0 when nothing is available.  <br /></td></tr>
 <tr class="separator:a27cf170550b5c64b7b2d29b04decc30c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0905b53110ef527925dc7a31c6734aea" id="r_a0905b53110ef527925dc7a31c6734aea"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1NimBLEClientTransport.html#a0905b53110ef527925dc7a31c6734aea">connected</a> () const override</td></tr>
 <tr class="memdesc:a0905b53110ef527925dc7a31c6734aea"><td class="mdescLeft">&#160;</td><td class="mdescRight">True while the link is up.  <br /></td></tr>
@@ -146,19 +149,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2530bca901598a5abceec60ce6e0618a inherit pub_methods_classtinyblefs_1_1Transport" id="r_a2530bca901598a5abceec60ce6e0618a"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Transport.html#a2530bca901598a5abceec60ce6e0618a">~Transport</a> ()=default</td></tr>
 <tr class="separator:a2530bca901598a5abceec60ce6e0618a inherit pub_methods_classtinyblefs_1_1Transport"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44617e813487a8168e9938083b9a538e inherit pub_methods_classtinyblefs_1_1Transport" id="r_a44617e813487a8168e9938083b9a538e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Transport.html#a44617e813487a8168e9938083b9a538e">poll</a> ()</td></tr>
+<tr class="memdesc:a44617e813487a8168e9938083b9a538e inherit pub_methods_classtinyblefs_1_1Transport"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called regularly by Server::poll() and while a Client waits for a response.  <br /></td></tr>
 <tr class="separator:a44617e813487a8168e9938083b9a538e inherit pub_methods_classtinyblefs_1_1Transport"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad35b5913aeb67d5ca27c6767728c2753 inherit pub_methods_classtinyblefs_1_1Transport" id="r_ad35b5913aeb67d5ca27c6767728c2753"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Transport.html#ad35b5913aeb67d5ca27c6767728c2753">generation</a> () const</td></tr>
+<tr class="memdesc:ad35b5913aeb67d5ca27c6767728c2753 inherit pub_methods_classtinyblefs_1_1Transport"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes whenever the server side state (open files) was lost, e.g.  <br /></td></tr>
 <tr class="separator:ad35b5913aeb67d5ca27c6767728c2753 inherit pub_methods_classtinyblefs_1_1Transport"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a252b107edfe493e1f106108eebd8a405" id="r_a252b107edfe493e1f106108eebd8a405"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; NimBLEAddress &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1NimBLEClientTransport.html#a252b107edfe493e1f106108eebd8a405">scan</a> (uint32_t durationMs=5000, const char *namePrefix=&quot;&quot;)</td></tr>
+<tr class="memdesc:a252b107edfe493e1f106108eebd8a405"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scans for devices that advertise the TinyBLEFS service.  <br /></td></tr>
 <tr class="separator:a252b107edfe493e1f106108eebd8a405"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Central side: connects to one TinyBLEFS server. </p>
 
-<p class="definition">Definition at line <a class="el" href="NimBLE_8h_source.html#l00180">180</a> of file <a class="el" href="NimBLE_8h_source.html">NimBLE.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NimBLE_8h_source.html#l00183">183</a> of file <a class="el" href="NimBLE_8h_source.html">NimBLE.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7569ce9e45ee8500ba986a7770421131" name="a7569ce9e45ee8500ba986a7770421131"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7569ce9e45ee8500ba986a7770421131">&#9670;&#160;</a></span>~NimBLEClientTransport()</h2>
@@ -183,7 +189,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NimBLE_8h_source.html#l00182">182</a> of file <a class="el" href="NimBLE_8h_source.html">NimBLE.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NimBLE_8h_source.html#l00185">185</a> of file <a class="el" href="NimBLE_8h_source.html">NimBLE.h</a>.</p>
 
 </div>
 </div>
@@ -212,7 +218,9 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NimBLE_8h_source.html#l00208">208</a> of file <a class="el" href="NimBLE_8h_source.html">NimBLE.h</a>.</p>
+<p>Connects to a device found by <a class="el" href="classtinyblefs_1_1NimBLEClientTransport.html#a252b107edfe493e1f106108eebd8a405" title="Scans for devices that advertise the TinyBLEFS service.">scan()</a> and discovers the file service. </p>
+
+<p class="definition">Definition at line <a class="el" href="NimBLE_8h_source.html#l00212">212</a> of file <a class="el" href="NimBLE_8h_source.html">NimBLE.h</a>.</p>
 
 </div>
 </div>
@@ -243,7 +251,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classtinyblefs_1_1Transport.html#a6542a2da6534dde47cf31fde58825542">tinyblefs::Transport</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="NimBLE_8h_source.html#l00255">255</a> of file <a class="el" href="NimBLE_8h_source.html">NimBLE.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NimBLE_8h_source.html#l00260">260</a> of file <a class="el" href="NimBLE_8h_source.html">NimBLE.h</a>.</p>
 
 </div>
 </div>
@@ -270,7 +278,9 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NimBLE_8h_source.html#l00229">229</a> of file <a class="el" href="NimBLE_8h_source.html">NimBLE.h</a>.</p>
+<p>Disconnects from the server. </p>
+
+<p class="definition">Definition at line <a class="el" href="NimBLE_8h_source.html#l00234">234</a> of file <a class="el" href="NimBLE_8h_source.html">NimBLE.h</a>.</p>
 
 </div>
 </div>
@@ -301,7 +311,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classtinyblefs_1_1Transport.html#a7ed2442227c801b6c80a71a4c1ba1a37">tinyblefs::Transport</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="NimBLE_8h_source.html#l00240">240</a> of file <a class="el" href="NimBLE_8h_source.html">NimBLE.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NimBLE_8h_source.html#l00245">245</a> of file <a class="el" href="NimBLE_8h_source.html">NimBLE.h</a>.</p>
 
 </div>
 </div>
@@ -338,11 +348,12 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Non blocking: copies the next received packet and returns its length, or 0 when nothing is available </p>
+
+<p>Non blocking: copies the next received packet and returns its length, or 0 when nothing is available. </p>
 
 <p>Implements <a class="el" href="classtinyblefs_1_1Transport.html#aaf9b81ce4e4244f2ec0e154512f579fc">tinyblefs::Transport</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="NimBLE_8h_source.html#l00250">250</a> of file <a class="el" href="NimBLE_8h_source.html">NimBLE.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NimBLE_8h_source.html#l00255">255</a> of file <a class="el" href="NimBLE_8h_source.html">NimBLE.h</a>.</p>
 
 </div>
 </div>
@@ -379,14 +390,16 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Scans for devices that advertise the TinyBLEFS service. </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Scans for devices that advertise the TinyBLEFS service. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">namePrefix</td><td>only return devices whose advertised BLE device name starts with this prefix (empty = all). This is the name given to <a class="el" href="classtinyblefs_1_1NimBLEServerTransport.html#a395148a05b845cdff3b88a13823db7f8">NimBLEServerTransport::begin()</a>, which is not necessarily the mount name announced by the tinyblefs::Server. </td></tr>
+    <tr><td class="paramname">namePrefix</td><td>only return devices whose advertised BLE device name starts with this prefix (empty = all). This is the name given to <a class="el" href="classtinyblefs_1_1NimBLEServerTransport.html#a395148a05b845cdff3b88a13823db7f8" title="Initialises NimBLE (unless already done), creates the service and starts advertising.">NimBLEServerTransport::begin()</a>, which is not necessarily the mount name announced by the tinyblefs::Server. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="NimBLE_8h_source.html#l00189">189</a> of file <a class="el" href="NimBLE_8h_source.html">NimBLE.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NimBLE_8h_source.html#l00192">192</a> of file <a class="el" href="NimBLE_8h_source.html">NimBLE.h</a>.</p>
 
 </div>
 </div>
@@ -428,7 +441,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classtinyblefs_1_1Transport.html#a0a80d045ee4cc085e615d6f34206c4cf">tinyblefs::Transport</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="NimBLE_8h_source.html#l00245">245</a> of file <a class="el" href="NimBLE_8h_source.html">NimBLE.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NimBLE_8h_source.html#l00250">250</a> of file <a class="el" href="NimBLE_8h_source.html">NimBLE.h</a>.</p>
 
 </div>
 </div>

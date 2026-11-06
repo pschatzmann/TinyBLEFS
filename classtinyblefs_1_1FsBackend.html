@@ -97,18 +97,21 @@ $(document).ready(function(){initNavTree('classtinyblefs_1_1FsBackend.html','');
 </div><!--header-->
 <div class="contents">
 
+<p>File system used by the <a class="el" href="classtinyblefs_1_1FileServer.html" title="Serves a file system (any FsBackend, given in the constructor) over a Transport.">FileServer</a>: implement it to serve any storage (see backends/)  
+ <a href="classtinyblefs_1_1FsBackend.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="FsBackend_8h_source.html">FsBackend.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for tinyblefs::FsBackend:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinyblefs_1_1FsBackend__inherit__graph.png" border="0" usemap="#atinyblefs_1_1FsBackend_inherit__map" alt="Inheritance graph"/></div>
 <map name="atinyblefs_1_1FsBackend_inherit__map" id="atinyblefs_1_1FsBackend_inherit__map">
-<area shape="rect" title=" " alt="" coords="236,5,381,234"/>
-<area shape="rect" href="classtinyblefs_1_1ArduinoFsBackend.html" title=" " alt="" coords="5,282,201,550"/>
+<area shape="rect" title="File system used by the FileServer: implement it to serve any storage (see backends/)" alt="" coords="236,5,381,234"/>
+<area shape="rect" href="classtinyblefs_1_1ArduinoFsBackend.html" title="FsBackend for any Arduino file system (LittleFS, SPIFFS, FFat, SD, SD_MMC, ...); uses the POSIX API f..." alt="" coords="5,282,201,550"/>
 <area shape="poly" title=" " alt="" coords="229,235,198,284,194,281,226,239"/>
-<area shape="rect" href="classtinyblefs_1_1StdFilesystemBackend.html" title=" " alt="" coords="225,304,392,528"/>
+<area shape="rect" href="classtinyblefs_1_1StdFilesystemBackend.html" title="FsBackend for the Linux/desktop file system (std::filesystem), restricted to a root directory." alt="" coords="225,304,392,528"/>
 <area shape="poly" title=" " alt="" coords="310,246,311,306,306,304,307,251"/>
-<area shape="rect" href="classtinyblefs_1_1TinyFatBackend.html" title=" " alt="" coords="417,302,595,530"/>
+<area shape="rect" href="classtinyblefs_1_1TinyFatBackend.html" title="FsBackend for the TinyFATFS library (FAT on SD cards and flash)" alt="" coords="417,302,595,530"/>
 <area shape="poly" title=" " alt="" coords="390,239,433,302,427,302,389,244"/>
 </map>
 </div>
@@ -117,7 +120,7 @@ Collaboration diagram for tinyblefs::FsBackend:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinyblefs_1_1FsBackend__coll__graph.png" border="0" usemap="#atinyblefs_1_1FsBackend_coll__map" alt="Collaboration graph"/></div>
 <map name="atinyblefs_1_1FsBackend_coll__map" id="atinyblefs_1_1FsBackend_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,151,234"/>
+<area shape="rect" title="File system used by the FileServer: implement it to serve any storage (see backends/)" alt="" coords="5,5,151,234"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -129,22 +132,28 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aa2e271f3efc83deff3d09c0c6f497fff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens a file (flags: OpenFlags). Returns nullptr on failure.  <br /></td></tr>
 <tr class="separator:aa2e271f3efc83deff3d09c0c6f497fff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6cda3fc27c564dc04cb607100051248" id="r_af6cda3fc27c564dc04cb607100051248"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FsBackend.html#af6cda3fc27c564dc04cb607100051248">stat</a> (const char *path, <a class="el" href="structtinyblefs_1_1FsEntry.html">FsEntry</a> &amp;entry)=0</td></tr>
+<tr class="memdesc:af6cda3fc27c564dc04cb607100051248"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports whether the path exists and its type and size.  <br /></td></tr>
 <tr class="separator:af6cda3fc27c564dc04cb607100051248"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba4a0d5cce91e78194ed33bf4b6325c0" id="r_aba4a0d5cce91e78194ed33bf4b6325c0"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FsBackend.html#aba4a0d5cce91e78194ed33bf4b6325c0">list</a> (const char *path, uint32_t index, <a class="el" href="structtinyblefs_1_1FsEntry.html">FsEntry</a> &amp;entry)=0</td></tr>
 <tr class="memdesc:aba4a0d5cce91e78194ed33bf4b6325c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the index-th entry of a directory; false at the end.  <br /></td></tr>
 <tr class="separator:aba4a0d5cce91e78194ed33bf4b6325c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0747a8ee42b0ed029d6425344b4c87ef" id="r_a0747a8ee42b0ed029d6425344b4c87ef"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FsBackend.html#a0747a8ee42b0ed029d6425344b4c87ef">remove</a> (const char *path)=0</td></tr>
+<tr class="memdesc:a0747a8ee42b0ed029d6425344b4c87ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes a file.  <br /></td></tr>
 <tr class="separator:a0747a8ee42b0ed029d6425344b4c87ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a325378837f43c9adaca69675cb2874a7" id="r_a325378837f43c9adaca69675cb2874a7"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FsBackend.html#a325378837f43c9adaca69675cb2874a7">mkdir</a> (const char *path)=0</td></tr>
+<tr class="memdesc:a325378837f43c9adaca69675cb2874a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a directory.  <br /></td></tr>
 <tr class="separator:a325378837f43c9adaca69675cb2874a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4aec73fa7d17db5f67bd979799f71ba6" id="r_a4aec73fa7d17db5f67bd979799f71ba6"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FsBackend.html#a4aec73fa7d17db5f67bd979799f71ba6">rmdir</a> (const char *path)=0</td></tr>
+<tr class="memdesc:a4aec73fa7d17db5f67bd979799f71ba6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an empty directory.  <br /></td></tr>
 <tr class="separator:a4aec73fa7d17db5f67bd979799f71ba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeef408a5664172cc465e8e34fce6b452" id="r_aeef408a5664172cc465e8e34fce6b452"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FsBackend.html#aeef408a5664172cc465e8e34fce6b452">rename</a> (const char *from, const char *to)=0</td></tr>
+<tr class="memdesc:aeef408a5664172cc465e8e34fce6b452"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renames or moves a file or directory.  <br /></td></tr>
 <tr class="separator:aeef408a5664172cc465e8e34fce6b452"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="FsBackend_8h_source.html#l00029">29</a> of file <a class="el" href="FsBackend_8h_source.html">FsBackend.h</a>.</p>
+<div class="textblock"><p>File system used by the <a class="el" href="classtinyblefs_1_1FileServer.html" title="Serves a file system (any FsBackend, given in the constructor) over a Transport.">FileServer</a>: implement it to serve any storage (see backends/) </p>
+
+<p class="definition">Definition at line <a class="el" href="FsBackend_8h_source.html#l00035">35</a> of file <a class="el" href="FsBackend_8h_source.html">FsBackend.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a124af808fa2a56b5db8baf48f3393d10" name="a124af808fa2a56b5db8baf48f3393d10"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a124af808fa2a56b5db8baf48f3393d10">&#9670;&#160;</a></span>~FsBackend()</h2>
@@ -242,6 +251,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Creates a directory. </p>
+
 <p>Implemented in <a class="el" href="classtinyblefs_1_1ArduinoFsBackend.html#add67abe44ed1d500474b14ebb4821b2c">tinyblefs::ArduinoFsBackend&lt; FS &gt;</a>, <a class="el" href="classtinyblefs_1_1StdFilesystemBackend.html#ac0d9021346f1e58c6ad8e1e7f2685af5">tinyblefs::StdFilesystemBackend</a>, and <a class="el" href="classtinyblefs_1_1TinyFatBackend.html#a7d399f4b70b2316da9612f1c7bf14418">tinyblefs::TinyFatBackend</a>.</p>
 
 </div>
@@ -310,6 +321,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Deletes a file. </p>
+
 <p>Implemented in <a class="el" href="classtinyblefs_1_1ArduinoFsBackend.html#a33c373a4c91802e14804158eddc0ff43">tinyblefs::ArduinoFsBackend&lt; FS &gt;</a>, <a class="el" href="classtinyblefs_1_1StdFilesystemBackend.html#a2bd0010c84be65cc7a1e6cc9fb42c90e">tinyblefs::StdFilesystemBackend</a>, and <a class="el" href="classtinyblefs_1_1TinyFatBackend.html#a75de6125785fdec6f4ca894285a73259">tinyblefs::TinyFatBackend</a>.</p>
 
 </div>
@@ -348,6 +361,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Renames or moves a file or directory. </p>
+
 <p>Implemented in <a class="el" href="classtinyblefs_1_1ArduinoFsBackend.html#aa91e297cec22245c01ff6e58c6c0ddc7">tinyblefs::ArduinoFsBackend&lt; FS &gt;</a>, <a class="el" href="classtinyblefs_1_1StdFilesystemBackend.html#ada7d957a1dd1edcc0252398ed3314876">tinyblefs::StdFilesystemBackend</a>, and <a class="el" href="classtinyblefs_1_1TinyFatBackend.html#afb8afaa2c36ea86a1ab3f475f007c6e8">tinyblefs::TinyFatBackend</a>.</p>
 
 </div>
@@ -375,6 +390,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Removes an empty directory. </p>
 
 <p>Implemented in <a class="el" href="classtinyblefs_1_1ArduinoFsBackend.html#a386fd5a5e341245c2620d6f5959efa9e">tinyblefs::ArduinoFsBackend&lt; FS &gt;</a>, <a class="el" href="classtinyblefs_1_1StdFilesystemBackend.html#ab4a5d348bd18240ad681464afba62aa6">tinyblefs::StdFilesystemBackend</a>, and <a class="el" href="classtinyblefs_1_1TinyFatBackend.html#ac8c9c39f513587ed2a233fadf74be53d">tinyblefs::TinyFatBackend</a>.</p>
 
@@ -413,6 +430,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Reports whether the path exists and its type and size. </p>
 
 <p>Implemented in <a class="el" href="classtinyblefs_1_1ArduinoFsBackend.html#af54fbd1c4344e4b0d7763f6c5771ce88">tinyblefs::ArduinoFsBackend&lt; FS &gt;</a>, <a class="el" href="classtinyblefs_1_1StdFilesystemBackend.html#adbc801376434439a86efef64a453d295">tinyblefs::StdFilesystemBackend</a>, and <a class="el" href="classtinyblefs_1_1TinyFatBackend.html#a88b3154619e90057b8b2d559e4cf4f75">tinyblefs::TinyFatBackend</a>.</p>
 

@@ -128,8 +128,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6be7674e5179dc06b8e3f565ab03b326" id="r_a6be7674e5179dc06b8e3f565ab03b326"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1PicoWClientTransport.html#a6be7674e5179dc06b8e3f565ab03b326">~PicoWClientTransport</a> () override</td></tr>
 <tr class="separator:a6be7674e5179dc06b8e3f565ab03b326"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae754ba8270b1201787e993fd95e44129" id="r_ae754ba8270b1201787e993fd95e44129"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1PicoWClientTransport.html#ae754ba8270b1201787e993fd95e44129">connect</a> (BLEAdvertising &amp;device, uint32_t timeoutSec=10)</td></tr>
+<tr class="memdesc:ae754ba8270b1201787e993fd95e44129"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connects to a device found by <a class="el" href="classtinyblefs_1_1PicoWClientTransport.html#ad68cb51e82ac4bf5c494a8ee549720bd" title="Scans for devices that advertise the TinyBLEFS service.">scan()</a> and discovers the file service.  <br /></td></tr>
 <tr class="separator:ae754ba8270b1201787e993fd95e44129"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaed7401c37e094876fcc8bdaebc4107d" id="r_aaed7401c37e094876fcc8bdaebc4107d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1PicoWClientTransport.html#aaed7401c37e094876fcc8bdaebc4107d">disconnect</a> ()</td></tr>
+<tr class="memdesc:aaed7401c37e094876fcc8bdaebc4107d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disconnects from the server.  <br /></td></tr>
 <tr class="separator:aaed7401c37e094876fcc8bdaebc4107d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac11a9fb3d5c2faf2718f67872c4aad34" id="r_ac11a9fb3d5c2faf2718f67872c4aad34"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1PicoWClientTransport.html#ac11a9fb3d5c2faf2718f67872c4aad34">mtu</a> () const override</td></tr>
 <tr class="memdesc:ac11a9fb3d5c2faf2718f67872c4aad34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of bytes per packet (ATT MTU - 3)  <br /></td></tr>
@@ -138,6 +140,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a9ee1ed18aaf3f64332c7b848aea1fb0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends one packet (&lt;= <a class="el" href="classtinyblefs_1_1PicoWClientTransport.html#ac11a9fb3d5c2faf2718f67872c4aad34" title="Maximum number of bytes per packet (ATT MTU - 3)">mtu()</a>); returns false on failure.  <br /></td></tr>
 <tr class="separator:a9ee1ed18aaf3f64332c7b848aea1fb0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53d629ad0e96743de6cddd8d7e2b8c94" id="r_a53d629ad0e96743de6cddd8d7e2b8c94"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1PicoWClientTransport.html#a53d629ad0e96743de6cddd8d7e2b8c94">receive</a> (uint8_t *buf, size_t max) override</td></tr>
+<tr class="memdesc:a53d629ad0e96743de6cddd8d7e2b8c94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non blocking: copies the next received packet and returns its length, or 0 when nothing is available.  <br /></td></tr>
 <tr class="separator:a53d629ad0e96743de6cddd8d7e2b8c94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1f13a571d667039ce47a9caa71f74fb" id="r_ae1f13a571d667039ce47a9caa71f74fb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1PicoWClientTransport.html#ae1f13a571d667039ce47a9caa71f74fb">connected</a> () const override</td></tr>
 <tr class="memdesc:ae1f13a571d667039ce47a9caa71f74fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">True while the link is up.  <br /></td></tr>
@@ -146,19 +149,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2530bca901598a5abceec60ce6e0618a inherit pub_methods_classtinyblefs_1_1Transport" id="r_a2530bca901598a5abceec60ce6e0618a"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Transport.html#a2530bca901598a5abceec60ce6e0618a">~Transport</a> ()=default</td></tr>
 <tr class="separator:a2530bca901598a5abceec60ce6e0618a inherit pub_methods_classtinyblefs_1_1Transport"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44617e813487a8168e9938083b9a538e inherit pub_methods_classtinyblefs_1_1Transport" id="r_a44617e813487a8168e9938083b9a538e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Transport.html#a44617e813487a8168e9938083b9a538e">poll</a> ()</td></tr>
+<tr class="memdesc:a44617e813487a8168e9938083b9a538e inherit pub_methods_classtinyblefs_1_1Transport"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called regularly by Server::poll() and while a Client waits for a response.  <br /></td></tr>
 <tr class="separator:a44617e813487a8168e9938083b9a538e inherit pub_methods_classtinyblefs_1_1Transport"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad35b5913aeb67d5ca27c6767728c2753 inherit pub_methods_classtinyblefs_1_1Transport" id="r_ad35b5913aeb67d5ca27c6767728c2753"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Transport.html#ad35b5913aeb67d5ca27c6767728c2753">generation</a> () const</td></tr>
+<tr class="memdesc:ad35b5913aeb67d5ca27c6767728c2753 inherit pub_methods_classtinyblefs_1_1Transport"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes whenever the server side state (open files) was lost, e.g.  <br /></td></tr>
 <tr class="separator:ad35b5913aeb67d5ca27c6767728c2753 inherit pub_methods_classtinyblefs_1_1Transport"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ad68cb51e82ac4bf5c494a8ee549720bd" id="r_ad68cb51e82ac4bf5c494a8ee549720bd"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; BLEAdvertising &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1PicoWClientTransport.html#ad68cb51e82ac4bf5c494a8ee549720bd">scan</a> (uint32_t durationMs=5000, const char *namePrefix=&quot;&quot;)</td></tr>
+<tr class="memdesc:ad68cb51e82ac4bf5c494a8ee549720bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scans for devices that advertise the TinyBLEFS service.  <br /></td></tr>
 <tr class="separator:ad68cb51e82ac4bf5c494a8ee549720bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Central side: connects to one TinyBLEFS server. </p>
 
-<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00219">219</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00222">222</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6be7674e5179dc06b8e3f565ab03b326" name="a6be7674e5179dc06b8e3f565ab03b326"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6be7674e5179dc06b8e3f565ab03b326">&#9670;&#160;</a></span>~PicoWClientTransport()</h2>
@@ -183,7 +189,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00221">221</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00224">224</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
 
 </div>
 </div>
@@ -222,7 +228,9 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00245">245</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
+<p>Connects to a device found by <a class="el" href="classtinyblefs_1_1PicoWClientTransport.html#ad68cb51e82ac4bf5c494a8ee549720bd" title="Scans for devices that advertise the TinyBLEFS service.">scan()</a> and discovers the file service. </p>
+
+<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00249">249</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
 
 </div>
 </div>
@@ -253,7 +261,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classtinyblefs_1_1Transport.html#a6542a2da6534dde47cf31fde58825542">tinyblefs::Transport</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00288">288</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00293">293</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
 
 </div>
 </div>
@@ -280,7 +288,9 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00265">265</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
+<p>Disconnects from the server. </p>
+
+<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00270">270</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
 
 </div>
 </div>
@@ -311,7 +321,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classtinyblefs_1_1Transport.html#a7ed2442227c801b6c80a71a4c1ba1a37">tinyblefs::Transport</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00277">277</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00282">282</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
 
 </div>
 </div>
@@ -348,11 +358,12 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Non blocking: copies the next received packet and returns its length, or 0 when nothing is available </p>
+
+<p>Non blocking: copies the next received packet and returns its length, or 0 when nothing is available. </p>
 
 <p>Implements <a class="el" href="classtinyblefs_1_1Transport.html#aaf9b81ce4e4244f2ec0e154512f579fc">tinyblefs::Transport</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00283">283</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00288">288</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
 
 </div>
 </div>
@@ -389,14 +400,16 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Scans for devices that advertise the TinyBLEFS service. </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Scans for devices that advertise the TinyBLEFS service. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">namePrefix</td><td>only return devices whose advertised BLE device name starts with this prefix (empty = all) </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00226">226</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00229">229</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
 
 </div>
 </div>
@@ -438,7 +451,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classtinyblefs_1_1Transport.html#a0a80d045ee4cc085e615d6f34206c4cf">tinyblefs::Transport</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00278">278</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00283">283</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
 
 </div>
 </div>

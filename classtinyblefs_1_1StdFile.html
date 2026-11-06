@@ -97,13 +97,16 @@ $(document).ready(function(){initNavTree('classtinyblefs_1_1StdFile.html',''); i
 </div><!--header-->
 <div class="contents">
 
+<p>Open file of the std::filesystem backend.  
+ <a href="classtinyblefs_1_1StdFile.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="StdFilesystem_8h_source.html">StdFilesystem.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for tinyblefs::StdFile:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinyblefs_1_1StdFile__inherit__graph.png" border="0" usemap="#atinyblefs_1_1StdFile_inherit__map" alt="Inheritance graph"/></div>
 <map name="atinyblefs_1_1StdFile_inherit__map" id="atinyblefs_1_1StdFile_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,193,125,354"/>
+<area shape="rect" title="Open file of the std::filesystem backend." alt="" coords="5,193,125,354"/>
 <area shape="rect" href="classtinyblefs_1_1FsFile.html" title="An open file. Destroying the object closes the file." alt="" coords="8,5,122,145"/>
 <area shape="poly" title=" " alt="" coords="66,157,68,193,63,193,65,162"/>
 </map>
@@ -113,7 +116,7 @@ Collaboration diagram for tinyblefs::StdFile:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinyblefs_1_1StdFile__coll__graph.png" border="0" usemap="#atinyblefs_1_1StdFile_coll__map" alt="Collaboration graph"/></div>
 <map name="atinyblefs_1_1StdFile_coll__map" id="atinyblefs_1_1StdFile_coll__map">
-<area shape="rect" title=" " alt="" coords="5,193,125,354"/>
+<area shape="rect" title="Open file of the std::filesystem backend." alt="" coords="5,193,125,354"/>
 <area shape="rect" href="classtinyblefs_1_1FsFile.html" title="An open file. Destroying the object closes the file." alt="" coords="8,5,122,145"/>
 <area shape="poly" title=" " alt="" coords="66,157,68,193,63,193,65,162"/>
 </map>
@@ -122,8 +125,10 @@ Collaboration diagram for tinyblefs::StdFile:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a22f6e814c119a552c7fd108a1deb620d" id="r_a22f6e814c119a552c7fd108a1deb620d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1StdFile.html#a22f6e814c119a552c7fd108a1deb620d">StdFile</a> (const std::string &amp;path, std::ios::openmode mode)</td></tr>
+<tr class="memdesc:a22f6e814c119a552c7fd108a1deb620d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the file.  <br /></td></tr>
 <tr class="separator:a22f6e814c119a552c7fd108a1deb620d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af45477df7e66759825c70607010c4ce2" id="r_af45477df7e66759825c70607010c4ce2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1StdFile.html#af45477df7e66759825c70607010c4ce2">isOpen</a> ()</td></tr>
+<tr class="memdesc:af45477df7e66759825c70607010c4ce2"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if the file was opened.  <br /></td></tr>
 <tr class="separator:af45477df7e66759825c70607010c4ce2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95ef9734d2895488a3f739531dea5824" id="r_a95ef9734d2895488a3f739531dea5824"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1StdFile.html#a95ef9734d2895488a3f739531dea5824">read</a> (uint32_t offset, uint8_t *buf, size_t len) override</td></tr>
 <tr class="memdesc:a95ef9734d2895488a3f739531dea5824"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads up to len bytes at offset; returns bytes read or -1 on error.  <br /></td></tr>
@@ -132,14 +137,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a513e46b674ba59cf3096da1cf743907c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes len bytes at offset; returns bytes written or -1 on error.  <br /></td></tr>
 <tr class="separator:a513e46b674ba59cf3096da1cf743907c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02ffd82b15ed1a29535f9900b1795927" id="r_a02ffd82b15ed1a29535f9900b1795927"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1StdFile.html#a02ffd82b15ed1a29535f9900b1795927">size</a> () override</td></tr>
+<tr class="memdesc:a02ffd82b15ed1a29535f9900b1795927"><td class="mdescLeft">&#160;</td><td class="mdescRight">File size in bytes.  <br /></td></tr>
 <tr class="separator:a02ffd82b15ed1a29535f9900b1795927"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classtinyblefs_1_1FsFile"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtinyblefs_1_1FsFile')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtinyblefs_1_1FsFile.html">tinyblefs::FsFile</a></td></tr>
 <tr class="memitem:a87da1fe6ee7102c591d1c35a2da39ace inherit pub_methods_classtinyblefs_1_1FsFile" id="r_a87da1fe6ee7102c591d1c35a2da39ace"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FsFile.html#a87da1fe6ee7102c591d1c35a2da39ace">~FsFile</a> ()=default</td></tr>
 <tr class="separator:a87da1fe6ee7102c591d1c35a2da39ace inherit pub_methods_classtinyblefs_1_1FsFile"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="StdFilesystem_8h_source.html#l00018">18</a> of file <a class="el" href="StdFilesystem_8h_source.html">StdFilesystem.h</a>.</p>
+<div class="textblock"><p>Open file of the std::filesystem backend. </p>
+
+<p class="definition">Definition at line <a class="el" href="StdFilesystem_8h_source.html#l00019">19</a> of file <a class="el" href="StdFilesystem_8h_source.html">StdFilesystem.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a22f6e814c119a552c7fd108a1deb620d" name="a22f6e814c119a552c7fd108a1deb620d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a22f6e814c119a552c7fd108a1deb620d">&#9670;&#160;</a></span>StdFile()</h2>
@@ -175,7 +182,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="StdFilesystem_8h_source.html#l00020">20</a> of file <a class="el" href="StdFilesystem_8h_source.html">StdFilesystem.h</a>.</p>
+<p>Opens the file. </p>
+
+<p class="definition">Definition at line <a class="el" href="StdFilesystem_8h_source.html#l00022">22</a> of file <a class="el" href="StdFilesystem_8h_source.html">StdFilesystem.h</a>.</p>
 
 </div>
 </div>
@@ -203,7 +212,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="StdFilesystem_8h_source.html#l00023">23</a> of file <a class="el" href="StdFilesystem_8h_source.html">StdFilesystem.h</a>.</p>
+<p>True if the file was opened. </p>
+
+<p class="definition">Definition at line <a class="el" href="StdFilesystem_8h_source.html#l00026">26</a> of file <a class="el" href="StdFilesystem_8h_source.html">StdFilesystem.h</a>.</p>
 
 </div>
 </div>
@@ -251,7 +262,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classtinyblefs_1_1FsFile.html#a170595884b562a70ecb1c2e06dfc37b6">tinyblefs::FsFile</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="StdFilesystem_8h_source.html#l00024">24</a> of file <a class="el" href="StdFilesystem_8h_source.html">StdFilesystem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StdFilesystem_8h_source.html#l00027">27</a> of file <a class="el" href="StdFilesystem_8h_source.html">StdFilesystem.h</a>.</p>
 
 </div>
 </div>
@@ -278,9 +289,11 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>File size in bytes. </p>
+
 <p>Implements <a class="el" href="classtinyblefs_1_1FsFile.html#ab7c5b37b90152442745cc2baa4735d40">tinyblefs::FsFile</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="StdFilesystem_8h_source.html#l00047">47</a> of file <a class="el" href="StdFilesystem_8h_source.html">StdFilesystem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StdFilesystem_8h_source.html#l00051">51</a> of file <a class="el" href="StdFilesystem_8h_source.html">StdFilesystem.h</a>.</p>
 
 </div>
 </div>
@@ -328,7 +341,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classtinyblefs_1_1FsFile.html#aacc4ac69b32e7fadc5d156282a04054c">tinyblefs::FsFile</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="StdFilesystem_8h_source.html#l00036">36</a> of file <a class="el" href="StdFilesystem_8h_source.html">StdFilesystem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StdFilesystem_8h_source.html#l00039">39</a> of file <a class="el" href="StdFilesystem_8h_source.html">StdFilesystem.h</a>.</p>
 
 </div>
 </div>

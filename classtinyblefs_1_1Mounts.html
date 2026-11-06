@@ -97,52 +97,68 @@ $(document).ready(function(){initNavTree('classtinyblefs_1_1Mounts.html',''); in
 </div><!--header-->
 <div class="contents">
 
+<p>Registry of remote servers mounted under /&lt;name&gt;: scans, mounts and opens files by path, copies files between servers.  
+ <a href="classtinyblefs_1_1Mounts.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Mounts_8h_source.html">Mounts.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for tinyblefs::Mounts:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinyblefs_1_1Mounts__coll__graph.png" border="0" usemap="#atinyblefs_1_1Mounts_coll__map" alt="Collaboration graph"/></div>
 <map name="atinyblefs_1_1Mounts_coll__map" id="atinyblefs_1_1Mounts_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,129,368"/>
+<area shape="rect" title="Registry of remote servers mounted under /&lt;name&gt;: scans, mounts and opens files by path,..." alt="" coords="5,5,129,368"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:acd3a04eacc435135123d2ad515cb2bba" id="r_acd3a04eacc435135123d2ad515cb2bba"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Mounts.html#acd3a04eacc435135123d2ad515cb2bba">mount</a> (<a class="el" href="classtinyblefs_1_1FileClient.html">FileClient</a> &amp;client, const char *alias=nullptr)</td></tr>
+<tr class="memdesc:acd3a04eacc435135123d2ad515cb2bba"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinyblefs_1_1Mounts.html" title="Registry of remote servers mounted under /&lt;name&gt;: scans, mounts and opens files by path,...">Mounts</a> the server behind the client.  <br /></td></tr>
 <tr class="separator:acd3a04eacc435135123d2ad515cb2bba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf29e19f6cbada1eefcbe181966f13f1" id="r_adf29e19f6cbada1eefcbe181966f13f1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Mounts.html#adf29e19f6cbada1eefcbe181966f13f1">unmount</a> (const char *name)</td></tr>
+<tr class="memdesc:adf29e19f6cbada1eefcbe181966f13f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a server from the mounts.  <br /></td></tr>
 <tr class="separator:adf29e19f6cbada1eefcbe181966f13f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61c92a9ae2f4c8a2e299df8db6b380c6" id="r_a61c92a9ae2f4c8a2e299df8db6b380c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtinyblefs_1_1RemoteFS.html">RemoteFS</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Mounts.html#a61c92a9ae2f4c8a2e299df8db6b380c6">get</a> (const char *name)</td></tr>
+<tr class="memdesc:a61c92a9ae2f4c8a2e299df8db6b380c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the file system mounted under the name (or nullptr)  <br /></td></tr>
 <tr class="separator:a61c92a9ae2f4c8a2e299df8db6b380c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a913b0ef44c69c037bf26f7a7f47a9e25" id="r_a913b0ef44c69c037bf26f7a7f47a9e25"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Mounts.html#a913b0ef44c69c037bf26f7a7f47a9e25">names</a> () const</td></tr>
+<tr class="memdesc:a913b0ef44c69c037bf26f7a7f47a9e25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Names of all mounted servers.  <br /></td></tr>
 <tr class="separator:a913b0ef44c69c037bf26f7a7f47a9e25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cdc2534ef61017a31fe42c1b4b93a2a" id="r_a8cdc2534ef61017a31fe42c1b4b93a2a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtinyblefs_1_1RemoteFile.html">RemoteFile</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Mounts.html#a8cdc2534ef61017a31fe42c1b4b93a2a">open</a> (const char *path, const char *mode=&quot;r&quot;)</td></tr>
+<tr class="memdesc:a8cdc2534ef61017a31fe42c1b4b93a2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens a file or directory by path (/name/...); mode: "r", "w" or "a".  <br /></td></tr>
 <tr class="separator:a8cdc2534ef61017a31fe42c1b4b93a2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7ab0848d57d27042399a2212b60e975" id="r_aa7ab0848d57d27042399a2212b60e975"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtinyblefs_1_1RemoteFile.html">RemoteFile</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Mounts.html#aa7ab0848d57d27042399a2212b60e975">openWait</a> (const char *path, const char *mode=&quot;r&quot;, uint32_t timeoutMs=5000, uint32_t retryMs=100)</td></tr>
+<tr class="memdesc:aa7ab0848d57d27042399a2212b60e975"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinyblefs_1_1Mounts.html#a8cdc2534ef61017a31fe42c1b4b93a2a" title="Opens a file or directory by path (/name/...); mode: &quot;r&quot;, &quot;w&quot; or &quot;a&quot;.">open()</a> that waits while the file is locked by another client (see <a class="el" href="classtinyblefs_1_1RemoteFS.html#af52b6cac09038bb128ea47b14382b04c" title="Like open(), but while the file is locked by another client (busy) it retries every retryMs,...">RemoteFS::openWait</a>)  <br /></td></tr>
 <tr class="separator:aa7ab0848d57d27042399a2212b60e975"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d9c7158788580c1208264a34507d79c" id="r_a2d9c7158788580c1208264a34507d79c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Mounts.html#a2d9c7158788580c1208264a34507d79c">exists</a> (const char *path)</td></tr>
+<tr class="memdesc:a2d9c7158788580c1208264a34507d79c"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if the path exists.  <br /></td></tr>
 <tr class="separator:a2d9c7158788580c1208264a34507d79c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a04ece637a2b82a4ee987b5fa70d5eb" id="r_a3a04ece637a2b82a4ee987b5fa70d5eb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Mounts.html#a3a04ece637a2b82a4ee987b5fa70d5eb">stat</a> (const char *path, bool &amp;isDir, uint32_t &amp;size)</td></tr>
+<tr class="memdesc:a3a04ece637a2b82a4ee987b5fa70d5eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type and size of a file or directory; "/" is the (virtual) directory of all mounts.  <br /></td></tr>
 <tr class="separator:a3a04ece637a2b82a4ee987b5fa70d5eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76b97ca8393219d3cadab3cfc23f4de5" id="r_a76b97ca8393219d3cadab3cfc23f4de5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Mounts.html#a76b97ca8393219d3cadab3cfc23f4de5">list</a> (const char *path, std::vector&lt; <a class="el" href="structtinyblefs_1_1DirEntry.html">DirEntry</a> &gt; &amp;entries)</td></tr>
 <tr class="memdesc:a76b97ca8393219d3cadab3cfc23f4de5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lists a directory without opening the entries; "/" lists the mounts.  <br /></td></tr>
 <tr class="separator:a76b97ca8393219d3cadab3cfc23f4de5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57b9eb2985cd2c9d2e4520ead6b84721" id="r_a57b9eb2985cd2c9d2e4520ead6b84721"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Mounts.html#a57b9eb2985cd2c9d2e4520ead6b84721">remove</a> (const char *path)</td></tr>
+<tr class="memdesc:a57b9eb2985cd2c9d2e4520ead6b84721"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes a file.  <br /></td></tr>
 <tr class="separator:a57b9eb2985cd2c9d2e4520ead6b84721"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91d1b243394640581d55d67047ae13f4" id="r_a91d1b243394640581d55d67047ae13f4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Mounts.html#a91d1b243394640581d55d67047ae13f4">mkdir</a> (const char *path)</td></tr>
+<tr class="memdesc:a91d1b243394640581d55d67047ae13f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a directory.  <br /></td></tr>
 <tr class="separator:a91d1b243394640581d55d67047ae13f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d6b955d21a3c209665ab92df2f1bc78" id="r_a6d6b955d21a3c209665ab92df2f1bc78"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Mounts.html#a6d6b955d21a3c209665ab92df2f1bc78">rmdir</a> (const char *path)</td></tr>
+<tr class="memdesc:a6d6b955d21a3c209665ab92df2f1bc78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an empty directory.  <br /></td></tr>
 <tr class="separator:a6d6b955d21a3c209665ab92df2f1bc78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1074558f465fd55e8dc52694ddf0467b" id="r_a1074558f465fd55e8dc52694ddf0467b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Mounts.html#a1074558f465fd55e8dc52694ddf0467b">rename</a> (const char *from, const char *to)</td></tr>
 <tr class="memdesc:a1074558f465fd55e8dc52694ddf0467b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Both paths must be on the same server.  <br /></td></tr>
 <tr class="separator:a1074558f465fd55e8dc52694ddf0467b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60076201c04e1399aceca004d21912e1" id="r_a60076201c04e1399aceca004d21912e1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Mounts.html#a60076201c04e1399aceca004d21912e1">copy</a> (const char *from, const char *to)</td></tr>
+<tr class="memdesc:a60076201c04e1399aceca004d21912e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies a file, or a whole directory tree, to another path.  <br /></td></tr>
 <tr class="separator:a60076201c04e1399aceca004d21912e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="Mounts_8h_source.html#l00017">17</a> of file <a class="el" href="Mounts_8h_source.html">Mounts.h</a>.</p>
+<div class="textblock"><p>Registry of remote servers mounted under /&lt;name&gt;: scans, mounts and opens files by path, copies files between servers. </p>
+
+<p class="definition">Definition at line <a class="el" href="Mounts_8h_source.html#l00018">18</a> of file <a class="el" href="Mounts_8h_source.html">Mounts.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a60076201c04e1399aceca004d21912e1" name="a60076201c04e1399aceca004d21912e1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a60076201c04e1399aceca004d21912e1">&#9670;&#160;</a></span>copy()</h2>
@@ -177,9 +193,11 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Copies a file, or a whole directory tree, to another path. The paths may be on the same or on different servers. An existing destination file is overwritten. Returns false on the first error. </p>
 
-<p class="definition">Definition at line <a class="el" href="Mounts_8h_source.html#l00125">125</a> of file <a class="el" href="Mounts_8h_source.html">Mounts.h</a>.</p>
+<p>Copies a file, or a whole directory tree, to another path. </p>
+<p>The paths may be on the same or on different servers. An existing destination file is overwritten. Returns false on the first error. </p>
+
+<p class="definition">Definition at line <a class="el" href="Mounts_8h_source.html#l00134">134</a> of file <a class="el" href="Mounts_8h_source.html">Mounts.h</a>.</p>
 
 </div>
 </div>
@@ -207,7 +225,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Mounts_8h_source.html#l00064">64</a> of file <a class="el" href="Mounts_8h_source.html">Mounts.h</a>.</p>
+<p>True if the path exists. </p>
+
+<p class="definition">Definition at line <a class="el" href="Mounts_8h_source.html#l00070">70</a> of file <a class="el" href="Mounts_8h_source.html">Mounts.h</a>.</p>
 
 </div>
 </div>
@@ -235,7 +255,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Mounts_8h_source.html#l00040">40</a> of file <a class="el" href="Mounts_8h_source.html">Mounts.h</a>.</p>
+<p>Returns the file system mounted under the name (or nullptr) </p>
+
+<p class="definition">Definition at line <a class="el" href="Mounts_8h_source.html#l00043">43</a> of file <a class="el" href="Mounts_8h_source.html">Mounts.h</a>.</p>
 
 </div>
 </div>
@@ -275,7 +297,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Lists a directory without opening the entries; "/" lists the mounts. </p>
 
-<p class="definition">Definition at line <a class="el" href="Mounts_8h_source.html#l00082">82</a> of file <a class="el" href="Mounts_8h_source.html">Mounts.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mounts_8h_source.html#l00088">88</a> of file <a class="el" href="Mounts_8h_source.html">Mounts.h</a>.</p>
 
 </div>
 </div>
@@ -303,7 +325,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Mounts_8h_source.html#l00102">102</a> of file <a class="el" href="Mounts_8h_source.html">Mounts.h</a>.</p>
+<p>Creates a directory. </p>
+
+<p class="definition">Definition at line <a class="el" href="Mounts_8h_source.html#l00110">110</a> of file <a class="el" href="Mounts_8h_source.html">Mounts.h</a>.</p>
 
 </div>
 </div>
@@ -340,9 +364,11 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p><a class="el" href="classtinyblefs_1_1Mounts.html">Mounts</a> the server behind the client. Returns the mount name, or an empty string when the server could not be reached. </p>
 
-<p class="definition">Definition at line <a class="el" href="Mounts_8h_source.html#l00021">21</a> of file <a class="el" href="Mounts_8h_source.html">Mounts.h</a>.</p>
+<p><a class="el" href="classtinyblefs_1_1Mounts.html" title="Registry of remote servers mounted under /&lt;name&gt;: scans, mounts and opens files by path,...">Mounts</a> the server behind the client. </p>
+<p>Returns the mount name, or an empty string when the server could not be reached. </p>
+
+<p class="definition">Definition at line <a class="el" href="Mounts_8h_source.html#l00022">22</a> of file <a class="el" href="Mounts_8h_source.html">Mounts.h</a>.</p>
 
 </div>
 </div>
@@ -369,7 +395,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Mounts_8h_source.html#l00044">44</a> of file <a class="el" href="Mounts_8h_source.html">Mounts.h</a>.</p>
+<p>Names of all mounted servers. </p>
+
+<p class="definition">Definition at line <a class="el" href="Mounts_8h_source.html#l00048">48</a> of file <a class="el" href="Mounts_8h_source.html">Mounts.h</a>.</p>
 
 </div>
 </div>
@@ -407,7 +435,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Mounts_8h_source.html#l00051">51</a> of file <a class="el" href="Mounts_8h_source.html">Mounts.h</a>.</p>
+<p>Opens a file or directory by path (/name/...); mode: "r", "w" or "a". </p>
+
+<p class="definition">Definition at line <a class="el" href="Mounts_8h_source.html#l00056">56</a> of file <a class="el" href="Mounts_8h_source.html">Mounts.h</a>.</p>
 
 </div>
 </div>
@@ -456,9 +486,10 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p><a class="el" href="classtinyblefs_1_1Mounts.html#a8cdc2534ef61017a31fe42c1b4b93a2a">open()</a> that waits while the file is locked by another client (see <a class="el" href="classtinyblefs_1_1RemoteFS.html#af52b6cac09038bb128ea47b14382b04c">RemoteFS::openWait</a>) </p>
 
-<p class="definition">Definition at line <a class="el" href="Mounts_8h_source.html#l00058">58</a> of file <a class="el" href="Mounts_8h_source.html">Mounts.h</a>.</p>
+<p><a class="el" href="classtinyblefs_1_1Mounts.html#a8cdc2534ef61017a31fe42c1b4b93a2a" title="Opens a file or directory by path (/name/...); mode: &quot;r&quot;, &quot;w&quot; or &quot;a&quot;.">open()</a> that waits while the file is locked by another client (see <a class="el" href="classtinyblefs_1_1RemoteFS.html#af52b6cac09038bb128ea47b14382b04c" title="Like open(), but while the file is locked by another client (busy) it retries every retryMs,...">RemoteFS::openWait</a>) </p>
+
+<p class="definition">Definition at line <a class="el" href="Mounts_8h_source.html#l00063">63</a> of file <a class="el" href="Mounts_8h_source.html">Mounts.h</a>.</p>
 
 </div>
 </div>
@@ -486,7 +517,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Mounts_8h_source.html#l00097">97</a> of file <a class="el" href="Mounts_8h_source.html">Mounts.h</a>.</p>
+<p>Deletes a file. </p>
+
+<p class="definition">Definition at line <a class="el" href="Mounts_8h_source.html#l00104">104</a> of file <a class="el" href="Mounts_8h_source.html">Mounts.h</a>.</p>
 
 </div>
 </div>
@@ -526,7 +559,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Both paths must be on the same server. </p>
 
-<p class="definition">Definition at line <a class="el" href="Mounts_8h_source.html#l00113">113</a> of file <a class="el" href="Mounts_8h_source.html">Mounts.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mounts_8h_source.html#l00122">122</a> of file <a class="el" href="Mounts_8h_source.html">Mounts.h</a>.</p>
 
 </div>
 </div>
@@ -554,7 +587,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Mounts_8h_source.html#l00107">107</a> of file <a class="el" href="Mounts_8h_source.html">Mounts.h</a>.</p>
+<p>Removes an empty directory. </p>
+
+<p class="definition">Definition at line <a class="el" href="Mounts_8h_source.html#l00116">116</a> of file <a class="el" href="Mounts_8h_source.html">Mounts.h</a>.</p>
 
 </div>
 </div>
@@ -597,9 +632,10 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Type and size of a file or directory; "/" is the (virtual) directory of all mounts </p>
 
-<p class="definition">Definition at line <a class="el" href="Mounts_8h_source.html#l00071">71</a> of file <a class="el" href="Mounts_8h_source.html">Mounts.h</a>.</p>
+<p>Type and size of a file or directory; "/" is the (virtual) directory of all mounts. </p>
+
+<p class="definition">Definition at line <a class="el" href="Mounts_8h_source.html#l00077">77</a> of file <a class="el" href="Mounts_8h_source.html">Mounts.h</a>.</p>
 
 </div>
 </div>
@@ -627,7 +663,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Mounts_8h_source.html#l00035">35</a> of file <a class="el" href="Mounts_8h_source.html">Mounts.h</a>.</p>
+<p>Removes a server from the mounts. </p>
+
+<p class="definition">Definition at line <a class="el" href="Mounts_8h_source.html#l00037">37</a> of file <a class="el" href="Mounts_8h_source.html">Mounts.h</a>.</p>
 
 </div>
 </div>

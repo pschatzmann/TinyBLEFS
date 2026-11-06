@@ -113,33 +113,43 @@ Collaboration diagram for tinyblefs::RemoteFS:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a95cc3a9cf080529230a9d54ef874bea3" id="r_a95cc3a9cf080529230a9d54ef874bea3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1RemoteFS.html#a95cc3a9cf080529230a9d54ef874bea3">RemoteFS</a> (<a class="el" href="classtinyblefs_1_1FileClient.html">FileClient</a> &amp;c)</td></tr>
+<tr class="memdesc:a95cc3a9cf080529230a9d54ef874bea3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a file system on the server behind the client.  <br /></td></tr>
 <tr class="separator:a95cc3a9cf080529230a9d54ef874bea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1640650a5da1d8ec4cc786575648448f" id="r_a1640650a5da1d8ec4cc786575648448f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtinyblefs_1_1RemoteFile.html">RemoteFile</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1RemoteFS.html#a1640650a5da1d8ec4cc786575648448f">open</a> (const char *path, const char *mode=&quot;r&quot;)</td></tr>
+<tr class="memdesc:a1640650a5da1d8ec4cc786575648448f"><td class="mdescLeft">&#160;</td><td class="mdescRight">mode: "r", "r+", "w", "a" (like the Arduino FS API).  <br /></td></tr>
 <tr class="separator:a1640650a5da1d8ec4cc786575648448f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af52b6cac09038bb128ea47b14382b04c" id="r_af52b6cac09038bb128ea47b14382b04c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtinyblefs_1_1RemoteFile.html">RemoteFile</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1RemoteFS.html#af52b6cac09038bb128ea47b14382b04c">openWait</a> (const char *path, const char *mode=&quot;r&quot;, uint32_t timeoutMs=5000, uint32_t retryMs=100)</td></tr>
+<tr class="memdesc:af52b6cac09038bb128ea47b14382b04c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Like <a class="el" href="classtinyblefs_1_1RemoteFS.html#a1640650a5da1d8ec4cc786575648448f" title="mode: &quot;r&quot;, &quot;r+&quot;, &quot;w&quot;, &quot;a&quot; (like the Arduino FS API).">open()</a>, but while the file is locked by another client (busy) it retries every retryMs, up to timeoutMs.  <br /></td></tr>
 <tr class="separator:af52b6cac09038bb128ea47b14382b04c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bb0192ca7aeef82a18610a167a6dead" id="r_a3bb0192ca7aeef82a18610a167a6dead"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1RemoteFS.html#a3bb0192ca7aeef82a18610a167a6dead">exists</a> (const char *path)</td></tr>
+<tr class="memdesc:a3bb0192ca7aeef82a18610a167a6dead"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if the path exists.  <br /></td></tr>
 <tr class="separator:a3bb0192ca7aeef82a18610a167a6dead"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e0f4389582a5e46e71ad94264ad15d1" id="r_a2e0f4389582a5e46e71ad94264ad15d1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1RemoteFS.html#a2e0f4389582a5e46e71ad94264ad15d1">stat</a> (const char *path, bool &amp;isDir, uint32_t &amp;size)</td></tr>
 <tr class="memdesc:a2e0f4389582a5e46e71ad94264ad15d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type and size of a file or directory, w/o opening it.  <br /></td></tr>
 <tr class="separator:a2e0f4389582a5e46e71ad94264ad15d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62d9065ee4c3f4cbace1b465a7db5ccf" id="r_a62d9065ee4c3f4cbace1b465a7db5ccf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1RemoteFS.html#a62d9065ee4c3f4cbace1b465a7db5ccf">list</a> (const char *path, std::vector&lt; <a class="el" href="structtinyblefs_1_1DirEntry.html">DirEntry</a> &gt; &amp;entries)</td></tr>
+<tr class="memdesc:a62d9065ee4c3f4cbace1b465a7db5ccf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lists a directory w/o opening its entries (no server file handles are used).  <br /></td></tr>
 <tr class="separator:a62d9065ee4c3f4cbace1b465a7db5ccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40c13fb736d61df8b4346c2063e6bdb7" id="r_a40c13fb736d61df8b4346c2063e6bdb7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1RemoteFS.html#a40c13fb736d61df8b4346c2063e6bdb7">remove</a> (const char *path)</td></tr>
+<tr class="memdesc:a40c13fb736d61df8b4346c2063e6bdb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes a file.  <br /></td></tr>
 <tr class="separator:a40c13fb736d61df8b4346c2063e6bdb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec6e1f9756566eac918fd2468ff6524a" id="r_aec6e1f9756566eac918fd2468ff6524a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1RemoteFS.html#aec6e1f9756566eac918fd2468ff6524a">mkdir</a> (const char *path)</td></tr>
+<tr class="memdesc:aec6e1f9756566eac918fd2468ff6524a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a directory.  <br /></td></tr>
 <tr class="separator:aec6e1f9756566eac918fd2468ff6524a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bdc341024e162a1c9e2b10f9786b334" id="r_a7bdc341024e162a1c9e2b10f9786b334"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1RemoteFS.html#a7bdc341024e162a1c9e2b10f9786b334">rmdir</a> (const char *path)</td></tr>
+<tr class="memdesc:a7bdc341024e162a1c9e2b10f9786b334"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an empty directory.  <br /></td></tr>
 <tr class="separator:a7bdc341024e162a1c9e2b10f9786b334"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac016141081ab50f7ea8520865bf33748" id="r_ac016141081ab50f7ea8520865bf33748"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1RemoteFS.html#ac016141081ab50f7ea8520865bf33748">rename</a> (const char *from, const char *to)</td></tr>
+<tr class="memdesc:ac016141081ab50f7ea8520865bf33748"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renames or moves a file or directory.  <br /></td></tr>
 <tr class="separator:ac016141081ab50f7ea8520865bf33748"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03c3359cd3502ebd729041632ad39236" id="r_a03c3359cd3502ebd729041632ad39236"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtinyblefs_1_1FileClient.html">FileClient</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1RemoteFS.html#a03c3359cd3502ebd729041632ad39236">client</a> ()</td></tr>
+<tr class="memdesc:a03c3359cd3502ebd729041632ad39236"><td class="mdescLeft">&#160;</td><td class="mdescRight">The underlying client.  <br /></td></tr>
 <tr class="separator:a03c3359cd3502ebd729041632ad39236"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The file system of one remote server. </p>
 
-<p class="definition">Definition at line <a class="el" href="RemoteFS_8h_source.html#l00267">267</a> of file <a class="el" href="RemoteFS_8h_source.html">RemoteFS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RemoteFS_8h_source.html#l00287">287</a> of file <a class="el" href="RemoteFS_8h_source.html">RemoteFS.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a95cc3a9cf080529230a9d54ef874bea3" name="a95cc3a9cf080529230a9d54ef874bea3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a95cc3a9cf080529230a9d54ef874bea3">&#9670;&#160;</a></span>RemoteFS()</h2>
@@ -165,7 +175,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="RemoteFS_8h_source.html#l00269">269</a> of file <a class="el" href="RemoteFS_8h_source.html">RemoteFS.h</a>.</p>
+<p>Creates a file system on the server behind the client. </p>
+
+<p class="definition">Definition at line <a class="el" href="RemoteFS_8h_source.html#l00290">290</a> of file <a class="el" href="RemoteFS_8h_source.html">RemoteFS.h</a>.</p>
 
 </div>
 </div>
@@ -193,7 +205,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="RemoteFS_8h_source.html#l00330">330</a> of file <a class="el" href="RemoteFS_8h_source.html">RemoteFS.h</a>.</p>
+<p>The underlying client. </p>
+
+<p class="definition">Definition at line <a class="el" href="RemoteFS_8h_source.html#l00357">357</a> of file <a class="el" href="RemoteFS_8h_source.html">RemoteFS.h</a>.</p>
 
 </div>
 </div>
@@ -221,7 +235,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="RemoteFS_8h_source.html#l00293">293</a> of file <a class="el" href="RemoteFS_8h_source.html">RemoteFS.h</a>.</p>
+<p>True if the path exists. </p>
+
+<p class="definition">Definition at line <a class="el" href="RemoteFS_8h_source.html#l00315">315</a> of file <a class="el" href="RemoteFS_8h_source.html">RemoteFS.h</a>.</p>
 
 </div>
 </div>
@@ -258,9 +274,11 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Lists a directory w/o opening its entries (no server file handles are used). Returns false if the directory could not be read. </p>
 
-<p class="definition">Definition at line <a class="el" href="RemoteFS_8h_source.html#l00304">304</a> of file <a class="el" href="RemoteFS_8h_source.html">RemoteFS.h</a>.</p>
+<p>Lists a directory w/o opening its entries (no server file handles are used). </p>
+<p>Returns false if the directory could not be read. </p>
+
+<p class="definition">Definition at line <a class="el" href="RemoteFS_8h_source.html#l00326">326</a> of file <a class="el" href="RemoteFS_8h_source.html">RemoteFS.h</a>.</p>
 
 </div>
 </div>
@@ -288,7 +306,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="RemoteFS_8h_source.html#l00325">325</a> of file <a class="el" href="RemoteFS_8h_source.html">RemoteFS.h</a>.</p>
+<p>Creates a directory. </p>
+
+<p class="definition">Definition at line <a class="el" href="RemoteFS_8h_source.html#l00349">349</a> of file <a class="el" href="RemoteFS_8h_source.html">RemoteFS.h</a>.</p>
 
 </div>
 </div>
@@ -325,9 +345,11 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>mode: "r", "r+", "w", "a" (like the Arduino FS API). Directories can be opened with "r". </p>
 
-<p class="definition">Definition at line <a class="el" href="RemoteFS_8h_source.html#l00273">273</a> of file <a class="el" href="RemoteFS_8h_source.html">RemoteFS.h</a>.</p>
+<p>mode: "r", "r+", "w", "a" (like the Arduino FS API). </p>
+<p>Directories can be opened with "r". </p>
+
+<p class="definition">Definition at line <a class="el" href="RemoteFS_8h_source.html#l00294">294</a> of file <a class="el" href="RemoteFS_8h_source.html">RemoteFS.h</a>.</p>
 
 </div>
 </div>
@@ -376,9 +398,11 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Like <a class="el" href="classtinyblefs_1_1RemoteFS.html#a1640650a5da1d8ec4cc786575648448f">open()</a>, but while the file is locked by another client (busy) it retries every retryMs, up to timeoutMs. Use it for appending to a shared file or for writing a file others may read. </p>
 
-<p class="definition">Definition at line <a class="el" href="RemoteFS_8h_source.html#l00279">279</a> of file <a class="el" href="RemoteFS_8h_source.html">RemoteFS.h</a>.</p>
+<p>Like <a class="el" href="classtinyblefs_1_1RemoteFS.html#a1640650a5da1d8ec4cc786575648448f" title="mode: &quot;r&quot;, &quot;r+&quot;, &quot;w&quot;, &quot;a&quot; (like the Arduino FS API).">open()</a>, but while the file is locked by another client (busy) it retries every retryMs, up to timeoutMs. </p>
+<p>Use it for appending to a shared file or for writing a file others may read. </p>
+
+<p class="definition">Definition at line <a class="el" href="RemoteFS_8h_source.html#l00300">300</a> of file <a class="el" href="RemoteFS_8h_source.html">RemoteFS.h</a>.</p>
 
 </div>
 </div>
@@ -406,7 +430,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="RemoteFS_8h_source.html#l00324">324</a> of file <a class="el" href="RemoteFS_8h_source.html">RemoteFS.h</a>.</p>
+<p>Deletes a file. </p>
+
+<p class="definition">Definition at line <a class="el" href="RemoteFS_8h_source.html#l00347">347</a> of file <a class="el" href="RemoteFS_8h_source.html">RemoteFS.h</a>.</p>
 
 </div>
 </div>
@@ -444,7 +470,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="RemoteFS_8h_source.html#l00327">327</a> of file <a class="el" href="RemoteFS_8h_source.html">RemoteFS.h</a>.</p>
+<p>Renames or moves a file or directory. </p>
+
+<p class="definition">Definition at line <a class="el" href="RemoteFS_8h_source.html#l00353">353</a> of file <a class="el" href="RemoteFS_8h_source.html">RemoteFS.h</a>.</p>
 
 </div>
 </div>
@@ -472,7 +500,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="RemoteFS_8h_source.html#l00326">326</a> of file <a class="el" href="RemoteFS_8h_source.html">RemoteFS.h</a>.</p>
+<p>Removes an empty directory. </p>
+
+<p class="definition">Definition at line <a class="el" href="RemoteFS_8h_source.html#l00351">351</a> of file <a class="el" href="RemoteFS_8h_source.html">RemoteFS.h</a>.</p>
 
 </div>
 </div>
@@ -518,7 +548,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Type and size of a file or directory, w/o opening it. </p>
 
-<p class="definition">Definition at line <a class="el" href="RemoteFS_8h_source.html#l00299">299</a> of file <a class="el" href="RemoteFS_8h_source.html">RemoteFS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RemoteFS_8h_source.html#l00321">321</a> of file <a class="el" href="RemoteFS_8h_source.html">RemoteFS.h</a>.</p>
 
 </div>
 </div>

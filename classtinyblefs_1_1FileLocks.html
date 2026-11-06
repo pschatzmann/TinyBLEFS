@@ -98,13 +98,16 @@ $(document).ready(function(){initNavTree('classtinyblefs_1_1FileLocks.html','');
 </div><!--header-->
 <div class="contents">
 
+<p>Shared file locks: any number of readers or one writer per file.  
+ <a href="classtinyblefs_1_1FileLocks.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Locks_8h_source.html">Locks.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for tinyblefs::FileLocks:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinyblefs_1_1FileLocks__coll__graph.png" border="0" usemap="#atinyblefs_1_1FileLocks_coll__map" alt="Collaboration graph"/></div>
 <map name="atinyblefs_1_1FileLocks_coll__map" id="atinyblefs_1_1FileLocks_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,141,145"/>
+<area shape="rect" title="Shared file locks: any number of readers or one writer per file." alt="" coords="5,5,141,145"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -114,16 +117,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab7f000f9d310a477ad5f39ecb76392f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers an open file; returns false if it conflicts with a lock.  <br /></td></tr>
 <tr class="separator:ab7f000f9d310a477ad5f39ecb76392f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90234f9978bfbaec75a32af725ab1a29" id="r_a90234f9978bfbaec75a32af725ab1a29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FileLocks.html#a90234f9978bfbaec75a32af725ab1a29">release</a> (const std::string &amp;path, bool write)</td></tr>
+<tr class="memdesc:a90234f9978bfbaec75a32af725ab1a29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases a lock taken with <a class="el" href="classtinyblefs_1_1FileLocks.html#ab7f000f9d310a477ad5f39ecb76392f3" title="Registers an open file; returns false if it conflicts with a lock.">acquire()</a>  <br /></td></tr>
 <tr class="separator:a90234f9978bfbaec75a32af725ab1a29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75146271fe8bd43605b5b28b34da9dfe" id="r_a75146271fe8bd43605b5b28b34da9dfe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FileLocks.html#a75146271fe8bd43605b5b28b34da9dfe">isBusy</a> (const std::string &amp;path) const</td></tr>
 <tr class="memdesc:a75146271fe8bd43605b5b28b34da9dfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if the file or any file below the path is open.  <br /></td></tr>
 <tr class="separator:a75146271fe8bd43605b5b28b34da9dfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54818d092bfb2b57d675314279127790" id="r_a54818d092bfb2b57d675314279127790"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FileLocks.html#a54818d092bfb2b57d675314279127790">openFiles</a> () const</td></tr>
+<tr class="memdesc:a54818d092bfb2b57d675314279127790"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of files with a lock.  <br /></td></tr>
 <tr class="separator:a54818d092bfb2b57d675314279127790"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="Locks_8h_source.html#l00021">21</a> of file <a class="el" href="Locks_8h_source.html">Locks.h</a>.</p>
+<div class="textblock"><p>Shared file locks: any number of readers or one writer per file. </p>
+
+<p class="definition">Definition at line <a class="el" href="Locks_8h_source.html#l00022">22</a> of file <a class="el" href="Locks_8h_source.html">Locks.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ab7f000f9d310a477ad5f39ecb76392f3" name="ab7f000f9d310a477ad5f39ecb76392f3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab7f000f9d310a477ad5f39ecb76392f3">&#9670;&#160;</a></span>acquire()</h2>
@@ -167,7 +173,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Registers an open file; returns false if it conflicts with a lock. </p>
 
-<p class="definition">Definition at line <a class="el" href="Locks_8h_source.html#l00024">24</a> of file <a class="el" href="Locks_8h_source.html">Locks.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Locks_8h_source.html#l00025">25</a> of file <a class="el" href="Locks_8h_source.html">Locks.h</a>.</p>
 
 </div>
 </div>
@@ -197,7 +203,7 @@ Public Member Functions</h2></td></tr>
 
 <p>True if the file or any file below the path is open. </p>
 
-<p class="definition">Definition at line <a class="el" href="Locks_8h_source.html#l00045">45</a> of file <a class="el" href="Locks_8h_source.html">Locks.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Locks_8h_source.html#l00047">47</a> of file <a class="el" href="Locks_8h_source.html">Locks.h</a>.</p>
 
 </div>
 </div>
@@ -224,7 +230,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Locks_8h_source.html#l00054">54</a> of file <a class="el" href="Locks_8h_source.html">Locks.h</a>.</p>
+<p>Number of files with a lock. </p>
+
+<p class="definition">Definition at line <a class="el" href="Locks_8h_source.html#l00057">57</a> of file <a class="el" href="Locks_8h_source.html">Locks.h</a>.</p>
 
 </div>
 </div>
@@ -262,7 +270,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Locks_8h_source.html#l00036">36</a> of file <a class="el" href="Locks_8h_source.html">Locks.h</a>.</p>
+<p>Releases a lock taken with <a class="el" href="classtinyblefs_1_1FileLocks.html#ab7f000f9d310a477ad5f39ecb76392f3" title="Registers an open file; returns false if it conflicts with a lock.">acquire()</a> </p>
+
+<p class="definition">Definition at line <a class="el" href="Locks_8h_source.html#l00038">38</a> of file <a class="el" href="Locks_8h_source.html">Locks.h</a>.</p>
 
 </div>
 </div>

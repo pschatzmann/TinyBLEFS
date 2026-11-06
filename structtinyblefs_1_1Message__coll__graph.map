@@ -1,5 +1,5 @@
 <map id="tinyblefs::Message" name="tinyblefs::Message">
-<area shape="rect" id="Node000001" title=" " alt="" coords="16,143,150,260"/>
+<area shape="rect" id="Node000001" title="A decoded protocol message: operation, request id, status and payload." alt="" coords="16,143,150,260"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,5,160,78"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="84,75,85,127,80,126,82,80"/>
 </map>

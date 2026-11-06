@@ -113,16 +113,19 @@ Collaboration diagram for tinyblefs::Reassembler:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab8d26f91062286a4e07d6d66943d4c36" id="r_ab8d26f91062286a4e07d6d66943d4c36"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Reassembler.html#ab8d26f91062286a4e07d6d66943d4c36">feed</a> (const uint8_t *data, size_t len)</td></tr>
+<tr class="memdesc:ab8d26f91062286a4e07d6d66943d4c36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds received bytes.  <br /></td></tr>
 <tr class="separator:ab8d26f91062286a4e07d6d66943d4c36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f51da29d7dcdd5e5f6ae71a3354878d" id="r_a0f51da29d7dcdd5e5f6ae71a3354878d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Reassembler.html#a0f51da29d7dcdd5e5f6ae71a3354878d">next</a> (<a class="el" href="structtinyblefs_1_1Message.html">Message</a> &amp;m)</td></tr>
+<tr class="memdesc:a0f51da29d7dcdd5e5f6ae71a3354878d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the next complete message; false if there is none.  <br /></td></tr>
 <tr class="separator:a0f51da29d7dcdd5e5f6ae71a3354878d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57b80e4336706c63221310a5eb186d4b" id="r_a57b80e4336706c63221310a5eb186d4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Reassembler.html#a57b80e4336706c63221310a5eb186d4b">reset</a> ()</td></tr>
+<tr class="memdesc:a57b80e4336706c63221310a5eb186d4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Discards partial data.  <br /></td></tr>
 <tr class="separator:a57b80e4336706c63221310a5eb186d4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Collects transport packets and extracts complete messages. </p>
 
-<p class="definition">Definition at line <a class="el" href="Protocol_8h_source.html#l00160">160</a> of file <a class="el" href="Protocol_8h_source.html">Protocol.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Protocol_8h_source.html#l00168">168</a> of file <a class="el" href="Protocol_8h_source.html">Protocol.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ab8d26f91062286a4e07d6d66943d4c36" name="ab8d26f91062286a4e07d6d66943d4c36"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab8d26f91062286a4e07d6d66943d4c36">&#9670;&#160;</a></span>feed()</h2>
@@ -158,7 +161,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Protocol_8h_source.html#l00162">162</a> of file <a class="el" href="Protocol_8h_source.html">Protocol.h</a>.</p>
+<p>Adds received bytes. </p>
+
+<p class="definition">Definition at line <a class="el" href="Protocol_8h_source.html#l00171">171</a> of file <a class="el" href="Protocol_8h_source.html">Protocol.h</a>.</p>
 
 </div>
 </div>
@@ -186,7 +191,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Protocol_8h_source.html#l00165">165</a> of file <a class="el" href="Protocol_8h_source.html">Protocol.h</a>.</p>
+<p>Gets the next complete message; false if there is none. </p>
+
+<p class="definition">Definition at line <a class="el" href="Protocol_8h_source.html#l00175">175</a> of file <a class="el" href="Protocol_8h_source.html">Protocol.h</a>.</p>
 
 </div>
 </div>
@@ -213,7 +220,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Protocol_8h_source.html#l00177">177</a> of file <a class="el" href="Protocol_8h_source.html">Protocol.h</a>.</p>
+<p>Discards partial data. </p>
+
+<p class="definition">Definition at line <a class="el" href="Protocol_8h_source.html#l00188">188</a> of file <a class="el" href="Protocol_8h_source.html">Protocol.h</a>.</p>
 
 </div>
 </div>

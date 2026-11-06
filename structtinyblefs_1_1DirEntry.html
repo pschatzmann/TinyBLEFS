@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('structtinyblefs_1_1DirEntry.html','');
 </div><!--header-->
 <div class="contents">
 
-<p>One directory entry (<a class="el" href="classtinyblefs_1_1RemoteFS.html#a62d9065ee4c3f4cbace1b465a7db5ccf">RemoteFS::list()</a>, <a class="el" href="classtinyblefs_1_1FileClient.html#a447193c39827faf1979222a8d62ddfb9">FileClient::listBatch()</a>)  
+<p>One directory entry (<a class="el" href="classtinyblefs_1_1RemoteFS.html#a62d9065ee4c3f4cbace1b465a7db5ccf" title="Lists a directory w/o opening its entries (no server file handles are used).">RemoteFS::list()</a>, <a class="el" href="classtinyblefs_1_1FileClient.html#a447193c39827faf1979222a8d62ddfb9" title="Lists the entries from index on, as many as fit into maxBytes of answer (about 20 entries per 400 byt...">FileClient::listBatch()</a>)  
  <a href="structtinyblefs_1_1DirEntry.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Protocol_8h_source.html">Protocol.h</a>&gt;</code></p>
@@ -117,14 +117,17 @@ Collaboration diagram for tinyblefs::DirEntry:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ae7ae7f0af75e4e9c920bb5262878c393" id="r_ae7ae7f0af75e4e9c920bb5262878c393"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinyblefs_1_1DirEntry.html#ae7ae7f0af75e4e9c920bb5262878c393">name</a></td></tr>
+<tr class="memdesc:ae7ae7f0af75e4e9c920bb5262878c393"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entry name without path.  <br /></td></tr>
 <tr class="separator:ae7ae7f0af75e4e9c920bb5262878c393"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd2ef3a99be8a7a1293d42a94b7a8028" id="r_afd2ef3a99be8a7a1293d42a94b7a8028"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinyblefs_1_1DirEntry.html#afd2ef3a99be8a7a1293d42a94b7a8028">isDir</a> = false</td></tr>
+<tr class="memdesc:afd2ef3a99be8a7a1293d42a94b7a8028"><td class="mdescLeft">&#160;</td><td class="mdescRight">True for a directory.  <br /></td></tr>
 <tr class="separator:afd2ef3a99be8a7a1293d42a94b7a8028"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6491c05a25ab2788bf2b80d4331fdc7" id="r_ab6491c05a25ab2788bf2b80d4331fdc7"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinyblefs_1_1DirEntry.html#ab6491c05a25ab2788bf2b80d4331fdc7">size</a> = 0</td></tr>
+<tr class="memdesc:ab6491c05a25ab2788bf2b80d4331fdc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size in bytes (0 for directories)  <br /></td></tr>
 <tr class="separator:ab6491c05a25ab2788bf2b80d4331fdc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>One directory entry (<a class="el" href="classtinyblefs_1_1RemoteFS.html#a62d9065ee4c3f4cbace1b465a7db5ccf">RemoteFS::list()</a>, <a class="el" href="classtinyblefs_1_1FileClient.html#a447193c39827faf1979222a8d62ddfb9">FileClient::listBatch()</a>) </p>
+<div class="textblock"><p>One directory entry (<a class="el" href="classtinyblefs_1_1RemoteFS.html#a62d9065ee4c3f4cbace1b465a7db5ccf" title="Lists a directory w/o opening its entries (no server file handles are used).">RemoteFS::list()</a>, <a class="el" href="classtinyblefs_1_1FileClient.html#a447193c39827faf1979222a8d62ddfb9" title="Lists the entries from index on, as many as fit into maxBytes of answer (about 20 entries per 400 byt...">FileClient::listBatch()</a>) </p>
 
 <p class="definition">Definition at line <a class="el" href="Protocol_8h_source.html#l00054">54</a> of file <a class="el" href="Protocol_8h_source.html">Protocol.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
@@ -140,7 +143,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Protocol_8h_source.html#l00056">56</a> of file <a class="el" href="Protocol_8h_source.html">Protocol.h</a>.</p>
+<p>True for a directory. </p>
+
+<p class="definition">Definition at line <a class="el" href="Protocol_8h_source.html#l00058">58</a> of file <a class="el" href="Protocol_8h_source.html">Protocol.h</a>.</p>
 
 </div>
 </div>
@@ -156,7 +161,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Protocol_8h_source.html#l00055">55</a> of file <a class="el" href="Protocol_8h_source.html">Protocol.h</a>.</p>
+<p>Entry name without path. </p>
+
+<p class="definition">Definition at line <a class="el" href="Protocol_8h_source.html#l00056">56</a> of file <a class="el" href="Protocol_8h_source.html">Protocol.h</a>.</p>
 
 </div>
 </div>
@@ -172,7 +179,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Protocol_8h_source.html#l00057">57</a> of file <a class="el" href="Protocol_8h_source.html">Protocol.h</a>.</p>
+<p>Size in bytes (0 for directories) </p>
+
+<p class="definition">Definition at line <a class="el" href="Protocol_8h_source.html#l00060">60</a> of file <a class="el" href="Protocol_8h_source.html">Protocol.h</a>.</p>
 
 </div>
 </div>

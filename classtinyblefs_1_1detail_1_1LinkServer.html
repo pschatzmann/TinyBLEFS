@@ -98,13 +98,16 @@ $(document).ready(function(){initNavTree('classtinyblefs_1_1detail_1_1LinkServer
 </div><!--header-->
 <div class="contents">
 
+<p>Internal: protocol engine serving one logical link (used by <a class="el" href="classtinyblefs_1_1FileServer.html" title="Serves a file system (any FsBackend, given in the constructor) over a Transport.">FileServer</a> for each session)  
+ <a href="classtinyblefs_1_1detail_1_1LinkServer.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="LinkServer_8h_source.html">LinkServer.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for tinyblefs::detail::LinkServer:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinyblefs_1_1detail_1_1LinkServer__coll__graph.png" border="0" usemap="#atinyblefs_1_1detail_1_1LinkServer_coll__map" alt="Collaboration graph"/></div>
 <map name="atinyblefs_1_1detail_1_1LinkServer_coll__map" id="atinyblefs_1_1detail_1_1LinkServer_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,150,273"/>
+<area shape="rect" title="Internal: protocol engine serving one logical link (used by FileServer for each session)" alt="" coords="5,5,150,273"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -115,26 +118,31 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae79b5481416cf039c24f0c095a84b48b" id="r_ae79b5481416cf039c24f0c095a84b48b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1detail_1_1LinkServer.html#ae79b5481416cf039c24f0c095a84b48b">~LinkServer</a> ()</td></tr>
 <tr class="separator:ae79b5481416cf039c24f0c095a84b48b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10c11481b8865591eb7ddbe80f6f83bc" id="r_a10c11481b8865591eb7ddbe80f6f83bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1detail_1_1LinkServer.html#a10c11481b8865591eb7ddbe80f6f83bc">setReadOnly</a> (bool ro)</td></tr>
+<tr class="memdesc:a10c11481b8865591eb7ddbe80f6f83bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refuses all changes when true.  <br /></td></tr>
 <tr class="separator:a10c11481b8865591eb7ddbe80f6f83bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8ea7c38de2e6bd37c8234ad29497cca" id="r_aa8ea7c38de2e6bd37c8234ad29497cca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1detail_1_1LinkServer.html#aa8ea7c38de2e6bd37c8234ad29497cca">setMaxListBytes</a> (size_t n)</td></tr>
 <tr class="memdesc:aa8ea7c38de2e6bd37c8234ad29497cca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Largest answer to a batched directory listing (default 2048 bytes)  <br /></td></tr>
 <tr class="separator:aa8ea7c38de2e6bd37c8234ad29497cca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe187693426380064828da0c95a2fe6f" id="r_abe187693426380064828da0c95a2fe6f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1detail_1_1LinkServer.html#abe187693426380064828da0c95a2fe6f">isReadOnly</a> () const</td></tr>
+<tr class="memdesc:abe187693426380064828da0c95a2fe6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">True when changes are refused.  <br /></td></tr>
 <tr class="separator:abe187693426380064828da0c95a2fe6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5509244d526c1c38714ff33029f9b678" id="r_a5509244d526c1c38714ff33029f9b678"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1detail_1_1LinkServer.html#a5509244d526c1c38714ff33029f9b678">name</a> () const</td></tr>
+<tr class="memdesc:a5509244d526c1c38714ff33029f9b678"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name announced to the clients.  <br /></td></tr>
 <tr class="separator:a5509244d526c1c38714ff33029f9b678"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abad009368f78884362d5e71d195948db" id="r_abad009368f78884362d5e71d195948db"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1detail_1_1LinkServer.html#abad009368f78884362d5e71d195948db">poll</a> ()</td></tr>
 <tr class="memdesc:abad009368f78884362d5e71d195948db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes all pending requests; returns true if something was handled.  <br /></td></tr>
 <tr class="separator:abad009368f78884362d5e71d195948db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafb4e82dd901d5674f99c11c12a4ef4f" id="r_aafb4e82dd901d5674f99c11c12a4ef4f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1detail_1_1LinkServer.html#aafb4e82dd901d5674f99c11c12a4ef4f">setLocks</a> (<a class="el" href="classtinyblefs_1_1FileLocks.html">FileLocks</a> *locks)</td></tr>
+<tr class="memdesc:aafb4e82dd901d5674f99c11c12a4ef4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses a lock table shared with other servers (one table for all sessions of a <a class="el" href="classtinyblefs_1_1FileServer.html" title="Serves a file system (any FsBackend, given in the constructor) over a Transport.">FileServer</a>).  <br /></td></tr>
 <tr class="separator:aafb4e82dd901d5674f99c11c12a4ef4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b557436a68d9e7f1df95952a226a397" id="r_a5b557436a68d9e7f1df95952a226a397"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1detail_1_1LinkServer.html#a5b557436a68d9e7f1df95952a226a397">closeAll</a> ()</td></tr>
 <tr class="memdesc:a5b557436a68d9e7f1df95952a226a397"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes all open files and drops partial messages (e.g. on disconnect)  <br /></td></tr>
 <tr class="separator:a5b557436a68d9e7f1df95952a226a397"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="LinkServer_8h_source.html#l00016">16</a> of file <a class="el" href="LinkServer_8h_source.html">LinkServer.h</a>.</p>
+<div class="textblock"><p>Internal: protocol engine serving one logical link (used by <a class="el" href="classtinyblefs_1_1FileServer.html" title="Serves a file system (any FsBackend, given in the constructor) over a Transport.">FileServer</a> for each session) </p>
+
+<p class="definition">Definition at line <a class="el" href="LinkServer_8h_source.html#l00017">17</a> of file <a class="el" href="LinkServer_8h_source.html">LinkServer.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a83e13259c6cc22d1867a9b0def46c079" name="a83e13259c6cc22d1867a9b0def46c079"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a83e13259c6cc22d1867a9b0def46c079">&#9670;&#160;</a></span>LinkServer()</h2>
@@ -198,7 +206,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="LinkServer_8h_source.html#l00023">23</a> of file <a class="el" href="LinkServer_8h_source.html">LinkServer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="LinkServer_8h_source.html#l00024">24</a> of file <a class="el" href="LinkServer_8h_source.html">LinkServer.h</a>.</p>
 
 </div>
 </div>
@@ -225,7 +233,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="LinkServer_8h_source.html#l00028">28</a> of file <a class="el" href="LinkServer_8h_source.html">LinkServer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="LinkServer_8h_source.html#l00029">29</a> of file <a class="el" href="LinkServer_8h_source.html">LinkServer.h</a>.</p>
 
 </div>
 </div>
@@ -255,7 +263,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Closes all open files and drops partial messages (e.g. on disconnect) </p>
 
-<p class="definition">Definition at line <a class="el" href="LinkServer_8h_source.html#l00059">59</a> of file <a class="el" href="LinkServer_8h_source.html">LinkServer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="LinkServer_8h_source.html#l00063">63</a> of file <a class="el" href="LinkServer_8h_source.html">LinkServer.h</a>.</p>
 
 </div>
 </div>
@@ -282,7 +290,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="LinkServer_8h_source.html#l00033">33</a> of file <a class="el" href="LinkServer_8h_source.html">LinkServer.h</a>.</p>
+<p>True when changes are refused. </p>
+
+<p class="definition">Definition at line <a class="el" href="LinkServer_8h_source.html#l00036">36</a> of file <a class="el" href="LinkServer_8h_source.html">LinkServer.h</a>.</p>
 
 </div>
 </div>
@@ -309,7 +319,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="LinkServer_8h_source.html#l00034">34</a> of file <a class="el" href="LinkServer_8h_source.html">LinkServer.h</a>.</p>
+<p>Name announced to the clients. </p>
+
+<p class="definition">Definition at line <a class="el" href="LinkServer_8h_source.html#l00038">38</a> of file <a class="el" href="LinkServer_8h_source.html">LinkServer.h</a>.</p>
 
 </div>
 </div>
@@ -338,7 +350,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Processes all pending requests; returns true if something was handled. </p>
 
-<p class="definition">Definition at line <a class="el" href="LinkServer_8h_source.html#l00037">37</a> of file <a class="el" href="LinkServer_8h_source.html">LinkServer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="LinkServer_8h_source.html#l00041">41</a> of file <a class="el" href="LinkServer_8h_source.html">LinkServer.h</a>.</p>
 
 </div>
 </div>
@@ -365,9 +377,11 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Uses a lock table shared with other servers (one table for all sessions of a <a class="el" href="classtinyblefs_1_1FileServer.html">FileServer</a>). Call before the first file is opened. </p>
 
-<p class="definition">Definition at line <a class="el" href="LinkServer_8h_source.html#l00056">56</a> of file <a class="el" href="LinkServer_8h_source.html">LinkServer.h</a>.</p>
+<p>Uses a lock table shared with other servers (one table for all sessions of a <a class="el" href="classtinyblefs_1_1FileServer.html" title="Serves a file system (any FsBackend, given in the constructor) over a Transport.">FileServer</a>). </p>
+<p>Call before the first file is opened. </p>
+
+<p class="definition">Definition at line <a class="el" href="LinkServer_8h_source.html#l00060">60</a> of file <a class="el" href="LinkServer_8h_source.html">LinkServer.h</a>.</p>
 
 </div>
 </div>
@@ -397,7 +411,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Largest answer to a batched directory listing (default 2048 bytes) </p>
 
-<p class="definition">Definition at line <a class="el" href="LinkServer_8h_source.html#l00032">32</a> of file <a class="el" href="LinkServer_8h_source.html">LinkServer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="LinkServer_8h_source.html#l00034">34</a> of file <a class="el" href="LinkServer_8h_source.html">LinkServer.h</a>.</p>
 
 </div>
 </div>
@@ -425,7 +439,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="LinkServer_8h_source.html#l00030">30</a> of file <a class="el" href="LinkServer_8h_source.html">LinkServer.h</a>.</p>
+<p>Refuses all changes when true. </p>
+
+<p class="definition">Definition at line <a class="el" href="LinkServer_8h_source.html#l00032">32</a> of file <a class="el" href="LinkServer_8h_source.html">LinkServer.h</a>.</p>
 
 </div>
 </div>

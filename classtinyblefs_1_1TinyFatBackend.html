@@ -98,14 +98,17 @@ $(document).ready(function(){initNavTree('classtinyblefs_1_1TinyFatBackend.html'
 </div><!--header-->
 <div class="contents">
 
+<p><a class="el" href="classtinyblefs_1_1FsBackend.html" title="File system used by the FileServer: implement it to serve any storage (see backends/)">FsBackend</a> for the TinyFATFS library (FAT on SD cards and flash)  
+ <a href="classtinyblefs_1_1TinyFatBackend.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="TinyFATFS_8h_source.html">TinyFATFS.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for tinyblefs::TinyFatBackend:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinyblefs_1_1TinyFatBackend__inherit__graph.png" border="0" usemap="#atinyblefs_1_1TinyFatBackend_inherit__map" alt="Inheritance graph"/></div>
 <map name="atinyblefs_1_1TinyFatBackend_inherit__map" id="atinyblefs_1_1TinyFatBackend_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,282,183,511"/>
-<area shape="rect" href="classtinyblefs_1_1FsBackend.html" title=" " alt="" coords="21,5,167,234"/>
+<area shape="rect" title="FsBackend for the TinyFATFS library (FAT on SD cards and flash)" alt="" coords="5,282,183,511"/>
+<area shape="rect" href="classtinyblefs_1_1FsBackend.html" title="File system used by the FileServer: implement it to serve any storage (see backends/)" alt="" coords="21,5,167,234"/>
 <area shape="poly" title=" " alt="" coords="95,246,97,283,92,282,94,251"/>
 </map>
 </div>
@@ -114,8 +117,8 @@ Collaboration diagram for tinyblefs::TinyFatBackend:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinyblefs_1_1TinyFatBackend__coll__graph.png" border="0" usemap="#atinyblefs_1_1TinyFatBackend_coll__map" alt="Collaboration graph"/></div>
 <map name="atinyblefs_1_1TinyFatBackend_coll__map" id="atinyblefs_1_1TinyFatBackend_coll__map">
-<area shape="rect" title=" " alt="" coords="5,282,183,511"/>
-<area shape="rect" href="classtinyblefs_1_1FsBackend.html" title=" " alt="" coords="21,5,167,234"/>
+<area shape="rect" title="FsBackend for the TinyFATFS library (FAT on SD cards and flash)" alt="" coords="5,282,183,511"/>
+<area shape="rect" href="classtinyblefs_1_1FsBackend.html" title="File system used by the FileServer: implement it to serve any storage (see backends/)" alt="" coords="21,5,167,234"/>
 <area shape="poly" title=" " alt="" coords="95,246,97,283,92,282,94,251"/>
 </map>
 </div>
@@ -123,30 +126,37 @@ Collaboration diagram for tinyblefs::TinyFatBackend:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2198669b531dc278a4a6044256b4cb46" id="r_a2198669b531dc278a4a6044256b4cb46"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1TinyFatBackend.html#a2198669b531dc278a4a6044256b4cb46">TinyFatBackend</a> (fatfs::SDClass &amp;sd)</td></tr>
+<tr class="memdesc:a2198669b531dc278a4a6044256b4cb46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves the given TinyFATFS drive (e.g. the global SD object)  <br /></td></tr>
 <tr class="separator:a2198669b531dc278a4a6044256b4cb46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad49cf8fde12386bded788dfcab1cc5e0" id="r_ad49cf8fde12386bded788dfcab1cc5e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtinyblefs_1_1FsFile.html">FsFile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1TinyFatBackend.html#ad49cf8fde12386bded788dfcab1cc5e0">open</a> (const char *path, uint8_t flags) override</td></tr>
 <tr class="memdesc:ad49cf8fde12386bded788dfcab1cc5e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens a file (flags: OpenFlags). Returns nullptr on failure.  <br /></td></tr>
 <tr class="separator:ad49cf8fde12386bded788dfcab1cc5e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88b3154619e90057b8b2d559e4cf4f75" id="r_a88b3154619e90057b8b2d559e4cf4f75"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1TinyFatBackend.html#a88b3154619e90057b8b2d559e4cf4f75">stat</a> (const char *path, <a class="el" href="structtinyblefs_1_1FsEntry.html">FsEntry</a> &amp;e) override</td></tr>
+<tr class="memdesc:a88b3154619e90057b8b2d559e4cf4f75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports whether the path exists and its type and size.  <br /></td></tr>
 <tr class="separator:a88b3154619e90057b8b2d559e4cf4f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1891c470327e0216e60d8a4396ec6fd" id="r_ab1891c470327e0216e60d8a4396ec6fd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1TinyFatBackend.html#ab1891c470327e0216e60d8a4396ec6fd">list</a> (const char *path, uint32_t index, <a class="el" href="structtinyblefs_1_1FsEntry.html">FsEntry</a> &amp;e) override</td></tr>
 <tr class="memdesc:ab1891c470327e0216e60d8a4396ec6fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the index-th entry of a directory; false at the end.  <br /></td></tr>
 <tr class="separator:ab1891c470327e0216e60d8a4396ec6fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75de6125785fdec6f4ca894285a73259" id="r_a75de6125785fdec6f4ca894285a73259"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1TinyFatBackend.html#a75de6125785fdec6f4ca894285a73259">remove</a> (const char *path) override</td></tr>
+<tr class="memdesc:a75de6125785fdec6f4ca894285a73259"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes a file.  <br /></td></tr>
 <tr class="separator:a75de6125785fdec6f4ca894285a73259"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d399f4b70b2316da9612f1c7bf14418" id="r_a7d399f4b70b2316da9612f1c7bf14418"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1TinyFatBackend.html#a7d399f4b70b2316da9612f1c7bf14418">mkdir</a> (const char *path) override</td></tr>
+<tr class="memdesc:a7d399f4b70b2316da9612f1c7bf14418"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a directory.  <br /></td></tr>
 <tr class="separator:a7d399f4b70b2316da9612f1c7bf14418"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8c9c39f513587ed2a233fadf74be53d" id="r_ac8c9c39f513587ed2a233fadf74be53d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1TinyFatBackend.html#ac8c9c39f513587ed2a233fadf74be53d">rmdir</a> (const char *path) override</td></tr>
+<tr class="memdesc:ac8c9c39f513587ed2a233fadf74be53d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an empty directory.  <br /></td></tr>
 <tr class="separator:ac8c9c39f513587ed2a233fadf74be53d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb8afaa2c36ea86a1ab3f475f007c6e8" id="r_afb8afaa2c36ea86a1ab3f475f007c6e8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1TinyFatBackend.html#afb8afaa2c36ea86a1ab3f475f007c6e8">rename</a> (const char *from, const char *to) override</td></tr>
+<tr class="memdesc:afb8afaa2c36ea86a1ab3f475f007c6e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renames or moves a file or directory.  <br /></td></tr>
 <tr class="separator:afb8afaa2c36ea86a1ab3f475f007c6e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classtinyblefs_1_1FsBackend"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtinyblefs_1_1FsBackend')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtinyblefs_1_1FsBackend.html">tinyblefs::FsBackend</a></td></tr>
 <tr class="memitem:a124af808fa2a56b5db8baf48f3393d10 inherit pub_methods_classtinyblefs_1_1FsBackend" id="r_a124af808fa2a56b5db8baf48f3393d10"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FsBackend.html#a124af808fa2a56b5db8baf48f3393d10">~FsBackend</a> ()=default</td></tr>
 <tr class="separator:a124af808fa2a56b5db8baf48f3393d10 inherit pub_methods_classtinyblefs_1_1FsBackend"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="TinyFATFS_8h_source.html#l00028">28</a> of file <a class="el" href="TinyFATFS_8h_source.html">TinyFATFS.h</a>.</p>
+<div class="textblock"><p><a class="el" href="classtinyblefs_1_1FsBackend.html" title="File system used by the FileServer: implement it to serve any storage (see backends/)">FsBackend</a> for the TinyFATFS library (FAT on SD cards and flash) </p>
+
+<p class="definition">Definition at line <a class="el" href="TinyFATFS_8h_source.html#l00029">29</a> of file <a class="el" href="TinyFATFS_8h_source.html">TinyFATFS.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2198669b531dc278a4a6044256b4cb46" name="a2198669b531dc278a4a6044256b4cb46"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2198669b531dc278a4a6044256b4cb46">&#9670;&#160;</a></span>TinyFatBackend()</h2>
@@ -172,7 +182,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TinyFATFS_8h_source.html#l00030">30</a> of file <a class="el" href="TinyFATFS_8h_source.html">TinyFATFS.h</a>.</p>
+<p>Serves the given TinyFATFS drive (e.g. the global SD object) </p>
+
+<p class="definition">Definition at line <a class="el" href="TinyFATFS_8h_source.html#l00032">32</a> of file <a class="el" href="TinyFATFS_8h_source.html">TinyFATFS.h</a>.</p>
 
 </div>
 </div>
@@ -221,7 +233,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classtinyblefs_1_1FsBackend.html#aba4a0d5cce91e78194ed33bf4b6325c0">tinyblefs::FsBackend</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TinyFATFS_8h_source.html#l00066">66</a> of file <a class="el" href="TinyFATFS_8h_source.html">TinyFATFS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TinyFATFS_8h_source.html#l00069">69</a> of file <a class="el" href="TinyFATFS_8h_source.html">TinyFATFS.h</a>.</p>
 
 </div>
 </div>
@@ -249,9 +261,11 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Creates a directory. </p>
+
 <p>Implements <a class="el" href="classtinyblefs_1_1FsBackend.html#a325378837f43c9adaca69675cb2874a7">tinyblefs::FsBackend</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TinyFATFS_8h_source.html#l00089">89</a> of file <a class="el" href="TinyFATFS_8h_source.html">TinyFATFS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TinyFATFS_8h_source.html#l00094">94</a> of file <a class="el" href="TinyFATFS_8h_source.html">TinyFATFS.h</a>.</p>
 
 </div>
 </div>
@@ -293,7 +307,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classtinyblefs_1_1FsBackend.html#aa2e271f3efc83deff3d09c0c6f497fff">tinyblefs::FsBackend</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TinyFATFS_8h_source.html#l00032">32</a> of file <a class="el" href="TinyFATFS_8h_source.html">TinyFATFS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TinyFATFS_8h_source.html#l00034">34</a> of file <a class="el" href="TinyFATFS_8h_source.html">TinyFATFS.h</a>.</p>
 
 </div>
 </div>
@@ -321,9 +335,11 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Deletes a file. </p>
+
 <p>Implements <a class="el" href="classtinyblefs_1_1FsBackend.html#a0747a8ee42b0ed029d6425344b4c87ef">tinyblefs::FsBackend</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TinyFATFS_8h_source.html#l00088">88</a> of file <a class="el" href="TinyFATFS_8h_source.html">TinyFATFS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TinyFATFS_8h_source.html#l00092">92</a> of file <a class="el" href="TinyFATFS_8h_source.html">TinyFATFS.h</a>.</p>
 
 </div>
 </div>
@@ -361,9 +377,11 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Renames or moves a file or directory. </p>
+
 <p>Implements <a class="el" href="classtinyblefs_1_1FsBackend.html#aeef408a5664172cc465e8e34fce6b452">tinyblefs::FsBackend</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TinyFATFS_8h_source.html#l00091">91</a> of file <a class="el" href="TinyFATFS_8h_source.html">TinyFATFS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TinyFATFS_8h_source.html#l00098">98</a> of file <a class="el" href="TinyFATFS_8h_source.html">TinyFATFS.h</a>.</p>
 
 </div>
 </div>
@@ -391,9 +409,11 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Removes an empty directory. </p>
+
 <p>Implements <a class="el" href="classtinyblefs_1_1FsBackend.html#a4aec73fa7d17db5f67bd979799f71ba6">tinyblefs::FsBackend</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TinyFATFS_8h_source.html#l00090">90</a> of file <a class="el" href="TinyFATFS_8h_source.html">TinyFATFS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TinyFATFS_8h_source.html#l00096">96</a> of file <a class="el" href="TinyFATFS_8h_source.html">TinyFATFS.h</a>.</p>
 
 </div>
 </div>
@@ -431,9 +451,11 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Reports whether the path exists and its type and size. </p>
+
 <p>Implements <a class="el" href="classtinyblefs_1_1FsBackend.html#af6cda3fc27c564dc04cb607100051248">tinyblefs::FsBackend</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TinyFATFS_8h_source.html#l00049">49</a> of file <a class="el" href="TinyFATFS_8h_source.html">TinyFATFS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TinyFATFS_8h_source.html#l00052">52</a> of file <a class="el" href="TinyFATFS_8h_source.html">TinyFATFS.h</a>.</p>
 
 </div>
 </div>

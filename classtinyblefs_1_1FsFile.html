@@ -107,7 +107,7 @@ Inheritance diagram for tinyblefs::FsFile:</div>
 <div class="center"><img src="classtinyblefs_1_1FsFile__inherit__graph.png" border="0" usemap="#atinyblefs_1_1FsFile_inherit__map" alt="Inheritance graph"/></div>
 <map name="atinyblefs_1_1FsFile_inherit__map" id="atinyblefs_1_1FsFile_inherit__map">
 <area shape="rect" title="An open file. Destroying the object closes the file." alt="" coords="8,5,122,145"/>
-<area shape="rect" href="classtinyblefs_1_1StdFile.html" title=" " alt="" coords="5,193,125,354"/>
+<area shape="rect" href="classtinyblefs_1_1StdFile.html" title="Open file of the std::filesystem backend." alt="" coords="5,193,125,354"/>
 <area shape="poly" title=" " alt="" coords="66,157,68,193,63,193,65,162"/>
 </map>
 </div>
@@ -131,12 +131,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aacc4ac69b32e7fadc5d156282a04054c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes len bytes at offset; returns bytes written or -1 on error.  <br /></td></tr>
 <tr class="separator:aacc4ac69b32e7fadc5d156282a04054c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7c5b37b90152442745cc2baa4735d40" id="r_ab7c5b37b90152442745cc2baa4735d40"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FsFile.html#ab7c5b37b90152442745cc2baa4735d40">size</a> ()=0</td></tr>
+<tr class="memdesc:ab7c5b37b90152442745cc2baa4735d40"><td class="mdescLeft">&#160;</td><td class="mdescRight">File size in bytes.  <br /></td></tr>
 <tr class="separator:ab7c5b37b90152442745cc2baa4735d40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An open file. Destroying the object closes the file. </p>
 
-<p class="definition">Definition at line <a class="el" href="FsBackend_8h_source.html#l00019">19</a> of file <a class="el" href="FsBackend_8h_source.html">FsBackend.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FsBackend_8h_source.html#l00023">23</a> of file <a class="el" href="FsBackend_8h_source.html">FsBackend.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a87da1fe6ee7102c591d1c35a2da39ace" name="a87da1fe6ee7102c591d1c35a2da39ace"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a87da1fe6ee7102c591d1c35a2da39ace">&#9670;&#160;</a></span>~FsFile()</h2>
@@ -232,6 +233,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>File size in bytes. </p>
 
 <p>Implemented in <a class="el" href="classtinyblefs_1_1StdFile.html#a02ffd82b15ed1a29535f9900b1795927">tinyblefs::StdFile</a>.</p>
 

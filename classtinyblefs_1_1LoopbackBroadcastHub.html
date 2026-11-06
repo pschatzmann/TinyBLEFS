@@ -98,31 +98,39 @@ $(document).ready(function(){initNavTree('classtinyblefs_1_1LoopbackBroadcastHub
 </div><!--header-->
 <div class="contents">
 
+<p>In-memory link with several clients that behaves like ArduinoBLE or the Pico W: the server cannot tell which client wrote a packet and every packet it sends reaches ALL connected clients.  
+ <a href="classtinyblefs_1_1LoopbackBroadcastHub.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Loopback_8h_source.html">Loopback.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for tinyblefs::LoopbackBroadcastHub:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinyblefs_1_1LoopbackBroadcastHub__coll__graph.png" border="0" usemap="#atinyblefs_1_1LoopbackBroadcastHub_coll__map" alt="Collaboration graph"/></div>
 <map name="atinyblefs_1_1LoopbackBroadcastHub_coll__map" id="atinyblefs_1_1LoopbackBroadcastHub_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,234,145"/>
+<area shape="rect" title="In&#45;memory link with several clients that behaves like ArduinoBLE or the Pico W: the server cannot tel..." alt="" coords="5,5,234,145"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:acab8f60ed279593c38adac21adb1ec98" id="r_acab8f60ed279593c38adac21adb1ec98"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1LoopbackBroadcastHub.html#acab8f60ed279593c38adac21adb1ec98">LoopbackBroadcastHub</a> (size_t clients, size_t mtu=20)</td></tr>
+<tr class="memdesc:acab8f60ed279593c38adac21adb1ec98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a hub for the given number of clients.  <br /></td></tr>
 <tr class="separator:acab8f60ed279593c38adac21adb1ec98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abcda8e0ee680ae2ffe76e39f00f19c53" id="r_abcda8e0ee680ae2ffe76e39f00f19c53"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtinyblefs_1_1Transport.html">Transport</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1LoopbackBroadcastHub.html#abcda8e0ee680ae2ffe76e39f00f19c53">client</a> (size_t i)</td></tr>
+<tr class="memdesc:abcda8e0ee680ae2ffe76e39f00f19c53"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinyblefs_1_1Transport.html" title="Packet oriented, reliable, in-order link between one client and one server.">Transport</a> of client i.  <br /></td></tr>
 <tr class="separator:abcda8e0ee680ae2ffe76e39f00f19c53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae61edfbf27e39d5e98c56bbace7d3432" id="r_ae61edfbf27e39d5e98c56bbace7d3432"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtinyblefs_1_1Transport.html">Transport</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1LoopbackBroadcastHub.html#ae61edfbf27e39d5e98c56bbace7d3432">server</a> ()</td></tr>
+<tr class="memdesc:ae61edfbf27e39d5e98c56bbace7d3432"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinyblefs_1_1Transport.html" title="Packet oriented, reliable, in-order link between one client and one server.">Transport</a> of the server (replies reach all clients)  <br /></td></tr>
 <tr class="separator:ae61edfbf27e39d5e98c56bbace7d3432"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c95c0a8fb02e722a5eccd7b022f5b04" id="r_a4c95c0a8fb02e722a5eccd7b022f5b04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1LoopbackBroadcastHub.html#a4c95c0a8fb02e722a5eccd7b022f5b04">setConnected</a> (size_t i, bool up)</td></tr>
+<tr class="memdesc:a4c95c0a8fb02e722a5eccd7b022f5b04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulates connect/disconnect of client i.  <br /></td></tr>
 <tr class="separator:a4c95c0a8fb02e722a5eccd7b022f5b04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>In-memory link with several clients that behaves like ArduinoBLE or the Pico W: the server cannot tell which client wrote a packet and every packet it sends reaches ALL connected clients. Thread safe, so clients can run in their own threads. </p>
+<div class="textblock"><p>In-memory link with several clients that behaves like ArduinoBLE or the Pico W: the server cannot tell which client wrote a packet and every packet it sends reaches ALL connected clients. </p>
+<p>Thread safe, so clients can run in their own threads. </p>
 
-<p class="definition">Definition at line <a class="el" href="Loopback_8h_source.html#l00062">62</a> of file <a class="el" href="Loopback_8h_source.html">Loopback.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Loopback_8h_source.html#l00067">67</a> of file <a class="el" href="Loopback_8h_source.html">Loopback.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="acab8f60ed279593c38adac21adb1ec98" name="acab8f60ed279593c38adac21adb1ec98"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acab8f60ed279593c38adac21adb1ec98">&#9670;&#160;</a></span>LoopbackBroadcastHub()</h2>
@@ -158,7 +166,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Loopback_8h_source.html#l00064">64</a> of file <a class="el" href="Loopback_8h_source.html">Loopback.h</a>.</p>
+<p>Creates a hub for the given number of clients. </p>
+
+<p class="definition">Definition at line <a class="el" href="Loopback_8h_source.html#l00070">70</a> of file <a class="el" href="Loopback_8h_source.html">Loopback.h</a>.</p>
 
 </div>
 </div>
@@ -187,7 +197,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Loopback_8h_source.html#l00069">69</a> of file <a class="el" href="Loopback_8h_source.html">Loopback.h</a>.</p>
+<p><a class="el" href="classtinyblefs_1_1Transport.html" title="Packet oriented, reliable, in-order link between one client and one server.">Transport</a> of client i. </p>
+
+<p class="definition">Definition at line <a class="el" href="Loopback_8h_source.html#l00076">76</a> of file <a class="el" href="Loopback_8h_source.html">Loopback.h</a>.</p>
 
 </div>
 </div>
@@ -214,7 +226,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Loopback_8h_source.html#l00070">70</a> of file <a class="el" href="Loopback_8h_source.html">Loopback.h</a>.</p>
+<p><a class="el" href="classtinyblefs_1_1Transport.html" title="Packet oriented, reliable, in-order link between one client and one server.">Transport</a> of the server (replies reach all clients) </p>
+
+<p class="definition">Definition at line <a class="el" href="Loopback_8h_source.html#l00078">78</a> of file <a class="el" href="Loopback_8h_source.html">Loopback.h</a>.</p>
 
 </div>
 </div>
@@ -252,7 +266,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Loopback_8h_source.html#l00071">71</a> of file <a class="el" href="Loopback_8h_source.html">Loopback.h</a>.</p>
+<p>Simulates connect/disconnect of client i. </p>
+
+<p class="definition">Definition at line <a class="el" href="Loopback_8h_source.html#l00080">80</a> of file <a class="el" href="Loopback_8h_source.html">Loopback.h</a>.</p>
 
 </div>
 </div>

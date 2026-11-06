@@ -1,3 +1,3 @@
 <map id="tinyblefs::FsBackend" name="tinyblefs::FsBackend">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,151,234"/>
+<area shape="rect" id="Node000001" title="File system used by the FileServer: implement it to serve any storage (see backends/)" alt="" coords="5,5,151,234"/>
 </map>

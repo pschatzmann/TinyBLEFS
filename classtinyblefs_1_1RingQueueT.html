@@ -119,8 +119,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aee8cac616afe0fe7abb6d10441ad6308"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the oldest packet; returns its length, or 0 if empty.  <br /></td></tr>
 <tr class="separator:aee8cac616afe0fe7abb6d10441ad6308"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad753e83eaed43121c0bd5eb49ccfd5a" id="r_aad753e83eaed43121c0bd5eb49ccfd5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1RingQueueT.html#aad753e83eaed43121c0bd5eb49ccfd5a">clear</a> ()</td></tr>
+<tr class="memdesc:aad753e83eaed43121c0bd5eb49ccfd5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all packets.  <br /></td></tr>
 <tr class="separator:aad753e83eaed43121c0bd5eb49ccfd5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f95398b10702f437e9465acf23af950" id="r_a9f95398b10702f437e9465acf23af950"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1RingQueueT.html#a9f95398b10702f437e9465acf23af950">takeDropped</a> ()</td></tr>
+<tr class="memdesc:a9f95398b10702f437e9465acf23af950"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of packets lost since the last call (queue full / packet too large).  <br /></td></tr>
 <tr class="separator:a9f95398b10702f437e9465acf23af950"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -154,7 +156,9 @@ template&lt;size_t Slots, size_t Size&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="RingQueue_8h_source.html#l00043">43</a> of file <a class="el" href="RingQueue_8h_source.html">RingQueue.h</a>.</p>
+<p>Removes all packets. </p>
+
+<p class="definition">Definition at line <a class="el" href="RingQueue_8h_source.html#l00044">44</a> of file <a class="el" href="RingQueue_8h_source.html">RingQueue.h</a>.</p>
 
 </div>
 </div>
@@ -266,9 +270,11 @@ template&lt;size_t Slots, size_t Size&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Number of packets lost since the last call (queue full / packet too large). Callbacks must not log, so the transports report this in loop(). </p>
 
-<p class="definition">Definition at line <a class="el" href="RingQueue_8h_source.html#l00046">46</a> of file <a class="el" href="RingQueue_8h_source.html">RingQueue.h</a>.</p>
+<p>Number of packets lost since the last call (queue full / packet too large). </p>
+<p>Callbacks must not log, so the transports report this in loop(). </p>
+
+<p class="definition">Definition at line <a class="el" href="RingQueue_8h_source.html#l00047">47</a> of file <a class="el" href="RingQueue_8h_source.html">RingQueue.h</a>.</p>
 
 </div>
 </div>

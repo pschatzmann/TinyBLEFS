@@ -125,21 +125,25 @@ Collaboration diagram for tinyblefs::StderrPrint:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a340f5dad150e208bd6b0f8b231a4dd8c" id="r_a340f5dad150e208bd6b0f8b231a4dd8c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1StderrPrint.html#a340f5dad150e208bd6b0f8b231a4dd8c">write</a> (const uint8_t *data, size_t len) override</td></tr>
+<tr class="memdesc:a340f5dad150e208bd6b0f8b231a4dd8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the bytes to stderr.  <br /></td></tr>
 <tr class="separator:a340f5dad150e208bd6b0f8b231a4dd8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classtinyblefs_1_1LogPrint"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtinyblefs_1_1LogPrint')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtinyblefs_1_1LogPrint.html">tinyblefs::LogPrint</a></td></tr>
 <tr class="memitem:ab18dd270e069f19e9739606c6edaecc3 inherit pub_methods_classtinyblefs_1_1LogPrint" id="r_ab18dd270e069f19e9739606c6edaecc3"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1LogPrint.html#ab18dd270e069f19e9739606c6edaecc3">~LogPrint</a> ()=default</td></tr>
 <tr class="separator:ab18dd270e069f19e9739606c6edaecc3 inherit pub_methods_classtinyblefs_1_1LogPrint"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a884320de68e35704e2a87f2388281445 inherit pub_methods_classtinyblefs_1_1LogPrint" id="r_a884320de68e35704e2a87f2388281445"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1LogPrint.html#a884320de68e35704e2a87f2388281445">write</a> (uint8_t c)</td></tr>
+<tr class="memdesc:a884320de68e35704e2a87f2388281445 inherit pub_methods_classtinyblefs_1_1LogPrint"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes one byte.  <br /></td></tr>
 <tr class="separator:a884320de68e35704e2a87f2388281445 inherit pub_methods_classtinyblefs_1_1LogPrint"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9999a882fd8dc73c3ad4f417ef2f0d5 inherit pub_methods_classtinyblefs_1_1LogPrint" id="r_ab9999a882fd8dc73c3ad4f417ef2f0d5"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1LogPrint.html#ab9999a882fd8dc73c3ad4f417ef2f0d5">print</a> (const char *s)</td></tr>
+<tr class="memdesc:ab9999a882fd8dc73c3ad4f417ef2f0d5 inherit pub_methods_classtinyblefs_1_1LogPrint"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a string.  <br /></td></tr>
 <tr class="separator:ab9999a882fd8dc73c3ad4f417ef2f0d5 inherit pub_methods_classtinyblefs_1_1LogPrint"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc80ed20683debd7ab5c327c589ad548 inherit pub_methods_classtinyblefs_1_1LogPrint" id="r_afc80ed20683debd7ab5c327c589ad548"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1LogPrint.html#afc80ed20683debd7ab5c327c589ad548">println</a> (const char *s)</td></tr>
+<tr class="memdesc:afc80ed20683debd7ab5c327c589ad548 inherit pub_methods_classtinyblefs_1_1LogPrint"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a string and a line end.  <br /></td></tr>
 <tr class="separator:afc80ed20683debd7ab5c327c589ad548 inherit pub_methods_classtinyblefs_1_1LogPrint"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Writes to stderr (default output on desktop systems) </p>
 
-<p class="definition">Definition at line <a class="el" href="Logger_8h_source.html#l00038">38</a> of file <a class="el" href="Logger_8h_source.html">Logger.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Logger_8h_source.html#l00042">42</a> of file <a class="el" href="Logger_8h_source.html">Logger.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a340f5dad150e208bd6b0f8b231a4dd8c" name="a340f5dad150e208bd6b0f8b231a4dd8c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a340f5dad150e208bd6b0f8b231a4dd8c">&#9670;&#160;</a></span>write()</h2>
@@ -175,9 +179,11 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Writes the bytes to stderr. </p>
+
 <p>Implements <a class="el" href="classtinyblefs_1_1LogPrint.html#ad2fadab92fb0a904db0e73593023a6d6">tinyblefs::LogPrint</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Logger_8h_source.html#l00040">40</a> of file <a class="el" href="Logger_8h_source.html">Logger.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Logger_8h_source.html#l00045">45</a> of file <a class="el" href="Logger_8h_source.html">Logger.h</a>.</p>
 
 </div>
 </div>

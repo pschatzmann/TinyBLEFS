@@ -128,8 +128,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0245f6b980dadf1512a2b6d6d84140ab" id="r_a0245f6b980dadf1512a2b6d6d84140ab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1ArduinoBLEClientTransport.html#a0245f6b980dadf1512a2b6d6d84140ab">~ArduinoBLEClientTransport</a> () override</td></tr>
 <tr class="separator:a0245f6b980dadf1512a2b6d6d84140ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3633a2ffd867e381d5f004f848619ceb" id="r_a3633a2ffd867e381d5f004f848619ceb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1ArduinoBLEClientTransport.html#a3633a2ffd867e381d5f004f848619ceb">connect</a> (BLEDevice device)</td></tr>
+<tr class="memdesc:a3633a2ffd867e381d5f004f848619ceb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connects to a device found by <a class="el" href="classtinyblefs_1_1ArduinoBLEClientTransport.html#a7ae92cb9e5621181d0cbda6f080fe99e" title="Scans for devices that advertise the TinyBLEFS service.">scan()</a> and discovers the file service.  <br /></td></tr>
 <tr class="separator:a3633a2ffd867e381d5f004f848619ceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ccafd2dc07009886d6fbf77db2a1d79" id="r_a1ccafd2dc07009886d6fbf77db2a1d79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1ArduinoBLEClientTransport.html#a1ccafd2dc07009886d6fbf77db2a1d79">disconnect</a> ()</td></tr>
+<tr class="memdesc:a1ccafd2dc07009886d6fbf77db2a1d79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disconnects from the server.  <br /></td></tr>
 <tr class="separator:a1ccafd2dc07009886d6fbf77db2a1d79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6b50012d4c3735e31c52f3920566382" id="r_af6b50012d4c3735e31c52f3920566382"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1ArduinoBLEClientTransport.html#af6b50012d4c3735e31c52f3920566382">setPacketSize</a> (size_t n)</td></tr>
 <tr class="memdesc:af6b50012d4c3735e31c52f3920566382"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bytes per packet (default 20 = safe with the default ATT MTU of 23)  <br /></td></tr>
@@ -141,21 +143,25 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a6d1390dd8867a7c40327b782555fc969"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends one packet (&lt;= <a class="el" href="classtinyblefs_1_1ArduinoBLEClientTransport.html#a45696af2ab5d763875f849f43c247441" title="Maximum number of bytes per packet (ATT MTU - 3)">mtu()</a>); returns false on failure.  <br /></td></tr>
 <tr class="separator:a6d1390dd8867a7c40327b782555fc969"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2fa8124b904e04606b44f57ecbdfb25" id="r_ac2fa8124b904e04606b44f57ecbdfb25"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1ArduinoBLEClientTransport.html#ac2fa8124b904e04606b44f57ecbdfb25">receive</a> (uint8_t *buf, size_t max) override</td></tr>
+<tr class="memdesc:ac2fa8124b904e04606b44f57ecbdfb25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non blocking: copies the next received packet and returns its length, or 0 when nothing is available.  <br /></td></tr>
 <tr class="separator:ac2fa8124b904e04606b44f57ecbdfb25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a349a0dc0c9976a3c038d85a662496122" id="r_a349a0dc0c9976a3c038d85a662496122"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1ArduinoBLEClientTransport.html#a349a0dc0c9976a3c038d85a662496122">connected</a> () const override</td></tr>
 <tr class="memdesc:a349a0dc0c9976a3c038d85a662496122"><td class="mdescLeft">&#160;</td><td class="mdescRight">True while the link is up.  <br /></td></tr>
 <tr class="separator:a349a0dc0c9976a3c038d85a662496122"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4e74dde0f42e1cd076eb26ad87fcec1" id="r_ad4e74dde0f42e1cd076eb26ad87fcec1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1ArduinoBLEClientTransport.html#ad4e74dde0f42e1cd076eb26ad87fcec1">poll</a> () override</td></tr>
+<tr class="memdesc:ad4e74dde0f42e1cd076eb26ad87fcec1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called regularly by Server::poll() and while a Client waits for a response.  <br /></td></tr>
 <tr class="separator:ad4e74dde0f42e1cd076eb26ad87fcec1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classtinyblefs_1_1Transport"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtinyblefs_1_1Transport')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtinyblefs_1_1Transport.html">tinyblefs::Transport</a></td></tr>
 <tr class="memitem:a2530bca901598a5abceec60ce6e0618a inherit pub_methods_classtinyblefs_1_1Transport" id="r_a2530bca901598a5abceec60ce6e0618a"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Transport.html#a2530bca901598a5abceec60ce6e0618a">~Transport</a> ()=default</td></tr>
 <tr class="separator:a2530bca901598a5abceec60ce6e0618a inherit pub_methods_classtinyblefs_1_1Transport"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad35b5913aeb67d5ca27c6767728c2753 inherit pub_methods_classtinyblefs_1_1Transport" id="r_ad35b5913aeb67d5ca27c6767728c2753"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Transport.html#ad35b5913aeb67d5ca27c6767728c2753">generation</a> () const</td></tr>
+<tr class="memdesc:ad35b5913aeb67d5ca27c6767728c2753 inherit pub_methods_classtinyblefs_1_1Transport"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes whenever the server side state (open files) was lost, e.g.  <br /></td></tr>
 <tr class="separator:ad35b5913aeb67d5ca27c6767728c2753 inherit pub_methods_classtinyblefs_1_1Transport"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a7ae92cb9e5621181d0cbda6f080fe99e" id="r_a7ae92cb9e5621181d0cbda6f080fe99e"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; BLEDevice &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1ArduinoBLEClientTransport.html#a7ae92cb9e5621181d0cbda6f080fe99e">scan</a> (uint32_t durationMs=5000, const char *namePrefix=&quot;&quot;)</td></tr>
+<tr class="memdesc:a7ae92cb9e5621181d0cbda6f080fe99e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scans for devices that advertise the TinyBLEFS service.  <br /></td></tr>
 <tr class="separator:a7ae92cb9e5621181d0cbda6f080fe99e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -215,7 +221,9 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ArduinoBLE_8h_source.html#l00175">175</a> of file <a class="el" href="ArduinoBLE_8h_source.html">ArduinoBLE.h</a>.</p>
+<p>Connects to a device found by <a class="el" href="classtinyblefs_1_1ArduinoBLEClientTransport.html#a7ae92cb9e5621181d0cbda6f080fe99e" title="Scans for devices that advertise the TinyBLEFS service.">scan()</a> and discovers the file service. </p>
+
+<p class="definition">Definition at line <a class="el" href="ArduinoBLE_8h_source.html#l00176">176</a> of file <a class="el" href="ArduinoBLE_8h_source.html">ArduinoBLE.h</a>.</p>
 
 </div>
 </div>
@@ -246,7 +254,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classtinyblefs_1_1Transport.html#a6542a2da6534dde47cf31fde58825542">tinyblefs::Transport</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="ArduinoBLE_8h_source.html#l00220">220</a> of file <a class="el" href="ArduinoBLE_8h_source.html">ArduinoBLE.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoBLE_8h_source.html#l00222">222</a> of file <a class="el" href="ArduinoBLE_8h_source.html">ArduinoBLE.h</a>.</p>
 
 </div>
 </div>
@@ -273,7 +281,9 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ArduinoBLE_8h_source.html#l00192">192</a> of file <a class="el" href="ArduinoBLE_8h_source.html">ArduinoBLE.h</a>.</p>
+<p>Disconnects from the server. </p>
+
+<p class="definition">Definition at line <a class="el" href="ArduinoBLE_8h_source.html#l00194">194</a> of file <a class="el" href="ArduinoBLE_8h_source.html">ArduinoBLE.h</a>.</p>
 
 </div>
 </div>
@@ -304,7 +314,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classtinyblefs_1_1Transport.html#a7ed2442227c801b6c80a71a4c1ba1a37">tinyblefs::Transport</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="ArduinoBLE_8h_source.html#l00209">209</a> of file <a class="el" href="ArduinoBLE_8h_source.html">ArduinoBLE.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoBLE_8h_source.html#l00211">211</a> of file <a class="el" href="ArduinoBLE_8h_source.html">ArduinoBLE.h</a>.</p>
 
 </div>
 </div>
@@ -330,11 +340,13 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Called regularly by Server::poll() and while a Client waits for a response. Polled BLE stacks (e.g. ArduinoBLE) run their event processing here; event driven stacks don't need to override it. </p>
+
+<p>Called regularly by Server::poll() and while a Client waits for a response. </p>
+<p>Polled BLE stacks (e.g. ArduinoBLE) run their event processing here; event driven stacks don't need to override it. </p>
 
 <p>Reimplemented from <a class="el" href="classtinyblefs_1_1Transport.html#a44617e813487a8168e9938083b9a538e">tinyblefs::Transport</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="ArduinoBLE_8h_source.html#l00221">221</a> of file <a class="el" href="ArduinoBLE_8h_source.html">ArduinoBLE.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoBLE_8h_source.html#l00223">223</a> of file <a class="el" href="ArduinoBLE_8h_source.html">ArduinoBLE.h</a>.</p>
 
 </div>
 </div>
@@ -371,11 +383,12 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Non blocking: copies the next received packet and returns its length, or 0 when nothing is available </p>
+
+<p>Non blocking: copies the next received packet and returns its length, or 0 when nothing is available. </p>
 
 <p>Implements <a class="el" href="classtinyblefs_1_1Transport.html#aaf9b81ce4e4244f2ec0e154512f579fc">tinyblefs::Transport</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="ArduinoBLE_8h_source.html#l00215">215</a> of file <a class="el" href="ArduinoBLE_8h_source.html">ArduinoBLE.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoBLE_8h_source.html#l00217">217</a> of file <a class="el" href="ArduinoBLE_8h_source.html">ArduinoBLE.h</a>.</p>
 
 </div>
 </div>
@@ -412,7 +425,9 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Scans for devices that advertise the TinyBLEFS service. </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Scans for devices that advertise the TinyBLEFS service. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">namePrefix</td><td>only return devices whose advertised BLE device name starts with this prefix (empty = all) </td></tr>
   </table>
@@ -461,7 +476,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classtinyblefs_1_1Transport.html#a0a80d045ee4cc085e615d6f34206c4cf">tinyblefs::Transport</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="ArduinoBLE_8h_source.html#l00210">210</a> of file <a class="el" href="ArduinoBLE_8h_source.html">ArduinoBLE.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoBLE_8h_source.html#l00212">212</a> of file <a class="el" href="ArduinoBLE_8h_source.html">ArduinoBLE.h</a>.</p>
 
 </div>
 </div>
@@ -491,7 +506,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Bytes per packet (default 20 = safe with the default ATT MTU of 23) </p>
 
-<p class="definition">Definition at line <a class="el" href="ArduinoBLE_8h_source.html#l00204">204</a> of file <a class="el" href="ArduinoBLE_8h_source.html">ArduinoBLE.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoBLE_8h_source.html#l00206">206</a> of file <a class="el" href="ArduinoBLE_8h_source.html">ArduinoBLE.h</a>.</p>
 
 </div>
 </div>

@@ -126,18 +126,22 @@ Collaboration diagram for tinyblefs::detail::PicoWNotifyCharacteristic:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae73f35add677f78ab8655ea72602ecdb" id="r_ae73f35add677f78ab8655ea72602ecdb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1detail_1_1PicoWNotifyCharacteristic.html#ae73f35add677f78ab8655ea72602ecdb">PicoWNotifyCharacteristic</a> (BLEUUID uuid)</td></tr>
+<tr class="memdesc:ae73f35add677f78ab8655ea72602ecdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a notify characteristic with the given UUID.  <br /></td></tr>
 <tr class="separator:ae73f35add677f78ab8655ea72602ecdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac785577008bbd183ae1b68436a023d7" id="r_aac785577008bbd183ae1b68436a023d7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1detail_1_1PicoWNotifyCharacteristic.html#aac785577008bbd183ae1b68436a023d7">sendPacket</a> (uint16_t handle, const uint8_t *data, size_t len, uint32_t timeoutMs=2000)</td></tr>
+<tr class="memdesc:aac785577008bbd183ae1b68436a023d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends one notification packet to a connection and waits until the Bluetooth buffers are free.  <br /></td></tr>
 <tr class="separator:aac785577008bbd183ae1b68436a023d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07537054ce8cb69d1290955de2c4c887" id="r_a07537054ce8cb69d1290955de2c4c887"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1detail_1_1PicoWNotifyCharacteristic.html#a07537054ce8cb69d1290955de2c4c887">subscribed</a> () const</td></tr>
 <tr class="memdesc:a07537054ce8cb69d1290955de2c4c887"><td class="mdescLeft">&#160;</td><td class="mdescRight">True once a client has enabled notifications.  <br /></td></tr>
 <tr class="separator:a07537054ce8cb69d1290955de2c4c887"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3701f616a61de640b185970e160d9b77" id="r_a3701f616a61de640b185970e160d9b77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1detail_1_1PicoWNotifyCharacteristic.html#a3701f616a61de640b185970e160d9b77">setSubscribed</a> (bool on)</td></tr>
+<tr class="memdesc:a3701f616a61de640b185970e160d9b77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remembers whether the client enabled notifications.  <br /></td></tr>
 <tr class="separator:a3701f616a61de640b185970e160d9b77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a0bb44bc2b90faa17e72ce686a5a79ee5" id="r_a0bb44bc2b90faa17e72ce686a5a79ee5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1detail_1_1PicoWNotifyCharacteristic.html#a0bb44bc2b90faa17e72ce686a5a79ee5">disconnected</a> () override</td></tr>
+<tr class="memdesc:a0bb44bc2b90faa17e72ce686a5a79ee5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the client disconnects.  <br /></td></tr>
 <tr class="separator:a0bb44bc2b90faa17e72ce686a5a79ee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -169,7 +173,9 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00040">40</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
+<p>Creates a notify characteristic with the given UUID. </p>
+
+<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00041">41</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
 
 </div>
 </div>
@@ -197,7 +203,9 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00071">71</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
+<p>Called when the client disconnects. </p>
+
+<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00074">74</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
 
 </div>
 </div>
@@ -246,9 +254,10 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Sends one notification packet to a connection and waits until the Bluetooth buffers are free </p>
 
-<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00045">45</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
+<p>Sends one notification packet to a connection and waits until the Bluetooth buffers are free. </p>
+
+<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00046">46</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
 
 </div>
 </div>
@@ -276,7 +285,9 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00066">66</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
+<p>Remembers whether the client enabled notifications. </p>
+
+<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00068">68</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
 
 </div>
 </div>
@@ -305,7 +316,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>True once a client has enabled notifications. </p>
 
-<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00065">65</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00066">66</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
 
 </div>
 </div>

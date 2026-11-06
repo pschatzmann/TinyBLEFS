@@ -1,5 +1,5 @@
 <map id="tinyblefs::detail::SessionLink" name="tinyblefs::detail::SessionLink">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,260,142,595"/>
+<area shape="rect" id="Node000001" title="Client side (internal, owned by FileClient): a point&#45;to&#45;point Transport on top of the shared link,..." alt="" coords="5,260,142,595"/>
 <area shape="rect" id="Node000002" href="$classtinyblefs_1_1Transport.html" title="Packet oriented, reliable, in&#45;order link between one client and one server." alt="" coords="6,5,142,212"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="74,224,76,260,71,260,74,229"/>
 </map>

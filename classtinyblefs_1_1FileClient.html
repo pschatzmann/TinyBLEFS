@@ -97,13 +97,16 @@ $(document).ready(function(){initNavTree('classtinyblefs_1_1FileClient.html','')
 </div><!--header-->
 <div class="contents">
 
+<p>Client side of the protocol: sends requests to a <a class="el" href="classtinyblefs_1_1FileServer.html" title="Serves a file system (any FsBackend, given in the constructor) over a Transport.">FileServer</a> over a <a class="el" href="classtinyblefs_1_1Transport.html" title="Packet oriented, reliable, in-order link between one client and one server.">Transport</a> (info, open, read, write, list, remove, ...)  
+ <a href="classtinyblefs_1_1FileClient.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Client_8h_source.html">Client.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for tinyblefs::FileClient:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinyblefs_1_1FileClient__coll__graph.png" border="0" usemap="#atinyblefs_1_1FileClient_coll__map" alt="Collaboration graph"/></div>
 <map name="atinyblefs_1_1FileClient_coll__map" id="atinyblefs_1_1FileClient_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,142,301"/>
+<area shape="rect" title="Client side of the protocol: sends requests to a FileServer over a Transport (info,..." alt="" coords="5,5,142,301"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -115,40 +118,52 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a0722a7a625a02bfc67a43071139f1d2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Joins the session of the server now (optional: the first request does it)  <br /></td></tr>
 <tr class="separator:a0722a7a625a02bfc67a43071139f1d2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fe88ebf7b62b5725ecc5aa6e2dd81dc" id="r_a2fe88ebf7b62b5725ecc5aa6e2dd81dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FileClient.html#a2fe88ebf7b62b5725ecc5aa6e2dd81dc">keepAlive</a> ()</td></tr>
+<tr class="memdesc:a2fe88ebf7b62b5725ecc5aa6e2dd81dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keeps the session alive while the application is idle: the server closes sessions without packets for 60 s (and with them the open files).  <br /></td></tr>
 <tr class="separator:a2fe88ebf7b62b5725ecc5aa6e2dd81dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab955c7d5fd95d79c84dbb8b6fec14c50" id="r_ab955c7d5fd95d79c84dbb8b6fec14c50"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FileClient.html#ab955c7d5fd95d79c84dbb8b6fec14c50">sessionId</a> () const</td></tr>
 <tr class="memdesc:ab955c7d5fd95d79c84dbb8b6fec14c50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Id of the session (0 before the first request)  <br /></td></tr>
 <tr class="separator:ab955c7d5fd95d79c84dbb8b6fec14c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f3392219b4b0133cd68049053e6bd02" id="r_a6f3392219b4b0133cd68049053e6bd02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FileClient.html#a6f3392219b4b0133cd68049053e6bd02">setIdleCallback</a> (void(*cb)(void *), void *ctx)</td></tr>
+<tr class="memdesc:a6f3392219b4b0133cd68049053e6bd02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called while waiting for a response (e.g.  <br /></td></tr>
 <tr class="separator:a6f3392219b4b0133cd68049053e6bd02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2429308cea9c11d20cd2c9907653bf61" id="r_a2429308cea9c11d20cd2c9907653bf61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FileClient.html#a2429308cea9c11d20cd2c9907653bf61">setTimeout</a> (uint32_t ms)</td></tr>
+<tr class="memdesc:a2429308cea9c11d20cd2c9907653bf61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets how long a request waits for the reply (ms)  <br /></td></tr>
 <tr class="separator:a2429308cea9c11d20cd2c9907653bf61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb4a7108a140856143a9a5c5d8471049" id="r_acb4a7108a140856143a9a5c5d8471049"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FileClient.html#acb4a7108a140856143a9a5c5d8471049">setChunkSize</a> (uint16_t n)</td></tr>
 <tr class="memdesc:acb4a7108a140856143a9a5c5d8471049"><td class="mdescLeft">&#160;</td><td class="mdescRight">Max bytes transferred per READ / WRITE request (read-ahead size)  <br /></td></tr>
 <tr class="separator:acb4a7108a140856143a9a5c5d8471049"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a729cd69a4c48ae1a66360775dca008" id="r_a5a729cd69a4c48ae1a66360775dca008"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FileClient.html#a5a729cd69a4c48ae1a66360775dca008">chunkSize</a> () const</td></tr>
+<tr class="memdesc:a5a729cd69a4c48ae1a66360775dca008"><td class="mdescLeft">&#160;</td><td class="mdescRight">Largest data block per read/write request.  <br /></td></tr>
 <tr class="separator:a5a729cd69a4c48ae1a66360775dca008"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bc04eb974dffac228394ff16be5da08" id="r_a9bc04eb974dffac228394ff16be5da08"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FileClient.html#a9bc04eb974dffac228394ff16be5da08">connected</a> () const</td></tr>
+<tr class="memdesc:a9bc04eb974dffac228394ff16be5da08"><td class="mdescLeft">&#160;</td><td class="mdescRight">True while the transport is connected.  <br /></td></tr>
 <tr class="separator:a9bc04eb974dffac228394ff16be5da08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af313ce753f6e0aad940774d094c30b81" id="r_af313ce753f6e0aad940774d094c30b81"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FileClient.html#af313ce753f6e0aad940774d094c30b81">generation</a> () const</td></tr>
 <tr class="memdesc:af313ce753f6e0aad940774d094c30b81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes when the server lost the state of this client (see <a class="el" href="classtinyblefs_1_1Transport.html" title="Packet oriented, reliable, in-order link between one client and one server.">Transport</a>)  <br /></td></tr>
 <tr class="separator:af313ce753f6e0aad940774d094c30b81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee4fe0ee3416f31dfc30a345cd6e19a1" id="r_aee4fe0ee3416f31dfc30a345cd6e19a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetinyblefs.html#aae88e6db3a81bca6a49aad9e31cc3046">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FileClient.html#aee4fe0ee3416f31dfc30a345cd6e19a1">info</a> (<a class="el" href="structtinyblefs_1_1ServerInfo.html">ServerInfo</a> &amp;si)</td></tr>
+<tr class="memdesc:aee4fe0ee3416f31dfc30a345cd6e19a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the server properties (name, limits, read-only flag)  <br /></td></tr>
 <tr class="separator:aee4fe0ee3416f31dfc30a345cd6e19a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b28f5be015ab20d0c68a284f6413e17" id="r_a5b28f5be015ab20d0c68a284f6413e17"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetinyblefs.html#aae88e6db3a81bca6a49aad9e31cc3046">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FileClient.html#a5b28f5be015ab20d0c68a284f6413e17">open</a> (const std::string &amp;path, uint8_t flags, uint8_t &amp;handle, uint32_t &amp;size)</td></tr>
+<tr class="memdesc:a5b28f5be015ab20d0c68a284f6413e17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens a file (flags: OpenFlags); returns the handle and file size.  <br /></td></tr>
 <tr class="separator:a5b28f5be015ab20d0c68a284f6413e17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad07bbae4271aeffdd0516d439b27c821" id="r_ad07bbae4271aeffdd0516d439b27c821"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetinyblefs.html#aae88e6db3a81bca6a49aad9e31cc3046">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FileClient.html#ad07bbae4271aeffdd0516d439b27c821">close</a> (uint8_t handle)</td></tr>
+<tr class="memdesc:ad07bbae4271aeffdd0516d439b27c821"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes a file handle.  <br /></td></tr>
 <tr class="separator:ad07bbae4271aeffdd0516d439b27c821"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3e2e38a79f1657c3bbb461c37e61d23" id="r_ab3e2e38a79f1657c3bbb461c37e61d23"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetinyblefs.html#aae88e6db3a81bca6a49aad9e31cc3046">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FileClient.html#ab3e2e38a79f1657c3bbb461c37e61d23">read</a> (uint8_t handle, uint32_t offset, uint16_t len, std::vector&lt; uint8_t &gt; &amp;data)</td></tr>
+<tr class="memdesc:ab3e2e38a79f1657c3bbb461c37e61d23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads len bytes at the given offset.  <br /></td></tr>
 <tr class="separator:ab3e2e38a79f1657c3bbb461c37e61d23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bc6a3389bc66f403cdc6915866d15c8" id="r_a3bc6a3389bc66f403cdc6915866d15c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetinyblefs.html#aae88e6db3a81bca6a49aad9e31cc3046">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FileClient.html#a3bc6a3389bc66f403cdc6915866d15c8">write</a> (uint8_t handle, uint32_t offset, const uint8_t *data, size_t len, uint16_t &amp;written)</td></tr>
+<tr class="memdesc:a3bc6a3389bc66f403cdc6915866d15c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes data at the given offset; returns the number of bytes written.  <br /></td></tr>
 <tr class="separator:a3bc6a3389bc66f403cdc6915866d15c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa3f6f85c8f2906bb7677ca71f875e95" id="r_afa3f6f85c8f2906bb7677ca71f875e95"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetinyblefs.html#aae88e6db3a81bca6a49aad9e31cc3046">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FileClient.html#afa3f6f85c8f2906bb7677ca71f875e95">stat</a> (const std::string &amp;path, bool &amp;isDir, uint32_t &amp;size)</td></tr>
+<tr class="memdesc:afa3f6f85c8f2906bb7677ca71f875e95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type and size of a file or directory.  <br /></td></tr>
 <tr class="separator:afa3f6f85c8f2906bb7677ca71f875e95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1dd964d2d96a7d0e0011dd93aa875066" id="r_a1dd964d2d96a7d0e0011dd93aa875066"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetinyblefs.html#aae88e6db3a81bca6a49aad9e31cc3046">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FileClient.html#a1dd964d2d96a7d0e0011dd93aa875066">list</a> (const std::string &amp;path, uint16_t index, bool &amp;isDir, uint32_t &amp;size, std::string &amp;name)</td></tr>
 <tr class="memdesc:a1dd964d2d96a7d0e0011dd93aa875066"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <a class="el" href="namespacetinyblefs.html#aae88e6db3a81bca6a49aad9e31cc3046a246a1f69d0a6525ecfae779b46182df5">Status::EndOfList</a> after the last entry.  <br /></td></tr>
 <tr class="separator:a1dd964d2d96a7d0e0011dd93aa875066"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a447193c39827faf1979222a8d62ddfb9" id="r_a447193c39827faf1979222a8d62ddfb9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetinyblefs.html#aae88e6db3a81bca6a49aad9e31cc3046">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FileClient.html#a447193c39827faf1979222a8d62ddfb9">listBatch</a> (const std::string &amp;path, uint16_t index, uint16_t maxBytes, std::vector&lt; <a class="el" href="structtinyblefs_1_1DirEntry.html">DirEntry</a> &gt; &amp;entries, bool &amp;end)</td></tr>
+<tr class="memdesc:a447193c39827faf1979222a8d62ddfb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lists the entries from <code>index</code> on, as many as fit into maxBytes of answer (about 20 entries per 400 bytes).  <br /></td></tr>
 <tr class="separator:a447193c39827faf1979222a8d62ddfb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32ae66d9e253dd8373d501a8d752fda3" id="r_a32ae66d9e253dd8373d501a8d752fda3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FileClient.html#a32ae66d9e253dd8373d501a8d752fda3">setBatchList</a> (bool on)</td></tr>
 <tr class="memdesc:a32ae66d9e253dd8373d501a8d752fda3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Switch off the batched listing (for servers of the first versions)  <br /></td></tr>
@@ -157,19 +172,25 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a524c2b2a8f1047ad40bb65370169b2fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of requests sent so far (every request counts once, retries not)  <br /></td></tr>
 <tr class="separator:a524c2b2a8f1047ad40bb65370169b2fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1282c5649a6669cd416a200da77396d" id="r_af1282c5649a6669cd416a200da77396d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetinyblefs.html#aae88e6db3a81bca6a49aad9e31cc3046">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FileClient.html#af1282c5649a6669cd416a200da77396d">remove</a> (const std::string &amp;path)</td></tr>
+<tr class="memdesc:af1282c5649a6669cd416a200da77396d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes a file.  <br /></td></tr>
 <tr class="separator:af1282c5649a6669cd416a200da77396d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12c9d640145d754663737749cb6af740" id="r_a12c9d640145d754663737749cb6af740"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetinyblefs.html#aae88e6db3a81bca6a49aad9e31cc3046">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FileClient.html#a12c9d640145d754663737749cb6af740">mkdir</a> (const std::string &amp;path)</td></tr>
+<tr class="memdesc:a12c9d640145d754663737749cb6af740"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a directory.  <br /></td></tr>
 <tr class="separator:a12c9d640145d754663737749cb6af740"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e435f928db836e4e85b1ce159324471" id="r_a0e435f928db836e4e85b1ce159324471"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetinyblefs.html#aae88e6db3a81bca6a49aad9e31cc3046">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FileClient.html#a0e435f928db836e4e85b1ce159324471">rmdir</a> (const std::string &amp;path)</td></tr>
+<tr class="memdesc:a0e435f928db836e4e85b1ce159324471"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an empty directory.  <br /></td></tr>
 <tr class="separator:a0e435f928db836e4e85b1ce159324471"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0ddc58ef8f0661a3b7f338c758550ec" id="r_af0ddc58ef8f0661a3b7f338c758550ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetinyblefs.html#aae88e6db3a81bca6a49aad9e31cc3046">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FileClient.html#af0ddc58ef8f0661a3b7f338c758550ec">rename</a> (const std::string &amp;from, const std::string &amp;to)</td></tr>
+<tr class="memdesc:af0ddc58ef8f0661a3b7f338c758550ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renames or moves a file or directory.  <br /></td></tr>
 <tr class="separator:af0ddc58ef8f0661a3b7f338c758550ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74dec630fb898f8de20a9122546d4b06" id="r_a74dec630fb898f8de20a9122546d4b06"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetinyblefs.html#aae88e6db3a81bca6a49aad9e31cc3046">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1FileClient.html#a74dec630fb898f8de20a9122546d4b06">request</a> (<a class="el" href="namespacetinyblefs.html#ae3dd53e5be6344da73b2b4c796a71718">Op</a> op, const std::vector&lt; uint8_t &gt; &amp;payload, std::vector&lt; uint8_t &gt; *response=nullptr, int retries=0)</td></tr>
+<tr class="memdesc:a74dec630fb898f8de20a9122546d4b06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a request and waits for the response.  <br /></td></tr>
 <tr class="separator:a74dec630fb898f8de20a9122546d4b06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00019">19</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
+<div class="textblock"><p>Client side of the protocol: sends requests to a <a class="el" href="classtinyblefs_1_1FileServer.html" title="Serves a file system (any FsBackend, given in the constructor) over a Transport.">FileServer</a> over a <a class="el" href="classtinyblefs_1_1Transport.html" title="Packet oriented, reliable, in-order link between one client and one server.">Transport</a> (info, open, read, write, list, remove, ...) </p>
+
+<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00025">25</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a829bda263547fc28466ed43454d19354" name="a829bda263547fc28466ed43454d19354"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a829bda263547fc28466ed43454d19354">&#9670;&#160;</a></span>FileClient()</h2>
@@ -212,7 +233,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00024">24</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00030">30</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
 
 </div>
 </div>
@@ -240,7 +261,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00050">50</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
+<p>Largest data block per read/write request. </p>
+
+<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00058">58</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
 
 </div>
 </div>
@@ -268,7 +291,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00080">80</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
+<p>Closes a file handle. </p>
+
+<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00092">92</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
 
 </div>
 </div>
@@ -295,7 +320,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00051">51</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
+<p>True while the transport is connected. </p>
+
+<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00060">60</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
 
 </div>
 </div>
@@ -324,7 +351,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Changes when the server lost the state of this client (see <a class="el" href="classtinyblefs_1_1Transport.html" title="Packet oriented, reliable, in-order link between one client and one server.">Transport</a>) </p>
 
-<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00053">53</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00062">62</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
 
 </div>
 </div>
@@ -352,7 +379,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00056">56</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
+<p>Reads the server properties (name, limits, read-only flag) </p>
+
+<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00066">66</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
 
 </div>
 </div>
@@ -381,7 +410,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Joins the session of the server now (optional: the first request does it) </p>
 
-<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00028">28</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00034">34</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
 
 </div>
 </div>
@@ -407,9 +436,11 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Keeps the session alive while the application is idle: the server closes sessions without packets for 60 s (and with them the open files). Call it at least once in that time. If the session was closed, the next request fails and the one after joins again (files that were open are lost). </p>
 
-<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00033">33</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
+<p>Keeps the session alive while the application is idle: the server closes sessions without packets for 60 s (and with them the open files). </p>
+<p>Call it at least once in that time. If the session was closed, the next request fails and the one after joins again (files that were open are lost). </p>
+
+<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00039">39</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
 
 </div>
 </div>
@@ -467,7 +498,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Returns <a class="el" href="namespacetinyblefs.html#aae88e6db3a81bca6a49aad9e31cc3046a246a1f69d0a6525ecfae779b46182df5">Status::EndOfList</a> after the last entry. </p>
 
-<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00114">114</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00129">129</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
 
 </div>
 </div>
@@ -522,9 +553,11 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Lists the entries from <code>index</code> on, as many as fit into maxBytes of answer (about 20 entries per 400 bytes). <code>end</code> is true when the last entry of the directory is among them. A server without batched listing is detected and then asked entry by entry. </p>
 
-<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00132">132</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
+<p>Lists the entries from <code>index</code> on, as many as fit into maxBytes of answer (about 20 entries per 400 bytes). </p>
+<p><code>end</code> is true when the last entry of the directory is among them. A server without batched listing is detected and then asked entry by entry. </p>
+
+<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00147">147</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
 
 </div>
 </div>
@@ -552,7 +585,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00175">175</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
+<p>Creates a directory. </p>
+
+<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00192">192</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
 
 </div>
 </div>
@@ -602,7 +637,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00068">68</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
+<p>Opens a file (flags: OpenFlags); returns the handle and file size. </p>
+
+<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00079">79</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
 
 </div>
 </div>
@@ -652,7 +689,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00082">82</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
+<p>Reads len bytes at the given offset. </p>
+
+<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00095">95</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
 
 </div>
 </div>
@@ -680,7 +719,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00174">174</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
+<p>Deletes a file. </p>
+
+<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00190">190</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
 
 </div>
 </div>
@@ -718,7 +759,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00178">178</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
+<p>Renames or moves a file or directory. </p>
+
+<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00197">197</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
 
 </div>
 </div>
@@ -767,9 +810,11 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Sends a request and waits for the response. Only operations that are safe to repeat should use retries &gt; 0. </p>
 
-<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00189">189</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
+<p>Sends a request and waits for the response. </p>
+<p>Only operations that are safe to repeat should use retries &gt; 0. </p>
+
+<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00208">208</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
 
 </div>
 </div>
@@ -798,7 +843,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Number of requests sent so far (every request counts once, retries not) </p>
 
-<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00172">172</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00187">187</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
 
 </div>
 </div>
@@ -826,7 +871,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00176">176</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
+<p>Removes an empty directory. </p>
+
+<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00194">194</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
 
 </div>
 </div>
@@ -855,7 +902,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Id of the session (0 before the first request) </p>
 
-<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00035">35</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00041">41</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
 
 </div>
 </div>
@@ -885,7 +932,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Switch off the batched listing (for servers of the first versions) </p>
 
-<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00170">170</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00185">185</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
 
 </div>
 </div>
@@ -915,7 +962,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Max bytes transferred per READ / WRITE request (read-ahead size) </p>
 
-<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00049">49</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00056">56</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
 
 </div>
 </div>
@@ -952,9 +999,11 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Called while waiting for a response (e.g. to run a BLE event loop or, in tests, to poll a server in the same thread) </p>
 
-<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00039">39</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
+<p>Called while waiting for a response (e.g. </p>
+<p>to run a BLE event loop or, in tests, to poll a server in the same thread) </p>
+
+<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00045">45</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
 
 </div>
 </div>
@@ -982,7 +1031,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00044">44</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
+<p>Sets how long a request waits for the reply (ms) </p>
+
+<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00051">51</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
 
 </div>
 </div>
@@ -1026,7 +1077,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00102">102</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
+<p>Gets the type and size of a file or directory. </p>
+
+<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00117">117</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
 
 </div>
 </div>
@@ -1082,7 +1135,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00090">90</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
+<p>Writes data at the given offset; returns the number of bytes written. </p>
+
+<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00104">104</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
 
 </div>
 </div>

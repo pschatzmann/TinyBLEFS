@@ -97,13 +97,16 @@ $(document).ready(function(){initNavTree('structtinyblefs_1_1ServerInfo.html',''
 </div><!--header-->
 <div class="contents">
 
+<p>Properties announced by a server (name, limits, read-only flag)  
+ <a href="structtinyblefs_1_1ServerInfo.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Client_8h_source.html">Client.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for tinyblefs::ServerInfo:</div>
 <div class="dyncontent">
 <div class="center"><img src="structtinyblefs_1_1ServerInfo__coll__graph.png" border="0" usemap="#atinyblefs_1_1ServerInfo_coll__map" alt="Collaboration graph"/></div>
 <map name="atinyblefs_1_1ServerInfo_coll__map" id="atinyblefs_1_1ServerInfo_coll__map">
-<area shape="rect" title=" " alt="" coords="5,281,148,398"/>
+<area shape="rect" title="Properties announced by a server (name, limits, read&#45;only flag)" alt="" coords="5,281,148,398"/>
 <area shape="rect" title=" " alt="" coords="39,144,114,216"/>
 <area shape="poly" title=" " alt="" coords="78,213,79,265,74,265,76,218"/>
 <area shape="rect" title=" " alt="" coords="13,5,140,95"/>
@@ -114,17 +117,22 @@ Collaboration diagram for tinyblefs::ServerInfo:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:af82914f39556cd2189dea3e2c9b91941" id="r_af82914f39556cd2189dea3e2c9b91941"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinyblefs_1_1ServerInfo.html#af82914f39556cd2189dea3e2c9b91941">version</a> = 0</td></tr>
+<tr class="memdesc:af82914f39556cd2189dea3e2c9b91941"><td class="mdescLeft">&#160;</td><td class="mdescRight">Protocol version of the server.  <br /></td></tr>
 <tr class="separator:af82914f39556cd2189dea3e2c9b91941"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3748aaa47adc12d801a86b2e911aa38" id="r_aa3748aaa47adc12d801a86b2e911aa38"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinyblefs_1_1ServerInfo.html#aa3748aaa47adc12d801a86b2e911aa38">maxHandles</a> = 0</td></tr>
+<tr class="memdesc:aa3748aaa47adc12d801a86b2e911aa38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of open files.  <br /></td></tr>
 <tr class="separator:aa3748aaa47adc12d801a86b2e911aa38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a929b1210fc8fd8e960f693adf548a9" id="r_a2a929b1210fc8fd8e960f693adf548a9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinyblefs_1_1ServerInfo.html#a2a929b1210fc8fd8e960f693adf548a9">readOnly</a> = false</td></tr>
+<tr class="memdesc:a2a929b1210fc8fd8e960f693adf548a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if the server refuses changes.  <br /></td></tr>
 <tr class="separator:a2a929b1210fc8fd8e960f693adf548a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c81ef55006dd09a52d9828dc1ae4aa5" id="r_a0c81ef55006dd09a52d9828dc1ae4aa5"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinyblefs_1_1ServerInfo.html#a0c81ef55006dd09a52d9828dc1ae4aa5">name</a></td></tr>
+<tr class="memdesc:a0c81ef55006dd09a52d9828dc1ae4aa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the server.  <br /></td></tr>
 <tr class="separator:a0c81ef55006dd09a52d9828dc1ae4aa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00012">12</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
+<div class="textblock"><p>Properties announced by a server (name, limits, read-only flag) </p>
+
+<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00013">13</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="aa3748aaa47adc12d801a86b2e911aa38" name="aa3748aaa47adc12d801a86b2e911aa38"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa3748aaa47adc12d801a86b2e911aa38">&#9670;&#160;</a></span>maxHandles</h2>
@@ -138,7 +146,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00014">14</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
+<p>Maximum number of open files. </p>
+
+<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00017">17</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
 
 </div>
 </div>
@@ -154,7 +164,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00016">16</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
+<p>Name of the server. </p>
+
+<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00021">21</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
 
 </div>
 </div>
@@ -170,7 +182,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00015">15</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
+<p>True if the server refuses changes. </p>
+
+<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00019">19</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
 
 </div>
 </div>
@@ -186,7 +200,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00013">13</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
+<p>Protocol version of the server. </p>
+
+<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00015">15</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
 
 </div>
 </div>

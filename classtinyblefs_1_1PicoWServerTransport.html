@@ -97,13 +97,16 @@ $(document).ready(function(){initNavTree('classtinyblefs_1_1PicoWServerTransport
 </div><!--header-->
 <div class="contents">
 
+<p>Peripheral side: advertises the TinyBLEFS service.  
+ <a href="classtinyblefs_1_1PicoWServerTransport.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="PicoW_8h_source.html">PicoW.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for tinyblefs::PicoWServerTransport:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinyblefs_1_1PicoWServerTransport__inherit__graph.png" border="0" usemap="#atinyblefs_1_1PicoWServerTransport_inherit__map" alt="Inheritance graph"/></div>
 <map name="atinyblefs_1_1PicoWServerTransport_inherit__map" id="atinyblefs_1_1PicoWServerTransport_inherit__map">
-<area shape="rect" title=" " alt="" coords="56,260,274,466"/>
+<area shape="rect" title="Peripheral side: advertises the TinyBLEFS service." alt="" coords="56,260,274,466"/>
 <area shape="rect" href="classtinyblefs_1_1Transport.html" title="Packet oriented, reliable, in&#45;order link between one client and one server." alt="" coords="5,5,141,212"/>
 <area shape="poly" title=" " alt="" coords="116,223,131,260,125,260,115,228"/>
 <area shape="rect" title=" " alt="" coords="165,72,352,145"/>
@@ -115,7 +118,7 @@ Collaboration diagram for tinyblefs::PicoWServerTransport:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinyblefs_1_1PicoWServerTransport__coll__graph.png" border="0" usemap="#atinyblefs_1_1PicoWServerTransport_coll__map" alt="Collaboration graph"/></div>
 <map name="atinyblefs_1_1PicoWServerTransport_coll__map" id="atinyblefs_1_1PicoWServerTransport_coll__map">
-<area shape="rect" title=" " alt="" coords="56,260,274,466"/>
+<area shape="rect" title="Peripheral side: advertises the TinyBLEFS service." alt="" coords="56,260,274,466"/>
 <area shape="rect" href="classtinyblefs_1_1Transport.html" title="Packet oriented, reliable, in&#45;order link between one client and one server." alt="" coords="5,5,141,212"/>
 <area shape="poly" title=" " alt="" coords="116,223,131,260,125,260,115,228"/>
 <area shape="rect" title=" " alt="" coords="165,72,352,145"/>
@@ -128,15 +131,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6f5eb6f7e3f65c14a986652ef9db5eaf" id="r_a6f5eb6f7e3f65c14a986652ef9db5eaf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1PicoWServerTransport.html#a6f5eb6f7e3f65c14a986652ef9db5eaf">PicoWServerTransport</a> ()</td></tr>
 <tr class="separator:a6f5eb6f7e3f65c14a986652ef9db5eaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adca57e5eec528c3a21e1a4aa7f1bfd47" id="r_adca57e5eec528c3a21e1a4aa7f1bfd47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1PicoWServerTransport.html#adca57e5eec528c3a21e1a4aa7f1bfd47">setConnectionInterval</a> (uint16_t minUnits, uint16_t maxUnits)</td></tr>
+<tr class="memdesc:adca57e5eec528c3a21e1a4aa7f1bfd47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connection interval the server asks the client for, in units of 1.25 ms (default 6..6 = 7.5 ms).  <br /></td></tr>
 <tr class="separator:adca57e5eec528c3a21e1a4aa7f1bfd47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29da48664a12b14950d71d618075720b" id="r_a29da48664a12b14950d71d618075720b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1PicoWServerTransport.html#a29da48664a12b14950d71d618075720b">begin</a> (const char *deviceName, size_t maxConnections=1)</td></tr>
+<tr class="memdesc:a29da48664a12b14950d71d618075720b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts BLE and advertising.  <br /></td></tr>
 <tr class="separator:a29da48664a12b14950d71d618075720b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1dfe2dd74ecdc1b60ddbf8071fa44543" id="r_a1dfe2dd74ecdc1b60ddbf8071fa44543"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1PicoWServerTransport.html#a1dfe2dd74ecdc1b60ddbf8071fa44543">mtu</a> () const override</td></tr>
 <tr class="memdesc:a1dfe2dd74ecdc1b60ddbf8071fa44543"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of bytes per packet (ATT MTU - 3)  <br /></td></tr>
 <tr class="separator:a1dfe2dd74ecdc1b60ddbf8071fa44543"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac97101912308b3dfd6ec3dcc30898aa7" id="r_ac97101912308b3dfd6ec3dcc30898aa7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1PicoWServerTransport.html#ac97101912308b3dfd6ec3dcc30898aa7">send</a> (const uint8_t *data, size_t len) override</td></tr>
+<tr class="memdesc:ac97101912308b3dfd6ec3dcc30898aa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends the packet to every connected client (the sessions of a <a class="el" href="classtinyblefs_1_1FileServer.html" title="Serves a file system (any FsBackend, given in the constructor) over a Transport.">FileServer</a> keep them apart)  <br /></td></tr>
 <tr class="separator:ac97101912308b3dfd6ec3dcc30898aa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a636f9b7246a2fd717369e15238502c24" id="r_a636f9b7246a2fd717369e15238502c24"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1PicoWServerTransport.html#a636f9b7246a2fd717369e15238502c24">receive</a> (uint8_t *buf, size_t max) override</td></tr>
+<tr class="memdesc:a636f9b7246a2fd717369e15238502c24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non blocking: copies the next received packet and returns its length, or 0 when nothing is available.  <br /></td></tr>
 <tr class="separator:a636f9b7246a2fd717369e15238502c24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb0d66d31720f07f0d57fa6efb5f216b" id="r_adb0d66d31720f07f0d57fa6efb5f216b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1PicoWServerTransport.html#adb0d66d31720f07f0d57fa6efb5f216b">connected</a> () const override</td></tr>
 <tr class="memdesc:adb0d66d31720f07f0d57fa6efb5f216b"><td class="mdescLeft">&#160;</td><td class="mdescRight">True while the link is up.  <br /></td></tr>
@@ -145,15 +152,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2530bca901598a5abceec60ce6e0618a inherit pub_methods_classtinyblefs_1_1Transport" id="r_a2530bca901598a5abceec60ce6e0618a"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Transport.html#a2530bca901598a5abceec60ce6e0618a">~Transport</a> ()=default</td></tr>
 <tr class="separator:a2530bca901598a5abceec60ce6e0618a inherit pub_methods_classtinyblefs_1_1Transport"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44617e813487a8168e9938083b9a538e inherit pub_methods_classtinyblefs_1_1Transport" id="r_a44617e813487a8168e9938083b9a538e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Transport.html#a44617e813487a8168e9938083b9a538e">poll</a> ()</td></tr>
+<tr class="memdesc:a44617e813487a8168e9938083b9a538e inherit pub_methods_classtinyblefs_1_1Transport"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called regularly by Server::poll() and while a Client waits for a response.  <br /></td></tr>
 <tr class="separator:a44617e813487a8168e9938083b9a538e inherit pub_methods_classtinyblefs_1_1Transport"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad35b5913aeb67d5ca27c6767728c2753 inherit pub_methods_classtinyblefs_1_1Transport" id="r_ad35b5913aeb67d5ca27c6767728c2753"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Transport.html#ad35b5913aeb67d5ca27c6767728c2753">generation</a> () const</td></tr>
+<tr class="memdesc:ad35b5913aeb67d5ca27c6767728c2753 inherit pub_methods_classtinyblefs_1_1Transport"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes whenever the server side state (open files) was lost, e.g.  <br /></td></tr>
 <tr class="separator:ad35b5913aeb67d5ca27c6767728c2753 inherit pub_methods_classtinyblefs_1_1Transport"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Peripheral side: advertises the TinyBLEFS service.</p>
-<p>With maxConnections &gt; 1 several clients can connect. They share the link, give the <a class="el" href="classtinyblefs_1_1FileServer.html">FileServer</a> maxSessions &gt; 1. </p>
+<div class="textblock"><p>Peripheral side: advertises the TinyBLEFS service. </p>
+<p>With maxConnections &gt; 1 several clients can connect. They share the link, give the <a class="el" href="classtinyblefs_1_1FileServer.html" title="Serves a file system (any FsBackend, given in the constructor) over a Transport.">FileServer</a> maxSessions &gt; 1. </p>
 
-<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00079">79</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00082">82</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6f5eb6f7e3f65c14a986652ef9db5eaf" name="a6f5eb6f7e3f65c14a986652ef9db5eaf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6f5eb6f7e3f65c14a986652ef9db5eaf">&#9670;&#160;</a></span>PicoWServerTransport()</h2>
@@ -178,7 +187,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00081">81</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00084">84</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
 
 </div>
 </div>
@@ -216,7 +225,9 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Starts BLE and advertising </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Starts BLE and advertising. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">deviceName</td><td>BLE device name (used by the client scan prefix) </td></tr>
     <tr><td class="paramname">maxConnections</td><td>clients connected at the same time (1 .. 4); the controller / BTstack configuration may allow fewer </td></tr>
@@ -224,7 +235,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00097">97</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00100">100</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
 
 </div>
 </div>
@@ -255,7 +266,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classtinyblefs_1_1Transport.html#a6542a2da6534dde47cf31fde58825542">tinyblefs::Transport</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00156">156</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00159">159</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
 
 </div>
 </div>
@@ -286,7 +297,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classtinyblefs_1_1Transport.html#a7ed2442227c801b6c80a71a4c1ba1a37">tinyblefs::Transport</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00118">118</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00121">121</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
 
 </div>
 </div>
@@ -323,11 +334,12 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Non blocking: copies the next received packet and returns its length, or 0 when nothing is available </p>
+
+<p>Non blocking: copies the next received packet and returns its length, or 0 when nothing is available. </p>
 
 <p>Implements <a class="el" href="classtinyblefs_1_1Transport.html#aaf9b81ce4e4244f2ec0e154512f579fc">tinyblefs::Transport</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00145">145</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00148">148</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
 
 </div>
 </div>
@@ -364,11 +376,12 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Sends the packet to every connected client (the sessions of a <a class="el" href="classtinyblefs_1_1FileServer.html">FileServer</a> keep them apart) </p>
+
+<p>Sends the packet to every connected client (the sessions of a <a class="el" href="classtinyblefs_1_1FileServer.html" title="Serves a file system (any FsBackend, given in the constructor) over a Transport.">FileServer</a> keep them apart) </p>
 
 <p>Implements <a class="el" href="classtinyblefs_1_1Transport.html#a0a80d045ee4cc085e615d6f34206c4cf">tinyblefs::Transport</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00132">132</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00135">135</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
 
 </div>
 </div>
@@ -405,9 +418,11 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Connection interval the server asks the client for, in units of 1.25 ms (default 6..6 = 7.5 ms). Call before <a class="el" href="classtinyblefs_1_1PicoWServerTransport.html#a29da48664a12b14950d71d618075720b">begin()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00088">88</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
+<p>Connection interval the server asks the client for, in units of 1.25 ms (default 6..6 = 7.5 ms). </p>
+<p>Call before <a class="el" href="classtinyblefs_1_1PicoWServerTransport.html#a29da48664a12b14950d71d618075720b" title="Starts BLE and advertising.">begin()</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="PicoW_8h_source.html#l00091">91</a> of file <a class="el" href="PicoW_8h_source.html">PicoW.h</a>.</p>
 
 </div>
 </div>

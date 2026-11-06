@@ -1,3 +1,3 @@
 <map id="tinyblefs::LoggerClass" name="tinyblefs::LoggerClass">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,160,234"/>
+<area shape="rect" id="Node000001" title="Logger with levels and a configurable Print output; use the global TinyBLEFSLogger." alt="" coords="5,5,160,234"/>
 </map>

@@ -133,8 +133,10 @@ Collaboration diagram for tinyblefs::NimBLEServerTransport:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a66a96de10314647811259711d9c3b0e7" id="r_a66a96de10314647811259711d9c3b0e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1NimBLEServerTransport.html#a66a96de10314647811259711d9c3b0e7">setConnectionInterval</a> (uint16_t minUnits, uint16_t maxUnits)</td></tr>
+<tr class="memdesc:a66a96de10314647811259711d9c3b0e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connection interval the server asks the client for, in units of 1.25 ms (default 6..6 = 7.5 ms, the shortest).  <br /></td></tr>
 <tr class="separator:a66a96de10314647811259711d9c3b0e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a395148a05b845cdff3b88a13823db7f8" id="r_a395148a05b845cdff3b88a13823db7f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1NimBLEServerTransport.html#a395148a05b845cdff3b88a13823db7f8">begin</a> (const char *deviceName, bool secure=false)</td></tr>
+<tr class="memdesc:a395148a05b845cdff3b88a13823db7f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises NimBLE (unless already done), creates the service and starts advertising.  <br /></td></tr>
 <tr class="separator:a395148a05b845cdff3b88a13823db7f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8d84afb850a39917899e23e3ac0ba8c" id="r_af8d84afb850a39917899e23e3ac0ba8c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1NimBLEServerTransport.html#af8d84afb850a39917899e23e3ac0ba8c">mtu</a> () const override</td></tr>
 <tr class="memdesc:af8d84afb850a39917899e23e3ac0ba8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of bytes per packet (ATT MTU - 3)  <br /></td></tr>
@@ -143,6 +145,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a6fbdbcc636593e6a34b48d0c00471fea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends one packet (&lt;= <a class="el" href="classtinyblefs_1_1NimBLEServerTransport.html#af8d84afb850a39917899e23e3ac0ba8c" title="Maximum number of bytes per packet (ATT MTU - 3)">mtu()</a>); returns false on failure.  <br /></td></tr>
 <tr class="separator:a6fbdbcc636593e6a34b48d0c00471fea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7f4d72515ff403b7ef40badd4b0ff16" id="r_ac7f4d72515ff403b7ef40badd4b0ff16"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1NimBLEServerTransport.html#ac7f4d72515ff403b7ef40badd4b0ff16">receive</a> (uint8_t *buf, size_t max) override</td></tr>
+<tr class="memdesc:ac7f4d72515ff403b7ef40badd4b0ff16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non blocking: copies the next received packet and returns its length, or 0 when nothing is available.  <br /></td></tr>
 <tr class="separator:ac7f4d72515ff403b7ef40badd4b0ff16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41cfc29733b8e39069358a4c19327239" id="r_a41cfc29733b8e39069358a4c19327239"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1NimBLEServerTransport.html#a41cfc29733b8e39069358a4c19327239">connected</a> () const override</td></tr>
 <tr class="memdesc:a41cfc29733b8e39069358a4c19327239"><td class="mdescLeft">&#160;</td><td class="mdescRight">True while the link is up.  <br /></td></tr>
@@ -151,14 +154,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2530bca901598a5abceec60ce6e0618a inherit pub_methods_classtinyblefs_1_1Transport" id="r_a2530bca901598a5abceec60ce6e0618a"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Transport.html#a2530bca901598a5abceec60ce6e0618a">~Transport</a> ()=default</td></tr>
 <tr class="separator:a2530bca901598a5abceec60ce6e0618a inherit pub_methods_classtinyblefs_1_1Transport"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44617e813487a8168e9938083b9a538e inherit pub_methods_classtinyblefs_1_1Transport" id="r_a44617e813487a8168e9938083b9a538e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Transport.html#a44617e813487a8168e9938083b9a538e">poll</a> ()</td></tr>
+<tr class="memdesc:a44617e813487a8168e9938083b9a538e inherit pub_methods_classtinyblefs_1_1Transport"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called regularly by Server::poll() and while a Client waits for a response.  <br /></td></tr>
 <tr class="separator:a44617e813487a8168e9938083b9a538e inherit pub_methods_classtinyblefs_1_1Transport"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad35b5913aeb67d5ca27c6767728c2753 inherit pub_methods_classtinyblefs_1_1Transport" id="r_ad35b5913aeb67d5ca27c6767728c2753"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Transport.html#ad35b5913aeb67d5ca27c6767728c2753">generation</a> () const</td></tr>
+<tr class="memdesc:ad35b5913aeb67d5ca27c6767728c2753 inherit pub_methods_classtinyblefs_1_1Transport"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes whenever the server side state (open files) was lost, e.g.  <br /></td></tr>
 <tr class="separator:ad35b5913aeb67d5ca27c6767728c2753 inherit pub_methods_classtinyblefs_1_1Transport"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Peripheral side: advertises the TinyBLEFS service and talks to one client. </p>
 
-<p class="definition">Definition at line <a class="el" href="NimBLE_8h_source.html#l00059">59</a> of file <a class="el" href="NimBLE_8h_source.html">NimBLE.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NimBLE_8h_source.html#l00062">62</a> of file <a class="el" href="NimBLE_8h_source.html">NimBLE.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a395148a05b845cdff3b88a13823db7f8" name="a395148a05b845cdff3b88a13823db7f8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a395148a05b845cdff3b88a13823db7f8">&#9670;&#160;</a></span>begin()</h2>
@@ -193,7 +198,9 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Initialises NimBLE (unless already done), creates the service and starts advertising. </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Initialises NimBLE (unless already done), creates the service and starts advertising. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">deviceName</td><td>BLE device name </td></tr>
     <tr><td class="paramname">secure</td><td>require an encrypted (bonded) link for all access </td></tr>
@@ -201,7 +208,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="NimBLE_8h_source.html#l00077">77</a> of file <a class="el" href="NimBLE_8h_source.html">NimBLE.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NimBLE_8h_source.html#l00080">80</a> of file <a class="el" href="NimBLE_8h_source.html">NimBLE.h</a>.</p>
 
 </div>
 </div>
@@ -232,7 +239,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classtinyblefs_1_1Transport.html#a6542a2da6534dde47cf31fde58825542">tinyblefs::Transport</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="NimBLE_8h_source.html#l00135">135</a> of file <a class="el" href="NimBLE_8h_source.html">NimBLE.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NimBLE_8h_source.html#l00138">138</a> of file <a class="el" href="NimBLE_8h_source.html">NimBLE.h</a>.</p>
 
 </div>
 </div>
@@ -263,7 +270,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classtinyblefs_1_1Transport.html#a7ed2442227c801b6c80a71a4c1ba1a37">tinyblefs::Transport</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="NimBLE_8h_source.html#l00115">115</a> of file <a class="el" href="NimBLE_8h_source.html">NimBLE.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NimBLE_8h_source.html#l00118">118</a> of file <a class="el" href="NimBLE_8h_source.html">NimBLE.h</a>.</p>
 
 </div>
 </div>
@@ -300,11 +307,12 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Non blocking: copies the next received packet and returns its length, or 0 when nothing is available </p>
+
+<p>Non blocking: copies the next received packet and returns its length, or 0 when nothing is available. </p>
 
 <p>Implements <a class="el" href="classtinyblefs_1_1Transport.html#aaf9b81ce4e4244f2ec0e154512f579fc">tinyblefs::Transport</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="NimBLE_8h_source.html#l00131">131</a> of file <a class="el" href="NimBLE_8h_source.html">NimBLE.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NimBLE_8h_source.html#l00134">134</a> of file <a class="el" href="NimBLE_8h_source.html">NimBLE.h</a>.</p>
 
 </div>
 </div>
@@ -346,7 +354,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classtinyblefs_1_1Transport.html#a0a80d045ee4cc085e615d6f34206c4cf">tinyblefs::Transport</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="NimBLE_8h_source.html#l00121">121</a> of file <a class="el" href="NimBLE_8h_source.html">NimBLE.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NimBLE_8h_source.html#l00124">124</a> of file <a class="el" href="NimBLE_8h_source.html">NimBLE.h</a>.</p>
 
 </div>
 </div>
@@ -383,9 +391,11 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Connection interval the server asks the client for, in units of 1.25 ms (default 6..6 = 7.5 ms, the shortest). The central decides, and a Bluetooth 4.0 PC controller picks the upper value of the range: with 6..12 it gave 4.7 KB/s, with 6..6 10.5 KB/s. A long interval saves power. Call before <a class="el" href="classtinyblefs_1_1NimBLEServerTransport.html#a395148a05b845cdff3b88a13823db7f8">begin()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="NimBLE_8h_source.html#l00068">68</a> of file <a class="el" href="NimBLE_8h_source.html">NimBLE.h</a>.</p>
+<p>Connection interval the server asks the client for, in units of 1.25 ms (default 6..6 = 7.5 ms, the shortest). </p>
+<p>The central decides, and a Bluetooth 4.0 PC controller picks the upper value of the range: with 6..12 it gave 4.7 KB/s, with 6..6 10.5 KB/s. A long interval saves power. Call before <a class="el" href="classtinyblefs_1_1NimBLEServerTransport.html#a395148a05b845cdff3b88a13823db7f8" title="Initialises NimBLE (unless already done), creates the service and starts advertising.">begin()</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="NimBLE_8h_source.html#l00071">71</a> of file <a class="el" href="NimBLE_8h_source.html">NimBLE.h</a>.</p>
 
 </div>
 </div>

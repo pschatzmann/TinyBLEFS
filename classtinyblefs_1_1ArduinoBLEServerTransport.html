@@ -97,13 +97,16 @@ $(document).ready(function(){initNavTree('classtinyblefs_1_1ArduinoBLEServerTran
 </div><!--header-->
 <div class="contents">
 
+<p>Peripheral side: advertises the TinyBLEFS service.  
+ <a href="classtinyblefs_1_1ArduinoBLEServerTransport.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="ArduinoBLE_8h_source.html">ArduinoBLE.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for tinyblefs::ArduinoBLEServerTransport:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinyblefs_1_1ArduinoBLEServerTransport__inherit__graph.png" border="0" usemap="#atinyblefs_1_1ArduinoBLEServerTransport_inherit__map" alt="Inheritance graph"/></div>
 <map name="atinyblefs_1_1ArduinoBLEServerTransport_inherit__map" id="atinyblefs_1_1ArduinoBLEServerTransport_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,260,218,528"/>
+<area shape="rect" title="Peripheral side: advertises the TinyBLEFS service." alt="" coords="5,260,218,528"/>
 <area shape="rect" href="classtinyblefs_1_1Transport.html" title="Packet oriented, reliable, in&#45;order link between one client and one server." alt="" coords="44,5,180,212"/>
 <area shape="poly" title=" " alt="" coords="112,224,114,260,109,259,111,229"/>
 </map>
@@ -113,7 +116,7 @@ Collaboration diagram for tinyblefs::ArduinoBLEServerTransport:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinyblefs_1_1ArduinoBLEServerTransport__coll__graph.png" border="0" usemap="#atinyblefs_1_1ArduinoBLEServerTransport_coll__map" alt="Collaboration graph"/></div>
 <map name="atinyblefs_1_1ArduinoBLEServerTransport_coll__map" id="atinyblefs_1_1ArduinoBLEServerTransport_coll__map">
-<area shape="rect" title=" " alt="" coords="5,260,218,528"/>
+<area shape="rect" title="Peripheral side: advertises the TinyBLEFS service." alt="" coords="5,260,218,528"/>
 <area shape="rect" href="classtinyblefs_1_1Transport.html" title="Packet oriented, reliable, in&#45;order link between one client and one server." alt="" coords="44,5,180,212"/>
 <area shape="poly" title=" " alt="" coords="112,224,114,260,109,259,111,229"/>
 </map>
@@ -124,8 +127,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a919c980b16b45d53231f63f0d4847af8" id="r_a919c980b16b45d53231f63f0d4847af8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1ArduinoBLEServerTransport.html#a919c980b16b45d53231f63f0d4847af8">ArduinoBLEServerTransport</a> ()</td></tr>
 <tr class="separator:a919c980b16b45d53231f63f0d4847af8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac697eaa46fd1b867221ed9beafa01feb" id="r_ac697eaa46fd1b867221ed9beafa01feb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1ArduinoBLEServerTransport.html#ac697eaa46fd1b867221ed9beafa01feb">setConnectionInterval</a> (uint16_t minUnits, uint16_t maxUnits)</td></tr>
+<tr class="memdesc:ac697eaa46fd1b867221ed9beafa01feb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connection interval the server asks the client for, in units of 1.25 ms (default 6..6 = 7.5 ms).  <br /></td></tr>
 <tr class="separator:ac697eaa46fd1b867221ed9beafa01feb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66a8146ecaee95cbc8e35d8c3da460ce" id="r_a66a8146ecaee95cbc8e35d8c3da460ce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1ArduinoBLEServerTransport.html#a66a8146ecaee95cbc8e35d8c3da460ce">begin</a> (const char *deviceName, size_t maxConnections=1)</td></tr>
+<tr class="memdesc:a66a8146ecaee95cbc8e35d8c3da460ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts BLE and advertising.  <br /></td></tr>
 <tr class="separator:a66a8146ecaee95cbc8e35d8c3da460ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28f86e5ba8ecfa2dffd083bafe6c77e6" id="r_a28f86e5ba8ecfa2dffd083bafe6c77e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1ArduinoBLEServerTransport.html#a28f86e5ba8ecfa2dffd083bafe6c77e6">setPacketSize</a> (size_t n)</td></tr>
 <tr class="memdesc:a28f86e5ba8ecfa2dffd083bafe6c77e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bytes per packet (default 20 = safe with the default ATT MTU of 23)  <br /></td></tr>
@@ -137,21 +142,24 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aa5ee64a5f5c7735c8a3374815abd0d2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends one packet (&lt;= <a class="el" href="classtinyblefs_1_1ArduinoBLEServerTransport.html#a495a8caa91af4f654aacd3e8b29a23ac" title="Maximum number of bytes per packet (ATT MTU - 3)">mtu()</a>); returns false on failure.  <br /></td></tr>
 <tr class="separator:aa5ee64a5f5c7735c8a3374815abd0d2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76bb50c818baf18eeb092ded88730799" id="r_a76bb50c818baf18eeb092ded88730799"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1ArduinoBLEServerTransport.html#a76bb50c818baf18eeb092ded88730799">receive</a> (uint8_t *buf, size_t max) override</td></tr>
+<tr class="memdesc:a76bb50c818baf18eeb092ded88730799"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non blocking: copies the next received packet and returns its length, or 0 when nothing is available.  <br /></td></tr>
 <tr class="separator:a76bb50c818baf18eeb092ded88730799"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6ca3a2d1afbc9458a8515531e14922a" id="r_af6ca3a2d1afbc9458a8515531e14922a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1ArduinoBLEServerTransport.html#af6ca3a2d1afbc9458a8515531e14922a">connected</a> () const override</td></tr>
 <tr class="memdesc:af6ca3a2d1afbc9458a8515531e14922a"><td class="mdescLeft">&#160;</td><td class="mdescRight">True while the link is up.  <br /></td></tr>
 <tr class="separator:af6ca3a2d1afbc9458a8515531e14922a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11b224945a07a6c4a410d2b3db674389" id="r_a11b224945a07a6c4a410d2b3db674389"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1ArduinoBLEServerTransport.html#a11b224945a07a6c4a410d2b3db674389">poll</a> () override</td></tr>
+<tr class="memdesc:a11b224945a07a6c4a410d2b3db674389"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called regularly by Server::poll() and while a Client waits for a response.  <br /></td></tr>
 <tr class="separator:a11b224945a07a6c4a410d2b3db674389"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classtinyblefs_1_1Transport"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtinyblefs_1_1Transport')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtinyblefs_1_1Transport.html">tinyblefs::Transport</a></td></tr>
 <tr class="memitem:a2530bca901598a5abceec60ce6e0618a inherit pub_methods_classtinyblefs_1_1Transport" id="r_a2530bca901598a5abceec60ce6e0618a"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Transport.html#a2530bca901598a5abceec60ce6e0618a">~Transport</a> ()=default</td></tr>
 <tr class="separator:a2530bca901598a5abceec60ce6e0618a inherit pub_methods_classtinyblefs_1_1Transport"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad35b5913aeb67d5ca27c6767728c2753 inherit pub_methods_classtinyblefs_1_1Transport" id="r_ad35b5913aeb67d5ca27c6767728c2753"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Transport.html#ad35b5913aeb67d5ca27c6767728c2753">generation</a> () const</td></tr>
+<tr class="memdesc:ad35b5913aeb67d5ca27c6767728c2753 inherit pub_methods_classtinyblefs_1_1Transport"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes whenever the server side state (open files) was lost, e.g.  <br /></td></tr>
 <tr class="separator:ad35b5913aeb67d5ca27c6767728c2753 inherit pub_methods_classtinyblefs_1_1Transport"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Peripheral side: advertises the TinyBLEFS service.</p>
-<p>With maxConnections &gt; 1 several clients can connect. They share the link (every reply reaches all of them): give the <a class="el" href="classtinyblefs_1_1FileServer.html">FileServer</a> maxSessions &gt; 1. </p>
+<div class="textblock"><p>Peripheral side: advertises the TinyBLEFS service. </p>
+<p>With maxConnections &gt; 1 several clients can connect. They share the link (every reply reaches all of them): give the <a class="el" href="classtinyblefs_1_1FileServer.html" title="Serves a file system (any FsBackend, given in the constructor) over a Transport.">FileServer</a> maxSessions &gt; 1. </p>
 
 <p class="definition">Definition at line <a class="el" href="ArduinoBLE_8h_source.html#l00038">38</a> of file <a class="el" href="ArduinoBLE_8h_source.html">ArduinoBLE.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -216,7 +224,9 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Starts BLE and advertising </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Starts BLE and advertising. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">deviceName</td><td>BLE device name (used by the client scan prefix) </td></tr>
     <tr><td class="paramname">maxConnections</td><td>clients connected at the same time (the BLE hardware may allow fewer: 3 on Nano 33 BLE) </td></tr>
@@ -312,7 +322,9 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Called regularly by Server::poll() and while a Client waits for a response. Polled BLE stacks (e.g. ArduinoBLE) run their event processing here; event driven stacks don't need to override it. </p>
+
+<p>Called regularly by Server::poll() and while a Client waits for a response. </p>
+<p>Polled BLE stacks (e.g. ArduinoBLE) run their event processing here; event driven stacks don't need to override it. </p>
 
 <p>Reimplemented from <a class="el" href="classtinyblefs_1_1Transport.html#a44617e813487a8168e9938083b9a538e">tinyblefs::Transport</a>.</p>
 
@@ -353,7 +365,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Non blocking: copies the next received packet and returns its length, or 0 when nothing is available </p>
+
+<p>Non blocking: copies the next received packet and returns its length, or 0 when nothing is available. </p>
 
 <p>Implements <a class="el" href="classtinyblefs_1_1Transport.html#aaf9b81ce4e4244f2ec0e154512f579fc">tinyblefs::Transport</a>.</p>
 
@@ -436,7 +449,9 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Connection interval the server asks the client for, in units of 1.25 ms (default 6..6 = 7.5 ms). Call before <a class="el" href="classtinyblefs_1_1ArduinoBLEServerTransport.html#a66a8146ecaee95cbc8e35d8c3da460ce">begin()</a>. </p>
+
+<p>Connection interval the server asks the client for, in units of 1.25 ms (default 6..6 = 7.5 ms). </p>
+<p>Call before <a class="el" href="classtinyblefs_1_1ArduinoBLEServerTransport.html#a66a8146ecaee95cbc8e35d8c3da460ce" title="Starts BLE and advertising.">begin()</a>. </p>
 
 <p class="definition">Definition at line <a class="el" href="ArduinoBLE_8h_source.html#l00047">47</a> of file <a class="el" href="ArduinoBLE_8h_source.html">ArduinoBLE.h</a>.</p>
 

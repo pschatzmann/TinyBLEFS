@@ -97,13 +97,16 @@ $(document).ready(function(){initNavTree('classtinyblefs_1_1detail_1_1SessionLin
 </div><!--header-->
 <div class="contents">
 
+<p>Client side (internal, owned by <a class="el" href="classtinyblefs_1_1FileClient.html" title="Client side of the protocol: sends requests to a FileServer over a Transport (info,...">FileClient</a>): a point-to-point <a class="el" href="classtinyblefs_1_1Transport.html" title="Packet oriented, reliable, in-order link between one client and one server.">Transport</a> on top of the shared link, tagging every packet with the session id.  
+ <a href="classtinyblefs_1_1detail_1_1SessionLink.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Session_8h_source.html">Session.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for tinyblefs::detail::SessionLink:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinyblefs_1_1detail_1_1SessionLink__inherit__graph.png" border="0" usemap="#atinyblefs_1_1detail_1_1SessionLink_inherit__map" alt="Inheritance graph"/></div>
 <map name="atinyblefs_1_1detail_1_1SessionLink_inherit__map" id="atinyblefs_1_1detail_1_1SessionLink_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,260,142,595"/>
+<area shape="rect" title="Client side (internal, owned by FileClient): a point&#45;to&#45;point Transport on top of the shared link,..." alt="" coords="5,260,142,595"/>
 <area shape="rect" href="classtinyblefs_1_1Transport.html" title="Packet oriented, reliable, in&#45;order link between one client and one server." alt="" coords="6,5,142,212"/>
 <area shape="poly" title=" " alt="" coords="74,224,76,260,71,260,74,229"/>
 </map>
@@ -113,7 +116,7 @@ Collaboration diagram for tinyblefs::detail::SessionLink:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinyblefs_1_1detail_1_1SessionLink__coll__graph.png" border="0" usemap="#atinyblefs_1_1detail_1_1SessionLink_coll__map" alt="Collaboration graph"/></div>
 <map name="atinyblefs_1_1detail_1_1SessionLink_coll__map" id="atinyblefs_1_1detail_1_1SessionLink_coll__map">
-<area shape="rect" title=" " alt="" coords="5,260,142,595"/>
+<area shape="rect" title="Client side (internal, owned by FileClient): a point&#45;to&#45;point Transport on top of the shared link,..." alt="" coords="5,260,142,595"/>
 <area shape="rect" href="classtinyblefs_1_1Transport.html" title="Packet oriented, reliable, in&#45;order link between one client and one server." alt="" coords="6,5,142,212"/>
 <area shape="poly" title=" " alt="" coords="74,224,76,260,71,260,74,229"/>
 </map>
@@ -124,17 +127,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa4793a63a60202b9e94848880d1274d1" id="r_aa4793a63a60202b9e94848880d1274d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1detail_1_1SessionLink.html#aa4793a63a60202b9e94848880d1274d1">SessionLink</a> (<a class="el" href="classtinyblefs_1_1Transport.html">Transport</a> &amp;raw, uint32_t timeoutMs)</td></tr>
 <tr class="separator:aa4793a63a60202b9e94848880d1274d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67383ed05883d6172ec7381103bcde26" id="r_a67383ed05883d6172ec7381103bcde26"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1detail_1_1SessionLink.html#a67383ed05883d6172ec7381103bcde26">join</a> ()</td></tr>
+<tr class="memdesc:a67383ed05883d6172ec7381103bcde26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asks the server for a session.  <br /></td></tr>
 <tr class="separator:a67383ed05883d6172ec7381103bcde26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9ff121507cbcbf72c5225d52963f55b" id="r_ae9ff121507cbcbf72c5225d52963f55b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1detail_1_1SessionLink.html#ae9ff121507cbcbf72c5225d52963f55b">keepAlive</a> ()</td></tr>
+<tr class="memdesc:ae9ff121507cbcbf72c5225d52963f55b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keeps the session alive while the application is idle (call at least once per session timeout of the server, 60 s by default)  <br /></td></tr>
 <tr class="separator:ae9ff121507cbcbf72c5225d52963f55b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93e95be9cd3c1dca2bd9af00efaaaca3" id="r_a93e95be9cd3c1dca2bd9af00efaaaca3"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1detail_1_1SessionLink.html#a93e95be9cd3c1dca2bd9af00efaaaca3">id</a> () const</td></tr>
+<tr class="memdesc:a93e95be9cd3c1dca2bd9af00efaaaca3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Session id (0 = not joined)  <br /></td></tr>
 <tr class="separator:a93e95be9cd3c1dca2bd9af00efaaaca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34a60954124b8539a71447095e8be7bd" id="r_a34a60954124b8539a71447095e8be7bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1detail_1_1SessionLink.html#a34a60954124b8539a71447095e8be7bd">setTimeout</a> (uint32_t ms)</td></tr>
+<tr class="memdesc:a34a60954124b8539a71447095e8be7bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets how long <a class="el" href="classtinyblefs_1_1detail_1_1SessionLink.html#a67383ed05883d6172ec7381103bcde26" title="Asks the server for a session.">join()</a> waits for the server (ms)  <br /></td></tr>
 <tr class="separator:a34a60954124b8539a71447095e8be7bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afaa3fe7a7815c363feca4ca67cd415ea" id="r_afaa3fe7a7815c363feca4ca67cd415ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1detail_1_1SessionLink.html#afaa3fe7a7815c363feca4ca67cd415ea">setIdleCallback</a> (void(*cb)(void *), void *ctx)</td></tr>
-<tr class="memdesc:afaa3fe7a7815c363feca4ca67cd415ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called while <a class="el" href="classtinyblefs_1_1detail_1_1SessionLink.html#a67383ed05883d6172ec7381103bcde26">join()</a> waits for the answer of the server.  <br /></td></tr>
+<tr class="memdesc:afaa3fe7a7815c363feca4ca67cd415ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called while <a class="el" href="classtinyblefs_1_1detail_1_1SessionLink.html#a67383ed05883d6172ec7381103bcde26" title="Asks the server for a session.">join()</a> waits for the answer of the server.  <br /></td></tr>
 <tr class="separator:afaa3fe7a7815c363feca4ca67cd415ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3efced98fb9f1e90ecf9f5a74728152b" id="r_a3efced98fb9f1e90ecf9f5a74728152b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1detail_1_1SessionLink.html#a3efced98fb9f1e90ecf9f5a74728152b">generation</a> () const override</td></tr>
+<tr class="memdesc:a3efced98fb9f1e90ecf9f5a74728152b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes whenever the server side state (open files) was lost, e.g.  <br /></td></tr>
 <tr class="separator:a3efced98fb9f1e90ecf9f5a74728152b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37b2ae04918050481bb4daff5a5f91b1" id="r_a37b2ae04918050481bb4daff5a5f91b1"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1detail_1_1SessionLink.html#a37b2ae04918050481bb4daff5a5f91b1">mtu</a> () const override</td></tr>
 <tr class="memdesc:a37b2ae04918050481bb4daff5a5f91b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of bytes per packet (ATT MTU - 3)  <br /></td></tr>
@@ -143,17 +151,20 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a299d0a212e371387cba658423e44831d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends one packet (&lt;= <a class="el" href="classtinyblefs_1_1detail_1_1SessionLink.html#a37b2ae04918050481bb4daff5a5f91b1" title="Maximum number of bytes per packet (ATT MTU - 3)">mtu()</a>); returns false on failure.  <br /></td></tr>
 <tr class="separator:a299d0a212e371387cba658423e44831d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfbd0bab091f03bfc83242685117cf50" id="r_adfbd0bab091f03bfc83242685117cf50"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1detail_1_1SessionLink.html#adfbd0bab091f03bfc83242685117cf50">receive</a> (uint8_t *out, size_t max) override</td></tr>
+<tr class="memdesc:adfbd0bab091f03bfc83242685117cf50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non blocking: copies the next received packet and returns its length, or 0 when nothing is available.  <br /></td></tr>
 <tr class="separator:adfbd0bab091f03bfc83242685117cf50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d9883e2e3f530fdaffd8d6fea6bfe29" id="r_a1d9883e2e3f530fdaffd8d6fea6bfe29"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1detail_1_1SessionLink.html#a1d9883e2e3f530fdaffd8d6fea6bfe29">connected</a> () const override</td></tr>
+<tr class="memdesc:a1d9883e2e3f530fdaffd8d6fea6bfe29"><td class="mdescLeft">&#160;</td><td class="mdescRight">False when the link is down or the server dropped the session; the next request then joins again with a new session (open files are lost)  <br /></td></tr>
 <tr class="separator:a1d9883e2e3f530fdaffd8d6fea6bfe29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae796f0ca880794c50dacdbd7ba304f95" id="r_ae796f0ca880794c50dacdbd7ba304f95"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1detail_1_1SessionLink.html#ae796f0ca880794c50dacdbd7ba304f95">poll</a> () override</td></tr>
+<tr class="memdesc:ae796f0ca880794c50dacdbd7ba304f95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called regularly by Server::poll() and while a Client waits for a response.  <br /></td></tr>
 <tr class="separator:ae796f0ca880794c50dacdbd7ba304f95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classtinyblefs_1_1Transport"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtinyblefs_1_1Transport')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtinyblefs_1_1Transport.html">tinyblefs::Transport</a></td></tr>
 <tr class="memitem:a2530bca901598a5abceec60ce6e0618a inherit pub_methods_classtinyblefs_1_1Transport" id="r_a2530bca901598a5abceec60ce6e0618a"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1Transport.html#a2530bca901598a5abceec60ce6e0618a">~Transport</a> ()=default</td></tr>
 <tr class="separator:a2530bca901598a5abceec60ce6e0618a inherit pub_methods_classtinyblefs_1_1Transport"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Client side (internal, owned by <a class="el" href="classtinyblefs_1_1FileClient.html">FileClient</a>): a point-to-point <a class="el" href="classtinyblefs_1_1Transport.html" title="Packet oriented, reliable, in-order link between one client and one server.">Transport</a> on top of the shared link, tagging every packet with the session id </p>
+<div class="textblock"><p>Client side (internal, owned by <a class="el" href="classtinyblefs_1_1FileClient.html" title="Client side of the protocol: sends requests to a FileServer over a Transport (info,...">FileClient</a>): a point-to-point <a class="el" href="classtinyblefs_1_1Transport.html" title="Packet oriented, reliable, in-order link between one client and one server.">Transport</a> on top of the shared link, tagging every packet with the session id. </p>
 
 <p class="definition">Definition at line <a class="el" href="Session_8h_source.html#l00049">49</a> of file <a class="el" href="Session_8h_source.html">Session.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -193,7 +204,7 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">raw</td><td>the BLE client adapter (must be connected) </td></tr>
-    <tr><td class="paramname">timeoutMs</td><td>how long <a class="el" href="classtinyblefs_1_1detail_1_1SessionLink.html#a67383ed05883d6172ec7381103bcde26">join()</a> waits for the server </td></tr>
+    <tr><td class="paramname">timeoutMs</td><td>how long <a class="el" href="classtinyblefs_1_1detail_1_1SessionLink.html#a67383ed05883d6172ec7381103bcde26" title="Asks the server for a session.">join()</a> waits for the server </td></tr>
   </table>
   </dd>
 </dl>
@@ -225,11 +236,12 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
 <p>False when the link is down or the server dropped the session; the next request then joins again with a new session (open files are lost) </p>
 
 <p>Reimplemented from <a class="el" href="classtinyblefs_1_1Transport.html#a6542a2da6534dde47cf31fde58825542">tinyblefs::Transport</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Session_8h_source.html#l00149">149</a> of file <a class="el" href="Session_8h_source.html">Session.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Session_8h_source.html#l00151">151</a> of file <a class="el" href="Session_8h_source.html">Session.h</a>.</p>
 
 </div>
 </div>
@@ -255,11 +267,13 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Changes whenever the server side state (open files) was lost, e.g. when a session had to be re-established. Files opened before are then invalid. </p>
+
+<p>Changes whenever the server side state (open files) was lost, e.g. </p>
+<p>when a session had to be re-established. Files opened before are then invalid. </p>
 
 <p>Reimplemented from <a class="el" href="classtinyblefs_1_1Transport.html#ad35b5913aeb67d5ca27c6767728c2753">tinyblefs::Transport</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Session_8h_source.html#l00114">114</a> of file <a class="el" href="Session_8h_source.html">Session.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Session_8h_source.html#l00116">116</a> of file <a class="el" href="Session_8h_source.html">Session.h</a>.</p>
 
 </div>
 </div>
@@ -286,7 +300,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Session_8h_source.html#l00107">107</a> of file <a class="el" href="Session_8h_source.html">Session.h</a>.</p>
+<p>Session id (0 = not joined) </p>
+
+<p class="definition">Definition at line <a class="el" href="Session_8h_source.html#l00108">108</a> of file <a class="el" href="Session_8h_source.html">Session.h</a>.</p>
 
 </div>
 </div>
@@ -312,7 +328,9 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Asks the server for a session. Called automatically by the first <a class="el" href="classtinyblefs_1_1detail_1_1SessionLink.html#a299d0a212e371387cba658423e44831d" title="Sends one packet (&lt;= mtu()); returns false on failure.">send()</a> and again after the server dropped the session. </p>
+
+<p>Asks the server for a session. </p>
+<p>Called automatically by the first <a class="el" href="classtinyblefs_1_1detail_1_1SessionLink.html#a299d0a212e371387cba658423e44831d" title="Sends one packet (&lt;= mtu()); returns false on failure.">send()</a> and again after the server dropped the session. </p>
 
 <p class="definition">Definition at line <a class="el" href="Session_8h_source.html#l00058">58</a> of file <a class="el" href="Session_8h_source.html">Session.h</a>.</p>
 
@@ -340,6 +358,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
 <p>Keeps the session alive while the application is idle (call at least once per session timeout of the server, 60 s by default) </p>
 
 <p class="definition">Definition at line <a class="el" href="Session_8h_source.html#l00101">101</a> of file <a class="el" href="Session_8h_source.html">Session.h</a>.</p>
@@ -373,7 +392,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classtinyblefs_1_1Transport.html#a7ed2442227c801b6c80a71a4c1ba1a37">tinyblefs::Transport</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Session_8h_source.html#l00117">117</a> of file <a class="el" href="Session_8h_source.html">Session.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Session_8h_source.html#l00119">119</a> of file <a class="el" href="Session_8h_source.html">Session.h</a>.</p>
 
 </div>
 </div>
@@ -399,11 +418,13 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Called regularly by Server::poll() and while a Client waits for a response. Polled BLE stacks (e.g. ArduinoBLE) run their event processing here; event driven stacks don't need to override it. </p>
+
+<p>Called regularly by Server::poll() and while a Client waits for a response. </p>
+<p>Polled BLE stacks (e.g. ArduinoBLE) run their event processing here; event driven stacks don't need to override it. </p>
 
 <p>Reimplemented from <a class="el" href="classtinyblefs_1_1Transport.html#a44617e813487a8168e9938083b9a538e">tinyblefs::Transport</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Session_8h_source.html#l00150">150</a> of file <a class="el" href="Session_8h_source.html">Session.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Session_8h_source.html#l00152">152</a> of file <a class="el" href="Session_8h_source.html">Session.h</a>.</p>
 
 </div>
 </div>
@@ -440,11 +461,12 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Non blocking: copies the next received packet and returns its length, or 0 when nothing is available </p>
+
+<p>Non blocking: copies the next received packet and returns its length, or 0 when nothing is available. </p>
 
 <p>Implements <a class="el" href="classtinyblefs_1_1Transport.html#aaf9b81ce4e4244f2ec0e154512f579fc">tinyblefs::Transport</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Session_8h_source.html#l00129">129</a> of file <a class="el" href="Session_8h_source.html">Session.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Session_8h_source.html#l00131">131</a> of file <a class="el" href="Session_8h_source.html">Session.h</a>.</p>
 
 </div>
 </div>
@@ -486,7 +508,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classtinyblefs_1_1Transport.html#a0a80d045ee4cc085e615d6f34206c4cf">tinyblefs::Transport</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Session_8h_source.html#l00121">121</a> of file <a class="el" href="Session_8h_source.html">Session.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Session_8h_source.html#l00123">123</a> of file <a class="el" href="Session_8h_source.html">Session.h</a>.</p>
 
 </div>
 </div>
@@ -524,9 +546,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Called while <a class="el" href="classtinyblefs_1_1detail_1_1SessionLink.html#a67383ed05883d6172ec7381103bcde26">join()</a> waits for the answer of the server. </p>
+<p>Called while <a class="el" href="classtinyblefs_1_1detail_1_1SessionLink.html#a67383ed05883d6172ec7381103bcde26" title="Asks the server for a session.">join()</a> waits for the answer of the server. </p>
 
-<p class="definition">Definition at line <a class="el" href="Session_8h_source.html#l00110">110</a> of file <a class="el" href="Session_8h_source.html">Session.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Session_8h_source.html#l00112">112</a> of file <a class="el" href="Session_8h_source.html">Session.h</a>.</p>
 
 </div>
 </div>
@@ -554,7 +576,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Session_8h_source.html#l00108">108</a> of file <a class="el" href="Session_8h_source.html">Session.h</a>.</p>
+<p>Sets how long <a class="el" href="classtinyblefs_1_1detail_1_1SessionLink.html#a67383ed05883d6172ec7381103bcde26" title="Asks the server for a session.">join()</a> waits for the server (ms) </p>
+
+<p class="definition">Definition at line <a class="el" href="Session_8h_source.html#l00110">110</a> of file <a class="el" href="Session_8h_source.html">Session.h</a>.</p>
 
 </div>
 </div>

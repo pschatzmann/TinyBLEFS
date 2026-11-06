@@ -106,7 +106,7 @@ $(document).ready(function(){initNavTree('hierarchy.html',''); initResizable(); 
 <tr><td><img src="inherit_graph_1.png" border="0" usemap="#aBLECharacteristicCallbacks" alt=""/>
 <map name="aBLECharacteristicCallbacks" id="aBLECharacteristicCallbacks">
 <area shape="rect" title=" " alt="" coords="19,5,217,33"/>
-<area shape="rect" href="classtinyblefs_1_1PicoWServerTransport.html" title=" " alt="" coords="284,5,512,33"/>
+<area shape="rect" href="classtinyblefs_1_1PicoWServerTransport.html" title="Peripheral side: advertises the TinyBLEFS service." alt="" coords="284,5,512,33"/>
 <area shape="poly" title=" " alt="" coords="232,17,286,18,282,21,234,22"/>
 <area shape="rect" title=" " alt="" coords="5,57,231,85"/>
 <area shape="rect" href="classtinyblefs_1_1NimBLEServerTransport.html" title="Peripheral side: advertises the TinyBLEFS service and talks to one client." alt="" coords="279,57,518,85"/>
@@ -118,7 +118,7 @@ $(document).ready(function(){initNavTree('hierarchy.html',''); initResizable(); 
 <area shape="poly" title=" " alt="" coords="147,218,229,147,251,119,261,106,277,94,305,84,301,87,280,99,265,110,255,122,233,150,151,221"/>
 <area shape="rect" href="classtinyblefs_1_1ArduinoBLEClientTransport.html" title="Central side: connects to one TinyBLEFS server." alt="" coords="299,489,498,534"/>
 <area shape="poly" title=" " alt="" coords="131,269,155,315,187,370,229,427,253,452,280,474,301,489,296,488,277,479,250,456,225,430,182,373,150,318,130,274"/>
-<area shape="rect" href="classtinyblefs_1_1ArduinoBLEServerTransport.html" title=" " alt="" coords="297,109,500,154"/>
+<area shape="rect" href="classtinyblefs_1_1ArduinoBLEServerTransport.html" title="Peripheral side: advertises the TinyBLEFS service." alt="" coords="297,109,500,154"/>
 <area shape="poly" title=" " alt="" coords="157,220,214,191,278,163,314,152,310,156,280,168,216,196,160,224"/>
 <area shape="rect" href="classtinyblefs_1_1NimBLEClientTransport.html" title="Central side: connects to one TinyBLEFS server." alt="" coords="281,177,516,205"/>
 <area shape="poly" title=" " alt="" coords="205,224,322,204,318,207,207,229"/>
@@ -126,15 +126,15 @@ $(document).ready(function(){initNavTree('hierarchy.html',''); initResizable(); 
 <area shape="poly" title=" " alt="" coords="206,241,288,242,284,245,208,246"/>
 <area shape="rect" href="classtinyblefs_1_1SimpleBLEClientTransport.html" title="Central side: connects to one TinyBLEFS server." alt="" coords="302,281,495,326"/>
 <area shape="poly" title=" " alt="" coords="200,258,304,281,299,284,201,263"/>
-<area shape="rect" href="classtinyblefs_1_1SimpleBLEServerTransport.html" title=" " alt="" coords="300,350,497,395"/>
+<area shape="rect" href="classtinyblefs_1_1SimpleBLEServerTransport.html" title="Peripheral side: advertises the TinyBLEFS service via BlueZ (GATT server) and talks to one client." alt="" coords="300,350,497,395"/>
 <area shape="poly" title=" " alt="" coords="152,263,211,300,280,335,312,349,307,350,278,340,209,305,152,269"/>
-<area shape="rect" href="classtinyblefs_1_1detail_1_1SessionLink.html" title=" " alt="" coords="333,420,464,464"/>
+<area shape="rect" href="classtinyblefs_1_1detail_1_1SessionLink.html" title="Client side (internal, owned by FileClient): a point&#45;to&#45;point Transport on top of the shared link,..." alt="" coords="333,420,464,464"/>
 <area shape="poly" title=" " alt="" coords="139,267,198,337,237,373,280,405,306,418,335,429,330,430,304,422,277,409,233,378,194,340,138,272"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_2.png" border="0" usemap="#atinyblefs_1_1detail_1_1LinkServer" alt=""/>
 <map name="atinyblefs_1_1detail_1_1LinkServer" id="atinyblefs_1_1detail_1_1LinkServer">
-<area shape="rect" href="classtinyblefs_1_1detail_1_1LinkServer.html" title=" " alt="" coords="5,5,137,50"/>
+<area shape="rect" href="classtinyblefs_1_1detail_1_1LinkServer.html" title="Internal: protocol engine serving one logical link (used by FileServer for each session)" alt="" coords="5,5,137,50"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_3.png" border="0" usemap="#atinyblefs_1_1detail_1_1LockedQueue" alt=""/>
@@ -154,45 +154,45 @@ $(document).ready(function(){initNavTree('hierarchy.html',''); initResizable(); 
 </td></tr>
 <tr><td><img src="inherit_graph_6.png" border="0" usemap="#atinyblefs_1_1FileClient" alt=""/>
 <map name="atinyblefs_1_1FileClient" id="atinyblefs_1_1FileClient">
-<area shape="rect" href="classtinyblefs_1_1FileClient.html" title=" " alt="" coords="5,5,153,33"/>
+<area shape="rect" href="classtinyblefs_1_1FileClient.html" title="Client side of the protocol: sends requests to a FileServer over a Transport (info,..." alt="" coords="5,5,153,33"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_7.png" border="0" usemap="#atinyblefs_1_1FileLocks" alt=""/>
 <map name="atinyblefs_1_1FileLocks" id="atinyblefs_1_1FileLocks">
-<area shape="rect" href="classtinyblefs_1_1FileLocks.html" title=" " alt="" coords="5,5,152,33"/>
+<area shape="rect" href="classtinyblefs_1_1FileLocks.html" title="Shared file locks: any number of readers or one writer per file." alt="" coords="5,5,152,33"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_8.png" border="0" usemap="#atinyblefs_1_1FileServer" alt=""/>
 <map name="atinyblefs_1_1FileServer" id="atinyblefs_1_1FileServer">
-<area shape="rect" href="classtinyblefs_1_1FileServer.html" title=" " alt="" coords="5,5,157,33"/>
+<area shape="rect" href="classtinyblefs_1_1FileServer.html" title="Serves a file system (any FsBackend, given in the constructor) over a Transport." alt="" coords="5,5,157,33"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_9.png" border="0" usemap="#atinyblefs_1_1FsBackend" alt=""/>
 <map name="atinyblefs_1_1FsBackend" id="atinyblefs_1_1FsBackend">
-<area shape="rect" href="classtinyblefs_1_1FsBackend.html" title=" " alt="" coords="5,83,162,111"/>
-<area shape="rect" href="classtinyblefs_1_1ArduinoFsBackend.html" title=" " alt="" coords="210,5,416,50"/>
+<area shape="rect" href="classtinyblefs_1_1FsBackend.html" title="File system used by the FileServer: implement it to serve any storage (see backends/)" alt="" coords="5,83,162,111"/>
+<area shape="rect" href="classtinyblefs_1_1ArduinoFsBackend.html" title="FsBackend for any Arduino file system (LittleFS, SPIFFS, FFat, SD, SD_MMC, ...); uses the POSIX API f..." alt="" coords="210,5,416,50"/>
 <area shape="poly" title=" " alt="" coords="145,76,239,49,234,52,147,81"/>
-<area shape="rect" href="classtinyblefs_1_1StdFilesystemBackend.html" title=" " alt="" coords="224,75,402,119"/>
+<area shape="rect" href="classtinyblefs_1_1StdFilesystemBackend.html" title="FsBackend for the Linux/desktop file system (std::filesystem), restricted to a root directory." alt="" coords="224,75,402,119"/>
 <area shape="poly" title=" " alt="" coords="177,94,226,96,221,98,178,100"/>
-<area shape="rect" href="classtinyblefs_1_1TinyFatBackend.html" title=" " alt="" coords="219,143,407,171"/>
+<area shape="rect" href="classtinyblefs_1_1TinyFatBackend.html" title="FsBackend for the TinyFATFS library (FAT on SD cards and flash)" alt="" coords="219,143,407,171"/>
 <area shape="poly" title=" " alt="" coords="150,113,210,129,255,142,250,143,209,134,150,118"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_10.png" border="0" usemap="#atinyblefs_1_1FsEntry" alt=""/>
 <map name="atinyblefs_1_1FsEntry" id="atinyblefs_1_1FsEntry">
-<area shape="rect" href="structtinyblefs_1_1FsEntry.html" title=" " alt="" coords="5,5,141,33"/>
+<area shape="rect" href="structtinyblefs_1_1FsEntry.html" title="One directory entry returned by FsBackend::list()" alt="" coords="5,5,141,33"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_11.png" border="0" usemap="#atinyblefs_1_1FsFile" alt=""/>
 <map name="atinyblefs_1_1FsFile" id="atinyblefs_1_1FsFile">
 <area shape="rect" href="classtinyblefs_1_1FsFile.html" title="An open file. Destroying the object closes the file." alt="" coords="5,5,130,33"/>
-<area shape="rect" href="classtinyblefs_1_1StdFile.html" title=" " alt="" coords="178,5,308,33"/>
+<area shape="rect" href="classtinyblefs_1_1StdFile.html" title="Open file of the std::filesystem backend." alt="" coords="178,5,308,33"/>
 <area shape="poly" title=" " alt="" coords="145,17,180,19,175,19,145,22"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_12.png" border="0" usemap="#atinyblefs_1_1LoggerClass" alt=""/>
 <map name="atinyblefs_1_1LoggerClass" id="atinyblefs_1_1LoggerClass">
-<area shape="rect" href="classtinyblefs_1_1LoggerClass.html" title=" " alt="" coords="5,5,171,33"/>
+<area shape="rect" href="classtinyblefs_1_1LoggerClass.html" title="Logger with levels and a configurable Print output; use the global TinyBLEFSLogger." alt="" coords="5,5,171,33"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_13.png" border="0" usemap="#atinyblefs_1_1LogPrint" alt=""/>
@@ -204,22 +204,22 @@ $(document).ready(function(){initNavTree('hierarchy.html',''); initResizable(); 
 </td></tr>
 <tr><td><img src="inherit_graph_14.png" border="0" usemap="#atinyblefs_1_1LoopbackBroadcastHub" alt=""/>
 <map name="atinyblefs_1_1LoopbackBroadcastHub" id="atinyblefs_1_1LoopbackBroadcastHub">
-<area shape="rect" href="classtinyblefs_1_1LoopbackBroadcastHub.html" title=" " alt="" coords="5,5,245,33"/>
+<area shape="rect" href="classtinyblefs_1_1LoopbackBroadcastHub.html" title="In&#45;memory link with several clients that behaves like ArduinoBLE or the Pico W: the server cannot tel..." alt="" coords="5,5,245,33"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_15.png" border="0" usemap="#atinyblefs_1_1LoopbackPair" alt=""/>
 <map name="atinyblefs_1_1LoopbackPair" id="atinyblefs_1_1LoopbackPair">
-<area shape="rect" href="classtinyblefs_1_1LoopbackPair.html" title=" " alt="" coords="5,5,178,33"/>
+<area shape="rect" href="classtinyblefs_1_1LoopbackPair.html" title="Two connected in&#45;memory Transports (client and server) for tests on the PC." alt="" coords="5,5,178,33"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_16.png" border="0" usemap="#atinyblefs_1_1Message" alt=""/>
 <map name="atinyblefs_1_1Message" id="atinyblefs_1_1Message">
-<area shape="rect" href="structtinyblefs_1_1Message.html" title=" " alt="" coords="5,5,150,33"/>
+<area shape="rect" href="structtinyblefs_1_1Message.html" title="A decoded protocol message: operation, request id, status and payload." alt="" coords="5,5,150,33"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_17.png" border="0" usemap="#atinyblefs_1_1Mounts" alt=""/>
 <map name="atinyblefs_1_1Mounts" id="atinyblefs_1_1Mounts">
-<area shape="rect" href="classtinyblefs_1_1Mounts.html" title=" " alt="" coords="5,5,140,33"/>
+<area shape="rect" href="classtinyblefs_1_1Mounts.html" title="Registry of remote servers mounted under /&lt;name&gt;: scans, mounts and opens files by path,..." alt="" coords="5,5,140,33"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_18.png" border="0" usemap="#atinyblefs_1_1Reassembler" alt=""/>
@@ -234,7 +234,7 @@ $(document).ready(function(){initNavTree('hierarchy.html',''); initResizable(); 
 </td></tr>
 <tr><td><img src="inherit_graph_20.png" border="0" usemap="#atinyblefs_1_1RemoteFile" alt=""/>
 <map name="atinyblefs_1_1RemoteFile" id="atinyblefs_1_1RemoteFile">
-<area shape="rect" href="classtinyblefs_1_1RemoteFile.html" title=" " alt="" coords="5,5,166,33"/>
+<area shape="rect" href="classtinyblefs_1_1RemoteFile.html" title="File on a remote server with the usual Arduino File API (read, write, seek, list, ...." alt="" coords="5,5,166,33"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_21.png" border="0" usemap="#atinyblefs_1_1RemoteFS" alt=""/>
@@ -259,7 +259,7 @@ $(document).ready(function(){initNavTree('hierarchy.html',''); initResizable(); 
 </td></tr>
 <tr><td><img src="inherit_graph_25.png" border="0" usemap="#atinyblefs_1_1ServerInfo" alt=""/>
 <map name="atinyblefs_1_1ServerInfo" id="atinyblefs_1_1ServerInfo">
-<area shape="rect" href="structtinyblefs_1_1ServerInfo.html" title=" " alt="" coords="5,5,159,33"/>
+<area shape="rect" href="structtinyblefs_1_1ServerInfo.html" title="Properties announced by a server (name, limits, read&#45;only flag)" alt="" coords="5,5,159,33"/>
 </map>
 </td></tr>
 </table>

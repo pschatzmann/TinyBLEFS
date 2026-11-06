@@ -199,6 +199,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes to stderr (default output on desktop systems)  <a href="classtinyblefs_1_1StderrPrint.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1LoggerClass.html">tinyblefs::LoggerClass</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logger with levels and a configurable Print output; use the global TinyBLEFSLogger.  <a href="classtinyblefs_1_1LoggerClass.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -276,10 +277,10 @@ Variables</h2></td></tr>
 <div class="line">    if (<a class="code hl_variable" href="Logger_8h.html#af5153d7d2dd1ac4ce5ab14c08555fcb2">::TinyBLEFSLogger</a>.isEnabled(level))                     \</div>
 <div class="line">      <a class="code hl_variable" href="Logger_8h.html#af5153d7d2dd1ac4ce5ab14c08555fcb2">::TinyBLEFSLogger</a>.<a class="code hl_function" href="classtinyblefs_1_1LoggerClass.html#ad5e7b20a178c05b9f273ddb92de0859c">log</a>(level, tag, __VA_ARGS__);           \</div>
 <div class="line">  } <span class="keywordflow">while</span> (0)</div>
-<div class="ttc" id="aLogger_8h_html_af5153d7d2dd1ac4ce5ab14c08555fcb2"><div class="ttname"><a href="Logger_8h.html#af5153d7d2dd1ac4ce5ab14c08555fcb2">TinyBLEFSLogger</a></div><div class="ttdeci">static tinyblefs::LoggerClass &amp; TinyBLEFSLogger</div><div class="ttdoc">The logger object of the library (one instance shared by all files)</div><div class="ttdef"><b>Definition</b> <a href="Logger_8h_source.html#l00115">Logger.h:115</a></div></div>
-<div class="ttc" id="aclasstinyblefs_1_1LoggerClass_html_ad5e7b20a178c05b9f273ddb92de0859c"><div class="ttname"><a href="classtinyblefs_1_1LoggerClass.html#ad5e7b20a178c05b9f273ddb92de0859c">tinyblefs::LoggerClass::log</a></div><div class="ttdeci">void log(LogLevel level, const char *tag, const char *fmt,...)</div><div class="ttdef"><b>Definition</b> <a href="Logger_8h_source.html#l00070">Logger.h:70</a></div></div>
+<div class="ttc" id="aLogger_8h_html_af5153d7d2dd1ac4ce5ab14c08555fcb2"><div class="ttname"><a href="Logger_8h.html#af5153d7d2dd1ac4ce5ab14c08555fcb2">TinyBLEFSLogger</a></div><div class="ttdeci">static tinyblefs::LoggerClass &amp; TinyBLEFSLogger</div><div class="ttdoc">The logger object of the library (one instance shared by all files)</div><div class="ttdef"><b>Definition</b> <a href="Logger_8h_source.html#l00126">Logger.h:126</a></div></div>
+<div class="ttc" id="aclasstinyblefs_1_1LoggerClass_html_ad5e7b20a178c05b9f273ddb92de0859c"><div class="ttname"><a href="classtinyblefs_1_1LoggerClass.html#ad5e7b20a178c05b9f273ddb92de0859c">tinyblefs::LoggerClass::log</a></div><div class="ttdeci">void log(LogLevel level, const char *tag, const char *fmt,...)</div><div class="ttdoc">Logs a printf style message with a tag.</div><div class="ttdef"><b>Definition</b> <a href="Logger_8h_source.html#l00081">Logger.h:81</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="Logger_8h_source.html#l00117">117</a> of file <a class="el" href="Logger_8h_source.html">Logger.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Logger_8h_source.html#l00128">128</a> of file <a class="el" href="Logger_8h_source.html">Logger.h</a>.</p>
 
 </div>
 </div>
@@ -309,7 +310,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Logger_8h_source.html#l00125">125</a> of file <a class="el" href="Logger_8h_source.html">Logger.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Logger_8h_source.html#l00136">136</a> of file <a class="el" href="Logger_8h_source.html">Logger.h</a>.</p>
 
 </div>
 </div>
@@ -339,7 +340,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Logger_8h_source.html#l00122">122</a> of file <a class="el" href="Logger_8h_source.html">Logger.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Logger_8h_source.html#l00133">133</a> of file <a class="el" href="Logger_8h_source.html">Logger.h</a>.</p>
 
 </div>
 </div>
@@ -369,7 +370,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Logger_8h_source.html#l00124">124</a> of file <a class="el" href="Logger_8h_source.html">Logger.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Logger_8h_source.html#l00135">135</a> of file <a class="el" href="Logger_8h_source.html">Logger.h</a>.</p>
 
 </div>
 </div>
@@ -399,7 +400,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Logger_8h_source.html#l00123">123</a> of file <a class="el" href="Logger_8h_source.html">Logger.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Logger_8h_source.html#l00134">134</a> of file <a class="el" href="Logger_8h_source.html">Logger.h</a>.</p>
 
 </div>
 </div>
@@ -426,7 +427,7 @@ Variables</h2></td></tr>
 
 <p>The logger object of the library (one instance shared by all files) </p>
 
-<p class="definition">Definition at line <a class="el" href="Logger_8h_source.html#l00115">115</a> of file <a class="el" href="Logger_8h_source.html">Logger.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Logger_8h_source.html#l00126">126</a> of file <a class="el" href="Logger_8h_source.html">Logger.h</a>.</p>
 
 </div>
 </div>

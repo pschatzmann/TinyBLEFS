@@ -1,0 +1,23 @@
+# Doxygen configuration (only the settings that differ from the defaults)
+PROJECT_NAME           = "TinyBLEFS"
+PROJECT_BRIEF          = "Remote file access over BLE for Arduino and Linux"
+OUTPUT_DIRECTORY       = docs
+HTML_OUTPUT            = html
+GENERATE_LATEX         = NO
+INPUT                  = README.md src docs
+FILE_PATTERNS          = *.h *.md
+RECURSIVE              = YES
+EXCLUDE_PATTERNS       = */docs/html/* */build/*
+USE_MDFILE_AS_MAINPAGE = README.md
+EXTRACT_ALL            = YES
+EXTRACT_STATIC         = YES
+MARKDOWN_SUPPORT       = YES
+AUTOLINK_SUPPORT       = YES
+BUILTIN_STL_SUPPORT    = YES
+SOURCE_BROWSER         = YES
+GENERATE_TREEVIEW      = YES
+HAVE_DOT               = YES
+UML_LOOK               = YES
+CALL_GRAPH             = NO
+QUIET                  = YES
+WARN_IF_UNDOCUMENTED   = NO

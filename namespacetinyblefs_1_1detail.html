@@ -120,6 +120,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ab005dffc3653abe5b7e26239f8aeff13" id="r_ab005dffc3653abe5b7e26239f8aeff13"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinyblefs_1_1detail.html#ab005dffc3653abe5b7e26239f8aeff13">beginArduinoBLE</a> ()</td></tr>
 <tr class="memdesc:ab005dffc3653abe5b7e26239f8aeff13"><td class="mdescLeft">&#160;</td><td class="mdescRight">BLE.begin() must run exactly once.  <br /></td></tr>
 <tr class="separator:ab005dffc3653abe5b7e26239f8aeff13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11dac385d2e61b8743fa23860ec288d4" id="r_a11dac385d2e61b8743fa23860ec288d4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinyblefs_1_1detail.html#a11dac385d2e61b8743fa23860ec288d4">selectAdapter</a> (SimpleBLE::Adapter &amp;out)</td></tr>
+<tr class="memdesc:a11dac385d2e61b8743fa23860ec288d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Picks the Bluetooth adapter: the one named by the environment variable TINYBLEFS_ADAPTER (identifier such as "hci1", or its address), otherwise the first powered one, otherwise the first.  <br /></td></tr>
+<tr class="separator:a11dac385d2e61b8743fa23860ec288d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ab005dffc3653abe5b7e26239f8aeff13" name="ab005dffc3653abe5b7e26239f8aeff13"></a>
@@ -148,6 +151,37 @@ Functions</h2></td></tr>
 <p>BLE.begin() must run exactly once. </p>
 
 <p class="definition">Definition at line <a class="el" href="ArduinoBLE_8h_source.html#l00028">28</a> of file <a class="el" href="ArduinoBLE_8h_source.html">ArduinoBLE.h</a>.</p>
+
+</div>
+</div>
+<a id="a11dac385d2e61b8743fa23860ec288d4" name="a11dac385d2e61b8743fa23860ec288d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11dac385d2e61b8743fa23860ec288d4">&#9670;&#160;</a></span>selectAdapter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool tinyblefs::detail::selectAdapter </td>
+          <td>(</td>
+          <td class="paramtype">SimpleBLE::Adapter &amp;&#160;</td>
+          <td class="paramname"><em>out</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Picks the Bluetooth adapter: the one named by the environment variable TINYBLEFS_ADAPTER (identifier such as "hci1", or its address), otherwise the first powered one, otherwise the first. </p>
+<p>Returns false if there is none. </p>
+
+<p class="definition">Definition at line <a class="el" href="SimpleBLE_8h_source.html#l00078">78</a> of file <a class="el" href="SimpleBLE_8h_source.html">SimpleBLE.h</a>.</p>
 
 </div>
 </div>

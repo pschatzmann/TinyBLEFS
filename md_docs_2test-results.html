@@ -93,13 +93,13 @@ $(document).ready(function(){initNavTree('md_docs_2test-results.html',''); initR
   <div class="headertitle"><div class="title">Test results</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md67"></a> Status of version 0.1 (proof of concept), tested on 2026-11-06. Three levels of testing exist:</p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md68"></a> Status of version 0.1 (proof of concept), tested on 2026-11-06. Three levels of testing exist:</p>
 <ol type="1">
 <li><b>PC tests</b>: automated, no hardware (<code>ctest</code>).</li>
 <li><b>Compile checks</b>: the examples build for the board with <code>arduino-cli</code>.</li>
 <li><b>Hardware tests</b>: boards and a Linux PC (BlueZ, SimpleBLE) were connected by hand.</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md68"></a>
+<h1><a class="anchor" id="autotoc_md69"></a>
 PC tests</h1>
 <p><code>cmake -S . -B build &amp;&amp; cmake --build build &amp;&amp; ctest --test-dir build</code>: all 4 pass.</p>
 <table class="markdownTable">
@@ -114,7 +114,7 @@ PC tests</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>test_tinyfat</code>   </td><td class="markdownTableBodyNone"><a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1TinyFatBackend.html"><code>TinyFatBackend</code></a> on a TinyFATFS RAM disk through the full server/client path   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md69"></a>
+<h1><a class="anchor" id="autotoc_md70"></a>
 Compile checks</h1>
 <p>Everything below builds without errors with the final code (<code>arduino-cli compile</code>; ArduinoBLE 2.1.0, NimBLE-Arduino 2.5.2, arduino-pico 6.3.2, esp32 3.3.12).</p>
 <table class="markdownTable">
@@ -131,114 +131,79 @@ Compile checks</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><b>Nano 33 BLE</b>   </td><td class="markdownTableBodyNone">the same ArduinoBLE sketch   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md70"></a>
+<h1><a class="anchor" id="autotoc_md71"></a>
 Hardware tests</h1>
-<p>The Linux PC runs the <code>tinyblefs</code> / <code>tinyblefs-server</code> tools (SimpleBLE 1.4.0, BlueZ). "Identical" means the SHA-256 of the downloaded file equals the uploaded one. Rows marked † ran before the library was reduced to one server and one client class (plain packets without session id, except the sessions row, which used the same packets as now); they need a repeat.</p>
+<p>The Linux PC runs the <code>tinyblefs</code> / <code>tinyblefs-server</code> tools (SimpleBLE 1.4.0, BlueZ 5.72). "Identical" means the SHA-256 of the downloaded file equals the uploaded one. Only runs with the current code are listed (one server class with sessions, packets of at most 512 bytes).</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Server / client   </th><th class="markdownTableHeadNone">Adapter, file system   </th><th class="markdownTableHeadNone">Tested   </th><th class="markdownTableHeadNone">Result    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>ESP32 (classic) and ESP32-S3</b> servers, one Linux client session (final code)   </td><td class="markdownTableBodyNone"><code>NimBLE</code>, LittleFS   </td><td class="markdownTableBodyNone">mount both boards at once (<code>/esp32</code>, <code>/esp32s3</code>); list, read on both; write, append, mkdir; copy within a board and <b>between the boards</b> (small file and 8 KB); download back; delete   </td><td class="markdownTableBodyNone">Works. The 8 KB file copied from one board to the other came back identical    </td></tr>
+<td class="markdownTableBodyNone"><b>ESP32 (classic) and ESP32-S3</b> servers, one Linux client session   </td><td class="markdownTableBodyNone"><code>NimBLE</code>, LittleFS   </td><td class="markdownTableBodyNone">mount both boards at once (<code>/esp32</code>, <code>/esp32s3</code>); list, read on both; write, append, mkdir; copy within a board and <b>between the boards</b> (small file and 8 KB); download back; delete   </td><td class="markdownTableBodyNone">Works. The 8 KB file copied from one board to the other came back identical    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>ESP32-S3 client, classic ESP32 server</b> (no PC)   </td><td class="markdownTableBodyNone"><code>NimBLE</code> both sides, LittleFS   </td><td class="markdownTableBodyNone">read a 60 KB file with different chunk sizes   </td><td class="markdownTableBodyNone">Works. Chunk 400: 3.9 KB/s with the adapters as first written, <b>13.2 KB/s</b> with the data length extension and a 7.5-15 ms connection interval. With packets limited to 512 bytes: chunk 1400 <b>30.1 KB/s</b>, chunk 4000 <b>50.6 KB/s</b>, chunk 8000 <b>55.6 KB/s</b>    </td></tr>
+<td class="markdownTableBodyNone"><b>ESP32-S3 client, classic ESP32 server</b> (no PC)   </td><td class="markdownTableBodyNone"><code>NimBLE</code> both sides, LittleFS   </td><td class="markdownTableBodyNone">read a 60 KB file with chunk sizes 400 to 8000   </td><td class="markdownTableBodyNone">Works, up to <b>55.6 KB/s</b> (see the performance matrix)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>Pico W</b> server, Linux client †   </td><td class="markdownTableBodyNone"><code>PicoW</code>, LittleFS   </td><td class="markdownTableBodyNone">scan, mount, list, read, write, append, stat, mkdir, copy, move, delete, rmdir; 100 KB upload and download   </td><td class="markdownTableBodyNone">Works. 100 KB identical (chunk 400: 1.6 KB/s up, 0.8 KB/s down while the PC was loaded; chunk 4000: 1.9 / 2.0 KB/s)    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>Pico W</b> server with sessions, Linux client   </td><td class="markdownTableBodyNone"><code>PicoW</code> (then still with a separate multi-client server class)   </td><td class="markdownTableBodyNone">handshake, list, read, 20 KB upload and download, idle expiry   </td><td class="markdownTableBodyNone">Works. 20 KB identical (11.5 s each way). After 40 s idle the session was closed, the next request failed at once and the following one joined again as session 2 with the file intact    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>Pico W</b> client, Linux server †   </td><td class="markdownTableBodyNone"><code>PicoW</code> client, <code>SimpleBLE</code> server, <code>std::filesystem</code>   </td><td class="markdownTableBodyNone">list, read 2 files, write a new file   </td><td class="markdownTableBodyNone">Works. Verified by the server log and the written file on the PC    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>UNO R4 WiFi</b> server, Linux client †   </td><td class="markdownTableBodyNone"><code>ArduinoBLE</code>, small RAM backend   </td><td class="markdownTableBodyNone">list, read, write, append, stat, copy, move, delete; 3.5 KB upload and download   </td><td class="markdownTableBodyNone">Works. 3.5 KB identical (chunk 400: 2.4 s up, 3.7 s down)    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>ESP32</b> (classic, 2nd board) server, Linux client †   </td><td class="markdownTableBodyNone"><code>NimBLE</code>, LittleFS (POSIX fast path)   </td><td class="markdownTableBodyNone">directory listing of 100 files, old tool (one request per entry) vs new tool (batched)   </td><td class="markdownTableBodyNone">Works. Old: 4.1 s (once 34 s because of a BlueZ stall). New: 2.0 s with the default batch (about 5 requests), 1.5 s with <code>-c 1500</code>, 4.2 s with <code>-c 100</code>. Other operations were not repeated on this board    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>ESP32-S3</b> server, Linux client †   </td><td class="markdownTableBodyNone"><code>NimBLE</code>, LittleFS (POSIX fast path)   </td><td class="markdownTableBodyNone">list (30 entries about 3.5 s), read, write, append, stat, mkdir, copy, move, delete, rmdir; 100 KB upload and download   </td><td class="markdownTableBodyNone">File operations work. 100 KB identical with chunk 400 (4.7 KB/s up, 1.9 KB/s down, one D-Bus timeout retried). <b>Chunk 4000 failed</b> (requests timed out)   </td></tr>
+<td class="markdownTableBodyNone"><b>ESP32-S3</b> server, Linux client   </td><td class="markdownTableBodyNone"><code>NimBLE</code>, LittleFS   </td><td class="markdownTableBodyNone">read a 60 KB file with chunk sizes 400 to 8000, through the built-in Bluetooth 4.0 controller and through a Bluetooth 5.1 USB dongle   </td><td class="markdownTableBodyNone">Works; every download identical. Up to 9 KB/s (built-in) and 17.7 KB/s (dongle)   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md71"></a>
+<h1><a class="anchor" id="autotoc_md72"></a>
 Performance matrix</h1>
-<p>Download speed in KB/s for a sequential read of a 60 KB file (<code>FileClient::setChunkSize</code> = the column), measured on 2026-11-06. The first read after a connect is sometimes hit by a BlueZ "D-Bus call timed out" stall (outliers of about 1.5 KB/s are not listed).</p>
+<p>Download speed in KB/s for a sequential read of a 60 KB file (<code>FileClient::setChunkSize</code> = the column), with the current adapter defaults (7.5 ms connection interval requested; NimBLE also asks for the data length extension, 251 bytes). Measured on 2026-11-06.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Client (Bluetooth controller)   </th><th class="markdownTableHeadNone">Server   </th><th class="markdownTableHeadNone">Server adapter settings   </th><th class="markdownTableHeadNone">400   </th><th class="markdownTableHeadNone">1400   </th><th class="markdownTableHeadNone">4000   </th><th class="markdownTableHeadNone">8000    </th></tr>
+<th class="markdownTableHeadNone">Client (Bluetooth controller)   </th><th class="markdownTableHeadNone">Server   </th><th class="markdownTableHeadNone">400   </th><th class="markdownTableHeadNone">1400   </th><th class="markdownTableHeadNone">4000   </th><th class="markdownTableHeadNone">8000    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>Linux PC</b> (Broadcom, <b>Bluetooth 4.0</b>: 27-byte link layer packets, 1M PHY)   </td><td class="markdownTableBodyNone">ESP32-S3   </td><td class="markdownTableBodyNone">interval 7.5-15 ms requested (first version)   </td><td class="markdownTableBodyNone">3.8   </td><td class="markdownTableBodyNone">4.4   </td><td class="markdownTableBodyNone">4.7   </td><td class="markdownTableBodyNone">n/a    </td></tr>
+<td class="markdownTableBodyNone"><b>Linux PC</b>, built-in Broadcom (<b>Bluetooth 4.0</b>: 27-byte link layer packets, 1M PHY)   </td><td class="markdownTableBodyNone">ESP32-S3   </td><td class="markdownTableBodyNone">6.5   </td><td class="markdownTableBodyNone">8.2   </td><td class="markdownTableBodyNone">8.8   </td><td class="markdownTableBodyNone">9.0    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Linux PC (same)   </td><td class="markdownTableBodyNone">ESP32-S3   </td><td class="markdownTableBodyNone"><b>7.5 ms</b> requested (now the default)   </td><td class="markdownTableBodyNone">6.5   </td><td class="markdownTableBodyNone">8.2   </td><td class="markdownTableBodyNone">8.8   </td><td class="markdownTableBodyNone">9.0    </td></tr>
+<td class="markdownTableBodyNone">Linux PC, same controller   </td><td class="markdownTableBodyNone">Pico W (no data length extension; measured with the code before sessions, needs a repeat)   </td><td class="markdownTableBodyNone">6.3   </td><td class="markdownTableBodyNone">8.3   </td><td class="markdownTableBodyNone">9.0   </td><td class="markdownTableBodyNone">9.1    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Linux PC (same)   </td><td class="markdownTableBodyNone">Pico W   </td><td class="markdownTableBodyNone"><b>7.5 ms</b> requested, no data length extension   </td><td class="markdownTableBodyNone">6.3   </td><td class="markdownTableBodyNone">8.3   </td><td class="markdownTableBodyNone">9.0   </td><td class="markdownTableBodyNone">9.1    </td></tr>
+<td class="markdownTableBodyNone"><b>Linux PC</b>, USB dongle "USB2.0-BT" (Barrot 8041a02, sold as CSR, <b>Bluetooth 5.1</b>), BlueZ connection interval set to 7.5 ms (see below)   </td><td class="markdownTableBodyNone">ESP32-S3   </td><td class="markdownTableBodyNone">n/a   </td><td class="markdownTableBodyNone">13.3   </td><td class="markdownTableBodyNone">17.7   </td><td class="markdownTableBodyNone">17.1    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Linux PC (same)   </td><td class="markdownTableBodyNone">Pico W   </td><td class="markdownTableBodyNone">no interval request (first version)   </td><td class="markdownTableBodyNone">about 2 for all chunk sizes (100 KB upload and download)   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Linux PC (same)   </td><td class="markdownTableBodyNone">UNO R4 WiFi (ArduinoBLE)   </td><td class="markdownTableBodyNone">20-byte packets   </td><td class="markdownTableBodyNone">about 1.5 (3.5 KB in 2.4 s up, 3.7 s down)   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>ESP32-S3</b> (Bluetooth 5.0)   </td><td class="markdownTableBodyNone">classic ESP32 (Bluetooth 4.2)   </td><td class="markdownTableBodyNone">first version   </td><td class="markdownTableBodyNone">3.9   </td><td class="markdownTableBodyNone">fails (packets of 514 bytes)   </td><td class="markdownTableBodyNone">fails   </td><td class="markdownTableBodyNone">fails    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">ESP32-S3   </td><td class="markdownTableBodyNone">classic ESP32   </td><td class="markdownTableBodyNone">data length extension 251, 7.5-15 ms   </td><td class="markdownTableBodyNone">13.2   </td><td class="markdownTableBodyNone">fails   </td><td class="markdownTableBodyNone">fails   </td><td class="markdownTableBodyNone">fails    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">ESP32-S3   </td><td class="markdownTableBodyNone">classic ESP32   </td><td class="markdownTableBodyNone">and packets of at most 512 bytes (now)   </td><td class="markdownTableBodyNone">13.2   </td><td class="markdownTableBodyNone">30.1   </td><td class="markdownTableBodyNone">50.6   </td><td class="markdownTableBodyNone">55.6   </td></tr>
+<td class="markdownTableBodyNone"><b>ESP32-S3</b> (Bluetooth 5.0)   </td><td class="markdownTableBodyNone">classic ESP32 (Bluetooth 4.2)   </td><td class="markdownTableBodyNone">13.2   </td><td class="markdownTableBodyNone">30.1   </td><td class="markdownTableBodyNone">50.6   </td><td class="markdownTableBodyNone">55.6   </td></tr>
 </table>
+<p>The dongle row shows the typical runs; runs hit by a stall (below) reach only about 1.7 KB/s. With the BlueZ defaults the same dongle gave at best 9.2 / 11.4 / 13.6 KB/s (chunk 1400 / 4000 / 8000), and about 40 % of the runs stalled. With <code>MinConnectionInterval=6</code>, <code>MaxConnectionInterval=6</code> and <code>ConnectionLatency=0</code> in the <code>[LE]</code> section of <code>/etc/bluetooth/main.conf</code> (see <a href="cli.md#bluetooth-settings">Linux tools</a>) 10 of 12 runs were clean (13-17.7 KB/s); each of the 2 others stalled once for 25 s and finished after the retry.</p>
 <p>What it shows:</p>
 <ul>
-<li><b>The PC's controller is the limit</b> (about 9 KB/s). The Pico W and the ESP32-S3 give the same speed through it, whatever the chunk size above 1400 bytes, and two ESP32 boards reach 55 KB/s with the same protocol. A Bluetooth 4.0 controller sends 27 bytes per link layer packet, a few packets per 7.5 ms connection event.</li>
-<li><b>The connection interval matters</b>: that controller takes the upper end of the requested range, so asking for 7.5-15 ms gave 15 ms (4.7 KB/s) and asking for exactly 7.5 ms gave 9 KB/s.</li>
-<li><b>Chunk size</b> helps until the link is saturated: 400 → 1400 bytes brings about 30-100 %, beyond 4000 bytes nothing.</li>
-<li>A Bluetooth 4.2 or 5 controller on the PC (data length extension, 2M PHY) is expected to remove the limit; this has not been tried. A different BLE library on the PC (Bleak, Qt, direct D-Bus) would not help: it talks to the same BlueZ and controller, and only about 18 notifications per second arrive at 9 KB/s.</li>
+<li><b>The PC's controller is the limit.</b> Through the built-in Bluetooth 4.0 controller the ESP32-S3 (and, with the earlier code, the Pico W) gives 9 KB/s; the Bluetooth 5.1 dongle doubles that to 17 KB/s, and two ESP32 boards reach 55 KB/s with the same protocol.</li>
+<li><b>The connection interval matters.</b> BlueZ and the controllers take the upper end of the range the server asks for; the adapters therefore ask for exactly 7.5 ms, and on the PC side setting the BlueZ default to 7.5 ms brought the dongle from about 12 to 17 KB/s.</li>
+<li><b>Chunk size</b> helps until the link is saturated: 400 → 1400 bytes brings about 30-100 %, beyond 4000 bytes little or nothing.</li>
+<li><b>The dongle is a cheap clone</b>: the kernel reports "Couldn't suspend the device for our Barrot 8041a02 receive-issue workaround"; writes sometimes stall (BlueZ "D-Bus call timed out"), and once the dongle switched itself off and stayed off until it was replugged (that run had USB autosuspend disabled). A dongle with a genuine chip (Realtek RTL8761B, Intel) is likely more reliable; not tried.</li>
 </ul>
 <p>MP3 needs: 64 kbps = 8 KB/s, 96 kbps = 12, 128 kbps = 16, 192 kbps = 24, 320 kbps = 40 KB/s.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Link   </th><th class="markdownTableHeadNone">Fastest measured   </th><th class="markdownTableHeadNone">Fits MP3 up to    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Linux PC with this Bluetooth 4.0 controller   </td><td class="markdownTableBodyNone">9 KB/s   </td><td class="markdownTableBodyNone">64 kbps (tight)    </td></tr>
+<td class="markdownTableBodyNone">Linux PC, built-in Bluetooth 4.0 controller   </td><td class="markdownTableBodyNone">9 KB/s   </td><td class="markdownTableBodyNone">64 kbps (tight)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">ESP32-S3 ↔ ESP32   </td><td class="markdownTableBodyNone">55 KB/s   </td><td class="markdownTableBodyNone">320 kbps    </td></tr>
+<td class="markdownTableBodyNone">Linux PC, Bluetooth 5.1 USB dongle, tuned BlueZ   </td><td class="markdownTableBodyNone">17.7 KB/s   </td><td class="markdownTableBodyNone">128 kbps (tight, stalls possible)    </td></tr>
 <tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">ESP32-S3 ↔ ESP32   </td><td class="markdownTableBodyNone">55 KB/s   </td><td class="markdownTableBodyNone">320 kbps    </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Pico W, UNO R4 WiFi with a Bluetooth 5 partner   </td><td class="markdownTableBodyNone">not measured   </td><td class="markdownTableBodyNone">–   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md72"></a>
-Problems found by the hardware tests</h1>
-<p>Fixed:</p>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Problem   </th><th class="markdownTableHeadNone">Fix    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Pico W dropped every packet larger than 244 bytes (the host negotiates 511), so writes of more than one packet failed   </td><td class="markdownTableBodyNone">Receive queue sized for the BLE maximum (514 bytes)    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">NimBLE servers did not advertise their name, so <code>scan(..., namePrefix)</code> and <code>tinyblefs -p</code> never found them   </td><td class="markdownTableBodyNone">Name added to the scan response    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">BlueZ reports a bogus ATT MTU of 65533 for the ESP32-S3; the Linux client sent 4 KB as one packet   </td><td class="markdownTableBodyNone">MTU limited to 517    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">A transient send failure (D-Bus timeout) aborted a whole transfer   </td><td class="markdownTableBodyNone">Idempotent requests are retried once after a failed send    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FsFile.html"><code>FsFile</code></a> of the library clashed with SdFat's <code>FsFile</code> (Pico W SD variant did not build)   </td><td class="markdownTableBodyNone">Only the public class names are imported into the global scope    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">NimBLE sent 514-byte packets, but an ATT attribute value is at most 512 bytes, so every message longer than 512 bytes (chunks of about 500 bytes or more) failed with a timeout   </td><td class="markdownTableBodyNone">Packets limited to 512 bytes    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Large stack buffers in <code>Receiver::poll()</code> and the ArduinoBLE handlers (UNO R4 has a very small stack)   </td><td class="markdownTableBodyNone">Moved off the stack    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">A NimBLE server stays invisible to scans when the PC holds a stale connection to it (it accepts one connection and stops advertising)   </td><td class="markdownTableBodyNone">Not a library bug: the tool disconnects when it exits cleanly; after an interrupted run use <code>bluetoothctl disconnect &lt;address&gt;</code> (see below)   </td></tr>
-</table>
-<p>Open (also listed under <a href="../README.md#future-improvements">Future improvements</a>):</p>
+<h1><a class="anchor" id="autotoc_md73"></a>
+Open problems</h1>
+<p>Also listed under <a href="../README.md#future-improvements">Future improvements</a>:</p>
 <ul>
-<li><b>Throughput through the PC is limited to about 9 KB/s</b> by its Bluetooth 4.0 controller (see the performance matrix). A Bluetooth 4.2/5 dongle is expected to fix it. The Pico W and ArduinoBLE adapters have not been measured with a Bluetooth 5 partner.</li>
-<li><b>SimpleBLE / BlueZ</b>: write calls sometimes time out ("D-Bus call timed out", 25 s), especially when the PC is busy (for example during builds). Retrying helps, the cause is unknown.</li>
-<li><b>UNO R4 WiFi</b>: running out of memory crashes the board, and its radio chip then stays stuck until the board is unplugged and replugged. An earlier failure was only the test sketch's RAM file system growing a string; with a fixed buffer 3.5 KB transfers work.</li>
+<li><b>Throughput through the PC</b> is limited by its Bluetooth controller: 9 KB/s with the built-in Bluetooth 4.0 controller, 17 KB/s with a Bluetooth 5.1 dongle (see the performance matrix). The Pico W and ArduinoBLE adapters have not been measured with a Bluetooth 5 partner.</li>
+<li><b>SimpleBLE / BlueZ</b>: write calls sometimes time out ("D-Bus call timed out", 25 s), with both controllers, more often with the cheap dongle and when the PC is busy. The retry recovers; the cause is unknown (the dongle not reporting sent packets is likely, a <code>btmon</code> trace would show it).</li>
 <li><b>Stale BlueZ connection</b>: if a tool run is killed, BlueZ may keep the link open; a NimBLE server (one connection) then stops advertising and no scan finds it until <code>bluetoothctl disconnect &lt;address&gt;</code>.</li>
 <li>The LittleFS of the Pico removes a directory when its last file is deleted, so a following <code>rmdir</code> reports "not found".</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md73"></a>
-Could not be tested</h1>
+<h1><a class="anchor" id="autotoc_md74"></a>
+Not tested with the current code</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Board   </th><th class="markdownTableHeadNone">Why    </th></tr>
+<th class="markdownTableHeadNone">What   </th><th class="markdownTableHeadNone">Why    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>UNO R4 WiFi</b> (ArduinoBLE server)   </td><td class="markdownTableBodyNone">only tested before the library was reduced to one server and one client class; then running out of memory crashed the board and left its radio chip stuck until replugged, with a fixed buffer 3.5 KB transfers worked. Needs a repeat    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>Pico W</b> file operations, sessions, the Pico W client, the Linux server (<code>tinyblefs-server</code>)   </td><td class="markdownTableBodyNone">same: only tested with the earlier code (all worked). Needs a repeat    </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">ESP32 (classic), first board   </td><td class="markdownTableBodyNone">USB power browns out when the radio starts, even with the brownout reset disabled; the board reboots and drops off the USB bus (a second classic ESP32 works)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">UNO R4 Minima   </td><td class="markdownTableBodyNone">has no Bluetooth    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Pico W   </td><td class="markdownTableBodyNone">not connected during the run with the final code   </td></tr>
+<td class="markdownTableBodyNone">UNO R4 Minima   </td><td class="markdownTableBodyNone">has no Bluetooth   </td></tr>
 </table>
-<p>Not tested on any hardware: the ArduinoBLE <em>client</em>, sessions over ArduinoBLE, several simultaneous real clients, file locking between real clients, SD / SD_MMC / FFat / SPIFFS / FatFS / SDFS / TinyFATFS file systems on real media. </p>
+<p>Not tested on any hardware: the ArduinoBLE <em>client</em>, several simultaneous real clients, file locking between real clients, SD / SD_MMC / FFat / SPIFFS / FatFS / SDFS / TinyFATFS file systems on real media. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

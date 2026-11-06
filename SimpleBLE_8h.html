@@ -92,12 +92,15 @@ $(document).ready(function(){initNavTree('SimpleBLE_8h.html',''); initResizable(
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">SimpleBLE.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;simpleble/SimpleBLE.h&gt;</code><br />
+<code>#include &lt;strings.h&gt;</code><br />
 <code>#include &lt;atomic&gt;</code><br />
+<code>#include &lt;cstdlib&gt;</code><br />
 <code>#include &lt;deque&gt;</code><br />
 <code>#include &lt;mutex&gt;</code><br />
 <code>#include &quot;<a class="el" href="Logger_8h_source.html">../Logger.h</a>&quot;</code><br />
@@ -107,49 +110,53 @@ Include dependency graph for SimpleBLE.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="SimpleBLE_8h__incl.png" border="0" usemap="#asrc_2TinyBLEFS_2adapters_2SimpleBLE_8h" alt=""/></div>
 <map name="asrc_2TinyBLEFS_2adapters_2SimpleBLE_8h" id="asrc_2TinyBLEFS_2adapters_2SimpleBLE_8h">
-<area shape="rect" title=" " alt="" coords="278,5,450,50"/>
+<area shape="rect" title=" " alt="" coords="380,5,553,50"/>
 <area shape="rect" title=" " alt="" coords="5,98,176,126"/>
-<area shape="poly" title=" " alt="" coords="290,53,150,95,148,91,293,48"/>
-<area shape="rect" title=" " alt="" coords="200,98,266,126"/>
-<area shape="poly" title=" " alt="" coords="327,52,269,92,265,87,331,49"/>
-<area shape="rect" title=" " alt="" coords="290,98,352,126"/>
-<area shape="poly" title=" " alt="" coords="354,48,337,85,333,82,351,52"/>
-<area shape="rect" title=" " alt="" coords="376,98,440,126"/>
-<area shape="poly" title=" " alt="" coords="376,48,396,84,391,83,375,53"/>
-<area shape="rect" href="Logger_8h.html" title=" " alt="" coords="422,174,511,201"/>
-<area shape="poly" title=" " alt="" coords="403,48,432,69,454,97,466,127,469,159,465,157,461,129,450,99,428,73,403,53"/>
-<area shape="rect" href="Transport_8h.html" title=" " alt="" coords="524,98,630,126"/>
-<area shape="poly" title=" " alt="" coords="420,48,532,91,526,93,420,53"/>
-<area shape="rect" title=" " alt="" coords="321,249,396,277"/>
-<area shape="poly" title=" " alt="" coords="450,201,391,243,389,238,445,203"/>
-<area shape="rect" title=" " alt="" coords="481,325,551,353"/>
-<area shape="poly" title=" " alt="" coords="464,200,458,237,458,257,462,276,474,296,489,315,484,314,469,299,457,278,453,257,453,236,460,204"/>
-<area shape="rect" title=" " alt="" coords="471,249,536,277"/>
-<area shape="poly" title=" " alt="" coords="474,200,493,236,488,235,472,204"/>
-<area shape="rect" title=" " alt="" coords="227,249,298,277"/>
-<area shape="poly" title=" " alt="" coords="433,201,313,246,312,241,428,203"/>
-<area shape="rect" href="Platform_8h.html" title=" " alt="" coords="612,249,702,277"/>
-<area shape="poly" title=" " alt="" coords="501,199,612,243,606,244,500,205"/>
-<area shape="poly" title=" " alt="" coords="634,277,555,320,554,315,629,278"/>
-<area shape="rect" title=" " alt="" coords="758,325,823,353"/>
-<area shape="poly" title=" " alt="" coords="682,275,757,318,751,317,680,280"/>
-<area shape="rect" title=" " alt="" coords="575,325,646,353"/>
-<area shape="poly" title=" " alt="" coords="651,276,628,314,625,310,646,279"/>
-<area shape="rect" title=" " alt="" coords="671,325,734,353"/>
-<area shape="poly" title=" " alt="" coords="667,275,689,313,684,311,664,280"/>
-<area shape="poly" title=" " alt="" coords="560,125,500,167,497,163,555,127"/>
-<area shape="poly" title=" " alt="" coords="593,124,615,145,634,172,647,204,655,236,650,233,642,205,630,175,611,149,592,129"/>
-<area shape="rect" title=" " alt="" coords="535,174,619,201"/>
-<area shape="poly" title=" " alt="" coords="579,124,579,159,575,157,576,128"/>
-<area shape="rect" href="Protocol_8h.html" title=" " alt="" coords="719,174,806,201"/>
-<area shape="poly" title=" " alt="" coords="611,124,718,168,713,168,610,129"/>
-<area shape="poly" title=" " alt="" coords="722,199,662,221,603,252,566,282,536,315,533,310,562,278,600,247,660,217,716,200"/>
-<area shape="rect" title=" " alt="" coords="726,249,799,277"/>
-<area shape="poly" title=" " alt="" coords="764,200,765,235,760,232,761,204"/>
-<area shape="rect" title=" " alt="" coords="823,249,881,277"/>
-<area shape="poly" title=" " alt="" coords="779,199,827,240,822,239,778,204"/>
-<area shape="rect" title=" " alt="" coords="905,249,967,277"/>
-<area shape="poly" title=" " alt="" coords="794,199,894,243,889,243,793,205"/>
+<area shape="poly" title=" " alt="" coords="378,50,167,97,165,92,381,46"/>
+<area shape="rect" title=" " alt="" coords="200,98,277,126"/>
+<area shape="poly" title=" " alt="" coords="404,52,290,95,288,90,408,49"/>
+<area shape="rect" title=" " alt="" coords="301,98,368,126"/>
+<area shape="poly" title=" " alt="" coords="429,52,370,92,367,87,434,49"/>
+<area shape="rect" title=" " alt="" coords="392,98,456,126"/>
+<area shape="poly" title=" " alt="" coords="457,48,440,86,436,82,453,52"/>
+<area shape="rect" title=" " alt="" coords="480,98,541,126"/>
+<area shape="poly" title=" " alt="" coords="479,48,499,84,494,83,477,53"/>
+<area shape="rect" title=" " alt="" coords="566,98,629,126"/>
+<area shape="poly" title=" " alt="" coords="501,48,566,89,561,90,501,53"/>
+<area shape="rect" href="Logger_8h.html" title=" " alt="" coords="612,174,700,201"/>
+<area shape="poly" title=" " alt="" coords="553,42,602,63,624,78,643,96,652,111,657,127,660,160,656,157,652,128,647,113,639,100,621,82,600,67,553,47"/>
+<area shape="rect" href="Transport_8h.html" title=" " alt="" coords="714,98,819,126"/>
+<area shape="poly" title=" " alt="" coords="546,48,707,93,702,94,546,53"/>
+<area shape="rect" title=" " alt="" coords="511,249,585,277"/>
+<area shape="poly" title=" " alt="" coords="639,201,581,243,578,238,634,203"/>
+<area shape="rect" title=" " alt="" coords="670,325,740,353"/>
+<area shape="poly" title=" " alt="" coords="653,200,647,237,647,257,652,276,663,296,679,315,674,313,659,299,647,278,642,257,642,236,649,204"/>
+<area shape="rect" title=" " alt="" coords="660,249,726,277"/>
+<area shape="poly" title=" " alt="" coords="664,200,682,237,677,235,661,204"/>
+<area shape="rect" title=" " alt="" coords="417,249,487,277"/>
+<area shape="poly" title=" " alt="" coords="622,201,503,246,501,241,617,203"/>
+<area shape="rect" href="Platform_8h.html" title=" " alt="" coords="802,249,891,277"/>
+<area shape="poly" title=" " alt="" coords="690,199,801,244,796,243,690,205"/>
+<area shape="poly" title=" " alt="" coords="824,277,745,320,743,315,819,278"/>
+<area shape="rect" title=" " alt="" coords="947,325,1012,353"/>
+<area shape="poly" title=" " alt="" coords="871,275,946,318,941,317,870,280"/>
+<area shape="rect" title=" " alt="" coords="764,325,836,353"/>
+<area shape="poly" title=" " alt="" coords="840,276,818,314,815,310,836,279"/>
+<area shape="rect" title=" " alt="" coords="860,325,924,353"/>
+<area shape="poly" title=" " alt="" coords="856,275,878,313,873,310,853,280"/>
+<area shape="poly" title=" " alt="" coords="749,125,689,168,687,163,744,127"/>
+<area shape="poly" title=" " alt="" coords="782,124,804,145,823,172,837,204,844,236,840,233,832,205,819,175,800,149,781,129"/>
+<area shape="rect" title=" " alt="" coords="724,174,809,201"/>
+<area shape="poly" title=" " alt="" coords="768,124,769,160,764,156,765,128"/>
+<area shape="rect" href="Protocol_8h.html" title=" " alt="" coords="909,174,995,201"/>
+<area shape="poly" title=" " alt="" coords="800,124,908,168,902,168,799,129"/>
+<area shape="poly" title=" " alt="" coords="911,199,851,221,792,252,755,282,725,315,723,310,751,278,789,247,849,217,906,200"/>
+<area shape="rect" title=" " alt="" coords="915,249,988,277"/>
+<area shape="poly" title=" " alt="" coords="954,200,954,235,950,232,950,204"/>
+<area shape="rect" title=" " alt="" coords="1012,249,1070,277"/>
+<area shape="poly" title=" " alt="" coords="969,199,1016,240,1011,239,967,204"/>
+<area shape="rect" title=" " alt="" coords="1094,249,1156,277"/>
+<area shape="poly" title=" " alt="" coords="983,199,1083,243,1078,243,982,205"/>
 </map>
 </div>
 </div>
@@ -173,6 +180,12 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacetinyblefs_1_1detail" id="r_namespacetinyblefs_1_1detail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinyblefs_1_1detail.html">tinyblefs::detail</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a11dac385d2e61b8743fa23860ec288d4" id="r_a11dac385d2e61b8743fa23860ec288d4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinyblefs_1_1detail.html#a11dac385d2e61b8743fa23860ec288d4">tinyblefs::detail::selectAdapter</a> (SimpleBLE::Adapter &amp;out)</td></tr>
+<tr class="memdesc:a11dac385d2e61b8743fa23860ec288d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Picks the Bluetooth adapter: the one named by the environment variable TINYBLEFS_ADAPTER (identifier such as "hci1", or its address), otherwise the first powered one, otherwise the first.  <br /></td></tr>
+<tr class="separator:a11dac385d2e61b8743fa23860ec288d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

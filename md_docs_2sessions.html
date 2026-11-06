@@ -93,7 +93,7 @@ $(document).ready(function(){initNavTree('md_docs_2sessions.html',''); initResiz
   <div class="headertitle"><div class="title">Several clients</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md63"></a> <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FileServer.html"><code>FileServer</code></a> serves as many clients at the same time as its <code>maxSessions</code> argument allows (default 1):</p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md64"></a> <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FileServer.html"><code>FileServer</code></a> serves as many clients at the same time as its <code>maxSessions</code> argument allows (default 1):</p>
 <div class="fragment"><div class="line">FileServer server(backend, transport, <span class="stringliteral">&quot;picow&quot;</span>, <span class="stringliteral">&quot;/&quot;</span>, 2);   <span class="comment">// up to 2 clients at the same time</span></div>
 <div class="line"><span class="comment">//                                    name,   root, maxSessions, maxHandles = 4</span></div>
 <div class="line"> </div>
@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('md_docs_2sessions.html',''); initResiz
 <div class="line"><span class="keywordtype">void</span> loop()  { server.poll(); }</div>
 </div><!-- fragment --><p>With 1 session a second client is refused ("the server has no free session"); it can try again when the first has gone. The BLE adapter must accept as many connections: <code>begin(name, maxConnections)</code> on the ArduinoBLE and Pico W server adapters (the hardware may allow fewer, 3 on the Nano 33 BLE). NimBLE and SimpleBLE servers accept one connection.</p>
 <p>The client needs nothing special: <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FileClient.html"><code>FileClient</code></a> joins a session by itself with its first request.</p>
-<h1><a class="anchor" id="autotoc_md64"></a>
+<h1><a class="anchor" id="autotoc_md65"></a>
 Sessions</h1>
 <p>Every client works in its own <b>session</b>: its own open files and message buffer. The clients share the file system and its <a href="server-api.md#file-locking">locks</a>. The session id is the first byte of every packet, which is what lets several clients share one BLE link, also on stacks that can neither tell which client sent a packet nor address a reply to one client (ArduinoBLE, Pico W).</p>
 <ul>
@@ -110,14 +110,14 @@ Sessions</h1>
 <li>When the BLE link goes down, all sessions end.</li>
 <li><code>server.sessionCount()</code> tells how many clients are connected.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md65"></a>
+<h1><a class="anchor" id="autotoc_md66"></a>
 Limits</h1>
 <ul>
 <li><b>No privacy between clients.</b> The stack broadcasts every reply to all connected clients, so each client sees the other clients' file contents. Pairing/encryption does not change this. Use more than one session only for clients that trust each other.</li>
 <li>Throughput per client drops with the number of clients, and every packet carries one more byte.</li>
 <li>Tested with a loopback hub that behaves like these stacks (<code>tests/test_loopback.cpp</code>) and, with one client, on hardware. Several simultaneous real clients, and whether a controller accepts a second connection while advertising, are not tested yet.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md66"></a>
+<h1><a class="anchor" id="autotoc_md67"></a>
 Wire format</h1>
 <p>Packets are <code>[session id][data]</code>; id 0 marks control packets:</p>
 <table class="markdownTable">

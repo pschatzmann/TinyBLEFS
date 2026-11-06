@@ -125,6 +125,7 @@ Usage</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>-v</code>   </td><td class="markdownTableBodyNone">Same as <code>-l info</code>   </td></tr>
 </table>
+<p>With several Bluetooth adapters the tools use the first powered one. To choose, set <code>TINYBLEFS_ADAPTER</code> to its name or address: <code>TINYBLEFS_ADAPTER=hci1 tinyblefs ls /</code> (<code>bluetoothctl list</code>, <code>hciconfig</code> show them). This applies to <code>tinyblefs-server</code> too.</p>
 <h1><a class="anchor" id="autotoc_md12"></a>
 Commands</h1>
 <p>Paths are <code>/&lt;mount&gt;/&lt;path&gt;</code>; <code>/</code> lists the mounts.</p>
@@ -162,6 +163,14 @@ Example</h1>
 <div class="line">tinyblefs -p TinyFS cp -r /sensor1/logs /sensor2/backup</div>
 <div class="line">tinyblefs shell</div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md14"></a>
+Bluetooth settings</h1>
+<p>The speed through a PC depends mostly on its Bluetooth controller (see the <a href="test-results.md#performance-matrix">performance matrix</a>): about 9 KB/s with a Bluetooth 4.0 controller, 17 KB/s with a Bluetooth 5 USB dongle. With BlueZ's defaults the dongle reached only about 12 KB/s and stalled more often; asking for a 7.5 ms connection interval helped. In <code>/etc/bluetooth/main.conf</code> (units of 1.25 ms):</p>
+<div class="fragment"><div class="line">[LE]</div>
+<div class="line">MinConnectionInterval=6</div>
+<div class="line">MaxConnectionInterval=6</div>
+<div class="line">ConnectionLatency=0</div>
+</div><!-- fragment --><p>then <code>sudo systemctl restart bluetooth</code>. If an adapter stays <code>DOWN</code> afterwards, check <code>rfkill list bluetooth</code> (<code>rfkill unblock bluetooth</code>) and <code>bluetoothctl power on</code>.</p>
+<h1><a class="anchor" id="autotoc_md15"></a>
 Server: tinyblefs-server</h1>
 <div class="fragment"><div class="line">bluetoothctl system-alias &quot;TinyFS PC&quot;     # BLE name seen by client scans</div>
 <div class="line">tinyblefs-server -n pc /srv/share            # mount name &quot;pc&quot;</div>

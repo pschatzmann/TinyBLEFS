@@ -10,6 +10,7 @@
 
 namespace tinyblefs {
 
+/// Two connected in-memory Transports (client and server) for tests on the PC
 class LoopbackPair {
  public:
   /// @param mtu packet size, small values (e.g. 20) exercise fragmentation
@@ -17,8 +18,11 @@ class LoopbackPair {
       : client_(mtu, &to_server_, &to_client_),
         server_(mtu, &to_client_, &to_server_) {}
 
+  /// Client end
   Transport& client() { return client_; }
+  /// Server end
   Transport& server() { return server_; }
+  /// Simulates connect/disconnect
   void setConnected(bool c) {
     client_.up = c;
     server_.up = c;
@@ -27,6 +31,7 @@ class LoopbackPair {
  private:
   using Queue = std::deque<std::vector<uint8_t>>;
 
+  /// One end of a LoopbackPair
   class End : public Transport {
    public:
     End(size_t mtu, Queue* tx, Queue* rx) : mtu_(mtu), tx_(tx), rx_(rx) {}
@@ -61,13 +66,17 @@ class LoopbackPair {
 /// their own threads.
 class LoopbackBroadcastHub {
  public:
+  /// Creates a hub for the given number of clients
   LoopbackBroadcastHub(size_t clients, size_t mtu = 20)
       : server_(this, mtu), mtu_(mtu) {
     for (size_t i = 0; i < clients; i++)
       clients_.emplace_back(new ClientEnd(this, i, mtu));
   }
+  /// Transport of client i
   Transport& client(size_t i) { return *clients_[i]; }
+  /// Transport of the server (replies reach all clients)
   Transport& server() { return server_; }
+  /// Simulates connect/disconnect of client i
   void setConnected(size_t i, bool up) {
     std::lock_guard<std::mutex> g(m_);
     clients_[i]->up = up;
@@ -76,6 +85,7 @@ class LoopbackBroadcastHub {
  private:
   using Packet = std::vector<uint8_t>;
 
+  /// Client end of a LoopbackBroadcastHub
   class ClientEnd : public Transport {
    public:
     ClientEnd(LoopbackBroadcastHub* h, size_t, size_t mtu) : hub_(h), mtu_(mtu) {}
@@ -103,6 +113,7 @@ class LoopbackBroadcastHub {
     size_t mtu_;
   };
 
+  /// Server end of a LoopbackBroadcastHub: replies reach all clients
   class ServerEnd : public Transport {
    public:
     ServerEnd(LoopbackBroadcastHub* h, size_t mtu) : hub_(h), mtu_(mtu) {}

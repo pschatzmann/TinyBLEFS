@@ -43,10 +43,12 @@ class FileServer {
         max_sessions_(maxSessions < 1 ? 1 : maxSessions), max_handles_(maxHandles),
         buf_(TINYBLEFS_SESSION_PACKET) {}
 
+  /// Refuses all changes when true
   void setReadOnly(bool ro) {
     read_only_ = ro;
     for (auto& kv : sessions_) kv.second->server.setReadOnly(ro);
   }
+  /// True when changes are refused
   bool isReadOnly() const { return read_only_; }
   /// Largest answer to a batched directory listing (default 2048 bytes)
   void setMaxListBytes(size_t n) {
@@ -58,6 +60,7 @@ class FileServer {
   void setSessionTimeout(uint32_t ms) { timeout_ = ms; }
   /// Clients connected right now
   size_t sessionCount() const { return sessions_.size(); }
+  /// Name announced to the clients (mount name)
   const char* name() const { return name_.c_str(); }
   /// Closes all sessions (and their open files)
   void closeAll() { sessions_.clear(); }
@@ -127,6 +130,7 @@ class FileServer {
     std::deque<std::vector<uint8_t>> q_;
   };
 
+  /// State of one client session (open files, message buffer)
   struct Session {
     Session(FsBackend& fs, Transport& raw, uint8_t sid, uint32_t nonce_,
             const std::string& name, const std::string& root, size_t handles,

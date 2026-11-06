@@ -15,11 +15,14 @@
 
 namespace tinyblefs {
 
+/// Open file of the std::filesystem backend
 class StdFile : public FsFile {
  public:
+  /// Opens the file
   StdFile(const std::string& path, std::ios::openmode mode) {
     f_.open(path, mode | std::ios::binary);
   }
+  /// True if the file was opened
   bool isOpen() { return f_.is_open(); }
   int read(uint32_t offset, uint8_t* buf, size_t len) override {
     f_.clear();
@@ -44,6 +47,7 @@ class StdFile : public FsFile {
     }
     return (int)len;
   }
+  /// File size in bytes
   uint32_t size() override {
     f_.clear();
     f_.seekg(0, std::ios::end);
@@ -54,6 +58,7 @@ class StdFile : public FsFile {
   std::fstream f_;
 };
 
+/// FsBackend for the Linux/desktop file system (std::filesystem), restricted to a root directory
 class StdFilesystemBackend : public FsBackend {
  public:
   FsFile* open(const char* path, uint8_t flags) override {
@@ -90,6 +95,7 @@ class StdFilesystemBackend : public FsBackend {
     return f;
   }
 
+  /// Reports whether the path exists and its type and size
   bool stat(const char* path, FsEntry& e) override {
     namespace fs = std::filesystem;
     std::error_code ec;
@@ -124,6 +130,7 @@ class StdFilesystemBackend : public FsBackend {
     return false;
   }
 
+  /// Deletes a file
   bool remove(const char* path) override {
     std::error_code ec;
     if (!std::filesystem::is_regular_file(path, ec) ||
@@ -133,6 +140,7 @@ class StdFilesystemBackend : public FsBackend {
     }
     return true;
   }
+  /// Creates a directory
   bool mkdir(const char* path) override {
     std::error_code ec;
     if (!std::filesystem::create_directory(path, ec)) {
@@ -141,6 +149,7 @@ class StdFilesystemBackend : public FsBackend {
     }
     return true;
   }
+  /// Removes an empty directory
   bool rmdir(const char* path) override {
     std::error_code ec;
     if (!std::filesystem::is_directory(path, ec) ||
@@ -150,6 +159,7 @@ class StdFilesystemBackend : public FsBackend {
     }
     return true;
   }
+  /// Renames or moves a file or directory
   bool rename(const char* from, const char* to) override {
     std::error_code ec;
     std::filesystem::rename(from, to, ec);

@@ -9,13 +9,19 @@
 
 namespace tinyblefs {
 
+/// Properties announced by a server (name, limits, read-only flag)
 struct ServerInfo {
+  /// Protocol version of the server
   uint8_t version = 0;
+  /// Maximum number of open files
   uint8_t maxHandles = 0;
+  /// True if the server refuses changes
   bool readOnly = false;
+  /// Name of the server
   std::string name;
 };
 
+/// Client side of the protocol: sends requests to a FileServer over a Transport (info, open, read, write, list, remove, ...)
 class FileClient {
  public:
   /// @param transport the BLE adapter (connected to the server); the client
@@ -41,18 +47,22 @@ class FileClient {
     idle_ctx_ = ctx;
     link_.setIdleCallback(cb, ctx);  // also while joining the session
   }
+  /// Sets how long a request waits for the reply (ms)
   void setTimeout(uint32_t ms) {
     timeout_ = ms;
     link_.setTimeout(ms);
   }
   /// Max bytes transferred per READ / WRITE request (read-ahead size)
   void setChunkSize(uint16_t n) { chunk_ = n; }
+  /// Largest data block per read/write request
   uint16_t chunkSize() const { return chunk_; }
+  /// True while the transport is connected
   bool connected() const { return t_.connected(); }
   /// Changes when the server lost the state of this client (see Transport)
   uint32_t generation() const { return t_.generation(); }
 
   // ---- high level operations -------------------------------------------
+  /// Reads the server properties (name, limits, read-only flag)
   Status info(ServerInfo& si) {
     std::vector<uint8_t> out;
     Status st = request(Op::Info, {}, &out, 1);
@@ -65,6 +75,7 @@ class FileClient {
     return Status::Ok;
   }
 
+  /// Opens a file (flags: OpenFlags); returns the handle and file size
   Status open(const std::string& path, uint8_t flags, uint8_t& handle,
               uint32_t& size) {
     std::vector<uint8_t> in{flags}, out;
@@ -77,8 +88,10 @@ class FileClient {
     return Status::Ok;
   }
 
+  /// Closes a file handle
   Status close(uint8_t handle) { return request(Op::Close, {handle}); }
 
+  /// Reads len bytes at the given offset
   Status read(uint8_t handle, uint32_t offset, uint16_t len,
               std::vector<uint8_t>& data) {
     std::vector<uint8_t> in{handle};
@@ -87,6 +100,7 @@ class FileClient {
     return request(Op::Read, in, &data, 1);
   }
 
+  /// Writes data at the given offset; returns the number of bytes written
   Status write(uint8_t handle, uint32_t offset, const uint8_t* data,
                size_t len, uint16_t& written) {
     std::vector<uint8_t> in{handle}, out;
@@ -99,6 +113,7 @@ class FileClient {
     return Status::Ok;
   }
 
+  /// Gets the type and size of a file or directory
   Status stat(const std::string& path, bool& isDir, uint32_t& size) {
     std::vector<uint8_t> in, out;
     putStr(in, path);
@@ -171,10 +186,14 @@ class FileClient {
   /// Number of requests sent so far (every request counts once, retries not)
   uint32_t requestCount() const { return request_count_; }
 
+  /// Deletes a file
   Status remove(const std::string& path) { return pathOp(Op::Remove, path); }
+  /// Creates a directory
   Status mkdir(const std::string& path) { return pathOp(Op::Mkdir, path); }
+  /// Removes an empty directory
   Status rmdir(const std::string& path) { return pathOp(Op::Rmdir, path); }
 
+  /// Renames or moves a file or directory
   Status rename(const std::string& from, const std::string& to) {
     std::vector<uint8_t> in;
     put16(in, (uint16_t)from.size());

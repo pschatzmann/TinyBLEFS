@@ -40,6 +40,7 @@ class RingQueueT {
     tail_ = (t + 1) % Slots;
     return n;
   }
+  /// Removes all packets
   void clear() { tail_ = head_; }
   /// Number of packets lost since the last call (queue full / packet too
   /// large). Callbacks must not log, so the transports report this in loop().

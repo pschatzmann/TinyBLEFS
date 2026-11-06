@@ -60,6 +60,7 @@ inline bool sendMessage(Transport& t, const Message& m) {
 /// Polls a transport and yields complete messages
 class Receiver {
  public:
+  /// Receives packets and returns true when a complete message is available
   bool poll(Transport& t, Message& m) {
     // the buffer is a member, not a local: small MCUs have only ~1-4 KB of stack
     if (tmp_.empty()) tmp_.resize(kPacketBuffer);
@@ -70,6 +71,7 @@ class Receiver {
       asm_.feed(tmp_.data(), n);
     }
   }
+  /// Discards partial data
   void reset() { asm_.reset(); }
 
  private:

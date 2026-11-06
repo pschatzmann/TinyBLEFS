@@ -13,6 +13,7 @@
 namespace tinyblefs {
 namespace detail {
 
+/// Internal: protocol engine serving one logical link (used by FileServer for each session)
 class LinkServer {
  public:
   /// @param fs         file system to share
@@ -27,10 +28,13 @@ class LinkServer {
   }
   ~LinkServer() { closeAll(); }
 
+  /// Refuses all changes when true
   void setReadOnly(bool ro) { read_only_ = ro; }
   /// Largest answer to a batched directory listing (default 2048 bytes)
   void setMaxListBytes(size_t n) { max_list_bytes_ = n < 32 ? 32 : n; }
+  /// True when changes are refused
   bool isReadOnly() const { return read_only_; }
+  /// Name announced to the clients
   const char* name() const { return name_.c_str(); }
 
   /// Processes all pending requests; returns true if something was handled
@@ -61,6 +65,7 @@ class LinkServer {
   }
 
  private:
+  /// Table entry of one open file
   struct Slot {
     FsFile* file = nullptr;
     uint8_t flags = 0;

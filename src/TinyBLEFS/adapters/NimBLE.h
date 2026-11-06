@@ -23,6 +23,7 @@ namespace detail {
 /// Thread safe packet queue (NimBLE callbacks run in the host task)
 class PacketQueue {
  public:
+  /// Adds a packet (dropped when full)
   void push(const uint8_t* d, size_t n) {
     std::lock_guard<std::mutex> g(m_);
     if (q_.size() < 64) q_.emplace_back(d, d + n);
@@ -35,6 +36,7 @@ class PacketQueue {
     dropped_ = 0;
     return n;
   }
+  /// Takes the oldest packet; returns its size or 0
   size_t pop(uint8_t* buf, size_t max) {
     std::lock_guard<std::mutex> g(m_);
     if (q_.empty()) return 0;
@@ -43,6 +45,7 @@ class PacketQueue {
     q_.pop_front();
     return n;
   }
+  /// Removes all packets
   void clear() {
     std::lock_guard<std::mutex> g(m_);
     q_.clear();
@@ -205,6 +208,7 @@ class NimBLEClientTransport : public Transport {
     return found;
   }
 
+  /// Connects to a device found by scan() and discovers the file service
   bool connect(const NimBLEAddress& address) {
     disconnect();
     if (!NimBLEDevice::isInitialized()) NimBLEDevice::init("");
@@ -226,6 +230,7 @@ class NimBLEClientTransport : public Transport {
     return true;
   }
 
+  /// Disconnects from the server
   void disconnect() {
     if (client_) {
       client_->disconnect();

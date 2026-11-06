@@ -172,6 +172,7 @@ class ArduinoBLEClientTransport : public Transport {
     return found;
   }
 
+  /// Connects to a device found by scan() and discovers the file service
   bool connect(BLEDevice device) {
     disconnect();
     if (!detail::beginArduinoBLE()) return fail("BLE.begin() failed");
@@ -189,6 +190,7 @@ class ArduinoBLEClientTransport : public Transport {
     return true;
   }
 
+  /// Disconnects from the server
   void disconnect() {
     if (registered_) {
       auto& v = instances();

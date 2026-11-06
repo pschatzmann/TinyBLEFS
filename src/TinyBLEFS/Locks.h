@@ -18,6 +18,7 @@
 
 namespace tinyblefs {
 
+/// Shared file locks: any number of readers or one writer per file
 class FileLocks {
  public:
   /// Registers an open file; returns false if it conflicts with a lock
@@ -33,6 +34,7 @@ class FileLocks {
     return ok;
   }
 
+  /// Releases a lock taken with acquire()
   void release(const std::string& path, bool write) {
     auto it = entries_.find(path);
     if (it == entries_.end()) return;
@@ -51,9 +53,11 @@ class FileLocks {
     return lb != entries_.end() && lb->first.compare(0, prefix.size(), prefix) == 0;
   }
 
+  /// Number of files with a lock
   size_t openFiles() const { return entries_.size(); }
 
  private:
+  /// Lock state of one file
   struct Entry {
     uint16_t readers = 0, writers = 0;
   };

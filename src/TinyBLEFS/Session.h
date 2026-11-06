@@ -104,7 +104,9 @@ class SessionLink : public Transport {
     raw_.send(p, sizeof(p));
   }
 
+  /// Session id (0 = not joined)
   uint8_t id() const { return sid_; }
+  /// Sets how long join() waits for the server (ms)
   void setTimeout(uint32_t ms) { timeout_ = ms; }
   /// Called while join() waits for the answer of the server
   void setIdleCallback(void (*cb)(void*), void* ctx) {

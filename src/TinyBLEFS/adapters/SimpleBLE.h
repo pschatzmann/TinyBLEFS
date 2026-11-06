@@ -35,11 +35,13 @@ namespace detail {
 /// Thread safe packet queue (SimpleBLE calls back from its own threads)
 class LockedQueue {
  public:
+  /// Adds a packet (thread safe)
   void push(const uint8_t* d, size_t n) {
     std::lock_guard<std::mutex> g(m_);
     if (q_.size() < 64) q_.emplace_back(d, d + n);
     else dropped_++;
   }
+  /// Takes the oldest packet; returns its size or 0
   size_t pop(uint8_t* buf, size_t max) {
     std::lock_guard<std::mutex> g(m_);
     if (q_.empty()) return 0;
@@ -48,6 +50,7 @@ class LockedQueue {
     q_.pop_front();
     return n;
   }
+  /// Removes all packets
   void clear() {
     std::lock_guard<std::mutex> g(m_);
     q_.clear();
@@ -104,6 +107,7 @@ class SimpleBLEClientTransport : public Transport {
     return found;
   }
 
+  /// Connects to a device found by scan() and discovers the file service
   bool connect(SimpleBLE::Peripheral peripheral) {
     disconnect();
     try {
@@ -124,6 +128,7 @@ class SimpleBLEClientTransport : public Transport {
     }
   }
 
+  /// Disconnects from the server
   void disconnect() {
     if (has_peripheral_) {
       try {

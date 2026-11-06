@@ -75,6 +75,7 @@ void setup() {
 | [Logging](docs/logging.md) | `TinyBLEFSLogger` |
 | [Protocol](docs/protocol.md) | Wire format |
 | [Test results](docs/test-results.md) | What was tested on a PC and on hardware, problems found |
+| [Class documentation](https://pschatzmann.github.io/TinyBLEFS/annotated.html) | Doxygen API reference
 
 ## Supported platforms
 
@@ -110,4 +111,4 @@ cmake -S . -B build && cmake --build build && ctest --test-dir build   # host te
 
 From another CMake project: `add_subdirectory(TinyBLEFS)` or `find_package(TinyBLEFS)`, then link `TinyBLEFS::TinyBLEFS`. Options such as `TINYBLEFS_BUILD_TOOLS` are described in [Linux tools](docs/cli.md).
 
-The API documentation is generated with Doxygen (`doxygen Doxyfile`, output in `docs/html`). A GitHub Action rebuilds it on every push to `main` and publishes it to the `doxygen` branch (GitHub Pages).
+The API documentation is generated with Doxygen (`doxygen Doxyfile`, output in `docs/html`). A GitHub Action rebuilds it on every push to `main` and publishes it to the `doxygen` branch (GitHub Pages, [https://pschatzmann.github.io/TinyBLEFS/](https://pschatzmann.github.io/TinyBLEFS/)).

@@ -29,14 +29,19 @@ using LogPrint = ::Print;
 class LogPrint {
  public:
   virtual ~LogPrint() = default;
+  /// Writes raw bytes
   virtual size_t write(const uint8_t* data, size_t len) = 0;
+  /// Writes one byte
   size_t write(uint8_t c) { return write(&c, 1); }
+  /// Writes a string
   size_t print(const char* s) { return write((const uint8_t*)s, strlen(s)); }
+  /// Writes a string and a line end
   size_t println(const char* s) { return print(s) + print("\n"); }
 };
 /// Writes to stderr (default output on desktop systems)
 class StderrPrint : public LogPrint {
  public:
+  /// Writes the bytes to stderr
   size_t write(const uint8_t* data, size_t len) override {
     return fwrite(data, 1, len, stderr);
   }
@@ -45,6 +50,7 @@ class StderrPrint : public LogPrint {
 
 enum class LogLevel : uint8_t { None = 0, Error, Warning, Info, Debug };
 
+/// Logger with levels and a configurable Print output; use the global TinyBLEFSLogger
 class LoggerClass {
  public:
   /// Defines the output and the level in one call
@@ -52,14 +58,18 @@ class LoggerClass {
     out_ = &out;
     level_ = level;
   }
+  /// Sets the output (any Print-like object); default: none
   void setOutput(LogPrint& out) { out_ = &out; }
   /// Disables the output (nothing is logged)
   void end() { out_ = nullptr; }
+  /// Sets the maximum level that is logged
   void setLevel(LogLevel level) { level_ = level; }
+  /// Current log level
   LogLevel level() const { return level_; }
   /// Prefix every line with the time in ms (default: on)
   void setTimestamps(bool on) { timestamps_ = on; }
 
+  /// True if messages of this level are logged
   bool isEnabled(LogLevel level) const {
     return out_ != nullptr && level != LogLevel::None && level <= level_;
   }
@@ -67,6 +77,7 @@ class LoggerClass {
 #if defined(__GNUC__)
   __attribute__((format(printf, 4, 5)))
 #endif
+  /// Logs a printf style message with a tag
   void log(LogLevel level, const char* tag, const char* fmt, ...) {
     if (!isEnabled(level)) return;
     char msg[160];

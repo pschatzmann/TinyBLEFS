@@ -14,6 +14,7 @@
 
 namespace tinyblefs {
 
+/// Registry of remote servers mounted under /<name>: scans, mounts and opens files by path, copies files between servers
 class Mounts {
  public:
   /// Mounts the server behind the client. Returns the mount name, or an empty
@@ -32,15 +33,18 @@ class Mounts {
                 si.readOnly ? " (read-only)" : "");
     return name;
   }
+  /// Removes a server from the mounts
   bool unmount(const char* name) {
     if (fs_.erase(name) > 0) return true;
     TINYBLEFS_LOGW("mounts", "unmount: nothing is mounted as /%s", name ? name : "");
     return false;
   }
+  /// Returns the file system mounted under the name (or nullptr)
   RemoteFS* get(const char* name) {
     auto it = fs_.find(name);
     return it == fs_.end() ? nullptr : &it->second;
   }
+  /// Names of all mounted servers
   std::vector<std::string> names() const {
     std::vector<std::string> v;
     for (auto& kv : fs_) v.push_back(kv.first);
@@ -48,6 +52,7 @@ class Mounts {
   }
 
   // ---- file API using "/<mount>/<path>" -------------------------------
+  /// Opens a file or directory by path (/name/...); mode: "r", "w" or "a"
   RemoteFile open(const char* path, const char* mode = "r") {
     std::string rest;
     RemoteFS* f = route(path, rest);
@@ -61,6 +66,7 @@ class Mounts {
     RemoteFS* f = route(path, rest);
     return f ? f->openWait(rest.c_str(), mode, timeoutMs, retryMs) : RemoteFile();
   }
+  /// True if the path exists
   bool exists(const char* path) {
     std::string rest;
     RemoteFS* f = route(path, rest);
@@ -94,16 +100,19 @@ class Mounts {
     RemoteFS* f = route(path, rest);
     return f && f->list(rest.c_str(), entries);
   }
+  /// Deletes a file
   bool remove(const char* path) {
     std::string rest;
     RemoteFS* f = route(path, rest);
     return f && f->remove(rest.c_str());
   }
+  /// Creates a directory
   bool mkdir(const char* path) {
     std::string rest;
     RemoteFS* f = route(path, rest);
     return f && f->mkdir(rest.c_str());
   }
+  /// Removes an empty directory
   bool rmdir(const char* path) {
     std::string rest;
     RemoteFS* f = route(path, rest);

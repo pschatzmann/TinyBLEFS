@@ -25,8 +25,10 @@
 
 namespace tinyblefs {
 
+/// FsBackend for the TinyFATFS library (FAT on SD cards and flash)
 class TinyFatBackend : public FsBackend {
  public:
+  /// Serves the given TinyFATFS drive (e.g. the global SD object)
   explicit TinyFatBackend(fatfs::SDClass& sd) : sd_(sd) {}
 
   FsFile* open(const char* path, uint8_t flags) override {
@@ -46,6 +48,7 @@ class TinyFatBackend : public FsBackend {
     return f.release();
   }
 
+  /// Reports whether the path exists and its type and size
   bool stat(const char* path, FsEntry& e) override {
     if (isRoot(path)) {  // FatFs has no FILINFO for the root directory
       e.name.clear();
@@ -85,9 +88,13 @@ class TinyFatBackend : public FsBackend {
     return found;
   }
 
+  /// Deletes a file
   bool remove(const char* path) override { return ok(sd_.remove(path), "remove", path); }
+  /// Creates a directory
   bool mkdir(const char* path) override { return ok(sd_.mkdir(path), "mkdir", path); }
+  /// Removes an empty directory
   bool rmdir(const char* path) override { return ok(sd_.rmdir(path), "rmdir", path); }
+  /// Renames or moves a file or directory
   bool rename(const char* from, const char* to) override {
     fatfs::FRESULT rc = sd_.getFatFs()->f_rename(from, to);
     if (rc != fatfs::FR_OK) TINYBLEFS_LOGW("tinyfat", "rename %s to %s: FatFs error %d", from, to, (int)rc);

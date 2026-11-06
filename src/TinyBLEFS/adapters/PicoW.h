@@ -37,6 +37,7 @@ namespace detail {
 /// TX characteristic that can send raw notification packets with flow control
 class PicoWNotifyCharacteristic : public BLECharacteristic {
  public:
+  /// Creates a notify characteristic with the given UUID
   PicoWNotifyCharacteristic(BLEUUID uuid)
       : BLECharacteristic(uuid, BLERead | BLENotify) {}
 
@@ -63,11 +64,13 @@ class PicoWNotifyCharacteristic : public BLECharacteristic {
   }
   /// True once a client has enabled notifications
   bool subscribed() const { return _notificationEnabled; }
+  /// Remembers whether the client enabled notifications
   void setSubscribed(bool on) { _notificationEnabled = on; }
 
  protected:
   // The core would switch notifications off when ANY client disconnects; the
   // transport does that when the last one has gone.
+  /// Called when the client disconnects
   void disconnected() override {}
 };
 }  // namespace detail
@@ -242,6 +245,7 @@ class PicoWClientTransport : public Transport {
     return found;
   }
 
+  /// Connects to a device found by scan() and discovers the file service
   bool connect(BLEAdvertising& device, uint32_t timeoutSec = 10) {
     disconnect();
     BLEClient* c = BLE.client();
@@ -262,6 +266,7 @@ class PicoWClientTransport : public Transport {
     return true;
   }
 
+  /// Disconnects from the server
   void disconnect() {
     if (rx_) {
       BLE.client()->disconnect();

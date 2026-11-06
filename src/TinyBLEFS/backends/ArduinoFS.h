@@ -34,11 +34,14 @@
 
 namespace tinyblefs {
 
+/// FsBackend for any Arduino file system (LittleFS, SPIFFS, FFat, SD, SD_MMC, ...); uses the POSIX API for fast listing on the ESP32
 template <class FS>
 class ArduinoFsBackend : public FsBackend {
  public:
+  /// File type of the wrapped file system
   using FileT = decltype(std::declval<FS&>().open("/", "r"));
 
+  /// Serves the given file system (e.g. LittleFS, SD)
   explicit ArduinoFsBackend(FS& fs) : fs_(fs) {}
   ~ArduinoFsBackend() override { closeCursor(); }
 
@@ -61,6 +64,7 @@ class ArduinoFsBackend : public FsBackend {
     return new ArduinoFile(f);
   }
 
+  /// Reports whether the path exists and its type and size
   bool stat(const char* path, FsEntry& e) override {
 #if defined(TINYBLEFS_ARDUINOFS_POSIX)
     const char* mp = mountOf(fs_, 0);
@@ -99,18 +103,22 @@ class ArduinoFsBackend : public FsBackend {
     return false;
   }
 
+  /// Deletes a file
   bool remove(const char* path) override {
     closeCursor();
     return ok(fs_.remove(path), "remove", path);
   }
+  /// Creates a directory
   bool mkdir(const char* path) override {
     closeCursor();
     return ok(fs_.mkdir(path), "mkdir", path);
   }
+  /// Removes an empty directory
   bool rmdir(const char* path) override {
     closeCursor();
     return ok(fs_.rmdir(path), "rmdir", path);
   }
+  /// Renames or moves a file or directory
   bool rename(const char* from, const char* to) override {
     closeCursor();
     return ok(fs_.rename(from, to), "rename", from);
@@ -122,6 +130,7 @@ class ArduinoFsBackend : public FsBackend {
     return result;
   }
 
+  /// Open file of an Arduino file system
   class ArduinoFile : public FsFile {
    public:
     explicit ArduinoFile(FileT f) : f_(f) {}

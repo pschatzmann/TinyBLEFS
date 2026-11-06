@@ -52,8 +52,11 @@ enum ListFlags : uint8_t { kListEnd = 1 };
 
 /// One directory entry (RemoteFS::list(), FileClient::listBatch())
 struct DirEntry {
+  /// Entry name without path
   std::string name;
+  /// True for a directory
   bool isDir = false;
+  /// Size in bytes (0 for directories)
   uint32_t size = 0;
 };
 
@@ -121,10 +124,15 @@ enum OpenFlags : uint8_t {
   kTrunc = 16   // truncate (implies create)
 };
 
+/// A decoded protocol message: operation, request id, status and payload
 struct Message {
+  /// Operation code (Op)
   uint8_t op = 0;
+  /// Request id, copied into the reply
   uint8_t reqId = 0;
+  /// Status (Status); 0 in requests
   uint8_t status = 0;
+  /// Operation specific data
   std::vector<uint8_t> payload;
 };
 
@@ -159,9 +167,11 @@ inline std::vector<uint8_t> encode(const Message& m) {
 /// Collects transport packets and extracts complete messages
 class Reassembler {
  public:
+  /// Adds received bytes
   void feed(const uint8_t* data, size_t len) {
     buf_.insert(buf_.end(), data, data + len);
   }
+  /// Gets the next complete message; false if there is none
   bool next(Message& m) {
     if (buf_.size() < kHeaderSize) return false;
     size_t len = get16(&buf_[3]);
@@ -174,6 +184,7 @@ class Reassembler {
     buf_.erase(buf_.begin(), buf_.begin() + kHeaderSize + len);
     return true;
   }
+  /// Discards partial data
   void reset() { buf_.clear(); }
 
  private:

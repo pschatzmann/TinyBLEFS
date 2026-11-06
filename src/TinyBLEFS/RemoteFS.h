@@ -17,12 +17,15 @@ namespace tinyblefs {
 
 class RemoteFS;
 
+/// File on a remote server with the usual Arduino File API (read, write, seek, list, ...); reads ahead and batches directory listings
 class RemoteFile {
  public:
   RemoteFile() = default;
+  /// True if the file or directory was opened
   explicit operator bool() const { return s_ && s_->valid; }
 
   // ---- reading ---------------------------------------------------------
+  /// Reads up to len bytes; returns the number of bytes read
   size_t read(uint8_t* dst, size_t len) {
     if (!alive() || s_->isDir) {
       TINYBLEFS_LOGW("file", "read from a closed file or a directory");
@@ -54,21 +57,25 @@ class RemoteFile {
     }
     return total;
   }
+  /// Reads one byte (-1 at the end)
   int read() {
     uint8_t b;
     return read(&b, 1) == 1 ? b : -1;
   }
+  /// Next byte without consuming it (-1 at the end)
   int peek() {
     int b = read();
     if (b >= 0) s_->pos--;
     return b;
   }
+  /// Number of bytes left to read
   int available() {
     if (!*this || s_->isDir) return 0;
     return s_->size > s_->pos ? (int)(s_->size - s_->pos) : 0;
   }
 
   // ---- writing ---------------------------------------------------------
+  /// Writes len bytes; returns the number of bytes written
   size_t write(const uint8_t* src, size_t len) {
     if (!alive() || s_->isDir) {
       TINYBLEFS_LOGW("file", "write to a closed file or a directory");
@@ -97,12 +104,17 @@ class RemoteFile {
     }
     return total;
   }
+  /// Writes one byte
   size_t write(uint8_t b) { return write(&b, 1); }
+  /// Writes a string
   size_t print(const char* str) { return write((const uint8_t*)str, strlen(str)); }
+  /// Writes a string and a line end
   size_t println(const char* str) { return print(str) + print("\n"); }
+  /// Sends buffered data to the server
   void flush() {}  // writes are synchronous
 
   // ---- position --------------------------------------------------------
+  /// Sets the read/write position
   bool seek(uint32_t pos) {
     if (!*this || s_->isDir) {
       TINYBLEFS_LOGW("file", "seek in a closed file or a directory");
@@ -111,17 +123,23 @@ class RemoteFile {
     s_->pos = pos;
     return true;
   }
+  /// Current read/write position
   uint32_t position() const { return *this ? s_->pos : 0; }
+  /// File size in bytes
   uint32_t size() const { return *this ? s_->size : 0; }
 
+  /// Closes the file
   void close() {
     if (s_) s_->closeNow();
     s_.reset();
   }
 
   // ---- info / directories ----------------------------------------------
+  /// True for a directory
   bool isDirectory() const { return *this && s_->isDir; }
+  /// File name without path
   const char* name() const { return *this ? s_->name.c_str() : ""; }
+  /// Full path
   const char* path() const { return *this ? s_->path.c_str() : ""; }
 
   /// Next entry of a directory (invalid File at the end)
@@ -148,6 +166,7 @@ class RemoteFile {
     child += e.name;
     return make(*s.c, child, modeFlags(mode));
   }
+  /// Restarts the directory listing
   void rewindDirectory() {
     if (!isDirectory()) return;
     s_->dirIndex = 0;
@@ -159,6 +178,7 @@ class RemoteFile {
  private:
   friend class RemoteFS;
 
+  /// Shared state of a RemoteFile (copies of the object refer to the same file)
   struct State {
     FileClient* c = nullptr;
     std::string path, name;
@@ -266,6 +286,7 @@ inline bool copyFile(RemoteFile& src, RemoteFile& dst, size_t bufSize = 512) {
 /// The file system of one remote server
 class RemoteFS {
  public:
+  /// Creates a file system on the server behind the client
   explicit RemoteFS(FileClient& c) : c_(&c) {}
 
   /// mode: "r", "r+", "w", "a" (like the Arduino FS API). Directories can be
@@ -290,6 +311,7 @@ class RemoteFS {
       sleepMs(retryMs);
     }
   }
+  /// True if the path exists
   bool exists(const char* path) {
     bool d;
     uint32_t s;
@@ -321,12 +343,17 @@ class RemoteFS {
       }
     }
   }
+  /// Deletes a file
   bool remove(const char* path) { return check("remove", path, c_->remove(path)); }
+  /// Creates a directory
   bool mkdir(const char* path) { return check("mkdir", path, c_->mkdir(path)); }
+  /// Removes an empty directory
   bool rmdir(const char* path) { return check("rmdir", path, c_->rmdir(path)); }
+  /// Renames or moves a file or directory
   bool rename(const char* from, const char* to) {
     return check("rename", from, c_->rename(from, to));
   }
+  /// The underlying client
   FileClient& client() { return *c_; }
 
  private:

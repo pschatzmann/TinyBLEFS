@@ -1,0 +1,5 @@
+<map id="tinyblefs::NimBLEClientTransport" name="tinyblefs::NimBLEClientTransport">
+<area shape="rect" id="Node000001" title="Central side: connects to one TinyBLEFS server." alt="" coords="5,260,230,488"/>
+<area shape="rect" id="Node000002" href="$classtinyblefs_1_1Transport.html" title="Packet oriented, reliable, in&#45;order link between one client and one server." alt="" coords="50,5,186,212"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,224,120,260,115,259,117,229"/>
+</map>

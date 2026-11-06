@@ -1,0 +1,21 @@
+<map id="tinyblefs::Transport" name="tinyblefs::Transport">
+<area shape="rect" id="Node000001" title="Packet oriented, reliable, in&#45;order link between one client and one server." alt="" coords="1026,5,1162,212"/>
+<area shape="rect" id="Node000002" href="$classtinyblefs_1_1ArduinoBLEClientTransport.html" title="Central side: connects to one TinyBLEFS server." alt="" coords="5,282,225,572"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1009,117,829,137,602,167,489,186,386,208,300,234,238,262,209,284,206,280,235,257,298,229,385,203,488,181,601,161,828,132,1014,116"/>
+<area shape="rect" id="Node000003" href="$classtinyblefs_1_1ArduinoBLEServerTransport.html" title=" " alt="" coords="249,293,462,561"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1009,113,898,125,759,149,685,168,612,192,541,224,476,262,437,296,434,291,472,258,539,219,610,187,683,162,757,143,897,119,1014,111"/>
+<area shape="rect" id="Node000004" href="$classtinyblefs_1_1NimBLEClientTransport.html" title="Central side: connects to one TinyBLEFS server." alt="" coords="486,313,710,542"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1009,130,946,152,871,180,794,216,724,262,696,287,670,315,667,311,692,283,720,258,792,212,869,175,944,147,1014,128"/>
+<area shape="rect" id="Node000005" href="$classtinyblefs_1_1NimBLEServerTransport.html" title="Peripheral side: advertises the TinyBLEFS service and talks to one client." alt="" coords="734,335,963,519"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="1019,205,977,261,919,338,915,333,973,258,1015,208"/>
+<area shape="rect" id="Node000006" href="$classtinyblefs_1_1PicoWClientTransport.html" title="Central side: connects to one TinyBLEFS server." alt="" coords="987,313,1201,542"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="1096,225,1096,315,1092,312,1092,229"/>
+<area shape="rect" id="Node000007" href="$classtinyblefs_1_1PicoWServerTransport.html" title=" " alt="" coords="1225,324,1443,530"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="1172,203,1215,258,1263,325,1258,324,1211,261,1170,208"/>
+<area shape="rect" id="Node000008" href="$classtinyblefs_1_1SimpleBLEClientTransport.html" title="Central side: connects to one TinyBLEFS server." alt="" coords="1466,304,1682,550"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1176,127,1242,147,1315,176,1389,212,1457,258,1502,305,1497,304,1454,262,1386,217,1313,180,1240,153,1176,132"/>
+<area shape="rect" id="Node000009" href="$classtinyblefs_1_1SimpleBLEServerTransport.html" title=" " alt="" coords="1706,293,1925,561"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="1177,110,1287,121,1422,146,1493,165,1563,190,1632,220,1696,257,1736,294,1730,293,1692,262,1629,225,1561,195,1491,170,1420,151,1286,127,1177,116"/>
+<area shape="rect" id="Node000010" href="$classtinyblefs_1_1detail_1_1SessionLink.html" title=" " alt="" coords="1950,260,2086,595"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="1176,112,1358,128,1583,156,1694,175,1795,198,1878,226,1912,241,1938,258,1952,272,1947,270,1935,262,1909,246,1876,231,1793,204,1693,181,1582,161,1357,133,1177,118"/>
+</map>

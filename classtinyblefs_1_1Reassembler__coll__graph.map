@@ -1,0 +1,3 @@
+<map id="tinyblefs::Reassembler" name="tinyblefs::Reassembler">
+<area shape="rect" id="Node000001" title="Collects transport packets and extracts complete messages." alt="" coords="5,5,166,122"/>
+</map>

@@ -1,0 +1,3 @@
+<map id="tinyblefs::detail::PacketQueue" name="tinyblefs::detail::PacketQueue">
+<area shape="rect" id="Node000001" title="Thread safe packet queue (NimBLE callbacks run in the host task)" alt="" coords="5,5,126,162"/>
+</map>

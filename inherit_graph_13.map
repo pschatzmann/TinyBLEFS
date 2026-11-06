@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classtinyblefs_1_1LogPrint.html" title="Minimal replacement of Arduino&#39;s Print for desktop systems." alt="" coords="5,5,145,33"/>
+<area shape="rect" id="Node000001" href="$classtinyblefs_1_1StderrPrint.html" title="Writes to stderr (default output on desktop systems)" alt="" coords="193,5,348,33"/>
+<area shape="poly" id="edge18_Node000000_Node000001" title=" " alt="" coords="160,17,195,19,190,19,160,22"/>
+</map>

@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['kappend_0',['kAppend',['../namespacetinyblefs.html#a5cb3f9c72c325af58394c059e7724cf8a6e5de4f5e8b18899140b115be068fc0d',1,'tinyblefs']]],
+  ['kcreate_1',['kCreate',['../namespacetinyblefs.html#a5cb3f9c72c325af58394c059e7724cf8aefa87617555a8979891e037482ce37e3',1,'tinyblefs']]],
+  ['keepalive_2',['keepalive',['../classtinyblefs_1_1detail_1_1SessionLink.html#ae9ff121507cbcbf72c5225d52963f55b',1,'tinyblefs::detail::SessionLink::keepAlive()'],['../classtinyblefs_1_1FileClient.html#a2fe88ebf7b62b5725ecc5aa6e2dd81dc',1,'tinyblefs::FileClient::keepAlive()']]],
+  ['kheadersize_3',['kHeaderSize',['../namespacetinyblefs.html#a80081b20f8ef4063c98cf4757047d6f9',1,'tinyblefs']]],
+  ['klistend_4',['kListEnd',['../namespacetinyblefs.html#a7853ff219e202d6adfd3b2a016f35b2ea022ab3a325785b762d029f94296743b7',1,'tinyblefs']]],
+  ['kmaxpayload_5',['kMaxPayload',['../namespacetinyblefs.html#a0d4b4a33bb20cdfaa40db506c04d40d9',1,'tinyblefs']]],
+  ['knimblemaxpacket_6',['kNimBleMaxPacket',['../namespacetinyblefs.html#a0ef2930a3356737cf87672cab52cf11e',1,'tinyblefs']]],
+  ['kprotocolversion_7',['kProtocolVersion',['../namespacetinyblefs.html#af0a427cff6154396b8a5cc7af876f2f1',1,'tinyblefs']]],
+  ['kread_8',['kRead',['../namespacetinyblefs.html#a5cb3f9c72c325af58394c059e7724cf8a2385b1d7c5dabd4727f26957c22c94a5',1,'tinyblefs']]],
+  ['kresponseflag_9',['kResponseFlag',['../namespacetinyblefs.html#a10ed21e35c393cb9e67d1cd9615aaac6',1,'tinyblefs']]],
+  ['krxuuid_10',['kRxUUID',['../namespacetinyblefs.html#a107a1e7963ef7a8887ef99a3ac6a9ff5',1,'tinyblefs']]],
+  ['kserviceuuid_11',['kServiceUUID',['../namespacetinyblefs.html#a5e7b0bec3a21beda99626831c8e208b0',1,'tinyblefs']]],
+  ['ksessionexpired_12',['kSessionExpired',['../namespacetinyblefs.html#adb4f176502e91762fa3fa69b8bdb51eca8bf8d86d352a276e95bcb8c5505f6e8e',1,'tinyblefs']]],
+  ['ksessionfull_13',['kSessionFull',['../namespacetinyblefs.html#adb4f176502e91762fa3fa69b8bdb51eca7cf5b29b00c4fe67acf835e8adc8d602',1,'tinyblefs']]],
+  ['ksessionhello_14',['kSessionHello',['../namespacetinyblefs.html#adb4f176502e91762fa3fa69b8bdb51ecac92993b3d02617c50abfaa422359e70a',1,'tinyblefs']]],
+  ['ksessionkeepalive_15',['kSessionKeepAlive',['../namespacetinyblefs.html#adb4f176502e91762fa3fa69b8bdb51eca4c159417e6494d745ce75842ce04f6c5',1,'tinyblefs']]],
+  ['ksessionwelcome_16',['kSessionWelcome',['../namespacetinyblefs.html#adb4f176502e91762fa3fa69b8bdb51eca8a5c168767320738f9142eb2cebd8c12',1,'tinyblefs']]],
+  ['ktrunc_17',['kTrunc',['../namespacetinyblefs.html#a5cb3f9c72c325af58394c059e7724cf8af9552d82f2fdd850a6572ae6ff28bca0',1,'tinyblefs']]],
+  ['ktxuuid_18',['kTxUUID',['../namespacetinyblefs.html#a7910423620c77824bccc61dd67e14978',1,'tinyblefs']]],
+  ['kwrite_19',['kWrite',['../namespacetinyblefs.html#a5cb3f9c72c325af58394c059e7724cf8ae4af9104aaea5b1d6a21aeec6833fb68',1,'tinyblefs']]]
+];

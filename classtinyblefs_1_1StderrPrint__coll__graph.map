@@ -1,0 +1,5 @@
+<map id="tinyblefs::StderrPrint" name="tinyblefs::StderrPrint">
+<area shape="rect" id="Node000001" title="Writes to stderr (default output on desktop systems)" alt="" coords="5,215,150,287"/>
+<area shape="rect" id="Node000002" href="$classtinyblefs_1_1LogPrint.html" title="Minimal replacement of Arduino&#39;s Print for desktop systems." alt="" coords="13,5,142,167"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="79,180,80,216,75,215,76,184"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="tinyblefs::ArduinoBLEServerTransport" name="tinyblefs::ArduinoBLEServerTransport">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,260,218,528"/>
+<area shape="rect" id="Node000002" href="$classtinyblefs_1_1Transport.html" title="Packet oriented, reliable, in&#45;order link between one client and one server." alt="" coords="44,5,180,212"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,224,114,260,109,259,111,229"/>
+</map>

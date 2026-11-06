@@ -1,0 +1,3 @@
+<map id="tinyblefs::Receiver" name="tinyblefs::Receiver">
+<area shape="rect" id="Node000001" title="Polls a transport and yields complete messages." alt="" coords="5,5,138,100"/>
+</map>

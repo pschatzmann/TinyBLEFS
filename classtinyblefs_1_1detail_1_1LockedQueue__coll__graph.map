@@ -1,0 +1,3 @@
+<map id="tinyblefs::detail::LockedQueue" name="tinyblefs::detail::LockedQueue">
+<area shape="rect" id="Node000001" title="Thread safe packet queue (SimpleBLE calls back from its own threads)" alt="" coords="5,5,126,162"/>
+</map>

@@ -1,4 +1,4 @@
-# TinyBLEFS
+# Tiny BLE FS
 
 > **Proof of concept.** This library is an early prototype to explore the idea. The protocol, the API and the file formats may still change without notice, and it has had only **first tests on real hardware** (see [Test results](docs/test-results.md)): everything else is verified by automated tests on a PC (loopback transport) and by compiling the examples for the supported boards. Do not use it for anything important, and expect bugs.
 

@@ -32,6 +32,8 @@ tinyblefs [options] scan         # list servers in range
 | `-l <level>` | Log level on stderr: `none`, `error` (default), `warning`, `info`, `debug` |
 | `-v` | Same as `-l info` |
 
+With several Bluetooth adapters the tools use the first powered one. To choose, set `TINYBLEFS_ADAPTER` to its name or address: `TINYBLEFS_ADAPTER=hci1 tinyblefs ls /` (`bluetoothctl list`, `hciconfig` show them). This applies to `tinyblefs-server` too.
+
 ## Commands
 
 Paths are `/<mount>/<path>`; `/` lists the mounts.
@@ -60,6 +62,19 @@ tinyblefs -p TinyFS put firmware.bin /sensor1/firmware.bin
 tinyblefs -p TinyFS cp -r /sensor1/logs /sensor2/backup
 tinyblefs shell
 ```
+
+## Bluetooth settings
+
+The speed through a PC depends mostly on its Bluetooth controller (see the [performance matrix](test-results.md#performance-matrix)): about 9 KB/s with a Bluetooth 4.0 controller, 17 KB/s with a Bluetooth 5 USB dongle. With BlueZ's defaults the dongle reached only about 12 KB/s and stalled more often; asking for a 7.5 ms connection interval helped. In `/etc/bluetooth/main.conf` (units of 1.25 ms):
+
+```ini
+[LE]
+MinConnectionInterval=6
+MaxConnectionInterval=6
+ConnectionLatency=0
+```
+
+then `sudo systemctl restart bluetooth`. If an adapter stays `DOWN` afterwards, check `rfkill list bluetooth` (`rfkill unblock bluetooth`) and `bluetoothctl power on`.
 
 ## Server: tinyblefs-server
 

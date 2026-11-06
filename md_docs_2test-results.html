@@ -110,9 +110,9 @@ PC tests</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>test_cli</code>   </td><td class="markdownTableBodyNone">All commands of the Linux tool over a loopback link with two servers    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>test_arduinofs</code>   </td><td class="markdownTableBodyNone"><code>ArduinoFsBackend</code> with a mock <code>FS</code>: POSIX fast path vs generic API (121 entries: about 1-2 ms and no <code>File</code> opened, against about 100-150 ms and 7,600 opens)    </td></tr>
+<td class="markdownTableBodyNone"><code>test_arduinofs</code>   </td><td class="markdownTableBodyNone"><a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1ArduinoFsBackend.html"><code>ArduinoFsBackend</code></a> with a mock <code>FS</code>: POSIX fast path vs generic API (121 entries: about 1-2 ms and no <code>File</code> opened, against about 100-150 ms and 7,600 opens)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>test_tinyfat</code>   </td><td class="markdownTableBodyNone"><code>TinyFatBackend</code> on a TinyFATFS RAM disk through the full server/client path   </td></tr>
+<td class="markdownTableBodyNone"><code>test_tinyfat</code>   </td><td class="markdownTableBodyNone"><a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1TinyFatBackend.html"><code>TinyFatBackend</code></a> on a TinyFATFS RAM disk through the full server/client path   </td></tr>
 </table>
 <h1><a class="anchor" id="autotoc_md69"></a>
 Compile checks</h1>
@@ -210,7 +210,7 @@ Problems found by the hardware tests</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">A transient send failure (D-Bus timeout) aborted a whole transfer   </td><td class="markdownTableBodyNone">Idempotent requests are retried once after a failed send    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>FsFile</code> of the library clashed with SdFat's <code>FsFile</code> (Pico W SD variant did not build)   </td><td class="markdownTableBodyNone">Only the public class names are imported into the global scope    </td></tr>
+<td class="markdownTableBodyNone"><a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FsFile.html"><code>FsFile</code></a> of the library clashed with SdFat's <code>FsFile</code> (Pico W SD variant did not build)   </td><td class="markdownTableBodyNone">Only the public class names are imported into the global scope    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">NimBLE sent 514-byte packets, but an ATT attribute value is at most 512 bytes, so every message longer than 512 bytes (chunks of about 500 bytes or more) failed with a timeout   </td><td class="markdownTableBodyNone">Packets limited to 512 bytes    </td></tr>
 <tr class="markdownTableRowOdd">

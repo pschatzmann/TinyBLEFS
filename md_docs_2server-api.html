@@ -126,7 +126,7 @@ Security</h1>
 </ul>
 <h1><a class="anchor" id="autotoc_md62"></a>
 File locking</h1>
-<p>The server protects files from concurrent access (all clients of a <code>FileServer</code> share one lock table):</p>
+<p>The server protects files from concurrent access (all clients of a <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FileServer.html"><code>FileServer</code></a> share one lock table):</p>
 <ul>
 <li>any number of readers, <b>one writer at a time</b> (open for write, append, create or truncate);</li>
 <li>opening with mode <code>w</code> (truncate) needs a file that is not open at all;</li>

@@ -99,13 +99,13 @@ $(document).ready(function(){initNavTree('md_docs_2filesystems.html',''); initRe
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Backend (<code>TinyBLEFS/backends/</code>)   </th><th class="markdownTableHeadNone">Shares   </th><th class="markdownTableHeadNone">Platforms    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code><a class="el" href="ArduinoFS_8h.html">ArduinoFS.h</a></code>: <code>ArduinoFsBackend&lt;FS&gt;</code>   </td><td class="markdownTableBodyNone">Any Arduino <code>FS</code> class with string open modes: <b>LittleFS, SPIFFS, FFat, SD, SD_MMC</b> (ESP32), <b>LittleFS, FatFS, SDFS</b> (RP2040 / Pico W)   </td><td class="markdownTableBodyNone">ESP32, RP2040    </td></tr>
+<td class="markdownTableBodyNone"><code><a class="el" href="ArduinoFS_8h.html">ArduinoFS.h</a></code>: <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1ArduinoFsBackend.html"><code>ArduinoFsBackend&lt;FS&gt;</code></a>   </td><td class="markdownTableBodyNone">Any Arduino <code>FS</code> class with string open modes: <b>LittleFS, SPIFFS, FFat, SD, SD_MMC</b> (ESP32), <b>LittleFS, FatFS, SDFS</b> (RP2040 / Pico W)   </td><td class="markdownTableBodyNone">ESP32, RP2040    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code><a class="el" href="TinyFATFS_8h.html">TinyFATFS.h</a></code>: <code>TinyFatBackend</code>   </td><td class="markdownTableBodyNone">A FAT volume of the <a href="https://github.com/pschatzmann/TinyFATFS">TinyFATFS</a> library: <b>RAM disk, SD card (SPI), SD_MMC (experimental), disk image file, ...</b>   </td><td class="markdownTableBodyNone">Boards supported by TinyFATFS (ESP32, RP2040, ...), Linux    </td></tr>
+<td class="markdownTableBodyNone"><code><a class="el" href="TinyFATFS_8h.html">TinyFATFS.h</a></code>: <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1TinyFatBackend.html"><code>TinyFatBackend</code></a>   </td><td class="markdownTableBodyNone">A FAT volume of the <a href="https://github.com/pschatzmann/TinyFATFS">TinyFATFS</a> library: <b>RAM disk, SD card (SPI), SD_MMC (experimental), disk image file, ...</b>   </td><td class="markdownTableBodyNone">Boards supported by TinyFATFS (ESP32, RP2040, ...), Linux    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code><a class="el" href="StdFilesystem_8h.html">StdFilesystem.h</a></code>: <code>StdFilesystemBackend</code>   </td><td class="markdownTableBodyNone">A directory of the host (<code>std::filesystem</code>)   </td><td class="markdownTableBodyNone">Linux, macOS, Windows    </td></tr>
+<td class="markdownTableBodyNone"><code><a class="el" href="StdFilesystem_8h.html">StdFilesystem.h</a></code>: <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1StdFilesystemBackend.html"><code>StdFilesystemBackend</code></a>   </td><td class="markdownTableBodyNone">A directory of the host (<code>std::filesystem</code>)   </td><td class="markdownTableBodyNone">Linux, macOS, Windows    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">your own <code>FsBackend</code>   </td><td class="markdownTableBodyNone">Anything else (see below)   </td><td class="markdownTableBodyNone">any   </td></tr>
+<td class="markdownTableBodyNone">your own <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FsBackend.html"><code>FsBackend</code></a>   </td><td class="markdownTableBodyNone">Anything else (see below)   </td><td class="markdownTableBodyNone">any   </td></tr>
 </table>
 <h1><a class="anchor" id="autotoc_md21"></a>
 Verification status</h1>
@@ -159,7 +159,7 @@ ESP32</h1>
 <div class="ttc" id="aNimBLE_8h_html"><div class="ttname"><a href="NimBLE_8h.html">NimBLE.h</a></div></div>
 <div class="ttc" id="aTinyBLEFS_8h_html"><div class="ttname"><a href="TinyBLEFS_8h.html">TinyBLEFS.h</a></div></div>
 </div><!-- fragment --><p>Declare the backend after the <code>#include</code> of the file system and before the server.</p>
-<p><b>Open files.</b> The ESP32 limits the number of simultaneously open files of each file system (the <code>maxOpenFiles</code> argument of <code>begin()</code>: 10 for LittleFS, SPIFFS and FFat, <b>5 for SD and SD_MMC</b>). A <code>FileServer</code> can hold up to <code>maxSessions × maxHandles</code> files (default 1 × 4), and one more is used while a directory is listed. Raise the limit of the file system or lower the server's.</p>
+<p><b>Open files.</b> The ESP32 limits the number of simultaneously open files of each file system (the <code>maxOpenFiles</code> argument of <code>begin()</code>: 10 for LittleFS, SPIFFS and FFat, <b>5 for SD and SD_MMC</b>). A <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FileServer.html"><code>FileServer</code></a> can hold up to <code>maxSessions × maxHandles</code> files (default 1 × 4), and one more is used while a directory is listed. Raise the limit of the file system or lower the server's.</p>
 <p><b>Fast directory listing.</b> On the ESP32 the backend lists directories with the POSIX functions of the virtual file system (<code>opendir</code>/<code>readdir</code>/<code>stat</code> below <code>FS::mountpoint()</code>) and keeps the directory open between the requests of a listing, while the generic Arduino API opens a <code>File</code> object for every entry it skips (a mock file system listed 121 entries about 70 times faster). Define <code>TINYBLEFS_ARDUINOFS_NO_POSIX</code> before the include to switch this off.</p>
 <h2><a class="anchor" id="autotoc_md24"></a>
 LittleFS</h2>
@@ -320,7 +320,7 @@ Linux, macOS, Windows: a directory</h1>
 <hr  />
 <h1><a class="anchor" id="autotoc_md43"></a>
 Your own file system</h1>
-<p>Derive from <code>FsBackend</code> (<code><a class="el" href="FsBackend_8h.html">TinyBLEFS/FsBackend.h</a></code>) and from <code>FsFile</code> for open files:</p>
+<p>Derive from <code>FsBackend</code> (<code><a class="el" href="FsBackend_8h.html">TinyBLEFS/FsBackend.h</a></code>) and from <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FsFile.html"><code>FsFile</code></a> for open files:</p>
 <div class="fragment"><div class="line"><span class="keyword">class </span>MyFile : <span class="keyword">public</span> FsFile {</div>
 <div class="line"> <span class="keyword">public</span>:</div>
 <div class="line">  <span class="keywordtype">int</span> read(uint32_t offset, uint8_t* buf, <span class="keywordtype">size_t</span> len) <span class="keyword">override</span>;        <span class="comment">// bytes read, 0 at the end, -1 on error</span></div>

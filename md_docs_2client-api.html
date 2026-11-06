@@ -99,10 +99,10 @@ Connecting</h1>
 <div class="fragment"><div class="line">NimBLEClientTransport transport;   <span class="comment">// or another adapter</span></div>
 <div class="line">FileClient client(transport, 5000);    <span class="comment">// request timeout in ms</span></div>
 <div class="line">transport.connect(address);</div>
-</div><!-- fragment --><p><code>FileClient</code> settings: <code>setTimeout(ms)</code>, <code>setChunkSize(bytes)</code> (data per request and read-ahead size, default 400; larger values are much faster on a good link: 4000 gave 50 KB/s between two ESP32 boards, if the server has the RAM for the answer), <code>setIdleCallback(fn, ctx)</code> (called while waiting for an answer).</p>
+</div><!-- fragment --><p><a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FileClient.html"><code>FileClient</code></a> settings: <code>setTimeout(ms)</code>, <code>setChunkSize(bytes)</code> (data per request and read-ahead size, default 400; larger values are much faster on a good link: 4000 gave 50 KB/s between two ESP32 boards, if the server has the RAM for the answer), <code>setIdleCallback(fn, ctx)</code> (called while waiting for an answer).</p>
 <h1><a class="anchor" id="autotoc_md17"></a>
 Mounts</h1>
-<p><code>Mounts</code> maps <code>/&lt;name&gt;/path</code> to the right server.</p>
+<p><a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1Mounts.html"><code>Mounts</code></a> maps <code>/&lt;name&gt;/path</code> to the right server.</p>
 <div class="fragment"><div class="line">Mounts mounts;</div>
 <div class="line">std::string name = mounts.mount(client);        <span class="comment">// name announced by the server</span></div>
 <div class="line">mounts.mount(client2, <span class="stringliteral">&quot;alias&quot;</span>);                 <span class="comment">// or choose your own</span></div>
@@ -111,7 +111,7 @@ Mounts</h1>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Method   </th><th class="markdownTableHeadNone">Description    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>open(path, mode="r")</code>   </td><td class="markdownTableBodyNone">Returns a <code>RemoteFile</code> (modes <code>r</code>, <code>r+</code>, <code>w</code>, <code>a</code>)    </td></tr>
+<td class="markdownTableBodyNone"><code>open(path, mode="r")</code>   </td><td class="markdownTableBodyNone">Returns a <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1RemoteFile.html"><code>RemoteFile</code></a> (modes <code>r</code>, <code>r+</code>, <code>w</code>, <code>a</code>)    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>openWait(path, mode, timeoutMs=5000, retryMs=100)</code>   </td><td class="markdownTableBodyNone">Like <code>open</code>, but retries while the file is locked by another client (see below)    </td></tr>
 <tr class="markdownTableRowOdd">
@@ -127,7 +127,7 @@ Mounts</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>names()</code>, <code>get(name)</code>, <code>unmount(name)</code>   </td><td class="markdownTableBodyNone">Manage mounts   </td></tr>
 </table>
-<p><code>RemoteFS</code> offers the same methods for a single server without the <code>/&lt;name&gt;</code> prefix. To use several servers, mount one <code>FileClient</code> per server in the same <code>Mounts</code>.</p>
+<p><a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1RemoteFS.html"><code>RemoteFS</code></a> offers the same methods for a single server without the <code>/&lt;name&gt;</code> prefix. To use several servers, mount one <code>FileClient</code> per server in the same <code>Mounts</code>.</p>
 <h1><a class="anchor" id="autotoc_md18"></a>
 File</h1>
 <p>Arduino-like: <code>read()</code>, <code>read(buf, len)</code>, <code>peek()</code>, <code>available()</code>, <code>write(byte)</code>, <code>write(buf, len)</code>, <code>print(str)</code>, <code>println(str)</code>, <code>seek(pos)</code>, <code>position()</code>, <code>size()</code>, <code>close()</code>, <code>isDirectory()</code>, <code>name()</code>, <code>path()</code>, <code>openNextFile()</code>, <code>rewindDirectory()</code>.</p>

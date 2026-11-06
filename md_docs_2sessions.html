@@ -93,20 +93,20 @@ $(document).ready(function(){initNavTree('md_docs_2sessions.html',''); initResiz
   <div class="headertitle"><div class="title">Several clients</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md63"></a> <code>FileServer</code> serves as many clients at the same time as its <code>maxSessions</code> argument allows (default 1):</p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md63"></a> <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FileServer.html"><code>FileServer</code></a> serves as many clients at the same time as its <code>maxSessions</code> argument allows (default 1):</p>
 <div class="fragment"><div class="line">FileServer server(backend, transport, <span class="stringliteral">&quot;picow&quot;</span>, <span class="stringliteral">&quot;/&quot;</span>, 2);   <span class="comment">// up to 2 clients at the same time</span></div>
 <div class="line"><span class="comment">//                                    name,   root, maxSessions, maxHandles = 4</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> setup() { <span class="comment">/* ... */</span> transport.begin(<span class="stringliteral">&quot;TinyBLEFS Pico&quot;</span>, 2); }   <span class="comment">// 2 BLE connections</span></div>
 <div class="line"><span class="keywordtype">void</span> loop()  { server.poll(); }</div>
 </div><!-- fragment --><p>With 1 session a second client is refused ("the server has no free session"); it can try again when the first has gone. The BLE adapter must accept as many connections: <code>begin(name, maxConnections)</code> on the ArduinoBLE and Pico W server adapters (the hardware may allow fewer, 3 on the Nano 33 BLE). NimBLE and SimpleBLE servers accept one connection.</p>
-<p>The client needs nothing special: <code>FileClient</code> joins a session by itself with its first request.</p>
+<p>The client needs nothing special: <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FileClient.html"><code>FileClient</code></a> joins a session by itself with its first request.</p>
 <h1><a class="anchor" id="autotoc_md64"></a>
 Sessions</h1>
 <p>Every client works in its own <b>session</b>: its own open files and message buffer. The clients share the file system and its <a href="server-api.md#file-locking">locks</a>. The session id is the first byte of every packet, which is what lets several clients share one BLE link, also on stacks that can neither tell which client sent a packet nor address a reply to one client (ArduinoBLE, Pico W).</p>
 <ul>
 <li>The server closes a session, and with it the open files, after 60 s without packets (<code>setSessionTimeout(ms)</code>). A client that is idle calls <code>client.keepAlive()</code> at least once in that time.</li>
-<li>If the session was closed, the next request fails at once and the one after joins again with a new session. Files that were open are invalid afterwards (<code>RemoteFile</code> notices and never uses a file of the new session).</li>
+<li>If the session was closed, the next request fails at once and the one after joins again with a new session. Files that were open are invalid afterwards (<a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1RemoteFile.html"><code>RemoteFile</code></a> notices and never uses a file of the new session).</li>
 <li>When the BLE link goes down, all sessions end.</li>
 <li><code>server.sessionCount()</code> tells how many clients are connected.</li>
 </ul>

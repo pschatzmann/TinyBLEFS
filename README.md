@@ -21,7 +21,7 @@ The goal is to use the files of another microcontroller like local ones (`open`,
 
 So TinyBLEFS defines a small protocol on plain GATT (one write and one notify characteristic, which every BLE library supports, down to 20-byte packets) and keeps the BLE library behind a tiny transport interface. Requests are offset based and safe to repeat, the library is header-only and small enough for boards with 32 KB of RAM, and the same code runs on the Linux PC.
 
-The price: it is a custom protocol, so standard apps and tools cannot talk to it (you need this library or the `tinyblefs` tool on the other side), and its speed depends on the BLE hardware: tens of KB/s between ESP32 boards, about 9 KB/s through an old Bluetooth 4.0 PC adapter. Nothing prevents adding an OTS or L2CAP based transport later for the stacks that support it.
+The price: it is a custom protocol, so standard apps and tools cannot talk to it (you need this library or the `tinyblefs` tool on the other side), and its speed depends on the BLE hardware: tens of KB/s between ESP32 boards, about 9 KB/s through an old Bluetooth 4.0 PC adapter and 17 KB/s through a Bluetooth 5 USB dongle. Nothing prevents adding an OTS or L2CAP based transport later for the stacks that support it.
 
 ## Quick start
 
@@ -93,7 +93,7 @@ Version 0.1. Tested on a PC with a loopback transport (4 automated tests), by co
 
 ## Future improvements
 
-- **Throughput.** Between an ESP32-S3 and an ESP32 about 30 KB/s with 1400-byte and 50-55 KB/s with 4000 to 8000-byte chunks (`setChunkSize`), enough for 128 kbps MP3 (16 KB/s). Through the Linux PC only about 9 KB/s, whichever board is the server, because its Bluetooth controller is version 4.0 (27-byte link layer packets): enough for MP3 up to about 64 kbps; a Bluetooth 4.2/5 USB dongle should lift that (untried). See the [performance matrix](docs/test-results.md#performance-matrix). Not tuned or measured with a Bluetooth 5 partner yet: the Pico W and ArduinoBLE adapters.
+- **Throughput.** Between an ESP32-S3 and an ESP32 about 30 KB/s with 1400-byte and 50-55 KB/s with 4000 to 8000-byte chunks (`setChunkSize`), enough for 128 kbps MP3 (16 KB/s). Through the Linux PC the controller is the limit: about 9 KB/s with a Bluetooth 4.0 controller (27-byte link layer packets), enough for MP3 up to about 64 kbps, and 13-17 KB/s with a Bluetooth 5.1 USB dongle and a 7.5 ms connection interval set in BlueZ ([Bluetooth settings](docs/cli.md#bluetooth-settings)), enough for 128 kbps; that cheap dongle sometimes stalls for 25 s. See the [performance matrix](docs/test-results.md#performance-matrix). Not tuned or measured with a Bluetooth 5 partner yet: the Pico W and ArduinoBLE adapters.
 - Hardware tests of the ESP32, the ArduinoBLE client, several simultaneous clients and file locking between real clients.
 - A transport on L2CAP channels (NimBLE-Arduino offers them, but disabled by default: `CONFIG_BT_NIMBLE_L2CAP_COC_MAX_NUM` in `nimconfig.h`) or the Object Transfer Service for stacks that support it, announced through a GATT characteristic with a fallback to GATT. Worth trying once the GATT path is tuned.
 - A ready-made RAM file system backend for boards without a file system (the UNO R4 WiFi test used a small one in the sketch).

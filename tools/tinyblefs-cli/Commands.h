@@ -237,6 +237,7 @@ class Cli {
     if (!f || f.isDirectory()) return fail("cat", p, "cannot read file");
     uint8_t buf[512];
     for (size_t n; (n = f.read(buf, sizeof(buf))) > 0;) out_.write((const char*)buf, n);
+    if (f.position() < f.size()) return fail("cat", p, "read failed");
     return true;
   }
 
@@ -353,6 +354,8 @@ class Cli {
     if (!out) return fail("get", local.string(), "cannot write local file");
     uint8_t buf[512];
     for (size_t n; (n = in.read(buf, sizeof(buf))) > 0;) out.write((const char*)buf, n);
+    // read() returns 0 both at the end and on a failed request
+    if (in.position() < in.size()) return fail("get", remote, "read failed");
     return (bool)out;
   }
   bool getTree(const std::string& remote, const std::filesystem::path& local) {

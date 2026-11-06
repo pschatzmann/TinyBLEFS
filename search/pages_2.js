@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['file_20systems_20and_20platforms_0',['File systems and platforms',['../md_docs_2filesystems.html',1,'']]]
+  ['client_20api_0',['Client API',['../md_docs_2client-api.html',1,'']]],
+  ['clients_1',['Several clients',['../md_docs_2sessions.html',1,'']]]
 ];

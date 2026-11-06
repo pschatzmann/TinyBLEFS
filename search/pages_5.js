@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['platforms_0',['File systems and platforms',['../md_docs_2filesystems.html',1,'']]],
-  ['protocol_1',['Protocol',['../md_docs_2protocol.html',1,'']]]
+  ['linux_20tools_0',['Linux tools',['../md_docs_2cli.html',1,'']]],
+  ['logging_1',['Logging',['../md_docs_2logging.html',1,'']]]
 ];

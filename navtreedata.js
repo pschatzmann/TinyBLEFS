@@ -25,14 +25,7 @@
 var NAVTREE =
 [
   [ "TinyBLEFS", "index.html", [
-    [ "Why this library?", "index.html#autotoc_md1", null ],
-    [ "Quick start", "index.html#autotoc_md2", null ],
-    [ "Documentation", "index.html#autotoc_md3", null ],
-    [ "Supported platforms", "index.html#autotoc_md4", null ],
-    [ "Status", "index.html#autotoc_md5", null ],
-    [ "Future improvements", "index.html#autotoc_md6", null ],
-    [ "Limits", "index.html#autotoc_md7", null ],
-    [ "Development", "index.html#autotoc_md8", null ],
+    [ "Tiny BLE FS", "index.html", "index" ],
     [ "Linux tools", "md_docs_2cli.html", [
       [ "Build", "md_docs_2cli.html#autotoc_md10", null ],
       [ "Usage", "md_docs_2cli.html#autotoc_md11", null ],

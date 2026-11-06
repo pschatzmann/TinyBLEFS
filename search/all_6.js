@@ -20,9 +20,10 @@ var searchData=
   ['flush_17',['flush',['../classtinyblefs_1_1RemoteFile.html#a04b318c1f4f228a670fcd1432cff706a',1,'tinyblefs::RemoteFile']]],
   ['format_18',['Wire format',['../md_docs_2sessions.html#autotoc_md66',1,'']]],
   ['found_20by_20the_20hardware_20tests_19',['Problems found by the hardware tests',['../md_docs_2test-results.html#autotoc_md72',1,'']]],
-  ['fsbackend_20',['FsBackend',['../classtinyblefs_1_1FsBackend.html',1,'tinyblefs']]],
-  ['fsbackend_2eh_21',['FsBackend.h',['../FsBackend_8h.html',1,'']]],
-  ['fsentry_22',['FsEntry',['../structtinyblefs_1_1FsEntry.html',1,'tinyblefs']]],
-  ['fsfile_23',['FsFile',['../classtinyblefs_1_1FsFile.html',1,'tinyblefs']]],
-  ['future_20improvements_24',['Future improvements',['../index.html#autotoc_md6',1,'']]]
+  ['fs_20',['Tiny BLE FS',['../index.html',1,'']]],
+  ['fsbackend_21',['FsBackend',['../classtinyblefs_1_1FsBackend.html',1,'tinyblefs']]],
+  ['fsbackend_2eh_22',['FsBackend.h',['../FsBackend_8h.html',1,'']]],
+  ['fsentry_23',['FsEntry',['../structtinyblefs_1_1FsEntry.html',1,'tinyblefs']]],
+  ['fsfile_24',['FsFile',['../classtinyblefs_1_1FsFile.html',1,'tinyblefs']]],
+  ['future_20improvements_25',['Future improvements',['../index.html#autotoc_md6',1,'']]]
 ];

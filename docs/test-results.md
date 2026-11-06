@@ -68,23 +68,9 @@ MP3 needs: 64 kbps = 8 KB/s, 96 kbps = 12, 128 kbps = 16, 192 kbps = 24, 320 kbp
 | ESP32-S3 ↔ ESP32 | 55 KB/s | 320 kbps |
 | Pico W, UNO R4 WiFi with a Bluetooth 5 partner | not measured | – |
 
-## Problems found by the hardware tests
+## Open problems
 
-Fixed:
-
-| Problem | Fix |
-|---|---|
-| Pico W dropped every packet larger than 244 bytes (the host negotiates 511), so writes of more than one packet failed | Receive queue sized for the BLE maximum (514 bytes) |
-| NimBLE servers did not advertise their name, so `scan(..., namePrefix)` and `tinyblefs -p` never found them | Name added to the scan response |
-| BlueZ reports a bogus ATT MTU of 65533 for the ESP32-S3; the Linux client sent 4 KB as one packet | MTU limited to 517 |
-| A transient send failure (D-Bus timeout) aborted a whole transfer | Idempotent requests are retried once after a failed send |
-| [`FsFile`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FsFile.html) of the library clashed with SdFat's `FsFile` (Pico W SD variant did not build) | Only the public class names are imported into the global scope |
-| NimBLE sent 514-byte packets, but an ATT attribute value is at most 512 bytes, so every message longer than 512 bytes (chunks of about 500 bytes or more) failed with a timeout | Packets limited to 512 bytes |
-| Large stack buffers in `Receiver::poll()` and the ArduinoBLE handlers (UNO R4 has a very small stack) | Moved off the stack |
-| A NimBLE server stays invisible to scans when the PC holds a stale connection to it (it accepts one connection and stops advertising) | Not a library bug: the tool disconnects when it exits cleanly; after an interrupted run use `bluetoothctl disconnect <address>` (see below) |
-| A failed read was taken for the end of the file: `tinyblefs get` reported success after a stall and left a truncated file (9,800 of 60,000 bytes); `cat` and `copyFile` / `Mounts::copy` had the same problem | They now fail unless the whole file was read |
-
-Open (also listed under [Future improvements](../README.md#future-improvements)):
+Also listed under [Future improvements](../README.md#future-improvements):
 
 - **Throughput through the PC** is limited by its Bluetooth controller: 9 KB/s with the built-in Bluetooth 4.0 controller, 17 KB/s with a Bluetooth 5.1 dongle (see the performance matrix). The Pico W and ArduinoBLE adapters have not been measured with a Bluetooth 5 partner.
 - **SimpleBLE / BlueZ**: write calls sometimes time out ("D-Bus call timed out", 25 s), with both controllers, more often with the cheap dongle and when the PC is busy. The retry recovers; the cause is unknown (the dongle not reporting sent packets is likely, a `btmon` trace would show it).

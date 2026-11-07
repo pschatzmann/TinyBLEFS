@@ -1,5 +1,9 @@
 # Tiny BLE FS
 
+
+[![arduino-library-badge](https://img.shields.io/badge/Arduino-Library-00979D?logo=arduino&logoColor=white)](https://www.arduino.cc/reference/en/libraries/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 > **Proof of concept.** This library is an early prototype to explore the idea. The protocol, the API and the file formats may still change without notice, and it has had only **first tests on real hardware** (see [Test results](docs/test-results.md)): everything else is verified by automated tests on a PC (loopback transport) and by compiling the examples for the supported boards. Do not use it for anything important, and expect bugs.
 
 A header-only C++ library that lets an Arduino sketch (or a Linux program) use the files of one or more **remote BLE devices** like local files.
@@ -112,3 +116,7 @@ cmake -S . -B build && cmake --build build && ctest --test-dir build   # host te
 From another CMake project: `add_subdirectory(TinyBLEFS)` or `find_package(TinyBLEFS)`, then link `TinyBLEFS::TinyBLEFS`. Options such as `TINYBLEFS_BUILD_TOOLS` are described in [Linux tools](docs/cli.md).
 
 The API documentation is generated with Doxygen (`doxygen Doxyfile`, output in `docs/html`). A GitHub Action rebuilds it on every push to `main` and publishes it to the `doxygen` branch (GitHub Pages, [https://pschatzmann.github.io/TinyBLEFS/](https://pschatzmann.github.io/TinyBLEFS/)).
+
+## License
+
+[MIT License](LICENSE.txt). The tools in `tools/` link the [SimpleBLE](https://github.com/OpenBLEcosystem/SimpleBLE) library, which has its own license terms (check them before distributing binaries).

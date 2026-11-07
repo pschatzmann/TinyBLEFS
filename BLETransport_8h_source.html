@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TinyBLEFS: src/TinyBLEFS/BLETransport.h Source File</title>
+<title>TinyBLEFS: src/TinyBLEFS/adapters/BLETransport.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -110,7 +110,7 @@ $(document).ready(function(){initNavTree('BLETransport_8h_source.html',''); init
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">// Example:</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">//   #include &quot;TinyBLEFS.h&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">//   #include &quot;TinyBLEFS/BLETransport.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">//   #include &quot;TinyBLEFS/adapters/BLETransport.h&quot;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">//</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">//   BLEServerTransport transport;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">//   transport.begin(&quot;TinyFS Sensor&quot;);</span></div>
@@ -120,10 +120,10 @@ $(document).ready(function(){initNavTree('BLETransport_8h_source.html',''); init
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">//   client.connect(found[0]);</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">//</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">// Default selection:</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">//   ESP32 (Arduino or ESP-IDF)   -&gt; adapters/NimBLE.h     (NimBLE-Arduino)</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">//   Raspberry Pi Pico W / 2 W    -&gt; adapters/PicoW.h      (arduino-pico BLE)</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">//   any other Arduino board      -&gt; adapters/ArduinoBLE.h (ArduinoBLE)</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">//   desktop (Linux, ...)         -&gt; adapters/SimpleBLE.h  (SimpleBLE)</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">//   ESP32 (Arduino or ESP-IDF)   -&gt; NimBLE.h     (NimBLE-Arduino)</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">//   Raspberry Pi Pico W / 2 W    -&gt; PicoW.h      (arduino-pico BLE)</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">//   any other Arduino board      -&gt; ArduinoBLE.h (ArduinoBLE)</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">//   desktop (Linux, ...)         -&gt; SimpleBLE.h  (SimpleBLE)</span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">//</span></div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">// Override it by defining one of these before including this header:</span></div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">//   TINYBLEFS_TRANSPORT_NIMBLE, TINYBLEFS_TRANSPORT_ARDUINOBLE,</span></div>
@@ -151,7 +151,7 @@ $(document).ready(function(){initNavTree('BLETransport_8h_source.html',''); init
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#if defined(TINYBLEFS_TRANSPORT_NIMBLE)</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#include &quot;<a class="code" href="NimBLE_8h.html">adapters/NimBLE.h</a>&quot;</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#include &quot;<a class="code" href="NimBLE_8h.html">NimBLE.h</a>&quot;</span></div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#define TINYBLEFS_TRANSPORT_NAME &quot;NimBLE&quot;</span></div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetinyblefs.html">tinyblefs</a> {</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">using </span><a class="code hl_typedef" href="namespacetinyblefs.html#a5420537a25cea68eb0df4a61c735f115">BLEServerTransport</a> = NimBLEServerTransport;</div>
@@ -160,7 +160,7 @@ $(document).ready(function(){initNavTree('BLETransport_8h_source.html',''); init
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>}  <span class="comment">// namespace tinyblefs</span></div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#elif defined(TINYBLEFS_TRANSPORT_ARDUINOBLE)</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#include &quot;<a class="code" href="ArduinoBLE_8h.html">adapters/ArduinoBLE.h</a>&quot;</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#include &quot;<a class="code" href="ArduinoBLE_8h.html">ArduinoBLE.h</a>&quot;</span></div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#define TINYBLEFS_TRANSPORT_NAME &quot;ArduinoBLE&quot;</span></div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetinyblefs.html">tinyblefs</a> {</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keyword">using </span><a class="code hl_typedef" href="namespacetinyblefs.html#a5420537a25cea68eb0df4a61c735f115">BLEServerTransport</a> = ArduinoBLEServerTransport;</div>
@@ -169,7 +169,7 @@ $(document).ready(function(){initNavTree('BLETransport_8h_source.html',''); init
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}  <span class="comment">// namespace tinyblefs</span></div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#elif defined(TINYBLEFS_TRANSPORT_PICOW)</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#include &quot;<a class="code" href="PicoW_8h.html">adapters/PicoW.h</a>&quot;</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#include &quot;<a class="code" href="PicoW_8h.html">PicoW.h</a>&quot;</span></div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">#define TINYBLEFS_TRANSPORT_NAME &quot;PicoW&quot;</span></div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetinyblefs.html">tinyblefs</a> {</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keyword">using </span><a class="code hl_typedef" href="namespacetinyblefs.html#a5420537a25cea68eb0df4a61c735f115">BLEServerTransport</a> = PicoWServerTransport;</div>
@@ -178,7 +178,7 @@ $(document).ready(function(){initNavTree('BLETransport_8h_source.html',''); init
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>}  <span class="comment">// namespace tinyblefs</span></div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">#elif defined(TINYBLEFS_TRANSPORT_SIMPLEBLE)</span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="preprocessor">#include &quot;<a class="code" href="SimpleBLE_8h.html">adapters/SimpleBLE.h</a>&quot;</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="preprocessor">#include &quot;<a class="code" href="SimpleBLE_8h.html">SimpleBLE.h</a>&quot;</span></div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="BLETransport_8h.html#accf8c0db7c5048ca24f40d894cef9b3b">   82</a></span><span class="preprocessor">#define TINYBLEFS_TRANSPORT_NAME &quot;SimpleBLE&quot;</span></div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetinyblefs.html">tinyblefs</a> {</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="namespacetinyblefs.html#a5420537a25cea68eb0df4a61c735f115">   84</a></span><span class="keyword">using </span><a class="code hl_class" href="classtinyblefs_1_1SimpleBLEServerTransport.html">BLEServerTransport</a> = <a class="code hl_class" href="classtinyblefs_1_1SimpleBLEServerTransport.html">SimpleBLEServerTransport</a>;</div>
@@ -208,7 +208,7 @@ $(document).ready(function(){initNavTree('BLETransport_8h_source.html',''); init
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_bc55abe329e90431aa2946004bdd4063.html">TinyBLEFS</a></li><li class="navelem"><a class="el" href="BLETransport_8h.html">BLETransport.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_bc55abe329e90431aa2946004bdd4063.html">TinyBLEFS</a></li><li class="navelem"><a class="el" href="dir_a147f578ca0aec9994176eecc6f02551.html">adapters</a></li><li class="navelem"><a class="el" href="BLETransport_8h.html">BLETransport.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

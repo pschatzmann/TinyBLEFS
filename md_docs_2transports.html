@@ -96,9 +96,9 @@ $(document).ready(function(){initNavTree('md_docs_2transports.html',''); initRes
 <div class="textblock"><p><a class="anchor" id="autotoc_md82"></a> A transport carries packets between one client and one server. The library never uses a BLE library directly; only the adapters do.</p>
 <h1><a class="anchor" id="autotoc_md83"></a>
 Common transport names</h1>
-<p><code><a class="el" href="BLETransport_8h.html">TinyBLEFS/BLETransport.h</a></code> includes the adapter of the current platform and gives its classes platform independent names, so one sketch compiles everywhere:</p>
+<p><code><a class="el" href="BLETransport_8h.html">TinyBLEFS/adapters/BLETransport.h</a></code> includes the adapter of the current platform and gives its classes platform independent names, so one sketch compiles everywhere:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="TinyBLEFS_8h.html">TinyBLEFS.h</a>&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="BLETransport_8h.html">TinyBLEFS/BLETransport.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="BLETransport_8h.html">TinyBLEFS/adapters/BLETransport.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line">BLEServerTransport server;                         <span class="comment">// server side</span></div>
 <div class="line">server.<a class="code hl_function" href="classtinyblefs_1_1SimpleBLEServerTransport.html#ab7064ccd860831c0be7bd130a3d78e38">begin</a>(<span class="stringliteral">&quot;TinyFS Sensor&quot;</span>);</div>
@@ -150,6 +150,8 @@ Adapters</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code><a class="el" href="SimpleBLE_8h.html">SimpleBLE.h</a></code>   </td><td class="markdownTableBodyNone"><a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1SimpleBLEClientTransport.html"><code>SimpleBLEClientTransport</code></a>, <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1SimpleBLEServerTransport.html"><code>SimpleBLEServerTransport</code></a>   </td><td class="markdownTableBodyNone">Desktop via SimpleBLE, aimed at Linux/BlueZ (other OSes untested). The server has <code>begin()</code> without a name (BlueZ advertises the adapter alias; <code>begin(name)</code> exists for the common API and ignores the name), packets of 20 bytes (<code>setPacketSize</code>) and paced notifications (<code>setPacingMs</code>, default 10 ms) because SimpleBLE has no flow control or MTU information. Details: <a class="el" href="md_docs_2tools.html">Linux tools</a>. Tested with a Pico W as the other end    </td></tr>
 <tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code><a class="el" href="BLETransport_8h.html">BLETransport.h</a></code>   </td><td class="markdownTableBodyNone"><code>BLEServerTransport</code>, <code>BLEClientTransport</code>   </td><td class="markdownTableBodyNone">Includes the adapter of the platform, see Common transport names    </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code><a class="el" href="Loopback_8h.html">Loopback.h</a></code>   </td><td class="markdownTableBodyNone"><a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1LoopbackPair.html"><code>LoopbackPair</code></a>   </td><td class="markdownTableBodyNone">In-memory link for tests: <code>client()</code> / <code>server()</code>   </td></tr>
 </table>
 <p>Received packets are buffered (<code>TINYBLEFS_RX_SLOTS</code> = 24 packets of up to <code>TINYBLEFS_RX_PACKET</code> = 244 bytes; define before including to change). Lost packets are reported as warnings.</p>

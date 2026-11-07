@@ -1,18 +1,24 @@
 // Finds all TinyBLEFS servers in range, mounts each of them as "/<name>" (the
 // name is provided by the server) and lists / reads / writes files on them.
 //
-// Note: the number of simultaneous BLE connections is limited by the NimBLE
-// configuration (CONFIG_BT_NIMBLE_MAX_CONNECTIONS, 3 by default on ESP32).
+// Runs on every supported board: TinyBLEFS/BLETransport.h selects the BLE
+// adapter of the platform (ESP32: NimBLE, Pico W: core BLE library, other
+// boards: ArduinoBLE).
+//
+// Limits of the number of simultaneous servers:
+// - ESP32: NimBLE configuration (CONFIG_BT_NIMBLE_MAX_CONNECTIONS, default 3)
+// - Pico W: the core's BLE library has one client, so only ONE server
+// - Pico W: select Tools -> IP/Bluetooth Stack -> "IPv4 + Bluetooth"
 #include <memory>
 #include <vector>
 
 #include "TinyBLEFS.h"
-#include "TinyBLEFS/adapters/NimBLE.h"
+#include "TinyBLEFS/BLETransport.h"
 
 // One transport + client per remote server. They must stay alive as long as
 // the server is mounted, so they are heap allocated and never moved.
 struct Remote {
-  NimBLEClientTransport transport;
+  BLEClientTransport transport;
   FileClient client{transport, 5000};
 };
 std::vector<std::unique_ptr<Remote>> remotes;
@@ -30,29 +36,30 @@ void listDir(const std::string& path) {
 
 void setup() {
   Serial.begin(115200);
+  for (uint32_t t = millis(); !Serial && millis() - t < 3000;) delay(10);
+  Serial.print("TinyBLEFS client using ");
+  Serial.println(TINYBLEFS_TRANSPORT_NAME);
 
   // only servers whose BLE device name starts with "TinyFS" ("" = all)
-  auto addresses = NimBLEClientTransport::scan(5000, "TinyFS");
+  auto devices = BLEClientTransport::scan(5000, "TinyFS");
   Serial.print("found ");
-  Serial.print(addresses.size());
+  Serial.print(devices.size());
   Serial.println(" server(s)");
 
-  for (auto& address : addresses) {
+  for (auto& device : devices) {
     auto remote = std::make_unique<Remote>();
-    if (!remote->transport.connect(address)) {
-      Serial.print("connect failed: ");
-      Serial.println(address.toString().c_str());
+    // ArduinoBLE: 244 needs an ATT MTU of 247 on both sides (default: 20)
+    // remote->transport.setPacketSize(244);
+    if (!remote->transport.connect(device)) {
+      Serial.println("connect failed");
       continue;
     }
     std::string name = mounts.mount(remote->client);
     if (name.empty()) {
-      Serial.print("not responding: ");
-      Serial.println(address.toString().c_str());
+      Serial.println("server not responding");
       continue;
     }
-    Serial.print("mounted ");
-    Serial.print(address.toString().c_str());
-    Serial.print(" as /");
+    Serial.print("mounted /");
     Serial.println(name.c_str());
     remotes.push_back(std::move(remote));
   }

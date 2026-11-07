@@ -273,6 +273,17 @@ class SimpleBLEServerTransport : public Transport {
     }
   }
 
+  /// Same as begin(): for the same API as the other server adapters. The name
+  /// is ignored (BlueZ advertises the adapter alias, see above).
+  bool begin(const char* deviceName) {
+    if (deviceName && *deviceName)
+      TINYBLEFS_LOGI("simpleble",
+                     "device name '%s' ignored: set it with bluetoothctl "
+                     "system-alias",
+                     deviceName);
+    return begin();
+  }
+
   /// Stops advertising
   void end() {
     if (!started_) return;

@@ -17,7 +17,7 @@ else()
 endif()
 
 option(TINYBLEFS_BUILD_TESTS "Build the host tests (loopback transport)" ${_tinyblefs_top_level})
-option(TINYBLEFS_BUILD_TOOLS "Build the Linux tools tinyblefs and tinyblefs-server (needs SimpleBLE)" ON)
+option(TINYBLEFS_BUILD_TOOLS "Build the Linux tools tinyblefs and tinyblefs-server (needs SimpleBLE)" ${_tinyblefs_top_level})
 set(TINYBLEFS_TINYFATFS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../TinyFATFS" CACHE PATH
     "TinyFATFS library (https://github.com/pschatzmann/TinyFATFS): enables the TinyFatBackend test")
 option(TINYBLEFS_INSTALL "Install the headers and the CMake package" ${_tinyblefs_top_level})

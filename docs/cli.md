@@ -8,7 +8,8 @@ Two programs in `tools/tinyblefs-cli/`, both requiring BlueZ (`bluetoothd`) and 
 ## Build
 
 ```bash
-cmake -S . -B build -DTINYBLEFS_BUILD_TOOLS=ON && cmake --build build   # from the project root
+cmake -S . -B build && cmake --build build   # from the project root: tools are built by default
+cmake -S . -B build -DTINYBLEFS_BUILD_TOOLS=OFF   # tests only, no SimpleBLE download
 # or standalone:
 cmake -S tools/tinyblefs-cli -B build && cmake --build build
 ```

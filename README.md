@@ -113,7 +113,7 @@ Version 0.1. Tested on a PC with a loopback transport (4 automated tests), by co
 cmake -S . -B build && cmake --build build && ctest --test-dir build   # host tests
 ```
 
-From another CMake project: `add_subdirectory(TinyBLEFS)` or `find_package(TinyBLEFS)`, then link `TinyBLEFS::TinyBLEFS`. Options such as `TINYBLEFS_BUILD_TOOLS` are described in [Linux tools](docs/cli.md).
+From another CMake project: `add_subdirectory(TinyBLEFS)` or `find_package(TinyBLEFS)`, then link `TinyBLEFS::TinyBLEFS`. The Linux tools are built by default when TinyBLEFS is the top-level project (`-DTINYBLEFS_BUILD_TOOLS=OFF` disables them, `ON` forces them when used as a subproject); see in [Linux tools](docs/cli.md).
 
 The API documentation is generated with Doxygen (`doxygen Doxyfile`, output in `docs/html`). A GitHub Action rebuilds it on every push to `main` and publishes it to the `doxygen` branch (GitHub Pages, [https://pschatzmann.github.io/TinyBLEFS/](https://pschatzmann.github.io/TinyBLEFS/)).
 

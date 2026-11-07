@@ -100,7 +100,8 @@ $(document).ready(function(){initNavTree('md_docs_2cli.html',''); initResizable(
 </ul>
 <h1><a class="anchor" id="autotoc_md11"></a>
 Build</h1>
-<div class="fragment"><div class="line">cmake -S . -B build -DTINYBLEFS_BUILD_TOOLS=ON &amp;&amp; cmake --build build   # from the project root</div>
+<div class="fragment"><div class="line">cmake -S . -B build &amp;&amp; cmake --build build   # from the project root: tools are built by default</div>
+<div class="line">cmake -S . -B build -DTINYBLEFS_BUILD_TOOLS=OFF   # tests only, no SimpleBLE download</div>
 <div class="line"># or standalone:</div>
 <div class="line">cmake -S tools/tinyblefs-cli -B build &amp;&amp; cmake --build build</div>
 </div><!-- fragment --><p>CMake builds both tools. It uses an installed SimpleBLE or downloads v1.4.0.</p>

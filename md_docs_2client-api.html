@@ -93,14 +93,14 @@ $(document).ready(function(){initNavTree('md_docs_2client-api.html',''); initRes
   <div class="headertitle"><div class="title">Client API</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md17"></a> </p>
-<h1><a class="anchor" id="autotoc_md18"></a>
+<div class="textblock"><p><a class="anchor" id="autotoc_md18"></a> </p>
+<h1><a class="anchor" id="autotoc_md19"></a>
 Connecting</h1>
 <div class="fragment"><div class="line">NimBLEClientTransport transport;   <span class="comment">// or another adapter</span></div>
 <div class="line">FileClient client(transport, 5000);    <span class="comment">// request timeout in ms</span></div>
 <div class="line">transport.connect(address);</div>
 </div><!-- fragment --><p><a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FileClient.html"><code>FileClient</code></a> settings: <code>setTimeout(ms)</code>, <code>setChunkSize(bytes)</code> (data per request and read-ahead size, default 400; larger values are much faster on a good link: 4000 gave 50 KB/s between two ESP32 boards, if the server has the RAM for the answer), <code>setIdleCallback(fn, ctx)</code> (called while waiting for an answer).</p>
-<h1><a class="anchor" id="autotoc_md19"></a>
+<h1><a class="anchor" id="autotoc_md20"></a>
 Mounts</h1>
 <p><a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1Mounts.html"><code>Mounts</code></a> maps <code>/&lt;name&gt;/path</code> to the right server.</p>
 <div class="fragment"><div class="line">Mounts mounts;</div>
@@ -128,7 +128,7 @@ Mounts</h1>
 <td class="markdownTableBodyNone"><code>names()</code>, <code>get(name)</code>, <code>unmount(name)</code>   </td><td class="markdownTableBodyNone">Manage mounts   </td></tr>
 </table>
 <p><a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1RemoteFS.html"><code>RemoteFS</code></a> offers the same methods for a single server without the <code>/&lt;name&gt;</code> prefix. To use several servers, mount one <code>FileClient</code> per server in the same <code>Mounts</code>.</p>
-<h1><a class="anchor" id="autotoc_md20"></a>
+<h1><a class="anchor" id="autotoc_md21"></a>
 File</h1>
 <p>Arduino-like: <code>read()</code>, <code>read(buf, len)</code>, <code>peek()</code>, <code>available()</code>, <code>write(byte)</code>, <code>write(buf, len)</code>, <code>print(str)</code>, <code>println(str)</code>, <code>seek(pos)</code>, <code>position()</code>, <code>size()</code>, <code>close()</code>, <code>isDirectory()</code>, <code>name()</code>, <code>path()</code>, <code>openNextFile()</code>, <code>rewindDirectory()</code>.</p>
 <ul>
@@ -138,7 +138,7 @@ File</h1>
 </ul>
 <div class="fragment"><div class="line">RemoteFile f = mounts.open(<span class="stringliteral">&quot;/sensor1/log.txt&quot;</span>, <span class="stringliteral">&quot;a&quot;</span>);</div>
 <div class="line"><span class="keywordflow">if</span> (f) f.println(<span class="stringliteral">&quot;hello&quot;</span>);</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md21"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md22"></a>
 Errors and locking</h1>
 <p>Operations return <code>false</code>, an invalid <code>RemoteFile</code> (converts to <code>false</code>) or <code>0</code> bytes; the reason (not found, denied, timeout, ...) is written to the <a class="el" href="md_docs_2logging.html">log</a>. <code>FileClient</code> methods return a <code>Status</code>; <code>statusName(status)</code> gives a readable text.</p>
 <p>The server allows one writer per file (<a href="server-api.md#file-locking">file locking</a>): <code>open(path, "a")</code> fails with "busy" while another client writes the file. For files that several clients append to, use <code>openWait</code>:</p>

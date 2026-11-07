@@ -93,8 +93,8 @@ $(document).ready(function(){initNavTree('md_docs_2protocol.html',''); initResiz
   <div class="headertitle"><div class="title">Protocol</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md54"></a> Definitions are in <code><a class="el" href="Protocol_8h.html">src/TinyBLEFS/Protocol.h</a></code> and <code><a class="el" href="Session_8h.html">Session.h</a></code>. Version 1.</p>
-<h1><a class="anchor" id="autotoc_md55"></a>
+<div class="textblock"><p><a class="anchor" id="autotoc_md55"></a> Definitions are in <code><a class="el" href="Protocol_8h.html">src/TinyBLEFS/Protocol.h</a></code> and <code><a class="el" href="Session_8h.html">Session.h</a></code>. Version 1.</p>
+<h1><a class="anchor" id="autotoc_md56"></a>
 GATT</h1>
 <p>One service <code>6e1f0001-7a3b-4c5d-8e9f-0a1b2c3d4e5f</code> with two characteristics:</p>
 <table class="markdownTable">
@@ -105,13 +105,13 @@ GATT</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>6e1f0003-...</code> (TX)   </td><td class="markdownTableBodyNone">server → client   </td><td class="markdownTableBodyNone">notify   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md56"></a>
+<h1><a class="anchor" id="autotoc_md57"></a>
 Message</h1>
 <p>BLE delivers packets reliably and in order, so a message is just cut into packets of at most the MTU and reassembled with the length field.</p>
 <div class="fragment"><div class="line">[op:1][reqId:1][status:1][payloadLen:2 LE][payload...]</div>
 </div><!-- fragment --><p>Responses repeat <code>reqId</code>, set <code>op | 0x80</code> and carry a status. There is one request in flight per client.</p>
 <p>Every packet on the link starts with the <b>session id</b> of the client (<code>[sessionId:1][message bytes...]</code>, so the message is cut into packets of MTU − 1 bytes). A client first joins a session with control packets (session id 0), see <a href="sessions.md#wire-format">Several clients</a>.</p>
-<h1><a class="anchor" id="autotoc_md57"></a>
+<h1><a class="anchor" id="autotoc_md58"></a>
 Operations</h1>
 <p>All numbers are little endian. File access is <b>offset based</b>, so a repeated read or write is harmless (info, read, write, stat and list are retried once after a timeout).</p>
 <table class="markdownTable">
@@ -139,13 +139,13 @@ Operations</h1>
 <td class="markdownTableBodyNone">12 ListBatch   </td><td class="markdownTableBodyNone">index:2, maxBytes:2, path   </td><td class="markdownTableBodyNone">flags (bit 0: last entry included), then entries <code>isDir:1, size:4, nameLen:1, name</code> as many as fit into maxBytes (at least one). A client falls back to op 7 if the server does not know op 12.   </td></tr>
 </table>
 <p>Open flags: 1 read, 2 write, 4 append (client side), 8 create, 16 truncate.</p>
-<h1><a class="anchor" id="autotoc_md58"></a>
+<h1><a class="anchor" id="autotoc_md59"></a>
 Status codes</h1>
 <p>0 ok, 1 error, 2 not found, 3 bad request, 4 no handle, 5 denied, 6 exists, 7 I/O error, 8 end of list, 9 is a directory, 10 busy (locked). <code>Open</code> of a directory answers 9.</p>
-<h1><a class="anchor" id="autotoc_md59"></a>
+<h1><a class="anchor" id="autotoc_md60"></a>
 Locking</h1>
 <p>The server answers <em>busy</em> when a request conflicts with its file locks (rules: <a href="server-api.md#file-locking">Server API</a>).</p>
-<h1><a class="anchor" id="autotoc_md60"></a>
+<h1><a class="anchor" id="autotoc_md61"></a>
 Limits</h1>
 <p>Payload ≤ 65535 bytes, offsets and sizes 32 bit, paths are relative to the server's shared root and may not contain <code>..</code>. </p>
 </div></div><!-- contents -->

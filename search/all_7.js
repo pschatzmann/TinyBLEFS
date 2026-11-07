@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['gatt_0',['GATT',['../md_docs_2protocol.html#autotoc_md55',1,'']]],
+  ['gatt_0',['GATT',['../md_docs_2protocol.html#autotoc_md56',1,'']]],
   ['generation_1',['generation',['../classtinyblefs_1_1FileClient.html#af313ce753f6e0aad940774d094c30b81',1,'tinyblefs::FileClient::generation()'],['../classtinyblefs_1_1detail_1_1SessionLink.html#a3efced98fb9f1e90ecf9f5a74728152b',1,'tinyblefs::detail::SessionLink::generation()'],['../classtinyblefs_1_1Transport.html#ad35b5913aeb67d5ca27c6767728c2753',1,'tinyblefs::Transport::generation()']]],
   ['get_2',['get',['../classtinyblefs_1_1Mounts.html#a61c92a9ae2f4c8a2e299df8db6b380c6',1,'tinyblefs::Mounts']]],
   ['get16_3',['get16',['../namespacetinyblefs.html#a2dea386180abd61361c223a0cbcbf63e',1,'tinyblefs']]],

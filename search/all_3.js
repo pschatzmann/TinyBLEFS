@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['card_20over_20sd_5fmmc_0',['SD card over SD_MMC',['../md_docs_2filesystems.html#autotoc_md40',1,'']]],
-  ['card_20over_20sd_5fmmc_20sdio_1',['SD card over SD_MMC (SDIO)',['../md_docs_2filesystems.html#autotoc_md30',1,'']]],
-  ['card_20over_20spi_2',['SD card over SPI',['../md_docs_2filesystems.html#autotoc_md39',1,'']]],
-  ['card_20over_20spi_20tt_20sd_20tt_3',['SD card over SPI (&lt;tt&gt;SD&lt;/tt&gt;)',['../md_docs_2filesystems.html#autotoc_md29',1,'']]],
-  ['card_20tt_20sdfs_20tt_4',['SD card (&lt;tt&gt;SDFS&lt;/tt&gt;)',['../md_docs_2filesystems.html#autotoc_md35',1,'']]],
-  ['checks_5',['Compile checks',['../md_docs_2test-results.html#autotoc_md71',1,'']]],
+  ['card_20over_20sd_5fmmc_0',['SD card over SD_MMC',['../md_docs_2filesystems.html#autotoc_md41',1,'']]],
+  ['card_20over_20sd_5fmmc_20sdio_1',['SD card over SD_MMC (SDIO)',['../md_docs_2filesystems.html#autotoc_md31',1,'']]],
+  ['card_20over_20spi_2',['SD card over SPI',['../md_docs_2filesystems.html#autotoc_md40',1,'']]],
+  ['card_20over_20spi_20tt_20sd_20tt_3',['SD card over SPI (&lt;tt&gt;SD&lt;/tt&gt;)',['../md_docs_2filesystems.html#autotoc_md30',1,'']]],
+  ['card_20tt_20sdfs_20tt_4',['SD card (&lt;tt&gt;SDFS&lt;/tt&gt;)',['../md_docs_2filesystems.html#autotoc_md36',1,'']]],
+  ['checks_5',['Compile checks',['../md_docs_2test-results.html#autotoc_md72',1,'']]],
   ['chunksize_6',['chunkSize',['../classtinyblefs_1_1FileClient.html#a5a729cd69a4c48ae1a66360775dca008',1,'tinyblefs::FileClient']]],
   ['clear_7',['clear',['../classtinyblefs_1_1detail_1_1PacketQueue.html#a8f98212ea1267f819d86e21276db8148',1,'tinyblefs::detail::PacketQueue::clear()'],['../classtinyblefs_1_1RingQueueT.html#aad753e83eaed43121c0bd5eb49ccfd5a',1,'tinyblefs::RingQueueT::clear()'],['../classtinyblefs_1_1detail_1_1LockedQueue.html#ac7a2b9de8693c27a577564b88b4cde27',1,'tinyblefs::detail::LockedQueue::clear()']]],
   ['cli_2emd_8',['cli.md',['../cli_8md.html',1,'']]],
@@ -16,14 +16,14 @@ var searchData=
   ['clients_13',['Several clients',['../md_docs_2sessions.html',1,'']]],
   ['close_14',['close',['../namespacetinyblefs.html#ae3dd53e5be6344da73b2b4c796a71718ad3d2e617335f08df83599665eef8a418',1,'tinyblefs::Close'],['../classtinyblefs_1_1RemoteFile.html#a067ceb683ca0b0194a3198fbc69e86ca',1,'tinyblefs::RemoteFile::close()'],['../classtinyblefs_1_1FileClient.html#ad07bbae4271aeffdd0516d439b27c821',1,'tinyblefs::FileClient::close()']]],
   ['closeall_15',['closeall',['../classtinyblefs_1_1FileServer.html#a239484ba48131380c7e126c4eb223e5e',1,'tinyblefs::FileServer::closeAll()'],['../classtinyblefs_1_1detail_1_1LinkServer.html#a5b557436a68d9e7f1df95952a226a397',1,'tinyblefs::detail::LinkServer::closeAll()']]],
-  ['code_16',['Not tested with the current code',['../md_docs_2test-results.html#autotoc_md75',1,'']]],
-  ['codes_17',['Status codes',['../md_docs_2protocol.html#autotoc_md58',1,'']]],
+  ['code_16',['Not tested with the current code',['../md_docs_2test-results.html#autotoc_md76',1,'']]],
+  ['codes_17',['Status codes',['../md_docs_2protocol.html#autotoc_md59',1,'']]],
   ['commands_18',['Commands',['../md_docs_2cli.html#autotoc_md13',1,'']]],
-  ['compile_20checks_19',['Compile checks',['../md_docs_2test-results.html#autotoc_md71',1,'']]],
+  ['compile_20checks_19',['Compile checks',['../md_docs_2test-results.html#autotoc_md72',1,'']]],
   ['connect_20',['connect',['../classtinyblefs_1_1ArduinoBLEClientTransport.html#a3633a2ffd867e381d5f004f848619ceb',1,'tinyblefs::ArduinoBLEClientTransport::connect()'],['../classtinyblefs_1_1NimBLEClientTransport.html#ad3eae1c2af398f73771b0cb1e6d9cff9',1,'tinyblefs::NimBLEClientTransport::connect()'],['../classtinyblefs_1_1PicoWClientTransport.html#ae754ba8270b1201787e993fd95e44129',1,'tinyblefs::PicoWClientTransport::connect()'],['../classtinyblefs_1_1SimpleBLEClientTransport.html#a7de3daf84121faa248db9f11c120308a',1,'tinyblefs::SimpleBLEClientTransport::connect()']]],
   ['connected_21',['connected',['../classtinyblefs_1_1SimpleBLEServerTransport.html#a356458662c70a9fc57d174d067fde741',1,'tinyblefs::SimpleBLEServerTransport::connected()'],['../classtinyblefs_1_1ArduinoBLEServerTransport.html#af6ca3a2d1afbc9458a8515531e14922a',1,'tinyblefs::ArduinoBLEServerTransport::connected()'],['../classtinyblefs_1_1ArduinoBLEClientTransport.html#a349a0dc0c9976a3c038d85a662496122',1,'tinyblefs::ArduinoBLEClientTransport::connected()'],['../classtinyblefs_1_1NimBLEServerTransport.html#a41cfc29733b8e39069358a4c19327239',1,'tinyblefs::NimBLEServerTransport::connected()'],['../classtinyblefs_1_1NimBLEClientTransport.html#a0905b53110ef527925dc7a31c6734aea',1,'tinyblefs::NimBLEClientTransport::connected()'],['../classtinyblefs_1_1PicoWServerTransport.html#adb0d66d31720f07f0d57fa6efb5f216b',1,'tinyblefs::PicoWServerTransport::connected()'],['../classtinyblefs_1_1PicoWClientTransport.html#ae1f13a571d667039ce47a9caa71f74fb',1,'tinyblefs::PicoWClientTransport::connected()'],['../classtinyblefs_1_1Transport.html#a6542a2da6534dde47cf31fde58825542',1,'tinyblefs::Transport::connected()'],['../classtinyblefs_1_1detail_1_1SessionLink.html#a1d9883e2e3f530fdaffd8d6fea6bfe29',1,'tinyblefs::detail::SessionLink::connected()'],['../classtinyblefs_1_1FileClient.html#a9bc04eb974dffac228394ff16be5da08',1,'tinyblefs::FileClient::connected()'],['../classtinyblefs_1_1SimpleBLEClientTransport.html#a77d8d624f209c1e95512d70f1b8383b7',1,'tinyblefs::SimpleBLEClientTransport::connected()']]],
-  ['connecting_22',['Connecting',['../md_docs_2client-api.html#autotoc_md18',1,'']]],
+  ['connecting_22',['Connecting',['../md_docs_2client-api.html#autotoc_md19',1,'']]],
   ['copy_23',['copy',['../classtinyblefs_1_1Mounts.html#a60076201c04e1399aceca004d21912e1',1,'tinyblefs::Mounts']]],
   ['copyfile_24',['copyFile',['../namespacetinyblefs.html#a575f5edb43a24d00570698d119af1f44',1,'tinyblefs']]],
-  ['current_20code_25',['Not tested with the current code',['../md_docs_2test-results.html#autotoc_md75',1,'']]]
+  ['current_20code_25',['Not tested with the current code',['../md_docs_2test-results.html#autotoc_md76',1,'']]]
 ];

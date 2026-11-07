@@ -96,6 +96,7 @@ $(document).ready(function(){initNavTree('md_docs_2cli.html',''); initResizable(
 <div class="textblock"><p><a class="anchor" id="autotoc_md10"></a> Two programs in <code>tools/tinyblefs-cli/</code>, both requiring BlueZ (<code>bluetoothd</code>) and <a href="https://github.com/OpenBluetoothToolbox/SimpleBLE">SimpleBLE</a>:</p>
 <ul>
 <li><code>tinyblefs</code>: client. Scans, mounts every TinyBLEFS server it finds and runs a file command.</li>
+<li><code>tinyblefs-fuse</code>: mounts the servers as a normal directory (see below); also needs libfuse3.</li>
 <li><code>tinyblefs-server</code>: shares a directory of this computer over BLE (see below).</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md11"></a>
@@ -172,6 +173,24 @@ Bluetooth settings</h1>
 <div class="line">ConnectionLatency=0</div>
 </div><!-- fragment --><p>then <code>sudo systemctl restart bluetooth</code>. If an adapter stays <code>DOWN</code> afterwards, check <code>rfkill list bluetooth</code> (<code>rfkill unblock bluetooth</code>) and <code>bluetoothctl power on</code>.</p>
 <h1><a class="anchor" id="autotoc_md16"></a>
+Mounting as a directory: tinyblefs-fuse</h1>
+<div class="fragment"><div class="line">sudo apt install libfuse3-dev fuse3        # build and run (re-run cmake after installing)</div>
+<div class="line">mkdir -p ~/ble</div>
+<div class="line">tinyblefs-fuse --prefix=TinyFS ~/ble       # scans, connects, goes to the background</div>
+<div class="line">ls ~/ble                                   # sensor1  sensor2</div>
+<div class="line">cp ~/ble/sensor1/log.txt .</div>
+<div class="line">echo hi &gt;&gt; ~/ble/sensor1/notes.txt</div>
+<div class="line">fusermount3 -u ~/ble                       # unmount</div>
+</div><!-- fragment --><p>The mount point lists the servers as subdirectories and all the usual file commands work. Options: <code>--prefix=</code>, <code>--address=</code>, <code>--scan-time=</code>, <code>--timeout=</code>, <code>--chunk=</code> and <code>--log=</code> (same meaning as for <code>tinyblefs</code>), plus the FUSE options (<code>-f</code> foreground, <code>-d</code> debug, <code>-o allow_other</code>). The BLE scan runs after the program went into the background, so the first access waits a few seconds; if no server is found the mount ends again (use <code>-f</code> to see the message).</p>
+<p>Limits:</p>
+<ul>
+<li>BLE speed: tens of KB/s at best; tools that read many files (<code>grep -r</code>, thumbnails) are slow.</li>
+<li>No permissions, owners or time stamps: fixed values are reported; <code>chmod</code>, <code>chown</code> and <code>touch</code> are accepted and ignored.</li>
+<li>The protocol has no truncate request: <code>&gt; file</code> and <code>truncate -s 0</code> work, other sizes fail (<code>ENOTSUP</code>).</li>
+<li>An open file uses one of the server's open-file slots; too many open files fail.</li>
+<li>Runs single threaded (one request in flight per link). The <code>/</code> directory only holds the mounts: you cannot create files or directories there.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md17"></a>
 Server: tinyblefs-server</h1>
 <div class="fragment"><div class="line">bluetoothctl system-alias &quot;TinyFS PC&quot;     # BLE name seen by client scans</div>
 <div class="line">tinyblefs-server -n pc /srv/share            # mount name &quot;pc&quot;</div>

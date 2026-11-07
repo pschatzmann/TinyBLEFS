@@ -104,7 +104,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <li>Clients mount each server as <code>/&lt;name&gt;/...</code>. The name is announced by the server.</li>
 <li>Arduino <code>File</code>-like API: <code>open</code>, <code>read</code>, <code>write</code>, <code>seek</code>, <code>list</code>, <code>remove</code>, <code>mkdir</code>, <code>rename</code>, <code>copy</code>.</li>
 <li>Works with any BLE library through a tiny transport interface; adapters for NimBLE-Arduino, ArduinoBLE, Pico W and SimpleBLE (Linux) are included.</li>
-<li>Linux command line tools: <code>tinyblefs</code> (client) and <code>tinyblefs-server</code> (shares a directory).</li>
+<li>Linux command line tools: <code>tinyblefs</code> (client), <code>tinyblefs-fuse</code> (mounts the servers as a directory, so <code>ls</code>, <code>cp</code>, <code>cat</code> ... work) and <code>tinyblefs-server</code> (shares a directory).</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md1"></a>
 Why this library?</h1>

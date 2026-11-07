@@ -93,13 +93,13 @@ $(document).ready(function(){initNavTree('md_docs_2test-results.html',''); initR
   <div class="headertitle"><div class="title">Test results</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md69"></a> Status of version 0.1 (proof of concept), tested on 2026-11-06. Three levels of testing exist:</p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md70"></a> Status of version 0.1 (proof of concept), tested on 2026-11-06. Three levels of testing exist:</p>
 <ol type="1">
 <li><b>PC tests</b>: automated, no hardware (<code>ctest</code>).</li>
 <li><b>Compile checks</b>: the examples build for the board with <code>arduino-cli</code>.</li>
 <li><b>Hardware tests</b>: boards and a Linux PC (BlueZ, SimpleBLE) were connected by hand.</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md70"></a>
+<h1><a class="anchor" id="autotoc_md71"></a>
 PC tests</h1>
 <p><code>cmake -S . -B build &amp;&amp; cmake --build build &amp;&amp; ctest --test-dir build</code>: all 4 pass.</p>
 <table class="markdownTable">
@@ -114,7 +114,7 @@ PC tests</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>test_tinyfat</code>   </td><td class="markdownTableBodyNone"><a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1TinyFatBackend.html"><code>TinyFatBackend</code></a> on a TinyFATFS RAM disk through the full server/client path   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md71"></a>
+<h1><a class="anchor" id="autotoc_md72"></a>
 Compile checks</h1>
 <p>Everything below builds without errors with the final code (<code>arduino-cli compile</code>; ArduinoBLE 2.1.0, NimBLE-Arduino 2.5.2, arduino-pico 6.3.2, esp32 3.3.12).</p>
 <table class="markdownTable">
@@ -131,7 +131,7 @@ Compile checks</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><b>Nano 33 BLE</b>   </td><td class="markdownTableBodyNone">the same ArduinoBLE sketch   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md72"></a>
+<h1><a class="anchor" id="autotoc_md73"></a>
 Hardware tests</h1>
 <p>The Linux PC runs the <code>tinyblefs</code> / <code>tinyblefs-server</code> tools (SimpleBLE 1.4.0, BlueZ 5.72). "Identical" means the SHA-256 of the downloaded file equals the uploaded one. Only runs with the current code are listed (one server class with sessions, packets of at most 512 bytes).</p>
 <table class="markdownTable">
@@ -144,7 +144,7 @@ Hardware tests</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><b>ESP32-S3</b> server, Linux client   </td><td class="markdownTableBodyNone"><code>NimBLE</code>, LittleFS   </td><td class="markdownTableBodyNone">read a 60 KB file with chunk sizes 400 to 8000, through the built-in Bluetooth 4.0 controller and through a Bluetooth 5.1 USB dongle   </td><td class="markdownTableBodyNone">Works; every download identical. Up to 9 KB/s (built-in) and 17.7 KB/s (dongle)   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md73"></a>
+<h1><a class="anchor" id="autotoc_md74"></a>
 Performance matrix</h1>
 <p>Download speed in KB/s for a sequential read of a 60 KB file (<code>FileClient::setChunkSize</code> = the column), with the current adapter defaults (7.5 ms connection interval requested; NimBLE also asks for the data length extension, 251 bytes). Measured on 2026-11-06.</p>
 <table class="markdownTable">
@@ -180,7 +180,7 @@ Performance matrix</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Pico W, UNO R4 WiFi with a Bluetooth 5 partner   </td><td class="markdownTableBodyNone">not measured   </td><td class="markdownTableBodyNone">–   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md74"></a>
+<h1><a class="anchor" id="autotoc_md75"></a>
 Open problems</h1>
 <p>Also listed under <a href="../README.md#future-improvements">Future improvements</a>:</p>
 <ul>
@@ -189,7 +189,7 @@ Open problems</h1>
 <li><b>Stale BlueZ connection</b>: if a tool run is killed, BlueZ may keep the link open; a NimBLE server (one connection) then stops advertising and no scan finds it until <code>bluetoothctl disconnect &lt;address&gt;</code>.</li>
 <li>The LittleFS of the Pico removes a directory when its last file is deleted, so a following <code>rmdir</code> reports "not found".</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md75"></a>
+<h1><a class="anchor" id="autotoc_md76"></a>
 Not tested with the current code</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">

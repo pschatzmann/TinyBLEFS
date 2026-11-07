@@ -1,5 +1,5 @@
-<map id="src/TinyBLEFS/adapters/Loopback.h" name="src/TinyBLEFS/adapters/Loopback.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="136,5,309,50"/>
+<map id="src/TinyBLEFS/transports/Loopback.h" name="src/TinyBLEFS/transports/Loopback.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="132,5,313,50"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,98,67,126"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,53,81,94,78,89,174,48"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="91,98,168,126"/>

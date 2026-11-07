@@ -1,4 +1,4 @@
-<map id="src/TinyBLEFS/adapters/ArduinoBLE.h" name="src/TinyBLEFS/adapters/ArduinoBLE.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,178,50"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="194,20,204,28,196,35,179,38,178,33,194,30,199,28,192,25"/>
+<map id="src/TinyBLEFS/transports/ArduinoBLE.h" name="src/TinyBLEFS/transports/ArduinoBLE.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,187,50"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="203,20,213,28,205,35,188,38,187,33,203,30,208,28,202,25"/>
 </map>

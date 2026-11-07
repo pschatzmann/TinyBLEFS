@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('md_docs_2client-api.html',''); initRes
 <div class="textblock"><p><a class="anchor" id="autotoc_md10"></a> </p>
 <h1><a class="anchor" id="autotoc_md11"></a>
 Connecting</h1>
-<div class="fragment"><div class="line">BLEClientTransport transport;      <span class="comment">// TinyBLEFS/adapters/BLETransport.h, or an adapter class</span></div>
+<div class="fragment"><div class="line">BLEClientTransport transport;      <span class="comment">// TinyBLEFS/transports/BLETransport.h, or an adapter class</span></div>
 <div class="line">FileClient client(transport, 5000);    <span class="comment">// request timeout in ms</span></div>
 <div class="line">transport.connect(BLEClientTransport::scan(5000, <span class="stringliteral">&quot;TinyFS&quot;</span>)[0]);</div>
 </div><!-- fragment --><p><a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FileClient.html"><code>FileClient</code></a> settings: <code>setTimeout(ms)</code>, <code>setChunkSize(bytes)</code> (data per request and read-ahead size, default 400; larger values are much faster on a good link: 4000 gave 50 KB/s between two ESP32 boards, if the server has the RAM for the answer), <code>setIdleCallback(fn, ctx)</code> (called while waiting for an answer).</p>

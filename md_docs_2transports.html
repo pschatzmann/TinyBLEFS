@@ -96,9 +96,9 @@ $(document).ready(function(){initNavTree('md_docs_2transports.html',''); initRes
 <div class="textblock"><p><a class="anchor" id="autotoc_md82"></a> A transport carries packets between one client and one server. The library never uses a BLE library directly; only the adapters do.</p>
 <h1><a class="anchor" id="autotoc_md83"></a>
 Common transport names</h1>
-<p><code><a class="el" href="BLETransport_8h.html">TinyBLEFS/adapters/BLETransport.h</a></code> includes the adapter of the current platform and gives its classes platform independent names, so one sketch compiles everywhere:</p>
+<p><code><a class="el" href="BLETransport_8h.html">TinyBLEFS/transports/BLETransport.h</a></code> includes the adapter of the current platform and gives its classes platform independent names, so one sketch compiles everywhere:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="TinyBLEFS_8h.html">TinyBLEFS.h</a>&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="BLETransport_8h.html">TinyBLEFS/adapters/BLETransport.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="BLETransport_8h.html">TinyBLEFS/transports/BLETransport.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line">BLEServerTransport server;                         <span class="comment">// server side</span></div>
 <div class="line">server.<a class="code hl_function" href="classtinyblefs_1_1SimpleBLEServerTransport.html#ab7064ccd860831c0be7bd130a3d78e38">begin</a>(<span class="stringliteral">&quot;TinyFS Sensor&quot;</span>);</div>
@@ -140,7 +140,7 @@ Adapters</h1>
 <p>All server adapters have <code>begin(deviceName)</code>. All client adapters have <code>scan(durationMs, namePrefix)</code> and <code>connect(device)</code>. The prefix filters on the <b>BLE device name</b> given to <code>begin()</code> (not on the mount name, which is only known after connecting).</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Adapter (<code>TinyBLEFS/adapters/</code>)   </th><th class="markdownTableHeadNone">Classes   </th><th class="markdownTableHeadNone">Notes    </th></tr>
+<th class="markdownTableHeadNone">Adapter (<code>TinyBLEFS/transports/</code>)   </th><th class="markdownTableHeadNone">Classes   </th><th class="markdownTableHeadNone">Notes    </th></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code><a class="el" href="NimBLE_8h.html">NimBLE.h</a></code>   </td><td class="markdownTableBodyNone"><a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1NimBLEServerTransport.html"><code>NimBLEServerTransport</code></a>, <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1NimBLEClientTransport.html"><code>NimBLEClientTransport</code></a>   </td><td class="markdownTableBodyNone">Server tested on an ESP32-S3. Negotiates MTU 517 and asks for the data length extension (251 bytes) and a 7.5-15 ms connection interval, packets of at most 512 bytes (the ATT limit). Between two ESP32 boards this gave 13 KB/s with 400-byte chunks, 30 KB/s with 1400 and about 50 KB/s with 4000 (<code>FileClient::setChunkSize</code>); <code>begin(name, true)</code> requires encryption; several client connections (limit: NimBLE config, default 3)    </td></tr>
 <tr class="markdownTableRowEven">

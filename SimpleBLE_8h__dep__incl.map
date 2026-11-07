@@ -1,5 +1,5 @@
-<map id="src/TinyBLEFS/adapters/SimpleBLE.h" name="src/TinyBLEFS/adapters/SimpleBLE.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,178,50"/>
-<area shape="rect" id="Node000002" href="$BLETransport_8h.html" title=" " alt="" coords="5,98,178,143"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,64,94,99,89,97,90,68"/>
+<map id="src/TinyBLEFS/transports/SimpleBLE.h" name="src/TinyBLEFS/transports/SimpleBLE.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,187,50"/>
+<area shape="rect" id="Node000002" href="$BLETransport_8h.html" title=" " alt="" coords="5,98,187,143"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,64,99,99,93,97,94,68"/>
 </map>

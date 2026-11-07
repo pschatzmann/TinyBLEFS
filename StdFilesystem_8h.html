@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TinyBLEFS: src/TinyBLEFS/backends/StdFilesystem.h File Reference</title>
+<title>TinyBLEFS: src/TinyBLEFS/fs/StdFilesystem.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,49 +106,49 @@ $(document).ready(function(){initNavTree('StdFilesystem_8h.html',''); initResiza
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for StdFilesystem.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="StdFilesystem_8h__incl.png" border="0" usemap="#asrc_2TinyBLEFS_2backends_2StdFilesystem_8h" alt=""/></div>
-<map name="asrc_2TinyBLEFS_2backends_2StdFilesystem_8h" id="asrc_2TinyBLEFS_2backends_2StdFilesystem_8h">
-<area shape="rect" title=" " alt="" coords="247,5,424,50"/>
-<area shape="rect" title=" " alt="" coords="5,98,95,126"/>
-<area shape="poly" title=" " alt="" coords="258,53,111,96,109,91,261,48"/>
-<area shape="rect" title=" " alt="" coords="119,98,192,126"/>
-<area shape="poly" title=" " alt="" coords="286,52,199,94,196,89,290,49"/>
-<area shape="rect" title=" " alt="" coords="216,98,278,126"/>
-<area shape="poly" title=" " alt="" coords="314,49,274,89,271,85,310,52"/>
-<area shape="rect" title=" " alt="" coords="303,98,368,126"/>
-<area shape="poly" title=" " alt="" coords="337,48,338,84,333,81,334,53"/>
-<area shape="rect" href="FsBackend_8h.html" title=" " alt="" coords="794,98,909,126"/>
-<area shape="poly" title=" " alt="" coords="424,40,780,97,776,100,424,46"/>
-<area shape="rect" href="Logger_8h.html" title=" " alt="" coords="392,98,481,126"/>
-<area shape="poly" title=" " alt="" coords="362,48,411,88,406,88,361,53"/>
-<area shape="rect" href="Protocol_8h.html" title=" " alt="" coords="626,98,724,126"/>
-<area shape="poly" title=" " alt="" coords="424,48,614,94,609,96,424,53"/>
-<area shape="rect" title=" " alt="" coords="450,249,520,277"/>
-<area shape="poly" title=" " alt="" coords="866,123,882,140,896,161,902,182,900,193,895,203,870,221,832,236,786,246,734,254,627,263,535,265,535,260,626,257,734,249,785,241,831,231,867,217,891,200,895,191,897,183,891,163,878,144,864,128"/>
-<area shape="rect" title=" " alt="" coords="822,174,880,201"/>
-<area shape="poly" title=" " alt="" coords="853,124,853,160,849,156,850,128"/>
-<area shape="poly" title=" " alt="" coords="422,125,407,143,393,162,386,181,390,200,410,224,438,244,433,243,407,228,385,202,381,181,389,159,403,140,418,128"/>
-<area shape="rect" title=" " alt="" coords="400,174,474,201"/>
-<area shape="poly" title=" " alt="" coords="438,124,439,159,434,157,435,128"/>
-<area shape="rect" title=" " alt="" coords="497,174,563,201"/>
-<area shape="poly" title=" " alt="" coords="454,124,504,164,499,164,453,129"/>
-<area shape="rect" title=" " alt="" coords="255,174,325,201"/>
-<area shape="poly" title=" " alt="" coords="413,125,331,169,328,164,408,127"/>
-<area shape="rect" href="Platform_8h.html" title=" " alt="" coords="141,174,231,201"/>
-<area shape="poly" title=" " alt="" coords="389,127,246,171,245,166,394,125"/>
-<area shape="poly" title=" " alt="" coords="231,197,437,248,432,251,230,202"/>
-<area shape="rect" title=" " alt="" coords="61,249,127,277"/>
-<area shape="poly" title=" " alt="" coords="172,201,123,242,120,237,167,203"/>
-<area shape="rect" title=" " alt="" coords="150,249,222,277"/>
-<area shape="poly" title=" " alt="" coords="188,200,188,235,184,232,184,204"/>
-<area shape="rect" title=" " alt="" coords="246,249,310,277"/>
-<area shape="poly" title=" " alt="" coords="203,199,253,240,247,240,202,204"/>
-<area shape="poly" title=" " alt="" coords="665,125,577,203,520,243,518,238,574,199,660,127"/>
-<area shape="poly" title=" " alt="" coords="707,124,811,168,805,168,706,129"/>
-<area shape="rect" title=" " alt="" coords="639,174,712,201"/>
-<area shape="poly" title=" " alt="" coords="677,124,677,160,673,156,674,128"/>
-<area shape="rect" title=" " alt="" coords="736,174,798,201"/>
-<area shape="poly" title=" " alt="" coords="693,124,742,165,737,164,691,129"/>
+<div class="center"><img src="StdFilesystem_8h__incl.png" border="0" usemap="#asrc_2TinyBLEFS_2fs_2StdFilesystem_8h" alt=""/></div>
+<map name="asrc_2TinyBLEFS_2fs_2StdFilesystem_8h" id="asrc_2TinyBLEFS_2fs_2StdFilesystem_8h">
+<area shape="rect" title=" " alt="" coords="218,5,453,33"/>
+<area shape="rect" title=" " alt="" coords="5,81,95,109"/>
+<area shape="poly" title=" " alt="" coords="283,36,111,81,109,76,285,31"/>
+<area shape="rect" title=" " alt="" coords="119,81,192,109"/>
+<area shape="poly" title=" " alt="" coords="301,35,202,77,200,73,305,32"/>
+<area shape="rect" title=" " alt="" coords="216,81,278,109"/>
+<area shape="poly" title=" " alt="" coords="322,32,276,73,273,69,317,35"/>
+<area shape="rect" title=" " alt="" coords="303,81,368,109"/>
+<area shape="poly" title=" " alt="" coords="337,31,338,66,333,64,334,36"/>
+<area shape="rect" href="FsBackend_8h.html" title=" " alt="" coords="794,81,909,109"/>
+<area shape="poly" title=" " alt="" coords="428,31,781,82,776,85,428,36"/>
+<area shape="rect" href="Logger_8h.html" title=" " alt="" coords="392,81,481,109"/>
+<area shape="poly" title=" " alt="" coords="354,31,409,72,404,72,353,36"/>
+<area shape="rect" href="Protocol_8h.html" title=" " alt="" coords="626,81,724,109"/>
+<area shape="poly" title=" " alt="" coords="397,31,613,79,608,81,396,36"/>
+<area shape="rect" title=" " alt="" coords="450,232,520,260"/>
+<area shape="poly" title=" " alt="" coords="866,106,882,123,896,144,902,165,900,176,895,186,870,204,832,219,786,229,734,237,627,246,535,248,535,243,626,240,734,232,785,224,831,214,867,200,891,183,895,174,897,166,891,146,878,127,864,111"/>
+<area shape="rect" title=" " alt="" coords="822,157,880,184"/>
+<area shape="poly" title=" " alt="" coords="853,107,853,143,849,139,850,111"/>
+<area shape="poly" title=" " alt="" coords="422,108,407,126,393,145,386,164,390,183,410,207,438,227,433,226,407,211,385,185,381,164,389,142,403,123,418,111"/>
+<area shape="rect" title=" " alt="" coords="400,157,474,184"/>
+<area shape="poly" title=" " alt="" coords="438,107,439,142,434,140,435,111"/>
+<area shape="rect" title=" " alt="" coords="497,157,563,184"/>
+<area shape="poly" title=" " alt="" coords="454,107,504,147,499,147,453,112"/>
+<area shape="rect" title=" " alt="" coords="255,157,325,184"/>
+<area shape="poly" title=" " alt="" coords="413,108,331,152,328,147,408,110"/>
+<area shape="rect" href="Platform_8h.html" title=" " alt="" coords="141,157,231,184"/>
+<area shape="poly" title=" " alt="" coords="389,110,246,154,245,149,394,108"/>
+<area shape="poly" title=" " alt="" coords="231,180,437,231,432,234,230,185"/>
+<area shape="rect" title=" " alt="" coords="61,232,127,260"/>
+<area shape="poly" title=" " alt="" coords="172,184,123,225,120,220,167,186"/>
+<area shape="rect" title=" " alt="" coords="150,232,222,260"/>
+<area shape="poly" title=" " alt="" coords="188,183,188,218,184,215,184,187"/>
+<area shape="rect" title=" " alt="" coords="246,232,310,260"/>
+<area shape="poly" title=" " alt="" coords="203,182,253,223,247,223,202,187"/>
+<area shape="poly" title=" " alt="" coords="665,108,577,186,520,226,518,221,574,182,660,110"/>
+<area shape="poly" title=" " alt="" coords="707,107,811,151,805,151,706,112"/>
+<area shape="rect" title=" " alt="" coords="639,157,712,184"/>
+<area shape="poly" title=" " alt="" coords="677,107,677,143,673,139,674,111"/>
+<area shape="rect" title=" " alt="" coords="736,157,798,184"/>
+<area shape="poly" title=" " alt="" coords="693,107,742,148,737,147,691,112"/>
 </map>
 </div>
 </div>
@@ -160,7 +160,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open file of the std::filesystem backend.  <a href="classtinyblefs_1_1StdFile.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1StdFilesystemBackend.html">tinyblefs::StdFilesystemBackend</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinyblefs_1_1FsBackend.html" title="File system used by the FileServer: implement it to serve any storage (see backends/)">FsBackend</a> for the Linux/desktop file system (std::filesystem), restricted to a root directory.  <a href="classtinyblefs_1_1StdFilesystemBackend.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinyblefs_1_1FsBackend.html" title="File system used by the FileServer: implement it to serve any storage (see fs/)">FsBackend</a> for the Linux/desktop file system (std::filesystem), restricted to a root directory.  <a href="classtinyblefs_1_1StdFilesystemBackend.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -173,7 +173,7 @@ Namespaces</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_bc55abe329e90431aa2946004bdd4063.html">TinyBLEFS</a></li><li class="navelem"><a class="el" href="dir_97cd9ce40aa3712ad8afdd6a5aa9a8fe.html">backends</a></li><li class="navelem"><a class="el" href="StdFilesystem_8h.html">StdFilesystem.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_bc55abe329e90431aa2946004bdd4063.html">TinyBLEFS</a></li><li class="navelem"><a class="el" href="dir_17ee7638b7bde2437e2a1c6faa99bdb9.html">fs</a></li><li class="navelem"><a class="el" href="StdFilesystem_8h.html">StdFilesystem.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

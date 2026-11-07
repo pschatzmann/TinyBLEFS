@@ -1,7 +1,7 @@
-<map id="src/TinyBLEFS/adapters/SimpleBLE.h" name="src/TinyBLEFS/adapters/SimpleBLE.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="380,5,553,50"/>
+<map id="src/TinyBLEFS/transports/SimpleBLE.h" name="src/TinyBLEFS/transports/SimpleBLE.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="376,5,557,50"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,98,176,126"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="378,50,167,97,165,92,381,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="374,51,167,97,165,92,377,46"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="200,98,277,126"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="404,52,290,95,288,90,408,49"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="301,98,368,126"/>
@@ -13,7 +13,7 @@
 <area shape="rect" id="Node000007" title=" " alt="" coords="566,98,629,126"/>
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="501,48,566,89,561,90,501,53"/>
 <area shape="rect" id="Node000008" href="$Logger_8h.html" title=" " alt="" coords="612,174,700,201"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="553,42,602,63,624,78,643,96,652,111,657,127,660,160,656,157,652,128,647,113,639,100,621,82,600,67,553,47"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="557,43,604,64,625,78,643,96,652,111,657,127,660,160,656,157,652,128,647,113,639,100,622,82,602,68,557,48"/>
 <area shape="rect" id="Node000017" href="$Transport_8h.html" title=" " alt="" coords="714,98,819,126"/>
 <area shape="poly" id="edge17_Node000001_Node000017" title=" " alt="" coords="546,48,707,93,702,94,546,53"/>
 <area shape="rect" id="Node000009" title=" " alt="" coords="511,249,585,277"/>

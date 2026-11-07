@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('md_docs_2filesystems.html',''); initRe
 <div class="fragment"><div class="line">FileServer server(backend, transport, <span class="stringliteral">&quot;name&quot;</span>);</div>
 </div><!-- fragment --><table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Backend (<code>TinyBLEFS/backends/</code>)   </th><th class="markdownTableHeadNone">Shares   </th><th class="markdownTableHeadNone">Platforms    </th></tr>
+<th class="markdownTableHeadNone">Backend (<code>TinyBLEFS/fs/</code>)   </th><th class="markdownTableHeadNone">Shares   </th><th class="markdownTableHeadNone">Platforms    </th></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code><a class="el" href="ArduinoFS_8h.html">ArduinoFS.h</a></code>: <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1ArduinoFsBackend.html"><code>ArduinoFsBackend&lt;FS&gt;</code></a>   </td><td class="markdownTableBodyNone">Any Arduino <code>FS</code> class with string open modes: <b>LittleFS, SPIFFS, FFat, SD, SD_MMC</b> (ESP32), <b>LittleFS, FatFS, SDFS</b> (RP2040 / Pico W)   </td><td class="markdownTableBodyNone">ESP32, RP2040    </td></tr>
 <tr class="markdownTableRowEven">
@@ -144,8 +144,8 @@ ESP32</h1>
 <div class="fragment"><div class="line">ArduinoFsBackend&lt;fs::FS&gt; backend(LittleFS);   <span class="comment">// or SPIFFS, FFat, SD, SD_MMC</span></div>
 </div><!-- fragment --><p>Common to all sketches:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="TinyBLEFS_8h.html">TinyBLEFS.h</a>&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="BLETransport_8h.html">TinyBLEFS/adapters/BLETransport.h</a>&quot;</span>         <span class="comment">// NimBLE on the ESP32</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="ArduinoFS_8h.html">TinyBLEFS/backends/ArduinoFS.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="BLETransport_8h.html">TinyBLEFS/transports/BLETransport.h</a>&quot;</span>         <span class="comment">// NimBLE on the ESP32</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="ArduinoFS_8h.html">TinyBLEFS/fs/ArduinoFS.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line">BLEServerTransport transport;</div>
 <div class="line">FileServer server(backend, transport, <span class="stringliteral">&quot;esp32&quot;</span>);   <span class="comment">// backend: see below</span></div>
@@ -220,8 +220,8 @@ SD card over SD_MMC (SDIO)</h2>
 Raspberry Pi Pico W / Pico 2 W (arduino-pico)</h1>
 <p>The file system classes of arduino-pico are all of the type <code>FS</code>:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="TinyBLEFS_8h.html">TinyBLEFS.h</a>&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="BLETransport_8h.html">TinyBLEFS/adapters/BLETransport.h</a>&quot;</span>      <span class="comment">// Tools -&gt; IP/Bluetooth Stack -&gt; &quot;IPv4 + Bluetooth&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="ArduinoFS_8h.html">TinyBLEFS/backends/ArduinoFS.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="BLETransport_8h.html">TinyBLEFS/transports/BLETransport.h</a>&quot;</span>      <span class="comment">// Tools -&gt; IP/Bluetooth Stack -&gt; &quot;IPv4 + Bluetooth&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="ArduinoFS_8h.html">TinyBLEFS/fs/ArduinoFS.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line">BLEServerTransport transport;</div>
 <div class="line">ArduinoFsBackend&lt;FS&gt; backend(LittleFS);   <span class="comment">// or FatFS, SDFS</span></div>
@@ -260,8 +260,8 @@ TinyFATFS (FAT on any storage)</h1>
 <p><a href="https://github.com/pschatzmann/TinyFATFS">TinyFATFS</a> is a header-only port of ChaN's FatFs with exchangeable drivers. Use it where the Arduino file system classes do not fit (UNO R4 WiFi, Nano 33 BLE), where you want a RAM disk, or one FAT code base on all boards.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;fatfs.h&quot;</span>                        <span class="comment">// TinyFATFS: SD, RamIO, ArduinoSpiIO, ...</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="TinyBLEFS_8h.html">TinyBLEFS.h</a>&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="BLETransport_8h.html">TinyBLEFS/adapters/BLETransport.h</a>&quot;</span>       <span class="comment">// adapter of the board</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="TinyFATFS_8h.html">TinyBLEFS/backends/TinyFATFS.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="BLETransport_8h.html">TinyBLEFS/transports/BLETransport.h</a>&quot;</span>       <span class="comment">// adapter of the board</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="TinyFATFS_8h.html">TinyBLEFS/fs/TinyFATFS.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line">BLEServerTransport transport;</div>
 <div class="line">TinyFatBackend backend(SD);               <span class="comment">// SD: the global object of TinyFATFS</span></div>
@@ -301,8 +301,8 @@ Notes</h2>
 <h1><a class="anchor" id="autotoc_md36"></a>
 Linux, macOS, Windows: a directory</h1>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="TinyBLEFS_8h.html">TinyBLEFS.h</a>&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="SimpleBLE_8h.html">TinyBLEFS/adapters/SimpleBLE.h</a>&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="StdFilesystem_8h.html">TinyBLEFS/backends/StdFilesystem.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="SimpleBLE_8h.html">TinyBLEFS/transports/SimpleBLE.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="StdFilesystem_8h.html">TinyBLEFS/fs/StdFilesystem.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line">StdFilesystemBackend backend;</div>
 <div class="line">SimpleBLEServerTransport transport;</div>

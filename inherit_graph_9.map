@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$classtinyblefs_1_1FsBackend.html" title="File system used by the FileServer: implement it to serve any storage (see backends/)" alt="" coords="5,83,162,111"/>
+<area shape="rect" id="Node000000" href="$classtinyblefs_1_1FsBackend.html" title="File system used by the FileServer: implement it to serve any storage (see fs/)" alt="" coords="5,83,162,111"/>
 <area shape="rect" id="Node000001" href="$classtinyblefs_1_1ArduinoFsBackend.html" title="FsBackend for any Arduino file system (LittleFS, SPIFFS, FFat, SD, SD_MMC, ...); uses the POSIX API f..." alt="" coords="210,5,416,50"/>
 <area shape="poly" id="edge14_Node000000_Node000001" title=" " alt="" coords="145,76,239,49,234,52,147,81"/>
 <area shape="rect" id="Node000002" href="$classtinyblefs_1_1StdFilesystemBackend.html" title="FsBackend for the Linux/desktop file system (std::filesystem), restricted to a root directory." alt="" coords="224,75,402,119"/>

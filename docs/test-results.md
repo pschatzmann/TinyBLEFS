@@ -25,8 +25,8 @@ Everything below builds without errors with the final code (`arduino-cli compile
 |---|---|
 | **ESP32** | examples `server-littlefs`, `client-list`, `server-tinyfat`; the file systems LittleFS, SPIFFS, FFat, SD (SPI), SD_MMC with `ArduinoFsBackend`; TinyFATFS RAM disk and SD over SPI with `TinyFatBackend`; the NimBLE test server |
 | **ESP32-S3** | the NimBLE test server and the NimBLE test client |
-| **Pico W** | examples `server-picow`, `client-picow`; LittleFS, FatFS and SDFS with `ArduinoFsBackend` |
-| **UNO R4 WiFi** | example `client-arduinoble`; an ArduinoBLE server and client sketch |
+| **Pico W** | examples `server-picow`, `client-picow` (now `server-littlefs`, `client-list`); LittleFS, FatFS and SDFS with `ArduinoFsBackend` |
+| **UNO R4 WiFi** | example `client-arduinoble` (now `client-list`); an ArduinoBLE server and client sketch |
 | **Nano 33 BLE** | the same ArduinoBLE sketch |
 
 ## Hardware tests

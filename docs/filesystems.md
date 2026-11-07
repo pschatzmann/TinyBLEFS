@@ -47,10 +47,10 @@ Common to all sketches:
 
 ```cpp
 #include "TinyBLEFS.h"
-#include "TinyBLEFS/adapters/NimBLE.h"
+#include "TinyBLEFS/BLETransport.h"         // NimBLE on the ESP32
 #include "TinyBLEFS/backends/ArduinoFS.h"
 
-NimBLEServerTransport transport;
+BLEServerTransport transport;
 FileServer server(backend, transport, "esp32");   // backend: see below
 
 void setup() {
@@ -148,10 +148,10 @@ The file system classes of arduino-pico are all of the type `FS`:
 
 ```cpp
 #include "TinyBLEFS.h"
-#include "TinyBLEFS/adapters/PicoW.h"      // Tools -> IP/Bluetooth Stack -> "IPv4 + Bluetooth"
+#include "TinyBLEFS/BLETransport.h"      // Tools -> IP/Bluetooth Stack -> "IPv4 + Bluetooth"
 #include "TinyBLEFS/backends/ArduinoFS.h"
 
-PicoWServerTransport transport;
+BLEServerTransport transport;
 ArduinoFsBackend<FS> backend(LittleFS);   // or FatFS, SDFS
 FileServer server(backend, transport, "picow");
 
@@ -206,10 +206,10 @@ Use `SDFS`, not the `SD` object of arduino-pico: `SD` is a different class (Ardu
 ```cpp
 #include "fatfs.h"                        // TinyFATFS: SD, RamIO, ArduinoSpiIO, ...
 #include "TinyBLEFS.h"
-#include "TinyBLEFS/adapters/NimBLE.h"
+#include "TinyBLEFS/BLETransport.h"       // adapter of the board
 #include "TinyBLEFS/backends/TinyFATFS.h"
 
-NimBLEServerTransport transport;
+BLEServerTransport transport;
 TinyFatBackend backend(SD);               // SD: the global object of TinyFATFS
 FileServer server(backend, transport, "fat");
 ```

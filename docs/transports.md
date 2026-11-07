@@ -2,6 +2,38 @@
 
 A transport carries packets between one client and one server. The library never uses a BLE library directly; only the adapters do.
 
+## Common transport names
+
+`TinyBLEFS/BLETransport.h` includes the adapter of the current platform and gives its classes platform independent names, so one sketch compiles everywhere:
+
+```cpp
+#include "TinyBLEFS.h"
+#include "TinyBLEFS/BLETransport.h"
+
+BLEServerTransport server;                         // server side
+server.begin("TinyFS Sensor");
+
+auto found = BLEClientTransport::scan(5000, "TinyFS");  // client side
+BLEClientTransport client;
+client.connect(found[0]);
+```
+
+| Name | Meaning |
+|---|---|
+| `BLEServerTransport` | server (peripheral) transport of the platform |
+| `BLEClientTransport` | client (central) transport of the platform |
+| `BLEScanResult` | element type returned by `BLEClientTransport::scan()` |
+| `TINYBLEFS_TRANSPORT_NAME` | name of the selected adapter, e.g. `"NimBLE"` |
+
+| Platform | Selected adapter |
+|---|---|
+| ESP32 (`ARDUINO_ARCH_ESP32`, `ESP_PLATFORM`) | `NimBLE.h` |
+| Raspberry Pi Pico W / Pico 2 W (`ARDUINO_ARCH_RP2040`) | `PicoW.h` |
+| any other Arduino board | `ArduinoBLE.h` |
+| desktop (no `ARDUINO`) | `SimpleBLE.h` |
+
+To choose another adapter (e.g. ArduinoBLE on an ESP32), define one of `TINYBLEFS_TRANSPORT_NIMBLE`, `TINYBLEFS_TRANSPORT_ARDUINOBLE`, `TINYBLEFS_TRANSPORT_PICOW` or `TINYBLEFS_TRANSPORT_SIMPLEBLE` before the include. Only the common API below is the same on every platform; the adapter specific extras (`setPacketSize`, `maxConnections`, ...) remain available but make a sketch platform specific.
+
 ## Adapters
 
 All server adapters have `begin(deviceName)`. All client adapters have `scan(durationMs, namePrefix)` and `connect(device)`. The prefix filters on the **BLE device name** given to `begin()` (not on the mount name, which is only known after connecting).
@@ -11,7 +43,7 @@ All server adapters have `begin(deviceName)`. All client adapters have `scan(dur
 | `NimBLE.h` | [`NimBLEServerTransport`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1NimBLEServerTransport.html), [`NimBLEClientTransport`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1NimBLEClientTransport.html) | Server tested on an ESP32-S3. Negotiates MTU 517 and asks for the data length extension (251 bytes) and a 7.5-15 ms connection interval, packets of at most 512 bytes (the ATT limit). Between two ESP32 boards this gave 13 KB/s with 400-byte chunks, 30 KB/s with 1400 and about 50 KB/s with 4000 (`FileClient::setChunkSize`); `begin(name, true)` requires encryption; several client connections (limit: NimBLE config, default 3) |
 | `ArduinoBLE.h` | [`ArduinoBLEServerTransport`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1ArduinoBLEServerTransport.html), [`ArduinoBLEClientTransport`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1ArduinoBLEClientTransport.html) | Server tested on a UNO R4 WiFi. That board has 32 KB of RAM: keep files, chunk sizes and the queue small, because running out of memory crashes it, and after a crash its radio chip needs a power cycle (unplug/replug) before it advertises again. Polled stack (requests and `server.poll()` run `BLE.poll()`). The MTU cannot be read, so packets are 20 bytes; use `setPacketSize(244)` if both sides negotiate MTU 247. `begin(name, maxConnections)`: for several clients also give the [`FileServer`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FileServer.html) `maxSessions` ([Several clients](sessions.md)) |
 | `PicoW.h` | [`PicoWServerTransport`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1PicoWServerTransport.html), [`PicoWClientTransport`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1PicoWClientTransport.html) | The core has a single `BLEClient`, so a client mounts **one** server at a time. The server tracks its connections itself and sends with BTstack `att_server_notify`. `begin(name, maxConnections)`: for several clients also give the `FileServer` `maxSessions` ([Several clients](sessions.md)) |
-| `SimpleBLE.h` | [`SimpleBLEClientTransport`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1SimpleBLEClientTransport.html), [`SimpleBLEServerTransport`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1SimpleBLEServerTransport.html) | Desktop via SimpleBLE, aimed at Linux/BlueZ (other OSes untested). The server has `begin()` without a name (BlueZ advertises the adapter alias), packets of 20 bytes (`setPacketSize`) and paced notifications (`setPacingMs`, default 10 ms) because SimpleBLE has no flow control or MTU information. Details: [Linux tools](tools.md). Tested with a Pico W as the other end |
+| `SimpleBLE.h` | [`SimpleBLEClientTransport`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1SimpleBLEClientTransport.html), [`SimpleBLEServerTransport`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1SimpleBLEServerTransport.html) | Desktop via SimpleBLE, aimed at Linux/BlueZ (other OSes untested). The server has `begin()` without a name (BlueZ advertises the adapter alias; `begin(name)` exists for the common API and ignores the name), packets of 20 bytes (`setPacketSize`) and paced notifications (`setPacingMs`, default 10 ms) because SimpleBLE has no flow control or MTU information. Details: [Linux tools](tools.md). Tested with a Pico W as the other end |
 | `Loopback.h` | [`LoopbackPair`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1LoopbackPair.html) | In-memory link for tests: `client()` / `server()` |
 
 Received packets are buffered (`TINYBLEFS_RX_SLOTS` = 24 packets of up to `TINYBLEFS_RX_PACKET` = 244 bytes; define before including to change). Lost packets are reported as warnings.

@@ -29,19 +29,21 @@ The price: it is a custom protocol, so standard apps and tools cannot talk to it
 
 ## Quick start
 
-Server (ESP32 sharing LittleFS):
+`TinyBLEFS/BLETransport.h` picks the BLE adapter of your board (ESP32: NimBLE, Pico W: core BLE library, other Arduino boards: ArduinoBLE, Linux: SimpleBLE), so the same sketch runs on all of them.
+
+Server (sharing LittleFS on an ESP32 or Pico W):
 
 ```cpp
 #include <LittleFS.h>
 #include "TinyBLEFS.h"
-#include "TinyBLEFS/adapters/NimBLE.h"
+#include "TinyBLEFS/BLETransport.h"
 #include "TinyBLEFS/backends/ArduinoFS.h"
 
-NimBLEServerTransport transport;
-ArduinoFsBackend<fs::LittleFSFS> backend(LittleFS);
+BLEServerTransport transport;
+ArduinoFsBackend<FS> backend(LittleFS);
 FileServer server(backend, transport, "sensor1");   // mount name
 
-void setup() { LittleFS.begin(true); transport.begin("TinyFS Sensor"); }
+void setup() { LittleFS.begin(); transport.begin("TinyFS Sensor"); }
 void loop()  { server.poll(); }
 ```
 
@@ -49,14 +51,14 @@ Client:
 
 ```cpp
 #include "TinyBLEFS.h"
-#include "TinyBLEFS/adapters/NimBLE.h"
+#include "TinyBLEFS/BLETransport.h"
 
-NimBLEClientTransport transport;
+BLEClientTransport transport;
 FileClient client(transport);
 Mounts mounts;
 
 void setup() {
-  auto found = NimBLEClientTransport::scan(5000, "TinyFS");  // name prefix
+  auto found = BLEClientTransport::scan(5000, "TinyFS");  // name prefix
   transport.connect(found[0]);
   mounts.mount(client);                              // -> "/sensor1"
 
@@ -90,6 +92,8 @@ void setup() {
 | Server + client | `adapters/PicoW.h` | Raspberry Pi Pico W / Pico 2 W (client: one server at a time) |
 | Server + client | `adapters/SimpleBLE.h` | Linux (BlueZ), via [SimpleBLE](https://github.com/OpenBluetoothToolbox/SimpleBLE) |
 | Tests | `adapters/Loopback.h` | any (in memory) |
+
+`TinyBLEFS/BLETransport.h` includes the right adapter for the platform and names its classes `BLEServerTransport` and `BLEClientTransport` ([Transports](docs/transports.md#common-transport-names)).
 
 ## Status
 

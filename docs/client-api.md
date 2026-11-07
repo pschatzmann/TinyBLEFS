@@ -3,9 +3,9 @@
 ## Connecting
 
 ```cpp
-NimBLEClientTransport transport;   // or another adapter
+BLEClientTransport transport;      // TinyBLEFS/BLETransport.h, or an adapter class
 FileClient client(transport, 5000);    // request timeout in ms
-transport.connect(address);
+transport.connect(BLEClientTransport::scan(5000, "TinyFS")[0]);
 ```
 
 [`FileClient`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FileClient.html) settings: `setTimeout(ms)`, `setChunkSize(bytes)` (data per request and read-ahead size, default 400; larger values are much faster on a good link: 4000 gave 50 KB/s between two ESP32 boards, if the server has the RAM for the answer), `setIdleCallback(fn, ctx)` (called while waiting for an answer).

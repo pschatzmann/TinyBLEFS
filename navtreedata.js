@@ -107,9 +107,10 @@ var NAVTREE =
       [ "Server: tinyblefs-server", "md_docs_2tools.html#autotoc_md81", null ]
     ] ],
     [ "Transports", "md_docs_2transports.html", [
-      [ "Adapters", "md_docs_2transports.html#autotoc_md83", null ],
-      [ "Writing an adapter", "md_docs_2transports.html#autotoc_md84", null ],
-      [ "Performance", "md_docs_2transports.html#autotoc_md85", null ]
+      [ "Common transport names", "md_docs_2transports.html#autotoc_md83", null ],
+      [ "Adapters", "md_docs_2transports.html#autotoc_md84", null ],
+      [ "Writing an adapter", "md_docs_2transports.html#autotoc_md85", null ],
+      [ "Performance", "md_docs_2transports.html#autotoc_md86", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],

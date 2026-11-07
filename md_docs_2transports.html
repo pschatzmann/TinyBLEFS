@@ -95,6 +95,47 @@ $(document).ready(function(){initNavTree('md_docs_2transports.html',''); initRes
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="autotoc_md82"></a> A transport carries packets between one client and one server. The library never uses a BLE library directly; only the adapters do.</p>
 <h1><a class="anchor" id="autotoc_md83"></a>
+Common transport names</h1>
+<p><code><a class="el" href="BLETransport_8h.html">TinyBLEFS/BLETransport.h</a></code> includes the adapter of the current platform and gives its classes platform independent names, so one sketch compiles everywhere:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="TinyBLEFS_8h.html">TinyBLEFS.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="BLETransport_8h.html">TinyBLEFS/BLETransport.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line">BLEServerTransport server;                         <span class="comment">// server side</span></div>
+<div class="line">server.<a class="code hl_function" href="classtinyblefs_1_1SimpleBLEServerTransport.html#ab7064ccd860831c0be7bd130a3d78e38">begin</a>(<span class="stringliteral">&quot;TinyFS Sensor&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> found = BLEClientTransport::scan(5000, <span class="stringliteral">&quot;TinyFS&quot;</span>);  <span class="comment">// client side</span></div>
+<div class="line">BLEClientTransport client;</div>
+<div class="line">client.<a class="code hl_function" href="classtinyblefs_1_1SimpleBLEClientTransport.html#a7de3daf84121faa248db9f11c120308a">connect</a>(found[0]);</div>
+<div class="ttc" id="aBLETransport_8h_html"><div class="ttname"><a href="BLETransport_8h.html">BLETransport.h</a></div></div>
+<div class="ttc" id="aTinyBLEFS_8h_html"><div class="ttname"><a href="TinyBLEFS_8h.html">TinyBLEFS.h</a></div></div>
+<div class="ttc" id="aclasstinyblefs_1_1SimpleBLEClientTransport_html_a7de3daf84121faa248db9f11c120308a"><div class="ttname"><a href="classtinyblefs_1_1SimpleBLEClientTransport.html#a7de3daf84121faa248db9f11c120308a">tinyblefs::SimpleBLEClientTransport::connect</a></div><div class="ttdeci">bool connect(SimpleBLE::Peripheral peripheral)</div><div class="ttdoc">Connects to a device found by scan() and discovers the file service.</div><div class="ttdef"><b>Definition</b> <a href="SimpleBLE_8h_source.html#l00140">SimpleBLE.h:140</a></div></div>
+<div class="ttc" id="aclasstinyblefs_1_1SimpleBLEServerTransport_html_ab7064ccd860831c0be7bd130a3d78e38"><div class="ttname"><a href="classtinyblefs_1_1SimpleBLEServerTransport.html#ab7064ccd860831c0be7bd130a3d78e38">tinyblefs::SimpleBLEServerTransport::begin</a></div><div class="ttdeci">bool begin()</div><div class="ttdoc">Creates the TinyBLEFS service and starts advertising.</div><div class="ttdef"><b>Definition</b> <a href="SimpleBLE_8h_source.html#l00237">SimpleBLE.h:237</a></div></div>
+</div><!-- fragment --><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Name   </th><th class="markdownTableHeadNone">Meaning    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>BLEServerTransport</code>   </td><td class="markdownTableBodyNone">server (peripheral) transport of the platform    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>BLEClientTransport</code>   </td><td class="markdownTableBodyNone">client (central) transport of the platform    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>BLEScanResult</code>   </td><td class="markdownTableBodyNone">element type returned by <code>BLEClientTransport::scan()</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>TINYBLEFS_TRANSPORT_NAME</code>   </td><td class="markdownTableBodyNone">name of the selected adapter, e.g. <code>"NimBLE"</code>   </td></tr>
+</table>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Platform   </th><th class="markdownTableHeadNone">Selected adapter    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">ESP32 (<code>ARDUINO_ARCH_ESP32</code>, <code>ESP_PLATFORM</code>)   </td><td class="markdownTableBodyNone"><code><a class="el" href="NimBLE_8h.html">NimBLE.h</a></code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Raspberry Pi Pico W / Pico 2 W (<code>ARDUINO_ARCH_RP2040</code>)   </td><td class="markdownTableBodyNone"><code><a class="el" href="PicoW_8h.html">PicoW.h</a></code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">any other Arduino board   </td><td class="markdownTableBodyNone"><code><a class="el" href="ArduinoBLE_8h.html">ArduinoBLE.h</a></code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">desktop (no <code>ARDUINO</code>)   </td><td class="markdownTableBodyNone"><code><a class="el" href="SimpleBLE_8h.html">SimpleBLE.h</a></code>   </td></tr>
+</table>
+<p>To choose another adapter (e.g. ArduinoBLE on an ESP32), define one of <code>TINYBLEFS_TRANSPORT_NIMBLE</code>, <code>TINYBLEFS_TRANSPORT_ARDUINOBLE</code>, <code>TINYBLEFS_TRANSPORT_PICOW</code> or <code>TINYBLEFS_TRANSPORT_SIMPLEBLE</code> before the include. Only the common API below is the same on every platform; the adapter specific extras (<code>setPacketSize</code>, <code>maxConnections</code>, ...) remain available but make a sketch platform specific.</p>
+<h1><a class="anchor" id="autotoc_md84"></a>
 Adapters</h1>
 <p>All server adapters have <code>begin(deviceName)</code>. All client adapters have <code>scan(durationMs, namePrefix)</code> and <code>connect(device)</code>. The prefix filters on the <b>BLE device name</b> given to <code>begin()</code> (not on the mount name, which is only known after connecting).</p>
 <table class="markdownTable">
@@ -107,12 +148,12 @@ Adapters</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code><a class="el" href="PicoW_8h.html">PicoW.h</a></code>   </td><td class="markdownTableBodyNone"><a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1PicoWServerTransport.html"><code>PicoWServerTransport</code></a>, <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1PicoWClientTransport.html"><code>PicoWClientTransport</code></a>   </td><td class="markdownTableBodyNone">The core has a single <code>BLEClient</code>, so a client mounts <b>one</b> server at a time. The server tracks its connections itself and sends with BTstack <code>att_server_notify</code>. <code>begin(name, maxConnections)</code>: for several clients also give the <code>FileServer</code> <code>maxSessions</code> (<a class="el" href="md_docs_2sessions.html">Several clients</a>)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code><a class="el" href="SimpleBLE_8h.html">SimpleBLE.h</a></code>   </td><td class="markdownTableBodyNone"><a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1SimpleBLEClientTransport.html"><code>SimpleBLEClientTransport</code></a>, <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1SimpleBLEServerTransport.html"><code>SimpleBLEServerTransport</code></a>   </td><td class="markdownTableBodyNone">Desktop via SimpleBLE, aimed at Linux/BlueZ (other OSes untested). The server has <code>begin()</code> without a name (BlueZ advertises the adapter alias), packets of 20 bytes (<code>setPacketSize</code>) and paced notifications (<code>setPacingMs</code>, default 10 ms) because SimpleBLE has no flow control or MTU information. Details: <a class="el" href="md_docs_2tools.html">Linux tools</a>. Tested with a Pico W as the other end    </td></tr>
+<td class="markdownTableBodyNone"><code><a class="el" href="SimpleBLE_8h.html">SimpleBLE.h</a></code>   </td><td class="markdownTableBodyNone"><a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1SimpleBLEClientTransport.html"><code>SimpleBLEClientTransport</code></a>, <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1SimpleBLEServerTransport.html"><code>SimpleBLEServerTransport</code></a>   </td><td class="markdownTableBodyNone">Desktop via SimpleBLE, aimed at Linux/BlueZ (other OSes untested). The server has <code>begin()</code> without a name (BlueZ advertises the adapter alias; <code>begin(name)</code> exists for the common API and ignores the name), packets of 20 bytes (<code>setPacketSize</code>) and paced notifications (<code>setPacingMs</code>, default 10 ms) because SimpleBLE has no flow control or MTU information. Details: <a class="el" href="md_docs_2tools.html">Linux tools</a>. Tested with a Pico W as the other end    </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code><a class="el" href="Loopback_8h.html">Loopback.h</a></code>   </td><td class="markdownTableBodyNone"><a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1LoopbackPair.html"><code>LoopbackPair</code></a>   </td><td class="markdownTableBodyNone">In-memory link for tests: <code>client()</code> / <code>server()</code>   </td></tr>
 </table>
 <p>Received packets are buffered (<code>TINYBLEFS_RX_SLOTS</code> = 24 packets of up to <code>TINYBLEFS_RX_PACKET</code> = 244 bytes; define before including to change). Lost packets are reported as warnings.</p>
-<h1><a class="anchor" id="autotoc_md84"></a>
+<h1><a class="anchor" id="autotoc_md85"></a>
 Writing an adapter</h1>
 <p>Derive from <code><a class="el" href="classtinyblefs_1_1Transport.html" title="Packet oriented, reliable, in-order link between one client and one server.">tinyblefs::Transport</a></code> (<code><a class="el" href="Transport_8h.html">Transport.h</a></code>):</p>
 <table class="markdownTable">
@@ -130,7 +171,7 @@ Writing an adapter</h1>
 <td class="markdownTableBodyNone"><code>void poll()</code>   </td><td class="markdownTableBodyNone">Optional: run the BLE event loop of polled stacks   </td></tr>
 </table>
 <p>Use the GATT layout from <code><a class="el" href="Protocol_8h.html">Protocol.h</a></code>: service <code>kServiceUUID</code>, RX characteristic <code>kRxUUID</code> (client → server, write / write without response), TX characteristic <code>kTxUUID</code> (server → client, notify). Callbacks must only store packets; <code><a class="el" href="RingQueue_8h.html">RingQueue.h</a></code> is a ready-made allocation-free queue. Messages are fragmented and reassembled by the library.</p>
-<h1><a class="anchor" id="autotoc_md85"></a>
+<h1><a class="anchor" id="autotoc_md86"></a>
 Performance</h1>
 <p>Throughput depends on the MTU, the connection interval and the stack; with 20-byte packets expect only a few KB/s. Prefer adapters that negotiate a large MTU (NimBLE, Pico W server).</p>
 <p>Measured so far (details: the performance matrix in <a href="test-results.md#performance-matrix">Test results</a>):</p>

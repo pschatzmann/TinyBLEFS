@@ -119,31 +119,32 @@ Why this library?</h1>
 <p>The price: it is a custom protocol, so standard apps and tools cannot talk to it (you need this library or the <code>tinyblefs</code> tool on the other side), and its speed depends on the BLE hardware: tens of KB/s between ESP32 boards, about 9 KB/s through an old Bluetooth 4.0 PC adapter and 17 KB/s through a Bluetooth 5 USB dongle. Nothing prevents adding an OTS or L2CAP based transport later for the stacks that support it.</p>
 <h1><a class="anchor" id="autotoc_md2"></a>
 Quick start</h1>
-<p>Server (ESP32 sharing LittleFS):</p>
+<p><code><a class="el" href="BLETransport_8h.html">TinyBLEFS/BLETransport.h</a></code> picks the BLE adapter of your board (ESP32: NimBLE, Pico W: core BLE library, other Arduino boards: ArduinoBLE, Linux: SimpleBLE), so the same sketch runs on all of them.</p>
+<p>Server (sharing LittleFS on an ESP32 or Pico W):</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;LittleFS.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="TinyBLEFS_8h.html">TinyBLEFS.h</a>&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="NimBLE_8h.html">TinyBLEFS/adapters/NimBLE.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="BLETransport_8h.html">TinyBLEFS/BLETransport.h</a>&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="ArduinoFS_8h.html">TinyBLEFS/backends/ArduinoFS.h</a>&quot;</span></div>
 <div class="line"> </div>
-<div class="line">NimBLEServerTransport transport;</div>
-<div class="line">ArduinoFsBackend&lt;fs::LittleFSFS&gt; backend(LittleFS);</div>
+<div class="line">BLEServerTransport transport;</div>
+<div class="line">ArduinoFsBackend&lt;FS&gt; backend(LittleFS);</div>
 <div class="line">FileServer server(backend, transport, <span class="stringliteral">&quot;sensor1&quot;</span>);   <span class="comment">// mount name</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> setup() { LittleFS.begin(<span class="keyword">true</span>); transport.begin(<span class="stringliteral">&quot;TinyFS Sensor&quot;</span>); }</div>
+<div class="line"><span class="keywordtype">void</span> setup() { LittleFS.begin(); transport.begin(<span class="stringliteral">&quot;TinyFS Sensor&quot;</span>); }</div>
 <div class="line"><span class="keywordtype">void</span> loop()  { server.poll(); }</div>
 <div class="ttc" id="aArduinoFS_8h_html"><div class="ttname"><a href="ArduinoFS_8h.html">ArduinoFS.h</a></div></div>
-<div class="ttc" id="aNimBLE_8h_html"><div class="ttname"><a href="NimBLE_8h.html">NimBLE.h</a></div></div>
+<div class="ttc" id="aBLETransport_8h_html"><div class="ttname"><a href="BLETransport_8h.html">BLETransport.h</a></div></div>
 <div class="ttc" id="aTinyBLEFS_8h_html"><div class="ttname"><a href="TinyBLEFS_8h.html">TinyBLEFS.h</a></div></div>
 </div><!-- fragment --><p>Client:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="TinyBLEFS_8h.html">TinyBLEFS.h</a>&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="NimBLE_8h.html">TinyBLEFS/adapters/NimBLE.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="BLETransport_8h.html">TinyBLEFS/BLETransport.h</a>&quot;</span></div>
 <div class="line"> </div>
-<div class="line">NimBLEClientTransport transport;</div>
+<div class="line">BLEClientTransport transport;</div>
 <div class="line">FileClient client(transport);</div>
 <div class="line">Mounts mounts;</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> setup() {</div>
-<div class="line">  <span class="keyword">auto</span> found = NimBLEClientTransport::scan(5000, <span class="stringliteral">&quot;TinyFS&quot;</span>);  <span class="comment">// name prefix</span></div>
+<div class="line">  <span class="keyword">auto</span> found = BLEClientTransport::scan(5000, <span class="stringliteral">&quot;TinyFS&quot;</span>);  <span class="comment">// name prefix</span></div>
 <div class="line">  transport.connect(found[0]);</div>
 <div class="line">  mounts.mount(client);                              <span class="comment">// -&gt; &quot;/sensor1&quot;</span></div>
 <div class="line"> </div>
@@ -194,6 +195,7 @@ Supported platforms</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Tests   </td><td class="markdownTableBodyNone"><code><a class="el" href="Loopback_8h.html">adapters/Loopback.h</a></code>   </td><td class="markdownTableBodyNone">any (in memory)   </td></tr>
 </table>
+<p><code><a class="el" href="BLETransport_8h.html">TinyBLEFS/BLETransport.h</a></code> includes the right adapter for the platform and names its classes <code>BLEServerTransport</code> and <code>BLEClientTransport</code> (<a href="docs/transports.md#common-transport-names">Transports</a>).</p>
 <h1><a class="anchor" id="autotoc_md5"></a>
 Status</h1>
 <p>Version 0.1. Tested on a PC with a loopback transport (4 automated tests), by compiling the examples for ESP32, ESP32-S3, Pico W, UNO R4 WiFi and Nano 33 BLE, and by hand on a Linux PC against a <b>Pico W, UNO R4 WiFi, a classic ESP32 and an ESP32-S3</b>. The final code (one server class with sessions) has been run on hardware with the two ESP32 boards mounted together; the other boards were tested just before that change. Not tested on hardware: the ArduinoBLE client, several simultaneous real clients. Details and the problems found: <a class="el" href="md_docs_2test-results.html">Test results</a>.</p>

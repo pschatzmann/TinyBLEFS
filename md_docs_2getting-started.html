@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('md_docs_2getting-started.html',''); in
 <div class="textblock"><p><a class="anchor" id="autotoc_md40"></a> </p>
 <h1><a class="anchor" id="autotoc_md41"></a>
 Installation</h1>
-<p>Copy or clone the library into your Arduino <code>libraries</code> folder. It is header-only: include <code><a class="el" href="TinyBLEFS_8h.html">TinyBLEFS.h</a></code> (core) plus one BLE adapter (<code>TinyBLEFS/adapters/&lt;ble&gt;.h</code>, see <a class="el" href="md_docs_2transports.html">Transports</a>) and, for a server, one file system backend (<code>TinyBLEFS/backends/&lt;fs&gt;.h</code>, see <a class="el" href="md_docs_2filesystems.html">File systems</a>). Adapters and backends are separate includes so that unused libraries are never required.</p>
+<p>Copy or clone the library into your Arduino <code>libraries</code> folder. It is header-only: include <code><a class="el" href="TinyBLEFS_8h.html">TinyBLEFS.h</a></code> (core) plus the BLE transport (<code><a class="el" href="BLETransport_8h.html">TinyBLEFS/BLETransport.h</a></code>, which selects the adapter of your platform, or one adapter <code>TinyBLEFS/adapters/&lt;ble&gt;.h</code> directly, see <a class="el" href="md_docs_2transports.html">Transports</a>) and, for a server, one file system backend (<code>TinyBLEFS/backends/&lt;fs&gt;.h</code>, see <a class="el" href="md_docs_2filesystems.html">File systems</a>). Adapters and backends are separate includes so that unused libraries are never required.</p>
 <p>On Arduino the public classes (<a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FileServer.html"><code>FileServer</code></a>, <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FileClient.html"><code>FileClient</code></a>, <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1Mounts.html"><code>Mounts</code></a>, <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1RemoteFS.html"><code>RemoteFS</code></a>, <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1RemoteFile.html"><code>RemoteFile</code></a>, <code>LogLevel</code>, the adapters and backends) are available without the <code>tinyblefs::</code> prefix. Only these names are imported, not the whole namespace, so internal names cannot clash with other libraries (SdFat, for example, has its own <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FsFile.html"><code>FsFile</code></a>). The classes are named so that they do not clash with the <code>File</code>, <code>Client</code> and <code>Server</code> classes of the Arduino cores. Everything else needs <code>tinyblefs::</code> (e.g. <code><a class="el" href="classtinyblefs_1_1FsFile.html" title="An open file. Destroying the object closes the file.">tinyblefs::FsFile</a></code>, <code><a class="el" href="namespacetinyblefs.html#aae88e6db3a81bca6a49aad9e31cc3046">tinyblefs::Status</a></code>). Define <code>TINYBLEFS_NO_USING_NAMESPACE</code> before including the library to import nothing.</p>
 <h1><a class="anchor" id="autotoc_md42"></a>
 Requirements</h1>
@@ -110,22 +110,18 @@ How it works</h1>
 </div><!-- fragment --><p>A <b>server</b> advertises one BLE service and answers file requests. A <b>client</b> connects to a server, asks for its name and mounts it as <code>/&lt;name&gt;</code>. Several servers can be mounted at once (one transport + <code>FileClient</code> per server, kept alive while mounted, see <code>examples/client-list</code>). The adapters on both sides can differ, e.g. a NimBLE server and a Linux client.</p>
 <h1><a class="anchor" id="autotoc_md44"></a>
 Examples</h1>
+<p>The examples use <code><a class="el" href="BLETransport_8h.html">TinyBLEFS/BLETransport.h</a></code>, so they compile for every supported board without changes.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Example   </th><th class="markdownTableHeadNone">Board   </th><th class="markdownTableHeadNone">Shows    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>server-littlefs</code>   </td><td class="markdownTableBodyNone">ESP32   </td><td class="markdownTableBodyNone">Share LittleFS    </td></tr>
+<td class="markdownTableBodyNone"><code>server-littlefs</code>   </td><td class="markdownTableBodyNone">ESP32, Pico W   </td><td class="markdownTableBodyNone">Share LittleFS    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>client-list</code>   </td><td class="markdownTableBodyNone">ESP32   </td><td class="markdownTableBodyNone">Mount all servers in range, list, read, write    </td></tr>
+<td class="markdownTableBodyNone"><code>server-tinyfat</code>   </td><td class="markdownTableBodyNone">all (UNO R4: make the RAM disk smaller)   </td><td class="markdownTableBodyNone">Share a FAT RAM disk (TinyFATFS)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>server-picow</code>   </td><td class="markdownTableBodyNone">Pico W   </td><td class="markdownTableBodyNone">Share LittleFS    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>client-picow</code>   </td><td class="markdownTableBodyNone">Pico W   </td><td class="markdownTableBodyNone">Mount a server, list, read    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>server-tinyfat</code>   </td><td class="markdownTableBodyNone">ESP32   </td><td class="markdownTableBodyNone">Share a FAT RAM disk (TinyFATFS)    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>client-arduinoble</code>   </td><td class="markdownTableBodyNone">UNO R4 WiFi, Nano 33 BLE   </td><td class="markdownTableBodyNone">Mount all servers in range   </td></tr>
+<td class="markdownTableBodyNone"><code>client-list</code>   </td><td class="markdownTableBodyNone">all (Pico W: one server at a time)   </td><td class="markdownTableBodyNone">Mount all servers in range, list, read, write   </td></tr>
 </table>
+<p>Pico W: select Tools → IP/Bluetooth Stack → <em>IPv4 + Bluetooth</em>.</p>
 <p>If a sketch misbehaves, switch on <a class="el" href="md_docs_2logging.html">logging</a>: <code>TinyBLEFSLogger.begin(Serial, LogLevel::Debug);</code> </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

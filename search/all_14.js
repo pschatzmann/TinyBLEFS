@@ -34,9 +34,10 @@ var searchData=
   ['tools_31',['Linux tools',['../md_docs_2tools.html',1,'']]],
   ['tools_2emd_32',['tools.md',['../tools_8md.html',1,'']]],
   ['transport_33',['Transport',['../classtinyblefs_1_1Transport.html',1,'tinyblefs']]],
-  ['transport_2eh_34',['Transport.h',['../Transport_8h.html',1,'']]],
-  ['transports_35',['Transports',['../md_docs_2transports.html',1,'']]],
-  ['transports_2emd_36',['transports.md',['../transports_8md.html',1,'']]],
-  ['tt_20sd_20tt_37',['SD card over SPI (&lt;tt&gt;SD&lt;/tt&gt;)',['../md_docs_2filesystems.html#autotoc_md22',1,'']]],
-  ['tt_20sdfs_20tt_38',['SD card (&lt;tt&gt;SDFS&lt;/tt&gt;)',['../md_docs_2filesystems.html#autotoc_md28',1,'']]]
+  ['transport_20names_34',['Common transport names',['../md_docs_2transports.html#autotoc_md83',1,'']]],
+  ['transport_2eh_35',['Transport.h',['../Transport_8h.html',1,'']]],
+  ['transports_36',['Transports',['../md_docs_2transports.html',1,'']]],
+  ['transports_2emd_37',['transports.md',['../transports_8md.html',1,'']]],
+  ['tt_20sd_20tt_38',['SD card over SPI (&lt;tt&gt;SD&lt;/tt&gt;)',['../md_docs_2filesystems.html#autotoc_md22',1,'']]],
+  ['tt_20sdfs_20tt_39',['SD card (&lt;tt&gt;SDFS&lt;/tt&gt;)',['../md_docs_2filesystems.html#autotoc_md28',1,'']]]
 ];

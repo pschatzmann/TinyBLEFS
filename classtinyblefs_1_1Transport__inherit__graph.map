@@ -14,8 +14,8 @@
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="1172,203,1215,258,1263,325,1258,324,1211,261,1170,208"/>
 <area shape="rect" id="Node000008" href="$classtinyblefs_1_1SimpleBLEClientTransport.html" title="Central side: connects to one TinyBLEFS server." alt="" coords="1466,304,1682,550"/>
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1176,127,1242,147,1315,176,1389,212,1457,258,1502,305,1497,304,1454,262,1386,217,1313,180,1240,153,1176,132"/>
-<area shape="rect" id="Node000009" href="$classtinyblefs_1_1SimpleBLEServerTransport.html" title="Peripheral side: advertises the TinyBLEFS service via BlueZ (GATT server) and talks to one client." alt="" coords="1706,293,1925,561"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="1177,110,1287,121,1422,146,1493,165,1563,190,1632,220,1696,257,1736,294,1730,293,1692,262,1629,225,1561,195,1491,170,1420,151,1286,127,1177,116"/>
+<area shape="rect" id="Node000009" href="$classtinyblefs_1_1SimpleBLEServerTransport.html" title="Peripheral side: advertises the TinyBLEFS service via BlueZ (GATT server) and talks to one client." alt="" coords="1706,282,1925,572"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="1177,110,1287,121,1422,146,1493,165,1563,190,1632,220,1696,257,1724,283,1719,282,1692,262,1629,225,1561,195,1491,170,1420,151,1286,127,1177,116"/>
 <area shape="rect" id="Node000010" href="$classtinyblefs_1_1detail_1_1SessionLink.html" title="Client side (internal, owned by FileClient): a point&#45;to&#45;point Transport on top of the shared link,..." alt="" coords="1950,260,2086,595"/>
 <area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="1176,112,1358,128,1583,156,1694,175,1795,198,1878,226,1912,241,1938,258,1952,272,1947,270,1935,262,1909,246,1876,231,1793,204,1693,181,1582,161,1357,133,1177,118"/>
 </map>

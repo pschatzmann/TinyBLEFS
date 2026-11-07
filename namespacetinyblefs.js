@@ -34,6 +34,9 @@ var namespacetinyblefs =
     [ "StdFilesystemBackend", "classtinyblefs_1_1StdFilesystemBackend.html", "classtinyblefs_1_1StdFilesystemBackend" ],
     [ "TinyFatBackend", "classtinyblefs_1_1TinyFatBackend.html", "classtinyblefs_1_1TinyFatBackend" ],
     [ "Transport", "classtinyblefs_1_1Transport.html", "classtinyblefs_1_1Transport" ],
+    [ "BLEClientTransport", "namespacetinyblefs.html#a0da8025af36bc17163f3525fcd99046c", null ],
+    [ "BLEScanResult", "namespacetinyblefs.html#a80389c8425baa0eb04fd59954d042e05", null ],
+    [ "BLEServerTransport", "namespacetinyblefs.html#a5420537a25cea68eb0df4a61c735f115", null ],
     [ "RingQueue", "namespacetinyblefs.html#ad0c78159b2cbc43d0f339bf8e6c4093b", null ],
     [ "ListFlags", "namespacetinyblefs.html#a7853ff219e202d6adfd3b2a016f35b2e", [
       [ "kListEnd", "namespacetinyblefs.html#a7853ff219e202d6adfd3b2a016f35b2ea022ab3a325785b762d029f94296743b7", null ]

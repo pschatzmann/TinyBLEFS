@@ -106,9 +106,9 @@ Inheritance diagram for tinyblefs::SimpleBLEServerTransport:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinyblefs_1_1SimpleBLEServerTransport__inherit__graph.png" border="0" usemap="#atinyblefs_1_1SimpleBLEServerTransport_inherit__map" alt="Inheritance graph"/></div>
 <map name="atinyblefs_1_1SimpleBLEServerTransport_inherit__map" id="atinyblefs_1_1SimpleBLEServerTransport_inherit__map">
-<area shape="rect" title="Peripheral side: advertises the TinyBLEFS service via BlueZ (GATT server) and talks to one client." alt="" coords="5,260,224,528"/>
+<area shape="rect" title="Peripheral side: advertises the TinyBLEFS service via BlueZ (GATT server) and talks to one client." alt="" coords="5,260,224,550"/>
 <area shape="rect" href="classtinyblefs_1_1Transport.html" title="Packet oriented, reliable, in&#45;order link between one client and one server." alt="" coords="47,5,183,212"/>
-<area shape="poly" title=" " alt="" coords="115,224,117,260,112,259,114,229"/>
+<area shape="poly" title=" " alt="" coords="115,224,117,260,112,260,114,229"/>
 </map>
 </div>
 <div class="dynheader">
@@ -116,9 +116,9 @@ Collaboration diagram for tinyblefs::SimpleBLEServerTransport:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinyblefs_1_1SimpleBLEServerTransport__coll__graph.png" border="0" usemap="#atinyblefs_1_1SimpleBLEServerTransport_coll__map" alt="Collaboration graph"/></div>
 <map name="atinyblefs_1_1SimpleBLEServerTransport_coll__map" id="atinyblefs_1_1SimpleBLEServerTransport_coll__map">
-<area shape="rect" title="Peripheral side: advertises the TinyBLEFS service via BlueZ (GATT server) and talks to one client." alt="" coords="5,260,224,528"/>
+<area shape="rect" title="Peripheral side: advertises the TinyBLEFS service via BlueZ (GATT server) and talks to one client." alt="" coords="5,260,224,550"/>
 <area shape="rect" href="classtinyblefs_1_1Transport.html" title="Packet oriented, reliable, in&#45;order link between one client and one server." alt="" coords="47,5,183,212"/>
-<area shape="poly" title=" " alt="" coords="115,224,117,260,112,259,114,229"/>
+<area shape="poly" title=" " alt="" coords="115,224,117,260,112,260,114,229"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -129,6 +129,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab7064ccd860831c0be7bd130a3d78e38" id="r_ab7064ccd860831c0be7bd130a3d78e38"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1SimpleBLEServerTransport.html#ab7064ccd860831c0be7bd130a3d78e38">begin</a> ()</td></tr>
 <tr class="memdesc:ab7064ccd860831c0be7bd130a3d78e38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the TinyBLEFS service and starts advertising.  <br /></td></tr>
 <tr class="separator:ab7064ccd860831c0be7bd130a3d78e38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a265db5d621ebd715fc312d8d486e3a08" id="r_a265db5d621ebd715fc312d8d486e3a08"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1SimpleBLEServerTransport.html#a265db5d621ebd715fc312d8d486e3a08">begin</a> (const char *deviceName)</td></tr>
+<tr class="memdesc:a265db5d621ebd715fc312d8d486e3a08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <a class="el" href="classtinyblefs_1_1SimpleBLEServerTransport.html#ab7064ccd860831c0be7bd130a3d78e38" title="Creates the TinyBLEFS service and starts advertising.">begin()</a>: for the same API as the other server adapters.  <br /></td></tr>
+<tr class="separator:a265db5d621ebd715fc312d8d486e3a08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a9314ac19199e9945cbf9e0e59726e9" id="r_a6a9314ac19199e9945cbf9e0e59726e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinyblefs_1_1SimpleBLEServerTransport.html#a6a9314ac19199e9945cbf9e0e59726e9">end</a> ()</td></tr>
 <tr class="memdesc:a6a9314ac19199e9945cbf9e0e59726e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops advertising.  <br /></td></tr>
 <tr class="separator:a6a9314ac19199e9945cbf9e0e59726e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -195,7 +198,7 @@ Public Member Functions</h2></td></tr>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="ab7064ccd860831c0be7bd130a3d78e38" name="ab7064ccd860831c0be7bd130a3d78e38"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7064ccd860831c0be7bd130a3d78e38">&#9670;&#160;</a></span>begin()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7064ccd860831c0be7bd130a3d78e38">&#9670;&#160;</a></span>begin() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -220,6 +223,37 @@ Public Member Functions</h2></td></tr>
 <p>Creates the TinyBLEFS service and starts advertising. </p>
 
 <p class="definition">Definition at line <a class="el" href="SimpleBLE_8h_source.html#l00237">237</a> of file <a class="el" href="SimpleBLE_8h_source.html">SimpleBLE.h</a>.</p>
+
+</div>
+</div>
+<a id="a265db5d621ebd715fc312d8d486e3a08" name="a265db5d621ebd715fc312d8d486e3a08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a265db5d621ebd715fc312d8d486e3a08">&#9670;&#160;</a></span>begin() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool tinyblefs::SimpleBLEServerTransport::begin </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>deviceName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Same as <a class="el" href="classtinyblefs_1_1SimpleBLEServerTransport.html#ab7064ccd860831c0be7bd130a3d78e38" title="Creates the TinyBLEFS service and starts advertising.">begin()</a>: for the same API as the other server adapters. </p>
+<p>The name is ignored (BlueZ advertises the adapter alias, see above). </p>
+
+<p class="definition">Definition at line <a class="el" href="SimpleBLE_8h_source.html#l00278">278</a> of file <a class="el" href="SimpleBLE_8h_source.html">SimpleBLE.h</a>.</p>
 
 </div>
 </div>
@@ -250,7 +284,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classtinyblefs_1_1Transport.html#a6542a2da6534dde47cf31fde58825542">tinyblefs::Transport</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="SimpleBLE_8h_source.html#l00316">316</a> of file <a class="el" href="SimpleBLE_8h_source.html">SimpleBLE.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SimpleBLE_8h_source.html#l00327">327</a> of file <a class="el" href="SimpleBLE_8h_source.html">SimpleBLE.h</a>.</p>
 
 </div>
 </div>
@@ -279,7 +313,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Stops advertising. </p>
 
-<p class="definition">Definition at line <a class="el" href="SimpleBLE_8h_source.html#l00277">277</a> of file <a class="el" href="SimpleBLE_8h_source.html">SimpleBLE.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SimpleBLE_8h_source.html#l00288">288</a> of file <a class="el" href="SimpleBLE_8h_source.html">SimpleBLE.h</a>.</p>
 
 </div>
 </div>
@@ -310,7 +344,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classtinyblefs_1_1Transport.html#a7ed2442227c801b6c80a71a4c1ba1a37">tinyblefs::Transport</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="SimpleBLE_8h_source.html#l00296">296</a> of file <a class="el" href="SimpleBLE_8h_source.html">SimpleBLE.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SimpleBLE_8h_source.html#l00307">307</a> of file <a class="el" href="SimpleBLE_8h_source.html">SimpleBLE.h</a>.</p>
 
 </div>
 </div>
@@ -352,7 +386,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classtinyblefs_1_1Transport.html#aaf9b81ce4e4244f2ec0e154512f579fc">tinyblefs::Transport</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="SimpleBLE_8h_source.html#l00311">311</a> of file <a class="el" href="SimpleBLE_8h_source.html">SimpleBLE.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SimpleBLE_8h_source.html#l00322">322</a> of file <a class="el" href="SimpleBLE_8h_source.html">SimpleBLE.h</a>.</p>
 
 </div>
 </div>
@@ -394,7 +428,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classtinyblefs_1_1Transport.html#a0a80d045ee4cc085e615d6f34206c4cf">tinyblefs::Transport</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="SimpleBLE_8h_source.html#l00297">297</a> of file <a class="el" href="SimpleBLE_8h_source.html">SimpleBLE.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SimpleBLE_8h_source.html#l00308">308</a> of file <a class="el" href="SimpleBLE_8h_source.html">SimpleBLE.h</a>.</p>
 
 </div>
 </div>
@@ -424,7 +458,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Pause after every notification (default 10 ms): SimpleBLE has no flow control, so this keeps the BlueZ notification queue from overflowing. </p>
 
-<p class="definition">Definition at line <a class="el" href="SimpleBLE_8h_source.html#l00293">293</a> of file <a class="el" href="SimpleBLE_8h_source.html">SimpleBLE.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SimpleBLE_8h_source.html#l00304">304</a> of file <a class="el" href="SimpleBLE_8h_source.html">SimpleBLE.h</a>.</p>
 
 </div>
 </div>
@@ -454,7 +488,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Bytes per notification (default 20: SimpleBLE can't tell the MTU of the connection; raise it if the client negotiated a larger one) </p>
 
-<p class="definition">Definition at line <a class="el" href="SimpleBLE_8h_source.html#l00290">290</a> of file <a class="el" href="SimpleBLE_8h_source.html">SimpleBLE.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SimpleBLE_8h_source.html#l00301">301</a> of file <a class="el" href="SimpleBLE_8h_source.html">SimpleBLE.h</a>.</p>
 
 </div>
 </div>

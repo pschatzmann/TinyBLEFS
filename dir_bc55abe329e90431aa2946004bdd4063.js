@@ -2,6 +2,7 @@ var dir_bc55abe329e90431aa2946004bdd4063 =
 [
     [ "adapters", "dir_a147f578ca0aec9994176eecc6f02551.html", "dir_a147f578ca0aec9994176eecc6f02551" ],
     [ "backends", "dir_97cd9ce40aa3712ad8afdd6a5aa9a8fe.html", "dir_97cd9ce40aa3712ad8afdd6a5aa9a8fe" ],
+    [ "BLETransport.h", "BLETransport_8h.html", "BLETransport_8h" ],
     [ "Client.h", "Client_8h.html", "Client_8h" ],
     [ "FsBackend.h", "FsBackend_8h.html", "FsBackend_8h" ],
     [ "LinkServer.h", "LinkServer_8h.html", "LinkServer_8h" ],

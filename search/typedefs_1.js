@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ringqueue_0',['RingQueue',['../namespacetinyblefs.html#ad0c78159b2cbc43d0f339bf8e6c4093b',1,'tinyblefs']]]
+  ['filet_0',['FileT',['../classtinyblefs_1_1ArduinoFsBackend.html#a5432528af61aa48181816cc55b06baee',1,'tinyblefs::ArduinoFsBackend']]]
 ];

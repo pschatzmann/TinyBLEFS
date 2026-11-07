@@ -148,9 +148,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "ArduinoBLE_8h.html",
-"classtinyblefs_1_1FileLocks.html#a90234f9978bfbaec75a32af725ab1a29",
-"classtinyblefs_1_1RemoteFile.html#a2fc06f0353110cbbe5b7eb7ea2dea58e",
-"functions_func_p.html"
+"classtinyblefs_1_1FileClient.html#afa3f6f85c8f2906bb7677ca71f875e95",
+"classtinyblefs_1_1RemoteFile.html#a067ceb683ca0b0194a3198fbc69e86ca",
+"functions_func_f.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

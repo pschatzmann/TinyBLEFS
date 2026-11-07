@@ -2,6 +2,7 @@ var classtinyblefs_1_1SimpleBLEServerTransport =
 [
     [ "~SimpleBLEServerTransport", "classtinyblefs_1_1SimpleBLEServerTransport.html#ac70abf46b4230d000a9e79fbf713b367", null ],
     [ "begin", "classtinyblefs_1_1SimpleBLEServerTransport.html#ab7064ccd860831c0be7bd130a3d78e38", null ],
+    [ "begin", "classtinyblefs_1_1SimpleBLEServerTransport.html#a265db5d621ebd715fc312d8d486e3a08", null ],
     [ "connected", "classtinyblefs_1_1SimpleBLEServerTransport.html#a356458662c70a9fc57d174d067fde741", null ],
     [ "end", "classtinyblefs_1_1SimpleBLEServerTransport.html#a6a9314ac19199e9945cbf9e0e59726e9", null ],
     [ "mtu", "classtinyblefs_1_1SimpleBLEServerTransport.html#aba306d8dd9d303d9906fe005dcc0c69b", null ],

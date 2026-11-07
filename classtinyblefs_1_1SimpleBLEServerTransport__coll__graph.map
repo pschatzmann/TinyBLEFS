@@ -1,5 +1,5 @@
 <map id="tinyblefs::SimpleBLEServerTransport" name="tinyblefs::SimpleBLEServerTransport">
-<area shape="rect" id="Node000001" title="Peripheral side: advertises the TinyBLEFS service via BlueZ (GATT server) and talks to one client." alt="" coords="5,260,224,528"/>
+<area shape="rect" id="Node000001" title="Peripheral side: advertises the TinyBLEFS service via BlueZ (GATT server) and talks to one client." alt="" coords="5,260,224,550"/>
 <area shape="rect" id="Node000002" href="$classtinyblefs_1_1Transport.html" title="Packet oriented, reliable, in&#45;order link between one client and one server." alt="" coords="47,5,183,212"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,224,117,260,112,259,114,229"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,224,117,260,112,260,114,229"/>
 </map>

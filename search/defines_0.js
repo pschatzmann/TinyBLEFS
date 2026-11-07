@@ -8,5 +8,7 @@ var searchData=
   ['tinyblefs_5fpico_5frx_5fpacket_5',['TINYBLEFS_PICO_RX_PACKET',['../PicoW_8h.html#a2576594469373d40efa60f567bcc3498',1,'PicoW.h']]],
   ['tinyblefs_5frx_5fpacket_6',['TINYBLEFS_RX_PACKET',['../RingQueue_8h.html#a15e13e49dcbe9c92dc7167ea9fe8a3fa',1,'RingQueue.h']]],
   ['tinyblefs_5frx_5fslots_7',['TINYBLEFS_RX_SLOTS',['../RingQueue_8h.html#a9e45b4275627219a9376a90fab22befa',1,'RingQueue.h']]],
-  ['tinyblefs_5fsession_5fpacket_8',['TINYBLEFS_SESSION_PACKET',['../Session_8h.html#a68d8b8035a13c0334da52c41696d54f7',1,'Session.h']]]
+  ['tinyblefs_5fsession_5fpacket_8',['TINYBLEFS_SESSION_PACKET',['../Session_8h.html#a68d8b8035a13c0334da52c41696d54f7',1,'Session.h']]],
+  ['tinyblefs_5ftransport_5fname_9',['TINYBLEFS_TRANSPORT_NAME',['../BLETransport_8h.html#accf8c0db7c5048ca24f40d894cef9b3b',1,'BLETransport.h']]],
+  ['tinyblefs_5ftransport_5fsimpleble_10',['TINYBLEFS_TRANSPORT_SIMPLEBLE',['../BLETransport_8h.html#a4267dd0da58ced1e470bfeb53a561e37',1,'BLETransport.h']]]
 ];

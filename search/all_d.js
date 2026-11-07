@@ -1,14 +1,14 @@
 var searchData=
 [
-  ['macos_20windows_3a_20a_20directory_0',['Linux, macOS, Windows: a directory',['../md_docs_2filesystems.html#autotoc_md44',1,'']]],
-  ['matrix_1',['Performance matrix',['../md_docs_2test-results.html#autotoc_md74',1,'']]],
+  ['macos_20windows_3a_20a_20directory_0',['Linux, macOS, Windows: a directory',['../md_docs_2filesystems.html#autotoc_md36',1,'']]],
+  ['matrix_1',['Performance matrix',['../md_docs_2test-results.html#autotoc_md66',1,'']]],
   ['maxhandles_2',['maxHandles',['../structtinyblefs_1_1ServerInfo.html#aa3748aaa47adc12d801a86b2e911aa38',1,'tinyblefs::ServerInfo']]],
-  ['message_3',['message',['../structtinyblefs_1_1Message.html',1,'tinyblefs::Message'],['../md_docs_2protocol.html#autotoc_md57',1,'Message']]],
-  ['messages_4',['Own messages',['../md_docs_2logging.html#autotoc_md54',1,'']]],
+  ['message_3',['message',['../structtinyblefs_1_1Message.html',1,'tinyblefs::Message'],['../md_docs_2protocol.html#autotoc_md49',1,'Message']]],
+  ['messages_4',['Own messages',['../md_docs_2logging.html#autotoc_md46',1,'']]],
   ['mkdir_5',['mkdir',['../namespacetinyblefs.html#ae3dd53e5be6344da73b2b4c796a71718aaa75edbf0279b66a7f5c763ca1896559',1,'tinyblefs::Mkdir'],['../classtinyblefs_1_1RemoteFS.html#aec6e1f9756566eac918fd2468ff6524a',1,'tinyblefs::RemoteFS::mkdir()'],['../classtinyblefs_1_1Mounts.html#a91d1b243394640581d55d67047ae13f4',1,'tinyblefs::Mounts::mkdir()'],['../classtinyblefs_1_1FsBackend.html#a325378837f43c9adaca69675cb2874a7',1,'tinyblefs::FsBackend::mkdir()'],['../classtinyblefs_1_1FileClient.html#a12c9d640145d754663737749cb6af740',1,'tinyblefs::FileClient::mkdir()'],['../classtinyblefs_1_1TinyFatBackend.html#a7d399f4b70b2316da9612f1c7bf14418',1,'tinyblefs::TinyFatBackend::mkdir()'],['../classtinyblefs_1_1StdFilesystemBackend.html#ac0d9021346f1e58c6ad8e1e7f2685af5',1,'tinyblefs::StdFilesystemBackend::mkdir()'],['../classtinyblefs_1_1ArduinoFsBackend.html#add67abe44ed1d500474b14ebb4821b2c',1,'tinyblefs::ArduinoFsBackend::mkdir()']]],
   ['mount_6',['mount',['../classtinyblefs_1_1Mounts.html#acd3a04eacc435135123d2ad515cb2bba',1,'tinyblefs::Mounts']]],
-  ['mounting_20as_20a_20directory_3a_20tinyblefs_20fuse_7',['Mounting as a directory: tinyblefs-fuse',['../md_docs_2cli.html#autotoc_md16',1,'']]],
-  ['mounts_8',['mounts',['../md_docs_2client-api.html#autotoc_md20',1,'Mounts'],['../classtinyblefs_1_1Mounts.html',1,'tinyblefs::Mounts']]],
+  ['mounting_20as_20a_20directory_3a_20tinyblefs_20fuse_7',['Mounting as a directory: tinyblefs-fuse',['../md_docs_2tools.html#autotoc_md75',1,'']]],
+  ['mounts_8',['mounts',['../md_docs_2client-api.html#autotoc_md12',1,'Mounts'],['../classtinyblefs_1_1Mounts.html',1,'tinyblefs::Mounts']]],
   ['mounts_2eh_9',['Mounts.h',['../Mounts_8h.html',1,'']]],
   ['mtu_10',['mtu',['../classtinyblefs_1_1SimpleBLEClientTransport.html#a3db1a66fd769359dc92d01c96854291b',1,'tinyblefs::SimpleBLEClientTransport::mtu()'],['../classtinyblefs_1_1SimpleBLEServerTransport.html#aba306d8dd9d303d9906fe005dcc0c69b',1,'tinyblefs::SimpleBLEServerTransport::mtu()'],['../classtinyblefs_1_1detail_1_1SessionLink.html#a37b2ae04918050481bb4daff5a5f91b1',1,'tinyblefs::detail::SessionLink::mtu()'],['../classtinyblefs_1_1Transport.html#a7ed2442227c801b6c80a71a4c1ba1a37',1,'tinyblefs::Transport::mtu()'],['../classtinyblefs_1_1PicoWClientTransport.html#ac11a9fb3d5c2faf2718f67872c4aad34',1,'tinyblefs::PicoWClientTransport::mtu()'],['../classtinyblefs_1_1PicoWServerTransport.html#a1dfe2dd74ecdc1b60ddbf8071fa44543',1,'tinyblefs::PicoWServerTransport::mtu()'],['../classtinyblefs_1_1NimBLEClientTransport.html#a79f3de9864c565258f9a0a3441d64c66',1,'tinyblefs::NimBLEClientTransport::mtu()'],['../classtinyblefs_1_1NimBLEServerTransport.html#af8d84afb850a39917899e23e3ac0ba8c',1,'tinyblefs::NimBLEServerTransport::mtu()'],['../classtinyblefs_1_1ArduinoBLEClientTransport.html#a45696af2ab5d763875f849f43c247441',1,'tinyblefs::ArduinoBLEClientTransport::mtu()'],['../classtinyblefs_1_1ArduinoBLEServerTransport.html#a495a8caa91af4f654aacd3e8b29a23ac',1,'tinyblefs::ArduinoBLEServerTransport::mtu()']]]
 ];

@@ -93,7 +93,7 @@ $(document).ready(function(){initNavTree('md_docs_2server-api.html',''); initRes
   <div class="headertitle"><div class="title">Server API</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md62"></a> </p><div class="fragment"><div class="line">FileServer server(backend, transport, <span class="stringliteral">&quot;sensor1&quot;</span>, <span class="stringliteral">&quot;/&quot;</span>, 1, 4);</div>
+<div class="textblock"><p><a class="anchor" id="autotoc_md54"></a> </p><div class="fragment"><div class="line">FileServer server(backend, transport, <span class="stringliteral">&quot;sensor1&quot;</span>, <span class="stringliteral">&quot;/&quot;</span>, 1, 4);</div>
 <div class="line"><span class="comment">//                file system, link, mount name, shared root, max sessions, max open files</span></div>
 <div class="line"><span class="keywordtype">void</span> loop() { server.poll(); }</div>
 </div><!-- fragment --><table class="markdownTable">
@@ -113,10 +113,10 @@ $(document).ready(function(){initNavTree('md_docs_2server-api.html',''); initRes
 <td class="markdownTableBodyNone"><code>maxHandles</code>   </td><td class="markdownTableBodyNone">Open files per client (default 4)   </td></tr>
 </table>
 <p>Call <code>server.poll()</code> often in <code>loop()</code>; with ArduinoBLE it also drives the BLE stack. Other methods: <code>setReadOnly(bool)</code>, <code>isReadOnly()</code>, <code>setMaxListBytes(n)</code> (largest answer to a batched directory listing, default 2048 bytes), <code>setSessionTimeout(ms)</code>, <code>sessionCount()</code>, <code>closeAll()</code>.</p>
-<h1><a class="anchor" id="autotoc_md63"></a>
+<h1><a class="anchor" id="autotoc_md55"></a>
 File system backends</h1>
 <p>The file system is given to the constructor, so any file system can be shared: LittleFS, SPIFFS, FFat, SD, SD_MMC, FatFS, TinyFATFS volumes, a Linux directory or your own. See <a class="el" href="md_docs_2filesystems.html">File systems</a> for the backends, code examples per platform and how to write your own.</p>
-<h1><a class="anchor" id="autotoc_md64"></a>
+<h1><a class="anchor" id="autotoc_md56"></a>
 Security</h1>
 <ul>
 <li><b>Path jail</b>: paths are normalised and any <code>..</code> is rejected, so clients cannot leave <code>root</code>.</li>
@@ -124,7 +124,7 @@ Security</h1>
 <li><b>Encryption</b>: on NimBLE use <code>transport.begin(name, true)</code> to require an encrypted (bonded) link. The other adapters do not enable pairing yet; anyone in range can otherwise read and write the shared files.</li>
 <li>A client's files are closed when it disconnects or its session ends. With the default <code>maxSessions = 1</code> the server serves one client at a time; for several clients see <a class="el" href="md_docs_2sessions.html">Several clients</a>.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md65"></a>
+<h1><a class="anchor" id="autotoc_md57"></a>
 File locking</h1>
 <p>The server protects files from concurrent access (all clients of a <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FileServer.html"><code>FileServer</code></a> share one lock table):</p>
 <ul>

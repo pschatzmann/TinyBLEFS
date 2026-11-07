@@ -93,22 +93,22 @@ $(document).ready(function(){initNavTree('md_docs_2getting-started.html',''); in
   <div class="headertitle"><div class="title">Getting started</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md48"></a> </p>
-<h1><a class="anchor" id="autotoc_md49"></a>
+<div class="textblock"><p><a class="anchor" id="autotoc_md40"></a> </p>
+<h1><a class="anchor" id="autotoc_md41"></a>
 Installation</h1>
 <p>Copy or clone the library into your Arduino <code>libraries</code> folder. It is header-only: include <code><a class="el" href="TinyBLEFS_8h.html">TinyBLEFS.h</a></code> (core) plus one BLE adapter (<code>TinyBLEFS/adapters/&lt;ble&gt;.h</code>, see <a class="el" href="md_docs_2transports.html">Transports</a>) and, for a server, one file system backend (<code>TinyBLEFS/backends/&lt;fs&gt;.h</code>, see <a class="el" href="md_docs_2filesystems.html">File systems</a>). Adapters and backends are separate includes so that unused libraries are never required.</p>
 <p>On Arduino the public classes (<a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FileServer.html"><code>FileServer</code></a>, <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FileClient.html"><code>FileClient</code></a>, <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1Mounts.html"><code>Mounts</code></a>, <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1RemoteFS.html"><code>RemoteFS</code></a>, <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1RemoteFile.html"><code>RemoteFile</code></a>, <code>LogLevel</code>, the adapters and backends) are available without the <code>tinyblefs::</code> prefix. Only these names are imported, not the whole namespace, so internal names cannot clash with other libraries (SdFat, for example, has its own <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FsFile.html"><code>FsFile</code></a>). The classes are named so that they do not clash with the <code>File</code>, <code>Client</code> and <code>Server</code> classes of the Arduino cores. Everything else needs <code>tinyblefs::</code> (e.g. <code><a class="el" href="classtinyblefs_1_1FsFile.html" title="An open file. Destroying the object closes the file.">tinyblefs::FsFile</a></code>, <code><a class="el" href="namespacetinyblefs.html#aae88e6db3a81bca6a49aad9e31cc3046">tinyblefs::Status</a></code>). Define <code>TINYBLEFS_NO_USING_NAMESPACE</code> before including the library to import nothing.</p>
-<h1><a class="anchor" id="autotoc_md50"></a>
+<h1><a class="anchor" id="autotoc_md42"></a>
 Requirements</h1>
 <ul>
 <li>32-bit board (ESP32, RP2040, nRF52, SAMD, Renesas) or Linux, C++11 or newer</li>
 <li>The BLE library of your adapter: <a href="https://github.com/h2zero/NimBLE-Arduino">NimBLE-Arduino</a>, <a href="https://www.arduino.cc/reference/en/libraries/arduinoble/">ArduinoBLE</a>, the arduino-pico <code>BLE</code> library (Tools → IP/Bluetooth Stack → <em>IPv4 + Bluetooth</em>) or SimpleBLE</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md51"></a>
+<h1><a class="anchor" id="autotoc_md43"></a>
 How it works</h1>
 <div class="fragment"><div class="line">client sketch ── Mounts ── RemoteFS ── FileClient ── Transport ~~ BLE ~~ Transport ── FileServer ── FsBackend ── SD/LittleFS</div>
 </div><!-- fragment --><p>A <b>server</b> advertises one BLE service and answers file requests. A <b>client</b> connects to a server, asks for its name and mounts it as <code>/&lt;name&gt;</code>. Several servers can be mounted at once (one transport + <code>FileClient</code> per server, kept alive while mounted, see <code>examples/client-list</code>). The adapters on both sides can differ, e.g. a NimBLE server and a Linux client.</p>
-<h1><a class="anchor" id="autotoc_md52"></a>
+<h1><a class="anchor" id="autotoc_md44"></a>
 Examples</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">

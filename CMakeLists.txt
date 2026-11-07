@@ -25,7 +25,7 @@ option(TINYBLEFS_INSTALL "Install the headers and the CMake package" ${_tinyblef
 # ---------------------------------------------------------------------------
 # The library: header-only, so an INTERFACE target
 #   target_link_libraries(myapp PRIVATE TinyBLEFS::TinyBLEFS)
-# Adapters (TinyBLEFS/adapters/*.h) need their BLE library, e.g. SimpleBLE.h needs
+# Adapters (TinyBLEFS/transports/*.h) need their BLE library, e.g. SimpleBLE.h needs
 # simpleble::simpleble; link it yourself.
 # ---------------------------------------------------------------------------
 add_library(tinyblefs_lib INTERFACE)

@@ -10,7 +10,7 @@
 //
 // Example:
 //   #include "TinyBLEFS.h"
-//   #include "TinyBLEFS/adapters/BLETransport.h"
+//   #include "TinyBLEFS/transports/BLETransport.h"
 //
 //   BLEServerTransport transport;
 //   transport.begin("TinyFS Sensor");

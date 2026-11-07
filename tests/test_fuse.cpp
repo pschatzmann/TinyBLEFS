@@ -11,8 +11,8 @@
 #include <thread>
 
 #include "FuseFs.h"
-#include "TinyBLEFS/adapters/Loopback.h"
-#include "TinyBLEFS/backends/StdFilesystem.h"
+#include "TinyBLEFS/transports/Loopback.h"
+#include "TinyBLEFS/fs/StdFilesystem.h"
 
 using namespace tinyblefs;
 namespace fs = std::filesystem;

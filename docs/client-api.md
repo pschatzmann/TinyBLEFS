@@ -3,7 +3,7 @@
 ## Connecting
 
 ```cpp
-BLEClientTransport transport;      // TinyBLEFS/adapters/BLETransport.h, or an adapter class
+BLEClientTransport transport;      // TinyBLEFS/transports/BLETransport.h, or an adapter class
 FileClient client(transport, 5000);    // request timeout in ms
 transport.connect(BLEClientTransport::scan(5000, "TinyFS")[0]);
 ```

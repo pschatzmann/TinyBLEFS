@@ -21,8 +21,8 @@
 #include <iostream>
 
 #include "TinyBLEFS.h"
-#include "TinyBLEFS/adapters/SimpleBLE.h"
-#include "TinyBLEFS/backends/StdFilesystem.h"
+#include "TinyBLEFS/transports/SimpleBLE.h"
+#include "TinyBLEFS/fs/StdFilesystem.h"
 
 namespace {
 std::atomic_bool running{true};

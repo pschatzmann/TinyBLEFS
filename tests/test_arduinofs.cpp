@@ -11,8 +11,8 @@
 #include <memory>
 
 #include "TinyBLEFS.h"
-#include "TinyBLEFS/adapters/Loopback.h"
-#include "TinyBLEFS/backends/ArduinoFS.h"
+#include "TinyBLEFS/transports/Loopback.h"
+#include "TinyBLEFS/fs/ArduinoFS.h"
 
 using namespace tinyblefs;
 namespace fs = std::filesystem;

@@ -1,7 +1,7 @@
 #pragma once
 // File system abstraction used by the Server. Pass any implementation to the
-// Server constructor: see backends/ArduinoFS.h (SD, LittleFS, SPIFFS, FFat...)
-// and backends/StdFilesystem.h (Linux / host).
+// Server constructor: see fs/ArduinoFS.h (SD, LittleFS, SPIFFS, FFat...)
+// and fs/StdFilesystem.h (Linux / host).
 
 #include <stdint.h>
 
@@ -31,7 +31,7 @@ class FsFile {
   virtual uint32_t size() = 0;
 };
 
-/// File system used by the FileServer: implement it to serve any storage (see backends/)
+/// File system used by the FileServer: implement it to serve any storage (see fs/)
 class FsBackend {
  public:
   virtual ~FsBackend() = default;

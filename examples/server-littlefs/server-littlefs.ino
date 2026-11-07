@@ -1,7 +1,7 @@
 // Shares the LittleFS file system of an ESP32 or a Raspberry Pi Pico W over BLE.
 // Clients see it as "/<name>/..." (name: "littlefs").
 //
-// TinyBLEFS/adapters/BLETransport.h selects the BLE adapter of the platform.
+// TinyBLEFS/transports/BLETransport.h selects the BLE adapter of the platform.
 // - ESP32: NimBLE-Arduino
 // - Pico W: select Tools -> IP/Bluetooth Stack -> "IPv4 + Bluetooth" and a
 //   flash size with a file system (Tools -> Flash Size)
@@ -9,8 +9,8 @@
 #include <LittleFS.h>
 
 #include "TinyBLEFS.h"
-#include "TinyBLEFS/adapters/BLETransport.h"
-#include "TinyBLEFS/backends/ArduinoFS.h"
+#include "TinyBLEFS/transports/BLETransport.h"
+#include "TinyBLEFS/fs/ArduinoFS.h"
 
 BLEServerTransport transport;
 ArduinoFsBackend<FS> backend(LittleFS);

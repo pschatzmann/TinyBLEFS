@@ -22,7 +22,7 @@
 #include <memory>
 
 #include "Commands.h"
-#include "TinyBLEFS/adapters/SimpleBLE.h"
+#include "TinyBLEFS/transports/SimpleBLE.h"
 
 using namespace tinyblefs;
 

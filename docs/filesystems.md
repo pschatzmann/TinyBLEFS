@@ -6,7 +6,7 @@ A server shares **one file system**, chosen by the backend you give to its const
 FileServer server(backend, transport, "name");
 ```
 
-| Backend (`TinyBLEFS/backends/`) | Shares | Platforms |
+| Backend (`TinyBLEFS/fs/`) | Shares | Platforms |
 |---|---|---|
 | `ArduinoFS.h`: [`ArduinoFsBackend<FS>`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1ArduinoFsBackend.html) | Any Arduino `FS` class with string open modes: **LittleFS, SPIFFS, FFat, SD, SD_MMC** (ESP32), **LittleFS, FatFS, SDFS** (RP2040 / Pico W) | ESP32, RP2040 |
 | `TinyFATFS.h`: [`TinyFatBackend`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1TinyFatBackend.html) | A FAT volume of the [TinyFATFS](https://github.com/pschatzmann/TinyFATFS) library: **RAM disk, SD card (SPI), SD_MMC (experimental), disk image file, ...** | Boards supported by TinyFATFS (ESP32, RP2040, ...), Linux |
@@ -47,8 +47,8 @@ Common to all sketches:
 
 ```cpp
 #include "TinyBLEFS.h"
-#include "TinyBLEFS/adapters/BLETransport.h"         // NimBLE on the ESP32
-#include "TinyBLEFS/backends/ArduinoFS.h"
+#include "TinyBLEFS/transports/BLETransport.h"         // NimBLE on the ESP32
+#include "TinyBLEFS/fs/ArduinoFS.h"
 
 BLEServerTransport transport;
 FileServer server(backend, transport, "esp32");   // backend: see below
@@ -148,8 +148,8 @@ The file system classes of arduino-pico are all of the type `FS`:
 
 ```cpp
 #include "TinyBLEFS.h"
-#include "TinyBLEFS/adapters/BLETransport.h"      // Tools -> IP/Bluetooth Stack -> "IPv4 + Bluetooth"
-#include "TinyBLEFS/backends/ArduinoFS.h"
+#include "TinyBLEFS/transports/BLETransport.h"      // Tools -> IP/Bluetooth Stack -> "IPv4 + Bluetooth"
+#include "TinyBLEFS/fs/ArduinoFS.h"
 
 BLEServerTransport transport;
 ArduinoFsBackend<FS> backend(LittleFS);   // or FatFS, SDFS
@@ -206,8 +206,8 @@ Use `SDFS`, not the `SD` object of arduino-pico: `SD` is a different class (Ardu
 ```cpp
 #include "fatfs.h"                        // TinyFATFS: SD, RamIO, ArduinoSpiIO, ...
 #include "TinyBLEFS.h"
-#include "TinyBLEFS/adapters/BLETransport.h"       // adapter of the board
-#include "TinyBLEFS/backends/TinyFATFS.h"
+#include "TinyBLEFS/transports/BLETransport.h"       // adapter of the board
+#include "TinyBLEFS/fs/TinyFATFS.h"
 
 BLEServerTransport transport;
 TinyFatBackend backend(SD);               // SD: the global object of TinyFATFS
@@ -258,8 +258,8 @@ TinyFATFS has a driver for the SDMMC controller (`Esp32SdmmcIO`), but it is mark
 
 ```cpp
 #include "TinyBLEFS.h"
-#include "TinyBLEFS/adapters/SimpleBLE.h"
-#include "TinyBLEFS/backends/StdFilesystem.h"
+#include "TinyBLEFS/transports/SimpleBLE.h"
+#include "TinyBLEFS/fs/StdFilesystem.h"
 
 StdFilesystemBackend backend;
 SimpleBLEServerTransport transport;

@@ -4,11 +4,11 @@ A transport carries packets between one client and one server. The library never
 
 ## Common transport names
 
-`TinyBLEFS/adapters/BLETransport.h` includes the adapter of the current platform and gives its classes platform independent names, so one sketch compiles everywhere:
+`TinyBLEFS/transports/BLETransport.h` includes the adapter of the current platform and gives its classes platform independent names, so one sketch compiles everywhere:
 
 ```cpp
 #include "TinyBLEFS.h"
-#include "TinyBLEFS/adapters/BLETransport.h"
+#include "TinyBLEFS/transports/BLETransport.h"
 
 BLEServerTransport server;                         // server side
 server.begin("TinyFS Sensor");
@@ -38,7 +38,7 @@ To choose another adapter (e.g. ArduinoBLE on an ESP32), define one of `TINYBLEF
 
 All server adapters have `begin(deviceName)`. All client adapters have `scan(durationMs, namePrefix)` and `connect(device)`. The prefix filters on the **BLE device name** given to `begin()` (not on the mount name, which is only known after connecting).
 
-| Adapter (`TinyBLEFS/adapters/`) | Classes | Notes |
+| Adapter (`TinyBLEFS/transports/`) | Classes | Notes |
 |---|---|---|
 | `NimBLE.h` | [`NimBLEServerTransport`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1NimBLEServerTransport.html), [`NimBLEClientTransport`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1NimBLEClientTransport.html) | Server tested on an ESP32-S3. Negotiates MTU 517 and asks for the data length extension (251 bytes) and a 7.5-15 ms connection interval, packets of at most 512 bytes (the ATT limit). Between two ESP32 boards this gave 13 KB/s with 400-byte chunks, 30 KB/s with 1400 and about 50 KB/s with 4000 (`FileClient::setChunkSize`); `begin(name, true)` requires encryption; several client connections (limit: NimBLE config, default 3) |
 | `ArduinoBLE.h` | [`ArduinoBLEServerTransport`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1ArduinoBLEServerTransport.html), [`ArduinoBLEClientTransport`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1ArduinoBLEClientTransport.html) | Server tested on a UNO R4 WiFi. That board has 32 KB of RAM: keep files, chunk sizes and the queue small, because running out of memory crashes it, and after a crash its radio chip needs a power cycle (unplug/replug) before it advertises again. Polled stack (requests and `server.poll()` run `BLE.poll()`). The MTU cannot be read, so packets are 20 bytes; use `setPacketSize(244)` if both sides negotiate MTU 247. `begin(name, maxConnections)`: for several clients also give the [`FileServer`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FileServer.html) `maxSessions` ([Several clients](sessions.md)) |

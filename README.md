@@ -29,15 +29,15 @@ The price: it is a custom protocol, so standard apps and tools cannot talk to it
 
 ## Quick start
 
-`TinyBLEFS/adapters/BLETransport.h` picks the BLE adapter of your board (ESP32: NimBLE, Pico W: core BLE library, other Arduino boards: ArduinoBLE, Linux: SimpleBLE), so the same sketch runs on all of them.
+`TinyBLEFS/transports/BLETransport.h` picks the BLE adapter of your board (ESP32: NimBLE, Pico W: core BLE library, other Arduino boards: ArduinoBLE, Linux: SimpleBLE), so the same sketch runs on all of them.
 
 Server (sharing LittleFS on an ESP32 or Pico W):
 
 ```cpp
 #include <LittleFS.h>
 #include "TinyBLEFS.h"
-#include "TinyBLEFS/adapters/BLETransport.h"
-#include "TinyBLEFS/backends/ArduinoFS.h"
+#include "TinyBLEFS/transports/BLETransport.h"
+#include "TinyBLEFS/fs/ArduinoFS.h"
 
 BLEServerTransport transport;
 ArduinoFsBackend<FS> backend(LittleFS);
@@ -51,7 +51,7 @@ Client:
 
 ```cpp
 #include "TinyBLEFS.h"
-#include "TinyBLEFS/adapters/BLETransport.h"
+#include "TinyBLEFS/transports/BLETransport.h"
 
 BLEClientTransport transport;
 FileClient client(transport);
@@ -87,14 +87,14 @@ void setup() {
 
 | Role | Adapter | Boards |
 |---|---|---|
-| Server + client | `adapters/NimBLE.h` | ESP32 (NimBLE-Arduino) |
-| Server + client | `adapters/ArduinoBLE.h` | UNO R4 WiFi, Nano 33 BLE, other ArduinoBLE boards |
-| Server + client | `adapters/PicoW.h` | Raspberry Pi Pico W / Pico 2 W (client: one server at a time) |
-| Server + client | `adapters/SimpleBLE.h` | Linux (BlueZ), via [SimpleBLE](https://github.com/OpenBluetoothToolbox/SimpleBLE) |
-| Server + client | `adapters/BLETransport.h` | any of the above: selects the adapter of the platform |
-| Tests | `adapters/Loopback.h` | any (in memory) |
+| Server + client | `transports/NimBLE.h` | ESP32 (NimBLE-Arduino) |
+| Server + client | `transports/ArduinoBLE.h` | UNO R4 WiFi, Nano 33 BLE, other ArduinoBLE boards |
+| Server + client | `transports/PicoW.h` | Raspberry Pi Pico W / Pico 2 W (client: one server at a time) |
+| Server + client | `transports/SimpleBLE.h` | Linux (BlueZ), via [SimpleBLE](https://github.com/OpenBluetoothToolbox/SimpleBLE) |
+| Server + client | `transports/BLETransport.h` | any of the above: selects the adapter of the platform |
+| Tests | `transports/Loopback.h` | any (in memory) |
 
-`TinyBLEFS/adapters/BLETransport.h` includes the right adapter for the platform and names its classes `BLEServerTransport` and `BLEClientTransport` ([Transports](docs/transports.md#common-transport-names)).
+`TinyBLEFS/transports/BLETransport.h` includes the right adapter for the platform and names its classes `BLEServerTransport` and `BLEClientTransport` ([Transports](docs/transports.md#common-transport-names)).
 
 ## Status
 

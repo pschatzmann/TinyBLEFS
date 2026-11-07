@@ -6,8 +6,8 @@
 #include <cstdio>
 
 #include "TinyBLEFS.h"
-#include "TinyBLEFS/adapters/Loopback.h"
-#include "TinyBLEFS/backends/TinyFATFS.h"
+#include "TinyBLEFS/transports/Loopback.h"
+#include "TinyBLEFS/fs/TinyFATFS.h"
 
 using namespace tinyblefs;
 

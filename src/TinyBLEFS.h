@@ -2,10 +2,10 @@
 // TinyBLEFS: header-only remote file system over BLE.
 //
 // Client side: FileClient + RemoteFS / Mounts (Arduino File-like API)
-// Server side: FileServer + an FsBackend (backends/ArduinoFS.h or
-//              backends/StdFilesystem.h, include the one you need)
-// BLE adapters (adapters/*.h) implement tinyblefs::Transport;
-// adapters/BLETransport.h selects the one of the current platform.
+// Server side: FileServer + an FsBackend (fs/ArduinoFS.h or
+//              fs/StdFilesystem.h, include the one you need)
+// BLE adapters (transports/*.h) implement tinyblefs::Transport;
+// transports/BLETransport.h selects the one of the current platform.
 
 #include "TinyBLEFS/Client.h"
 #include "TinyBLEFS/FsBackend.h"

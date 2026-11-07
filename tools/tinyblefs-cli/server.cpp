@@ -6,7 +6,7 @@
 //   -n <name>     name announced to clients = mount name (default: host name)
 //   -r            read-only
 //   -f <n>        max simultaneously open files (default 8)
-//   -P <bytes>    bytes per notification (default 20, see docs/transports.md)
+//   -P <bytes>    bytes per notification (default 20, see the wiki page Transports)
 //   -D <ms>       pause after every notification (default 10)
 //   -l <level>    log level on stderr: none, error, warning, info (default), debug
 //

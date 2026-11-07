@@ -280,6 +280,12 @@ inline bool copyFile(RemoteFile& src, RemoteFile& dst, size_t bufSize = 512) {
       return false;
     }
   }
+  // read() returns 0 both at the end and on a failed request
+  if (src.position() < src.size()) {
+    TINYBLEFS_LOGE("copy", "read of %s failed at %u of %u", src.path(),
+                   (unsigned)src.position(), (unsigned)src.size());
+    return false;
+  }
   return true;
 }
 

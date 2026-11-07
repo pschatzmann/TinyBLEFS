@@ -39,7 +39,7 @@ Measured so far (details: the performance matrix in [Test results](test-results.
 | Link | Speed |
 |---|---|
 | ESP32-S3 client ↔ ESP32 server, chunk 400 / 1400 / 4000 / 8000 | 13 / 30 / 51 / 56 KB/s |
-| Linux PC (Bluetooth 4.0 controller) ↔ ESP32-S3 or Pico W, chunk 1400 or more | 8-9 KB/s |
-| Linux PC ↔ UNO R4 WiFi (20-byte packets) | about 1.5 KB/s |
+| Linux PC (Bluetooth 4.0 controller) ↔ ESP32-S3, chunk 1400 or more | 8-9 KB/s |
+| Linux PC (Bluetooth 5.1 USB dongle, BlueZ interval 7.5 ms) ↔ ESP32-S3, chunk 4000 or more | 13-17.7 KB/s |
 
 The speed depends mostly on the weakest side: a controller without the data length extension (Bluetooth 4.2) sends only 27 bytes per link layer packet, and the server's requested connection interval counts (the adapters ask for 7.5 ms). 128 kbps MP3 needs 16 KB/s.

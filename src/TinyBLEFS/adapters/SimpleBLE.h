@@ -22,7 +22,10 @@
 
 #include <simpleble/SimpleBLE.h>
 
+#include <strings.h>
+
 #include <atomic>
+#include <cstdlib>
 #include <deque>
 #include <mutex>
 
@@ -68,6 +71,36 @@ class LockedQueue {
   uint32_t dropped_ = 0;
   std::deque<std::vector<uint8_t>> q_;
 };
+
+/// Picks the Bluetooth adapter: the one named by the environment variable
+/// TINYBLEFS_ADAPTER (identifier such as "hci1", or its address), otherwise
+/// the first powered one, otherwise the first. Returns false if there is none.
+inline bool selectAdapter(SimpleBLE::Adapter& out) {
+  auto adapters = SimpleBLE::Adapter::get_adapters();
+  if (adapters.empty()) {
+    TINYBLEFS_LOGE("simpleble", "no Bluetooth adapter found (is bluetoothd running?)");
+    return false;
+  }
+  const char* want = getenv("TINYBLEFS_ADAPTER");
+  if (want && *want) {
+    for (auto& a : adapters) {
+      if (a.identifier() == want || strcasecmp(a.address().c_str(), want) == 0) {
+        out = a;
+        return true;
+      }
+    }
+    TINYBLEFS_LOGE("simpleble", "adapter '%s' (TINYBLEFS_ADAPTER) not found", want);
+    return false;
+  }
+  for (auto& a : adapters) {
+    if (a.is_powered()) {
+      out = a;
+      return true;
+    }
+  }
+  out = adapters[0];
+  return true;
+}
 }  // namespace detail
 
 /// Central side: connects to one TinyBLEFS server
@@ -83,12 +116,8 @@ class SimpleBLEClientTransport : public Transport {
     std::vector<SimpleBLE::Peripheral> found;
     std::vector<SimpleBLE::Peripheral> results;
     try {
-      auto adapters = SimpleBLE::Adapter::get_adapters();
-      if (adapters.empty()) {
-        TINYBLEFS_LOGE("simpleble", "no Bluetooth adapter found (is bluetoothd running?)");
-        return found;
-      }
-      SimpleBLE::Adapter adapter = adapters[0];
+      SimpleBLE::Adapter adapter;
+      if (!detail::selectAdapter(adapter)) return found;
       adapter.scan_for(durationMs);
       results = adapter.scan_get_results();
     } catch (const std::exception& e) {
@@ -207,13 +236,10 @@ class SimpleBLEServerTransport : public Transport {
   /// Creates the TinyBLEFS service and starts advertising
   bool begin() {
     try {
-      auto adapters = SimpleBLE::Adapter::get_adapters();
-      if (adapters.empty()) {
-        TINYBLEFS_LOGE("simpleble", "no Bluetooth adapter found (is bluetoothd running?)");
-        return false;
-      }
+      SimpleBLE::Adapter adapter;
+      if (!detail::selectAdapter(adapter)) return false;
       using Cap = SimpleBLE::Local::CharacteristicCapability;
-      peripheral_ = adapters[0].create_local_peripheral();
+      peripheral_ = adapter.create_local_peripheral();
       peripheral_.add_advertised_service(kServiceUUID);
       SimpleBLE::Local::Service svc = peripheral_.add_service(kServiceUUID);
       rx_ = svc.add_characteristic(kRxUUID, {Cap::WRITE_REQUEST, Cap::WRITE_COMMAND});

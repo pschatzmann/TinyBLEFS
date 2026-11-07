@@ -93,7 +93,7 @@ $(document).ready(function(){initNavTree('md_docs_2filesystems.html',''); initRe
   <div class="headertitle"><div class="title">File systems and platforms</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md21"></a> A server shares <b>one file system</b>, chosen by the backend you give to its constructor:</p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md22"></a> A server shares <b>one file system</b>, chosen by the backend you give to its constructor:</p>
 <div class="fragment"><div class="line">FileServer server(backend, transport, <span class="stringliteral">&quot;name&quot;</span>);</div>
 </div><!-- fragment --><table class="markdownTable">
 <tr class="markdownTableHead">
@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('md_docs_2filesystems.html',''); initRe
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">your own <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FsBackend.html"><code>FsBackend</code></a>   </td><td class="markdownTableBodyNone">Anything else (see below)   </td><td class="markdownTableBodyNone">any   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md22"></a>
+<h1><a class="anchor" id="autotoc_md23"></a>
 Verification status</h1>
 <p>"Host test" means an automated test on a PC (<code>tests/</code>), "compiles" that it builds for the board with <code>arduino-cli</code>. Only the LittleFS rows have run on real hardware (see <a class="el" href="md_docs_2test-results.html">Test results</a>):</p>
 <table class="markdownTable">
@@ -138,7 +138,7 @@ Verification status</h1>
 </table>
 <p>The BLE adapter and the file system are independent: any adapter can share any backend. The boards of the ArduinoBLE adapter (UNO R4 WiFi, Nano 33 BLE) are mostly clients. As servers they need TinyFATFS or your own backend, because their own file system classes do not use string open modes; a server with a tiny RAM backend of ~50 lines was tested on a UNO R4 WiFi.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md24"></a>
+<h1><a class="anchor" id="autotoc_md25"></a>
 ESP32</h1>
 <p>All ESP32 file system classes derive from <code>fs::FS</code>, so one template argument fits all of them:</p>
 <div class="fragment"><div class="line">ArduinoFsBackend&lt;fs::FS&gt; backend(LittleFS);   <span class="comment">// or SPIFFS, FFat, SD, SD_MMC</span></div>
@@ -161,7 +161,7 @@ ESP32</h1>
 </div><!-- fragment --><p>Declare the backend after the <code>#include</code> of the file system and before the server.</p>
 <p><b>Open files.</b> The ESP32 limits the number of simultaneously open files of each file system (the <code>maxOpenFiles</code> argument of <code>begin()</code>: 10 for LittleFS, SPIFFS and FFat, <b>5 for SD and SD_MMC</b>). A <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FileServer.html"><code>FileServer</code></a> can hold up to <code>maxSessions × maxHandles</code> files (default 1 × 4), and one more is used while a directory is listed. Raise the limit of the file system or lower the server's.</p>
 <p><b>Fast directory listing.</b> On the ESP32 the backend lists directories with the POSIX functions of the virtual file system (<code>opendir</code>/<code>readdir</code>/<code>stat</code> below <code>FS::mountpoint()</code>) and keeps the directory open between the requests of a listing, while the generic Arduino API opens a <code>File</code> object for every entry it skips (a mock file system listed 121 entries about 70 times faster). Define <code>TINYBLEFS_ARDUINOFS_NO_POSIX</code> before the include to switch this off.</p>
-<h2><a class="anchor" id="autotoc_md25"></a>
+<h2><a class="anchor" id="autotoc_md26"></a>
 LittleFS</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;LittleFS.h&gt;</span></div>
 <div class="line">ArduinoFsBackend&lt;fs::FS&gt; backend(LittleFS);</div>
@@ -171,21 +171,21 @@ LittleFS</h2>
 <div class="line">  transport.begin(<span class="stringliteral">&quot;TinyFS ESP32&quot;</span>);</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>Needs a partition scheme with a <code>spiffs</code> data partition (the default schemes have one). Power-fail safe and wear leveling: the best choice for internal flash.</p>
-<h2><a class="anchor" id="autotoc_md26"></a>
+<h2><a class="anchor" id="autotoc_md27"></a>
 SPIFFS</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;SPIFFS.h&gt;</span></div>
 <div class="line">ArduinoFsBackend&lt;fs::FS&gt; backend(SPIFFS);</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> setup() { SPIFFS.begin(<span class="keyword">true</span>); transport.begin(<span class="stringliteral">&quot;TinyFS ESP32&quot;</span>); }</div>
 </div><!-- fragment --><p>SPIFFS has <b>no real directories</b> (paths are just long names, limited to 31 characters): <code>mkdir</code> / <code>rmdir</code> do not work as clients expect and listing a directory shows files below the path. Deprecated by Espressif; prefer LittleFS.</p>
-<h2><a class="anchor" id="autotoc_md27"></a>
+<h2><a class="anchor" id="autotoc_md28"></a>
 FFat (FAT in internal flash)</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;FFat.h&gt;</span></div>
 <div class="line">ArduinoFsBackend&lt;fs::FS&gt; backend(FFat);</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> setup() { FFat.begin(<span class="keyword">true</span>); transport.begin(<span class="stringliteral">&quot;TinyFS ESP32&quot;</span>); }</div>
 </div><!-- fragment --><p>Needs a partition scheme with an <code>ffat</code> partition (Tools → Partition Scheme → "16MB Flash (3MB APP/9.9MB FATFS)" or similar). The file is readable by a PC if you export the partition.</p>
-<h2><a class="anchor" id="autotoc_md28"></a>
+<h2><a class="anchor" id="autotoc_md29"></a>
 SD card over SPI (&lt;tt&gt;SD&lt;/tt&gt;)</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;SD.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;SPI.h&gt;</span></div>
@@ -201,7 +201,7 @@ SD card over SPI (&lt;tt&gt;SD&lt;/tt&gt;)</h2>
 <div class="line">  transport.begin(<span class="stringliteral">&quot;TinyFS SD&quot;</span>);</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>FAT32 or exFAT cards; file names are case insensitive.</p>
-<h2><a class="anchor" id="autotoc_md29"></a>
+<h2><a class="anchor" id="autotoc_md30"></a>
 SD card over SD_MMC (SDIO)</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;SD_MMC.h&gt;</span></div>
 <div class="line">ArduinoFsBackend&lt;fs::FS&gt; backend(SD_MMC);</div>
@@ -216,7 +216,7 @@ SD card over SD_MMC (SDIO)</h2>
 <div class="line">}</div>
 </div><!-- fragment --><p>Faster than SPI. On the classic ESP32 the SD_MMC pins are fixed (CLK 14, CMD 15, D0 2; GPIO 12 and the other data pins are used in 4-bit mode, which may conflict with boot pins).</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md31"></a>
+<h1><a class="anchor" id="autotoc_md32"></a>
 Raspberry Pi Pico W / Pico 2 W (arduino-pico)</h1>
 <p>The file system classes of arduino-pico are all of the type <code>FS</code>:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="TinyBLEFS_8h.html">TinyBLEFS.h</a>&quot;</span></div>
@@ -231,19 +231,19 @@ Raspberry Pi Pico W / Pico 2 W (arduino-pico)</h1>
 <div class="line"><span class="keywordtype">void</span> loop()  { server.poll(); }</div>
 <div class="ttc" id="aPicoW_8h_html"><div class="ttname"><a href="PicoW_8h.html">PicoW.h</a></div></div>
 </div><!-- fragment --><p>There is no POSIX fast path on the Pico: the generic Arduino API is used and a directory listing opens each entry. Keep directories small.</p>
-<h2><a class="anchor" id="autotoc_md32"></a>
+<h2><a class="anchor" id="autotoc_md33"></a>
 LittleFS (internal flash)</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;LittleFS.h&gt;</span></div>
 <div class="line">ArduinoFsBackend&lt;FS&gt; backend(LittleFS);</div>
 <div class="line"><span class="comment">// setup: LittleFS.begin();</span></div>
 </div><!-- fragment --><p>Select a flash size with a file system (Tools → Flash Size, e.g. "2MB (Sketch: 1MB, FS: 1MB)"). Note: this LittleFS removes a directory automatically when its last file is deleted, so a later <code>rmdir</code> of that directory reports "not found".</p>
-<h2><a class="anchor" id="autotoc_md33"></a>
+<h2><a class="anchor" id="autotoc_md34"></a>
 FatFS (internal flash)</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;FatFS.h&gt;</span></div>
 <div class="line">ArduinoFsBackend&lt;FS&gt; backend(FatFS);</div>
 <div class="line"><span class="comment">// setup: FatFS.begin();</span></div>
 </div><!-- fragment --><p>FAT in the flash partition: readable from a PC with <code>FatFSUSB</code>.</p>
-<h2><a class="anchor" id="autotoc_md34"></a>
+<h2><a class="anchor" id="autotoc_md35"></a>
 SD card (&lt;tt&gt;SDFS&lt;/tt&gt;)</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;SDFS.h&gt;</span></div>
 <div class="line">ArduinoFsBackend&lt;FS&gt; backend(SDFS);</div>
@@ -256,7 +256,7 @@ SD card (&lt;tt&gt;SDFS&lt;/tt&gt;)</h2>
 <div class="line">}</div>
 </div><!-- fragment --><p>Use <code>SDFS</code>, not the <code>SD</code> object of arduino-pico: <code>SD</code> is a different class (Arduino SD API) that the generic backend cannot use.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md36"></a>
+<h1><a class="anchor" id="autotoc_md37"></a>
 TinyFATFS (FAT on any storage)</h1>
 <p><a href="https://github.com/pschatzmann/TinyFATFS">TinyFATFS</a> is a header-only port of ChaN's FatFs with exchangeable drivers. Use it where the Arduino file system classes do not fit (UNO R4 WiFi, Nano 33 BLE), where you want a RAM disk, or one FAT code base on all boards.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;fatfs.h&quot;</span>                        <span class="comment">// TinyFATFS: SD, RamIO, ArduinoSpiIO, ...</span></div>
@@ -268,7 +268,7 @@ TinyFATFS (FAT on any storage)</h1>
 <div class="line">TinyFatBackend backend(SD);               <span class="comment">// SD: the global object of TinyFATFS</span></div>
 <div class="line">FileServer server(backend, transport, <span class="stringliteral">&quot;fat&quot;</span>);</div>
 <div class="ttc" id="aTinyFATFS_8h_html"><div class="ttname"><a href="TinyFATFS_8h.html">TinyFATFS.h</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md37"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md38"></a>
 RAM disk (no hardware)</h2>
 <div class="fragment"><div class="line">RamIO drive{200, 512};                    <span class="comment">// 200 sectors of 512 bytes = 100 KB of RAM</span></div>
 <div class="line"> </div>
@@ -277,7 +277,7 @@ RAM disk (no hardware)</h2>
 <div class="line">  transport.begin(<span class="stringliteral">&quot;TinyFS RAM&quot;</span>);</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>The content is lost at reset. The automated test (<code>tests/test_tinyfat.cpp</code>) runs against a RAM disk on a PC.</p>
-<h2><a class="anchor" id="autotoc_md38"></a>
+<h2><a class="anchor" id="autotoc_md39"></a>
 SD card over SPI</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;SPI.h&gt;</span></div>
 <div class="line">ArduinoSpiIO drive{13, SPI};              <span class="comment">// chip select, SPI bus</span></div>
@@ -288,10 +288,10 @@ SD card over SPI</h2>
 <div class="line">  transport.begin(<span class="stringliteral">&quot;TinyFS SD&quot;</span>);</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>Other drivers of TinyFATFS: <code>FileIO</code> (a disk image in a file on a PC), <code>StreamIO</code>, <code>MultiIO</code> (several drives), <code>NBDClientIO</code> (network block device). Their documentation: <a href="https://github.com/pschatzmann/TinyFATFS/blob/main/docs/driver-overview.md">TinyFATFS drivers</a>.</p>
-<h2><a class="anchor" id="autotoc_md39"></a>
+<h2><a class="anchor" id="autotoc_md40"></a>
 SD card over SD_MMC</h2>
 <p>TinyFATFS has a driver for the SDMMC controller (<code>Esp32SdmmcIO</code>), but it is marked <b>experimental</b> by its author (initialisation fails with some ESP-IDF 5 versions). For SD_MMC use the Arduino <code>SD_MMC</code> library with <code>ArduinoFsBackend</code> as shown for the ESP32 above.</p>
-<h2><a class="anchor" id="autotoc_md40"></a>
+<h2><a class="anchor" id="autotoc_md41"></a>
 Notes</h2>
 <ul>
 <li>Directory listing is efficient: the backend reads the directory with <code>f_readdir</code> and does not open the entries.</li>
@@ -299,7 +299,7 @@ Notes</h2>
 <li>FAT file names are case insensitive.</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md42"></a>
+<h1><a class="anchor" id="autotoc_md43"></a>
 Linux, macOS, Windows: a directory</h1>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="TinyBLEFS_8h.html">TinyBLEFS.h</a>&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="SimpleBLE_8h.html">TinyBLEFS/adapters/SimpleBLE.h</a>&quot;</span></div>
@@ -318,7 +318,7 @@ Linux, macOS, Windows: a directory</h1>
 </div><!-- fragment --><p>The shared directory is the 4th constructor argument; clients cannot leave it. The command line tool <code>tinyblefs-server</code> does exactly this (<a class="el" href="md_docs_2cli.html">Linux tools</a>).</p>
 <p>Directory listings of this backend re-read the directory for each entry on the server (a PC does that in milliseconds), which is not optimised yet.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md44"></a>
+<h1><a class="anchor" id="autotoc_md45"></a>
 Your own file system</h1>
 <p>Derive from <code>FsBackend</code> (<code><a class="el" href="FsBackend_8h.html">TinyBLEFS/FsBackend.h</a></code>) and from <a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FsFile.html"><code>FsFile</code></a> for open files:</p>
 <div class="fragment"><div class="line"><span class="keyword">class </span>MyFile : <span class="keyword">public</span> FsFile {</div>
@@ -349,7 +349,7 @@ Your own file system</h1>
 <li><b>Locking</b> is done by the server: a backend never sees two writers for the same file.</li>
 <li>Log failures with <code>TINYBLEFS_LOGE</code> / <code>TINYBLEFS_LOGW</code> (<a class="el" href="md_docs_2logging.html">Logging</a>).</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md45"></a>
+<h1><a class="anchor" id="autotoc_md46"></a>
 Limits that apply to all file systems</h1>
 <ul>
 <li>File sizes and offsets are 32 bit (4 GB).</li>

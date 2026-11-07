@@ -7,5 +7,6 @@ var index =
     [ "Status", "index.html#autotoc_md5", null ],
     [ "Future improvements", "index.html#autotoc_md6", null ],
     [ "Limits", "index.html#autotoc_md7", null ],
-    [ "Development", "index.html#autotoc_md8", null ]
+    [ "Development", "index.html#autotoc_md8", null ],
+    [ "License", "index.html#autotoc_md9", null ]
 ];

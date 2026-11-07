@@ -93,8 +93,8 @@ $(document).ready(function(){initNavTree('md_docs_2transports.html',''); initRes
   <div class="headertitle"><div class="title">Transports</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md75"></a> A transport carries packets between one client and one server. The library never uses a BLE library directly; only the adapters do.</p>
-<h1><a class="anchor" id="autotoc_md76"></a>
+<div class="textblock"><p><a class="anchor" id="autotoc_md76"></a> A transport carries packets between one client and one server. The library never uses a BLE library directly; only the adapters do.</p>
+<h1><a class="anchor" id="autotoc_md77"></a>
 Adapters</h1>
 <p>All server adapters have <code>begin(deviceName)</code>. All client adapters have <code>scan(durationMs, namePrefix)</code> and <code>connect(device)</code>. The prefix filters on the <b>BLE device name</b> given to <code>begin()</code> (not on the mount name, which is only known after connecting).</p>
 <table class="markdownTable">
@@ -112,7 +112,7 @@ Adapters</h1>
 <td class="markdownTableBodyNone"><code><a class="el" href="Loopback_8h.html">Loopback.h</a></code>   </td><td class="markdownTableBodyNone"><a href="https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1LoopbackPair.html"><code>LoopbackPair</code></a>   </td><td class="markdownTableBodyNone">In-memory link for tests: <code>client()</code> / <code>server()</code>   </td></tr>
 </table>
 <p>Received packets are buffered (<code>TINYBLEFS_RX_SLOTS</code> = 24 packets of up to <code>TINYBLEFS_RX_PACKET</code> = 244 bytes; define before including to change). Lost packets are reported as warnings.</p>
-<h1><a class="anchor" id="autotoc_md77"></a>
+<h1><a class="anchor" id="autotoc_md78"></a>
 Writing an adapter</h1>
 <p>Derive from <code><a class="el" href="classtinyblefs_1_1Transport.html" title="Packet oriented, reliable, in-order link between one client and one server.">tinyblefs::Transport</a></code> (<code><a class="el" href="Transport_8h.html">Transport.h</a></code>):</p>
 <table class="markdownTable">
@@ -130,7 +130,7 @@ Writing an adapter</h1>
 <td class="markdownTableBodyNone"><code>void poll()</code>   </td><td class="markdownTableBodyNone">Optional: run the BLE event loop of polled stacks   </td></tr>
 </table>
 <p>Use the GATT layout from <code><a class="el" href="Protocol_8h.html">Protocol.h</a></code>: service <code>kServiceUUID</code>, RX characteristic <code>kRxUUID</code> (client → server, write / write without response), TX characteristic <code>kTxUUID</code> (server → client, notify). Callbacks must only store packets; <code><a class="el" href="RingQueue_8h.html">RingQueue.h</a></code> is a ready-made allocation-free queue. Messages are fragmented and reassembled by the library.</p>
-<h1><a class="anchor" id="autotoc_md78"></a>
+<h1><a class="anchor" id="autotoc_md79"></a>
 Performance</h1>
 <p>Throughput depends on the MTU, the connection interval and the stack; with 20-byte packets expect only a few KB/s. Prefer adapters that negotiate a large MTU (NimBLE, Pico W server).</p>
 <p>Measured so far (details: the performance matrix in <a href="test-results.md#performance-matrix">Test results</a>):</p>

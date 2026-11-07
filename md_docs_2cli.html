@@ -93,18 +93,18 @@ $(document).ready(function(){initNavTree('md_docs_2cli.html',''); initResizable(
   <div class="headertitle"><div class="title">Linux tools</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md9"></a> Two programs in <code>tools/tinyblefs-cli/</code>, both requiring BlueZ (<code>bluetoothd</code>) and <a href="https://github.com/OpenBluetoothToolbox/SimpleBLE">SimpleBLE</a>:</p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md10"></a> Two programs in <code>tools/tinyblefs-cli/</code>, both requiring BlueZ (<code>bluetoothd</code>) and <a href="https://github.com/OpenBluetoothToolbox/SimpleBLE">SimpleBLE</a>:</p>
 <ul>
 <li><code>tinyblefs</code>: client. Scans, mounts every TinyBLEFS server it finds and runs a file command.</li>
 <li><code>tinyblefs-server</code>: shares a directory of this computer over BLE (see below).</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md10"></a>
+<h1><a class="anchor" id="autotoc_md11"></a>
 Build</h1>
 <div class="fragment"><div class="line">cmake -S . -B build -DTINYBLEFS_BUILD_TOOLS=ON &amp;&amp; cmake --build build   # from the project root</div>
 <div class="line"># or standalone:</div>
 <div class="line">cmake -S tools/tinyblefs-cli -B build &amp;&amp; cmake --build build</div>
 </div><!-- fragment --><p>CMake builds both tools. It uses an installed SimpleBLE or downloads v1.4.0.</p>
-<h1><a class="anchor" id="autotoc_md11"></a>
+<h1><a class="anchor" id="autotoc_md12"></a>
 Usage</h1>
 <div class="fragment"><div class="line">tinyblefs [options] &lt;command&gt; [args]</div>
 <div class="line">tinyblefs [options] shell        # interactive: connects once, supports cd and relative paths</div>
@@ -126,7 +126,7 @@ Usage</h1>
 <td class="markdownTableBodyNone"><code>-v</code>   </td><td class="markdownTableBodyNone">Same as <code>-l info</code>   </td></tr>
 </table>
 <p>With several Bluetooth adapters the tools use the first powered one. To choose, set <code>TINYBLEFS_ADAPTER</code> to its name or address: <code>TINYBLEFS_ADAPTER=hci1 tinyblefs ls /</code> (<code>bluetoothctl list</code>, <code>hciconfig</code> show them). This applies to <code>tinyblefs-server</code> too.</p>
-<h1><a class="anchor" id="autotoc_md12"></a>
+<h1><a class="anchor" id="autotoc_md13"></a>
 Commands</h1>
 <p>Paths are <code>/&lt;mount&gt;/&lt;path&gt;</code>; <code>/</code> lists the mounts.</p>
 <table class="markdownTable">
@@ -156,13 +156,13 @@ Commands</h1>
 <td class="markdownTableBodyNone"><code>pwd</code>, <code>cd &lt;dir&gt;</code>, <code>help</code>   </td><td class="markdownTableBodyNone">Shell helpers   </td></tr>
 </table>
 <p>If the destination of <code>cp</code>, <code>mv</code>, <code>put</code> or <code>get</code> is an existing directory, the file is placed inside it.</p>
-<h1><a class="anchor" id="autotoc_md13"></a>
+<h1><a class="anchor" id="autotoc_md14"></a>
 Example</h1>
 <div class="fragment"><div class="line">tinyblefs -p TinyFS mounts</div>
 <div class="line">tinyblefs -p TinyFS put firmware.bin /sensor1/firmware.bin</div>
 <div class="line">tinyblefs -p TinyFS cp -r /sensor1/logs /sensor2/backup</div>
 <div class="line">tinyblefs shell</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md14"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md15"></a>
 Bluetooth settings</h1>
 <p>The speed through a PC depends mostly on its Bluetooth controller (see the <a href="test-results.md#performance-matrix">performance matrix</a>): about 9 KB/s with a Bluetooth 4.0 controller, 17 KB/s with a Bluetooth 5 USB dongle. With BlueZ's defaults the dongle reached only about 12 KB/s and stalled more often; asking for a 7.5 ms connection interval helped. In <code>/etc/bluetooth/main.conf</code> (units of 1.25 ms):</p>
 <div class="fragment"><div class="line">[LE]</div>
@@ -170,7 +170,7 @@ Bluetooth settings</h1>
 <div class="line">MaxConnectionInterval=6</div>
 <div class="line">ConnectionLatency=0</div>
 </div><!-- fragment --><p>then <code>sudo systemctl restart bluetooth</code>. If an adapter stays <code>DOWN</code> afterwards, check <code>rfkill list bluetooth</code> (<code>rfkill unblock bluetooth</code>) and <code>bluetoothctl power on</code>.</p>
-<h1><a class="anchor" id="autotoc_md15"></a>
+<h1><a class="anchor" id="autotoc_md16"></a>
 Server: tinyblefs-server</h1>
 <div class="fragment"><div class="line">bluetoothctl system-alias &quot;TinyFS PC&quot;     # BLE name seen by client scans</div>
 <div class="line">tinyblefs-server -n pc /srv/share            # mount name &quot;pc&quot;</div>

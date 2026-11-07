@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['ram_20disk_20no_20hardware_0',['RAM disk (no hardware)',['../md_docs_2filesystems.html#autotoc_md37',1,'']]],
+  ['ram_20disk_20no_20hardware_0',['RAM disk (no hardware)',['../md_docs_2filesystems.html#autotoc_md38',1,'']]],
   ['randomu32_1',['randomU32',['../namespacetinyblefs.html#a48c02e4da93a8d9fe3b5be136c9bc385',1,'tinyblefs']]],
-  ['raspberry_20pi_20pico_20w_20pico_202_20w_20arduino_20pico_2',['Raspberry Pi Pico W / Pico 2 W (arduino-pico)',['../md_docs_2filesystems.html#autotoc_md31',1,'']]],
+  ['raspberry_20pi_20pico_20w_20pico_202_20w_20arduino_20pico_2',['Raspberry Pi Pico W / Pico 2 W (arduino-pico)',['../md_docs_2filesystems.html#autotoc_md32',1,'']]],
   ['read_3',['read',['../namespacetinyblefs.html#ae3dd53e5be6344da73b2b4c796a71718a7a1a5f3e79fdc91edf2f5ead9d66abb4',1,'tinyblefs::Read'],['../classtinyblefs_1_1StdFile.html#a95ef9734d2895488a3f739531dea5824',1,'tinyblefs::StdFile::read()'],['../classtinyblefs_1_1FileClient.html#ab3e2e38a79f1657c3bbb461c37e61d23',1,'tinyblefs::FileClient::read()'],['../classtinyblefs_1_1FsFile.html#a170595884b562a70ecb1c2e06dfc37b6',1,'tinyblefs::FsFile::read()'],['../classtinyblefs_1_1RemoteFile.html#ab1f988d1754244f3c5b096dcd1b9d043',1,'tinyblefs::RemoteFile::read(uint8_t *dst, size_t len)'],['../classtinyblefs_1_1RemoteFile.html#ae041f86a5661542e5ad931f3acc21a44',1,'tinyblefs::RemoteFile::read()']]],
   ['readme_2emd_4',['README.md',['../README_8md.html',1,'']]],
   ['readonly_5',['readOnly',['../structtinyblefs_1_1ServerInfo.html#a2a929b1210fc8fd8e960f693adf548a9',1,'tinyblefs::ServerInfo']]],
@@ -18,7 +18,7 @@ var searchData=
   ['reqid_15',['reqId',['../structtinyblefs_1_1Message.html#a4c4c23c989655cd1cc50ffedb0db9390',1,'tinyblefs::Message']]],
   ['request_16',['request',['../classtinyblefs_1_1FileClient.html#a74dec630fb898f8de20a9122546d4b06',1,'tinyblefs::FileClient']]],
   ['requestcount_17',['requestCount',['../classtinyblefs_1_1FileClient.html#a524c2b2a8f1047ad40bb65370169b2fd',1,'tinyblefs::FileClient']]],
-  ['requirements_18',['Requirements',['../md_docs_2getting-started.html#autotoc_md48',1,'']]],
+  ['requirements_18',['Requirements',['../md_docs_2getting-started.html#autotoc_md49',1,'']]],
   ['reset_19',['reset',['../classtinyblefs_1_1Reassembler.html#a57b80e4336706c63221310a5eb186d4b',1,'tinyblefs::Reassembler::reset()'],['../classtinyblefs_1_1Receiver.html#af22800a69c3122a2ee53a86b17c602f8',1,'tinyblefs::Receiver::reset()']]],
   ['results_20',['Test results',['../md_docs_2test-results.html',1,'']]],
   ['rewinddirectory_21',['rewindDirectory',['../classtinyblefs_1_1RemoteFile.html#a0573ddc8ed036abef16a326b058f0e79',1,'tinyblefs::RemoteFile']]],

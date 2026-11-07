@@ -27,82 +27,82 @@ var NAVTREE =
   [ "TinyBLEFS", "index.html", [
     [ "Tiny BLE FS", "index.html", "index" ],
     [ "Linux tools", "md_docs_2cli.html", [
-      [ "Build", "md_docs_2cli.html#autotoc_md10", null ],
-      [ "Usage", "md_docs_2cli.html#autotoc_md11", null ],
-      [ "Commands", "md_docs_2cli.html#autotoc_md12", null ],
-      [ "Example", "md_docs_2cli.html#autotoc_md13", null ],
-      [ "Bluetooth settings", "md_docs_2cli.html#autotoc_md14", null ],
-      [ "Server: tinyblefs-server", "md_docs_2cli.html#autotoc_md15", null ]
+      [ "Build", "md_docs_2cli.html#autotoc_md11", null ],
+      [ "Usage", "md_docs_2cli.html#autotoc_md12", null ],
+      [ "Commands", "md_docs_2cli.html#autotoc_md13", null ],
+      [ "Example", "md_docs_2cli.html#autotoc_md14", null ],
+      [ "Bluetooth settings", "md_docs_2cli.html#autotoc_md15", null ],
+      [ "Server: tinyblefs-server", "md_docs_2cli.html#autotoc_md16", null ]
     ] ],
     [ "Client API", "md_docs_2client-api.html", [
-      [ "Connecting", "md_docs_2client-api.html#autotoc_md17", null ],
-      [ "Mounts", "md_docs_2client-api.html#autotoc_md18", null ],
-      [ "File", "md_docs_2client-api.html#autotoc_md19", null ],
-      [ "Errors and locking", "md_docs_2client-api.html#autotoc_md20", null ]
+      [ "Connecting", "md_docs_2client-api.html#autotoc_md18", null ],
+      [ "Mounts", "md_docs_2client-api.html#autotoc_md19", null ],
+      [ "File", "md_docs_2client-api.html#autotoc_md20", null ],
+      [ "Errors and locking", "md_docs_2client-api.html#autotoc_md21", null ]
     ] ],
     [ "File systems and platforms", "md_docs_2filesystems.html", [
-      [ "Verification status", "md_docs_2filesystems.html#autotoc_md22", null ],
-      [ "ESP32", "md_docs_2filesystems.html#autotoc_md24", [
-        [ "LittleFS", "md_docs_2filesystems.html#autotoc_md25", null ],
-        [ "SPIFFS", "md_docs_2filesystems.html#autotoc_md26", null ],
-        [ "FFat (FAT in internal flash)", "md_docs_2filesystems.html#autotoc_md27", null ],
-        [ "SD card over SPI (<tt>SD</tt>)", "md_docs_2filesystems.html#autotoc_md28", null ],
-        [ "SD card over SD_MMC (SDIO)", "md_docs_2filesystems.html#autotoc_md29", null ]
+      [ "Verification status", "md_docs_2filesystems.html#autotoc_md23", null ],
+      [ "ESP32", "md_docs_2filesystems.html#autotoc_md25", [
+        [ "LittleFS", "md_docs_2filesystems.html#autotoc_md26", null ],
+        [ "SPIFFS", "md_docs_2filesystems.html#autotoc_md27", null ],
+        [ "FFat (FAT in internal flash)", "md_docs_2filesystems.html#autotoc_md28", null ],
+        [ "SD card over SPI (<tt>SD</tt>)", "md_docs_2filesystems.html#autotoc_md29", null ],
+        [ "SD card over SD_MMC (SDIO)", "md_docs_2filesystems.html#autotoc_md30", null ]
       ] ],
-      [ "Raspberry Pi Pico W / Pico 2 W (arduino-pico)", "md_docs_2filesystems.html#autotoc_md31", [
-        [ "LittleFS (internal flash)", "md_docs_2filesystems.html#autotoc_md32", null ],
-        [ "FatFS (internal flash)", "md_docs_2filesystems.html#autotoc_md33", null ],
-        [ "SD card (<tt>SDFS</tt>)", "md_docs_2filesystems.html#autotoc_md34", null ]
+      [ "Raspberry Pi Pico W / Pico 2 W (arduino-pico)", "md_docs_2filesystems.html#autotoc_md32", [
+        [ "LittleFS (internal flash)", "md_docs_2filesystems.html#autotoc_md33", null ],
+        [ "FatFS (internal flash)", "md_docs_2filesystems.html#autotoc_md34", null ],
+        [ "SD card (<tt>SDFS</tt>)", "md_docs_2filesystems.html#autotoc_md35", null ]
       ] ],
-      [ "TinyFATFS (FAT on any storage)", "md_docs_2filesystems.html#autotoc_md36", [
-        [ "RAM disk (no hardware)", "md_docs_2filesystems.html#autotoc_md37", null ],
-        [ "SD card over SPI", "md_docs_2filesystems.html#autotoc_md38", null ],
-        [ "SD card over SD_MMC", "md_docs_2filesystems.html#autotoc_md39", null ],
-        [ "Notes", "md_docs_2filesystems.html#autotoc_md40", null ]
+      [ "TinyFATFS (FAT on any storage)", "md_docs_2filesystems.html#autotoc_md37", [
+        [ "RAM disk (no hardware)", "md_docs_2filesystems.html#autotoc_md38", null ],
+        [ "SD card over SPI", "md_docs_2filesystems.html#autotoc_md39", null ],
+        [ "SD card over SD_MMC", "md_docs_2filesystems.html#autotoc_md40", null ],
+        [ "Notes", "md_docs_2filesystems.html#autotoc_md41", null ]
       ] ],
-      [ "Linux, macOS, Windows: a directory", "md_docs_2filesystems.html#autotoc_md42", null ],
-      [ "Your own file system", "md_docs_2filesystems.html#autotoc_md44", null ],
-      [ "Limits that apply to all file systems", "md_docs_2filesystems.html#autotoc_md45", null ]
+      [ "Linux, macOS, Windows: a directory", "md_docs_2filesystems.html#autotoc_md43", null ],
+      [ "Your own file system", "md_docs_2filesystems.html#autotoc_md45", null ],
+      [ "Limits that apply to all file systems", "md_docs_2filesystems.html#autotoc_md46", null ]
     ] ],
     [ "Getting started", "md_docs_2getting-started.html", [
-      [ "Installation", "md_docs_2getting-started.html#autotoc_md47", null ],
-      [ "Requirements", "md_docs_2getting-started.html#autotoc_md48", null ],
-      [ "How it works", "md_docs_2getting-started.html#autotoc_md49", null ],
-      [ "Examples", "md_docs_2getting-started.html#autotoc_md50", null ]
+      [ "Installation", "md_docs_2getting-started.html#autotoc_md48", null ],
+      [ "Requirements", "md_docs_2getting-started.html#autotoc_md49", null ],
+      [ "How it works", "md_docs_2getting-started.html#autotoc_md50", null ],
+      [ "Examples", "md_docs_2getting-started.html#autotoc_md51", null ]
     ] ],
     [ "Logging", "md_docs_2logging.html", [
-      [ "Own messages", "md_docs_2logging.html#autotoc_md52", null ]
+      [ "Own messages", "md_docs_2logging.html#autotoc_md53", null ]
     ] ],
     [ "Protocol", "md_docs_2protocol.html", [
-      [ "GATT", "md_docs_2protocol.html#autotoc_md54", null ],
-      [ "Message", "md_docs_2protocol.html#autotoc_md55", null ],
-      [ "Operations", "md_docs_2protocol.html#autotoc_md56", null ],
-      [ "Status codes", "md_docs_2protocol.html#autotoc_md57", null ],
-      [ "Locking", "md_docs_2protocol.html#autotoc_md58", null ],
-      [ "Limits", "md_docs_2protocol.html#autotoc_md59", null ]
+      [ "GATT", "md_docs_2protocol.html#autotoc_md55", null ],
+      [ "Message", "md_docs_2protocol.html#autotoc_md56", null ],
+      [ "Operations", "md_docs_2protocol.html#autotoc_md57", null ],
+      [ "Status codes", "md_docs_2protocol.html#autotoc_md58", null ],
+      [ "Locking", "md_docs_2protocol.html#autotoc_md59", null ],
+      [ "Limits", "md_docs_2protocol.html#autotoc_md60", null ]
     ] ],
     [ "Server API", "md_docs_2server-api.html", [
-      [ "File system backends", "md_docs_2server-api.html#autotoc_md61", null ],
-      [ "Security", "md_docs_2server-api.html#autotoc_md62", null ],
-      [ "File locking", "md_docs_2server-api.html#autotoc_md63", null ]
+      [ "File system backends", "md_docs_2server-api.html#autotoc_md62", null ],
+      [ "Security", "md_docs_2server-api.html#autotoc_md63", null ],
+      [ "File locking", "md_docs_2server-api.html#autotoc_md64", null ]
     ] ],
     [ "Several clients", "md_docs_2sessions.html", [
-      [ "Sessions", "md_docs_2sessions.html#autotoc_md65", null ],
-      [ "Limits", "md_docs_2sessions.html#autotoc_md66", null ],
-      [ "Wire format", "md_docs_2sessions.html#autotoc_md67", null ]
+      [ "Sessions", "md_docs_2sessions.html#autotoc_md66", null ],
+      [ "Limits", "md_docs_2sessions.html#autotoc_md67", null ],
+      [ "Wire format", "md_docs_2sessions.html#autotoc_md68", null ]
     ] ],
     [ "Test results", "md_docs_2test-results.html", [
-      [ "PC tests", "md_docs_2test-results.html#autotoc_md69", null ],
-      [ "Compile checks", "md_docs_2test-results.html#autotoc_md70", null ],
-      [ "Hardware tests", "md_docs_2test-results.html#autotoc_md71", null ],
-      [ "Performance matrix", "md_docs_2test-results.html#autotoc_md72", null ],
-      [ "Open problems", "md_docs_2test-results.html#autotoc_md73", null ],
-      [ "Not tested with the current code", "md_docs_2test-results.html#autotoc_md74", null ]
+      [ "PC tests", "md_docs_2test-results.html#autotoc_md70", null ],
+      [ "Compile checks", "md_docs_2test-results.html#autotoc_md71", null ],
+      [ "Hardware tests", "md_docs_2test-results.html#autotoc_md72", null ],
+      [ "Performance matrix", "md_docs_2test-results.html#autotoc_md73", null ],
+      [ "Open problems", "md_docs_2test-results.html#autotoc_md74", null ],
+      [ "Not tested with the current code", "md_docs_2test-results.html#autotoc_md75", null ]
     ] ],
     [ "Transports", "md_docs_2transports.html", [
-      [ "Adapters", "md_docs_2transports.html#autotoc_md76", null ],
-      [ "Writing an adapter", "md_docs_2transports.html#autotoc_md77", null ],
-      [ "Performance", "md_docs_2transports.html#autotoc_md78", null ]
+      [ "Adapters", "md_docs_2transports.html#autotoc_md77", null ],
+      [ "Writing an adapter", "md_docs_2transports.html#autotoc_md78", null ],
+      [ "Performance", "md_docs_2transports.html#autotoc_md79", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],

@@ -12,7 +12,7 @@ A header-only C++ library that lets an Arduino sketch (or a Linux program) use t
 - Clients mount each server as `/<name>/...`. The name is announced by the server.
 - Arduino `File`-like API: `open`, `read`, `write`, `seek`, `list`, `remove`, `mkdir`, `rename`, `copy`.
 - Works with any BLE library through a tiny transport interface; adapters for NimBLE-Arduino, ArduinoBLE, Pico W and SimpleBLE (Linux) are included.
-- Linux command line tools: `tinyblefs` (client) and `tinyblefs-server` (shares a directory).
+- Linux command line tools: `tinyblefs` (client), `tinyblefs-fuse` (mounts the servers as a directory, so `ls`, `cp`, `cat` ... work) and `tinyblefs-server` (shares a directory).
 
 ## Why this library?
 

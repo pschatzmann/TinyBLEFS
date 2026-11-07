@@ -3,6 +3,7 @@
 Two programs in `tools/tinyblefs-cli/`, both requiring BlueZ (`bluetoothd`) and [SimpleBLE](https://github.com/OpenBluetoothToolbox/SimpleBLE):
 
 - `tinyblefs`: client. Scans, mounts every TinyBLEFS server it finds and runs a file command.
+- `tinyblefs-fuse`: mounts the servers as a normal directory (see [below](#mounting-as-a-directory-tinyblefs-fuse)); also needs libfuse3.
 - `tinyblefs-server`: shares a directory of this computer over BLE (see [below](#server-tinyblefs-server)).
 
 ## Build
@@ -76,6 +77,28 @@ ConnectionLatency=0
 ```
 
 then `sudo systemctl restart bluetooth`. If an adapter stays `DOWN` afterwards, check `rfkill list bluetooth` (`rfkill unblock bluetooth`) and `bluetoothctl power on`.
+
+## Mounting as a directory: tinyblefs-fuse
+
+```bash
+sudo apt install libfuse3-dev fuse3        # build and run (re-run cmake after installing)
+mkdir -p ~/ble
+tinyblefs-fuse --prefix=TinyFS ~/ble       # scans, connects, goes to the background
+ls ~/ble                                   # sensor1  sensor2
+cp ~/ble/sensor1/log.txt .
+echo hi >> ~/ble/sensor1/notes.txt
+fusermount3 -u ~/ble                       # unmount
+```
+
+The mount point lists the servers as subdirectories and all the usual file commands work. Options: `--prefix=`, `--address=`, `--scan-time=`, `--timeout=`, `--chunk=` and `--log=` (same meaning as for `tinyblefs`), plus the FUSE options (`-f` foreground, `-d` debug, `-o allow_other`). The BLE scan runs after the program went into the background, so the first access waits a few seconds; if no server is found the mount ends again (use `-f` to see the message).
+
+Limits:
+
+- BLE speed: tens of KB/s at best; tools that read many files (`grep -r`, thumbnails) are slow.
+- No permissions, owners or time stamps: fixed values are reported; `chmod`, `chown` and `touch` are accepted and ignored.
+- The protocol has no truncate request: `> file` and `truncate -s 0` work, other sizes fail (`ENOTSUP`).
+- An open file uses one of the server's open-file slots; too many open files fail.
+- Runs single threaded (one request in flight per link). The `/` directory only holds the mounts: you cannot create files or directories there.
 
 ## Server: tinyblefs-server
 

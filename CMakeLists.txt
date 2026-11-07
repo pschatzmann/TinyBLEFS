@@ -17,7 +17,7 @@ else()
 endif()
 
 option(TINYBLEFS_BUILD_TESTS "Build the host tests (loopback transport)" ${_tinyblefs_top_level})
-option(TINYBLEFS_BUILD_TOOLS "Build the Linux tools tinyblefs and tinyblefs-server (needs SimpleBLE)" ${_tinyblefs_top_level})
+option(TINYBLEFS_BUILD_TOOLS "Build the Linux tools tinyblefs, tinyblefs-server and tinyblefs-fuse (needs SimpleBLE)" ${_tinyblefs_top_level})
 set(TINYBLEFS_TINYFATFS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../TinyFATFS" CACHE PATH
     "TinyFATFS library (https://github.com/pschatzmann/TinyFATFS): enables the TinyFatBackend test")
 option(TINYBLEFS_INSTALL "Install the headers and the CMake package" ${_tinyblefs_top_level})
@@ -68,6 +68,24 @@ if(TINYBLEFS_BUILD_TESTS)
     add_test(NAME test_tinyfat COMMAND test_tinyfat)
   else()
     message(STATUS "TinyFATFS not found (TINYBLEFS_TINYFATFS_DIR): test_tinyfat is not built")
+  endif()
+
+  # FUSE operations over loopback (needs libfuse3 and /dev/fuse; skips itself otherwise)
+  if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+    find_package(PkgConfig QUIET)
+    if(PkgConfig_FOUND)
+      pkg_check_modules(FUSE3 QUIET IMPORTED_TARGET fuse3)
+    endif()
+    if(FUSE3_FOUND)
+      add_executable(test_fuse tests/test_fuse.cpp)
+      target_link_libraries(test_fuse PRIVATE TinyBLEFS::TinyBLEFS PkgConfig::FUSE3)
+      target_include_directories(test_fuse PRIVATE tools/tinyblefs-cli)  # FuseFs.h
+      add_test(NAME test_fuse
+        COMMAND ${CMAKE_COMMAND}
+          -DEXE=$<TARGET_FILE:test_fuse>
+          -DDIR=${CMAKE_CURRENT_BINARY_DIR}/test_fuse-scratch
+          -P ${CMAKE_CURRENT_SOURCE_DIR}/cmake/RunTest.cmake)
+    endif()
   endif()
 
   foreach(_t test_loopback test_cli test_arduinofs)

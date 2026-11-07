@@ -50,7 +50,7 @@ Download speed in KB/s for a sequential read of a 60 KB file (`FileClient::setCh
 | **Linux PC**, USB dongle "USB2.0-BT" (Barrot 8041a02, sold as CSR, **Bluetooth 5.1**), BlueZ connection interval set to 7.5 ms (see below) | ESP32-S3 | n/a | 13.3 | 17.7 | 17.1 |
 | **ESP32-S3** (Bluetooth 5.0) | classic ESP32 (Bluetooth 4.2) | 13.2 | 30.1 | 50.6 | 55.6 |
 
-The dongle row shows the typical runs; runs hit by a stall (below) reach only about 1.7 KB/s. With the BlueZ defaults the same dongle gave at best 9.2 / 11.4 / 13.6 KB/s (chunk 1400 / 4000 / 8000), and about 40 % of the runs stalled. With `MinConnectionInterval=6`, `MaxConnectionInterval=6` and `ConnectionLatency=0` in the `[LE]` section of `/etc/bluetooth/main.conf` (see [Linux tools](cli.md#bluetooth-settings)) 10 of 12 runs were clean (13-17.7 KB/s); each of the 2 others stalled once for 25 s and finished after the retry.
+The dongle row shows the typical runs; runs hit by a stall (below) reach only about 1.7 KB/s. With the BlueZ defaults the same dongle gave at best 9.2 / 11.4 / 13.6 KB/s (chunk 1400 / 4000 / 8000), and about 40 % of the runs stalled. With `MinConnectionInterval=6`, `MaxConnectionInterval=6` and `ConnectionLatency=0` in the `[LE]` section of `/etc/bluetooth/main.conf` (see [Linux tools](tools.md#bluetooth-settings)) 10 of 12 runs were clean (13-17.7 KB/s); each of the 2 others stalled once for 25 s and finished after the retry.
 
 What it shows:
 

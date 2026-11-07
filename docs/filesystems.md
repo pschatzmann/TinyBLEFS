@@ -271,7 +271,7 @@ int main() {
 }
 ```
 
-The shared directory is the 4th constructor argument; clients cannot leave it. The command line tool `tinyblefs-server` does exactly this ([Linux tools](cli.md)).
+The shared directory is the 4th constructor argument; clients cannot leave it. The command line tool `tinyblefs-server` does exactly this ([Linux tools](tools.md)).
 
 Directory listings of this backend re-read the directory for each entry on the server (a PC does that in milliseconds), which is not optimised yet.
 

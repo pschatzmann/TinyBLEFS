@@ -1,13 +1,13 @@
 // Shares a FAT volume managed by the TinyFATFS library over BLE.
 // This example uses a RAM disk, so it needs no hardware. For an SD card
 // replace the RamIO by SD.begin(CS_PIN, SPI) (see the TinyFATFS examples).
-// Runs on every supported board: TinyBLEFS/BLETransport.h selects the BLE
+// Runs on every supported board: TinyBLEFS/adapters/BLETransport.h selects the BLE
 // adapter of the platform. On boards with little RAM (UNO R4: 32 KB) make the
 // RAM disk smaller, e.g. RamIO drive{32, 512}.
 #include "fatfs.h"  // TinyFATFS: provides SD, RamIO, ...
 
 #include "TinyBLEFS.h"
-#include "TinyBLEFS/BLETransport.h"
+#include "TinyBLEFS/adapters/BLETransport.h"
 #include "TinyBLEFS/backends/TinyFATFS.h"
 
 RamIO drive{200, 512};  // 100 KB RAM disk (200 sectors of 512 bytes)

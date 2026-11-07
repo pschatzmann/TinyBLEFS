@@ -2,7 +2,7 @@
 
 ## Installation
 
-Copy or clone the library into your Arduino `libraries` folder. It is header-only: include `TinyBLEFS.h` (core) plus the BLE transport (`TinyBLEFS/BLETransport.h`, which selects the adapter of your platform, or one adapter `TinyBLEFS/adapters/<ble>.h` directly, see [Transports](transports.md)) and, for a server, one file system backend (`TinyBLEFS/backends/<fs>.h`, see [File systems](filesystems.md)). Adapters and backends are separate includes so that unused libraries are never required.
+Copy or clone the library into your Arduino `libraries` folder. It is header-only: include `TinyBLEFS.h` (core) plus the BLE transport (`TinyBLEFS/adapters/BLETransport.h`, which selects the adapter of your platform, or one adapter `TinyBLEFS/adapters/<ble>.h` directly, see [Transports](transports.md)) and, for a server, one file system backend (`TinyBLEFS/backends/<fs>.h`, see [File systems](filesystems.md)). Adapters and backends are separate includes so that unused libraries are never required.
 
 On Arduino the public classes ([`FileServer`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FileServer.html), [`FileClient`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FileClient.html), [`Mounts`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1Mounts.html), [`RemoteFS`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1RemoteFS.html), [`RemoteFile`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1RemoteFile.html), `LogLevel`, the adapters and backends) are available without the `tinyblefs::` prefix. Only these names are imported, not the whole namespace, so internal names cannot clash with other libraries (SdFat, for example, has its own [`FsFile`](https://pschatzmann.github.io/TinyBLEFS/classtinyblefs_1_1FsFile.html)). The classes are named so that they do not clash with the `File`, `Client` and `Server` classes of the Arduino cores. Everything else needs `tinyblefs::` (e.g. `tinyblefs::FsFile`, `tinyblefs::Status`). Define `TINYBLEFS_NO_USING_NAMESPACE` before including the library to import nothing.
 
@@ -21,7 +21,7 @@ A **server** advertises one BLE service and answers file requests. A **client** 
 
 ## Examples
 
-The examples use `TinyBLEFS/BLETransport.h`, so they compile for every supported board without changes.
+The examples use `TinyBLEFS/adapters/BLETransport.h`, so they compile for every supported board without changes.
 
 | Example | Board | Shows |
 |---|---|---|

@@ -10,7 +10,7 @@
 //
 // Example:
 //   #include "TinyBLEFS.h"
-//   #include "TinyBLEFS/BLETransport.h"
+//   #include "TinyBLEFS/adapters/BLETransport.h"
 //
 //   BLEServerTransport transport;
 //   transport.begin("TinyFS Sensor");
@@ -20,10 +20,10 @@
 //   client.connect(found[0]);
 //
 // Default selection:
-//   ESP32 (Arduino or ESP-IDF)   -> adapters/NimBLE.h     (NimBLE-Arduino)
-//   Raspberry Pi Pico W / 2 W    -> adapters/PicoW.h      (arduino-pico BLE)
-//   any other Arduino board      -> adapters/ArduinoBLE.h (ArduinoBLE)
-//   desktop (Linux, ...)         -> adapters/SimpleBLE.h  (SimpleBLE)
+//   ESP32 (Arduino or ESP-IDF)   -> NimBLE.h     (NimBLE-Arduino)
+//   Raspberry Pi Pico W / 2 W    -> PicoW.h      (arduino-pico BLE)
+//   any other Arduino board      -> ArduinoBLE.h (ArduinoBLE)
+//   desktop (Linux, ...)         -> SimpleBLE.h  (SimpleBLE)
 //
 // Override it by defining one of these before including this header:
 //   TINYBLEFS_TRANSPORT_NIMBLE, TINYBLEFS_TRANSPORT_ARDUINOBLE,
@@ -51,7 +51,7 @@
 #endif
 
 #if defined(TINYBLEFS_TRANSPORT_NIMBLE)
-#include "adapters/NimBLE.h"
+#include "NimBLE.h"
 #define TINYBLEFS_TRANSPORT_NAME "NimBLE"
 namespace tinyblefs {
 using BLEServerTransport = NimBLEServerTransport;
@@ -60,7 +60,7 @@ using BLEScanResult = NimBLEAddress;
 }  // namespace tinyblefs
 
 #elif defined(TINYBLEFS_TRANSPORT_ARDUINOBLE)
-#include "adapters/ArduinoBLE.h"
+#include "ArduinoBLE.h"
 #define TINYBLEFS_TRANSPORT_NAME "ArduinoBLE"
 namespace tinyblefs {
 using BLEServerTransport = ArduinoBLEServerTransport;
@@ -69,7 +69,7 @@ using BLEScanResult = BLEDevice;
 }  // namespace tinyblefs
 
 #elif defined(TINYBLEFS_TRANSPORT_PICOW)
-#include "adapters/PicoW.h"
+#include "PicoW.h"
 #define TINYBLEFS_TRANSPORT_NAME "PicoW"
 namespace tinyblefs {
 using BLEServerTransport = PicoWServerTransport;
@@ -78,7 +78,7 @@ using BLEScanResult = BLEAdvertising;
 }  // namespace tinyblefs
 
 #elif defined(TINYBLEFS_TRANSPORT_SIMPLEBLE)
-#include "adapters/SimpleBLE.h"
+#include "SimpleBLE.h"
 #define TINYBLEFS_TRANSPORT_NAME "SimpleBLE"
 namespace tinyblefs {
 using BLEServerTransport = SimpleBLEServerTransport;

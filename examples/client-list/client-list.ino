@@ -1,7 +1,7 @@
 // Finds all TinyBLEFS servers in range, mounts each of them as "/<name>" (the
 // name is provided by the server) and lists / reads / writes files on them.
 //
-// Runs on every supported board: TinyBLEFS/BLETransport.h selects the BLE
+// Runs on every supported board: TinyBLEFS/adapters/BLETransport.h selects the BLE
 // adapter of the platform (ESP32: NimBLE, Pico W: core BLE library, other
 // boards: ArduinoBLE).
 //
@@ -13,7 +13,7 @@
 #include <vector>
 
 #include "TinyBLEFS.h"
-#include "TinyBLEFS/BLETransport.h"
+#include "TinyBLEFS/adapters/BLETransport.h"
 
 // One transport + client per remote server. They must stay alive as long as
 // the server is mounted, so they are heap allocated and never moved.

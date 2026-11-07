@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['verification_20status_0',['Verification status',['../md_docs_2filesystems.html#autotoc_md16',1,'']]],
-  ['version_1',['version',['../structtinyblefs_1_1ServerInfo.html#af82914f39556cd2189dea3e2c9b91941',1,'tinyblefs::ServerInfo']]]
+  ['yieldcpu_0',['yieldCpu',['../namespacetinyblefs.html#a3d2b81c30de43b7ef15a683fa15e7e5b',1,'tinyblefs']]]
 ];

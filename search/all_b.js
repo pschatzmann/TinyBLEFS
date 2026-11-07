@@ -1,23 +1,10 @@
 var searchData=
 [
-  ['kappend_0',['kAppend',['../namespacetinyblefs.html#a5cb3f9c72c325af58394c059e7724cf8a6e5de4f5e8b18899140b115be068fc0d',1,'tinyblefs']]],
-  ['kcreate_1',['kCreate',['../namespacetinyblefs.html#a5cb3f9c72c325af58394c059e7724cf8aefa87617555a8979891e037482ce37e3',1,'tinyblefs']]],
-  ['keepalive_2',['keepalive',['../classtinyblefs_1_1detail_1_1SessionLink.html#ae9ff121507cbcbf72c5225d52963f55b',1,'tinyblefs::detail::SessionLink::keepAlive()'],['../classtinyblefs_1_1FileClient.html#a2fe88ebf7b62b5725ecc5aa6e2dd81dc',1,'tinyblefs::FileClient::keepAlive()']]],
-  ['kheadersize_3',['kHeaderSize',['../namespacetinyblefs.html#a80081b20f8ef4063c98cf4757047d6f9',1,'tinyblefs']]],
-  ['klistend_4',['kListEnd',['../namespacetinyblefs.html#a7853ff219e202d6adfd3b2a016f35b2ea022ab3a325785b762d029f94296743b7',1,'tinyblefs']]],
-  ['kmaxpayload_5',['kMaxPayload',['../namespacetinyblefs.html#a0d4b4a33bb20cdfaa40db506c04d40d9',1,'tinyblefs']]],
-  ['knimblemaxpacket_6',['kNimBleMaxPacket',['../namespacetinyblefs.html#a0ef2930a3356737cf87672cab52cf11e',1,'tinyblefs']]],
-  ['kprotocolversion_7',['kProtocolVersion',['../namespacetinyblefs.html#af0a427cff6154396b8a5cc7af876f2f1',1,'tinyblefs']]],
-  ['kread_8',['kRead',['../namespacetinyblefs.html#a5cb3f9c72c325af58394c059e7724cf8a2385b1d7c5dabd4727f26957c22c94a5',1,'tinyblefs']]],
-  ['kresponseflag_9',['kResponseFlag',['../namespacetinyblefs.html#a10ed21e35c393cb9e67d1cd9615aaac6',1,'tinyblefs']]],
-  ['krxuuid_10',['kRxUUID',['../namespacetinyblefs.html#a107a1e7963ef7a8887ef99a3ac6a9ff5',1,'tinyblefs']]],
-  ['kserviceuuid_11',['kServiceUUID',['../namespacetinyblefs.html#a5e7b0bec3a21beda99626831c8e208b0',1,'tinyblefs']]],
-  ['ksessionexpired_12',['kSessionExpired',['../namespacetinyblefs.html#adb4f176502e91762fa3fa69b8bdb51eca8bf8d86d352a276e95bcb8c5505f6e8e',1,'tinyblefs']]],
-  ['ksessionfull_13',['kSessionFull',['../namespacetinyblefs.html#adb4f176502e91762fa3fa69b8bdb51eca7cf5b29b00c4fe67acf835e8adc8d602',1,'tinyblefs']]],
-  ['ksessionhello_14',['kSessionHello',['../namespacetinyblefs.html#adb4f176502e91762fa3fa69b8bdb51ecac92993b3d02617c50abfaa422359e70a',1,'tinyblefs']]],
-  ['ksessionkeepalive_15',['kSessionKeepAlive',['../namespacetinyblefs.html#adb4f176502e91762fa3fa69b8bdb51eca4c159417e6494d745ce75842ce04f6c5',1,'tinyblefs']]],
-  ['ksessionwelcome_16',['kSessionWelcome',['../namespacetinyblefs.html#adb4f176502e91762fa3fa69b8bdb51eca8a5c168767320738f9142eb2cebd8c12',1,'tinyblefs']]],
-  ['ktrunc_17',['kTrunc',['../namespacetinyblefs.html#a5cb3f9c72c325af58394c059e7724cf8af9552d82f2fdd850a6572ae6ff28bca0',1,'tinyblefs']]],
-  ['ktxuuid_18',['kTxUUID',['../namespacetinyblefs.html#a7910423620c77824bccc61dd67e14978',1,'tinyblefs']]],
-  ['kwrite_19',['kWrite',['../namespacetinyblefs.html#a5cb3f9c72c325af58394c059e7724cf8ae4af9104aaea5b1d6a21aeec6833fb68',1,'tinyblefs']]]
+  ['maxhandles_0',['maxHandles',['../structtinyblefs_1_1ServerInfo.html#aa3748aaa47adc12d801a86b2e911aa38',1,'tinyblefs::ServerInfo']]],
+  ['message_1',['Message',['../structtinyblefs_1_1Message.html',1,'tinyblefs']]],
+  ['mkdir_2',['mkdir',['../namespacetinyblefs.html#ae3dd53e5be6344da73b2b4c796a71718aaa75edbf0279b66a7f5c763ca1896559',1,'tinyblefs::Mkdir'],['../classtinyblefs_1_1FileClient.html#a12c9d640145d754663737749cb6af740',1,'tinyblefs::FileClient::mkdir()'],['../classtinyblefs_1_1ArduinoFsBackend.html#add67abe44ed1d500474b14ebb4821b2c',1,'tinyblefs::ArduinoFsBackend::mkdir()'],['../classtinyblefs_1_1StdFilesystemBackend.html#ac0d9021346f1e58c6ad8e1e7f2685af5',1,'tinyblefs::StdFilesystemBackend::mkdir()'],['../classtinyblefs_1_1TinyFatBackend.html#a7d399f4b70b2316da9612f1c7bf14418',1,'tinyblefs::TinyFatBackend::mkdir()'],['../classtinyblefs_1_1FsBackend.html#a325378837f43c9adaca69675cb2874a7',1,'tinyblefs::FsBackend::mkdir()'],['../classtinyblefs_1_1Mounts.html#a91d1b243394640581d55d67047ae13f4',1,'tinyblefs::Mounts::mkdir()'],['../classtinyblefs_1_1RemoteFS.html#aec6e1f9756566eac918fd2468ff6524a',1,'tinyblefs::RemoteFS::mkdir()']]],
+  ['mount_3',['mount',['../classtinyblefs_1_1Mounts.html#acd3a04eacc435135123d2ad515cb2bba',1,'tinyblefs::Mounts']]],
+  ['mounts_4',['Mounts',['../classtinyblefs_1_1Mounts.html',1,'tinyblefs']]],
+  ['mounts_2eh_5',['Mounts.h',['../Mounts_8h.html',1,'']]],
+  ['mtu_6',['mtu',['../classtinyblefs_1_1detail_1_1SessionLink.html#a37b2ae04918050481bb4daff5a5f91b1',1,'tinyblefs::detail::SessionLink::mtu()'],['../classtinyblefs_1_1Transport.html#a7ed2442227c801b6c80a71a4c1ba1a37',1,'tinyblefs::Transport::mtu()'],['../classtinyblefs_1_1ArduinoBLEServerTransport.html#a495a8caa91af4f654aacd3e8b29a23ac',1,'tinyblefs::ArduinoBLEServerTransport::mtu()'],['../classtinyblefs_1_1ArduinoBLEClientTransport.html#a45696af2ab5d763875f849f43c247441',1,'tinyblefs::ArduinoBLEClientTransport::mtu()'],['../classtinyblefs_1_1NimBLEServerTransport.html#af8d84afb850a39917899e23e3ac0ba8c',1,'tinyblefs::NimBLEServerTransport::mtu()'],['../classtinyblefs_1_1NimBLEClientTransport.html#a79f3de9864c565258f9a0a3441d64c66',1,'tinyblefs::NimBLEClientTransport::mtu()'],['../classtinyblefs_1_1PicoWServerTransport.html#a1dfe2dd74ecdc1b60ddbf8071fa44543',1,'tinyblefs::PicoWServerTransport::mtu()'],['../classtinyblefs_1_1PicoWClientTransport.html#ac11a9fb3d5c2faf2718f67872c4aad34',1,'tinyblefs::PicoWClientTransport::mtu()'],['../classtinyblefs_1_1SimpleBLEClientTransport.html#a3db1a66fd769359dc92d01c96854291b',1,'tinyblefs::SimpleBLEClientTransport::mtu()'],['../classtinyblefs_1_1SimpleBLEServerTransport.html#aba306d8dd9d303d9906fe005dcc0c69b',1,'tinyblefs::SimpleBLEServerTransport::mtu()']]]
 ];

@@ -1,12 +1,15 @@
 var searchData=
 [
-  ['encode_0',['encode',['../namespacetinyblefs.html#a20e662a567107fc03d64479bb2e2a908',1,'tinyblefs']]],
-  ['end_1',['end',['../classtinyblefs_1_1LoggerClass.html#a6989ca9f4e697eee1617be9d63a2c91b',1,'tinyblefs::LoggerClass::end()'],['../classtinyblefs_1_1SimpleBLEServerTransport.html#a6a9314ac19199e9945cbf9e0e59726e9',1,'tinyblefs::SimpleBLEServerTransport::end()']]],
-  ['endoflist_2',['EndOfList',['../namespacetinyblefs.html#aae88e6db3a81bca6a49aad9e31cc3046a246a1f69d0a6525ecfae779b46182df5',1,'tinyblefs']]],
-  ['error_3',['error',['../namespacetinyblefs.html#acd19202154b2143561afcfb6b764193ea902b0d55fddef6f8d651fe1035b7d4bd',1,'tinyblefs::Error'],['../namespacetinyblefs.html#aae88e6db3a81bca6a49aad9e31cc3046a902b0d55fddef6f8d651fe1035b7d4bd',1,'tinyblefs::Error']]],
-  ['errors_20and_20locking_4',['Errors and locking',['../md_docs_2client-api.html#autotoc_md14',1,'']]],
-  ['esp32_5',['ESP32',['../md_docs_2filesystems.html#autotoc_md18',1,'']]],
-  ['example_6',['example',['../md_docs_2tools.html#autotoc_md73',1,'Example'],['../md_docs_2tools.html#autotoc_md78',1,'Example']]],
-  ['examples_7',['Examples',['../md_docs_2getting-started.html#autotoc_md44',1,'']]],
-  ['exists_8',['exists',['../classtinyblefs_1_1Mounts.html#a2d9c7158788580c1208264a34507d79c',1,'tinyblefs::Mounts::exists()'],['../classtinyblefs_1_1RemoteFS.html#a3bb0192ca7aeef82a18610a167a6dead',1,'tinyblefs::RemoteFS::exists()'],['../namespacetinyblefs.html#aae88e6db3a81bca6a49aad9e31cc3046a2a8eb028670e972535e8e246be645821',1,'tinyblefs::Exists']]]
+  ['feed_0',['feed',['../classtinyblefs_1_1Reassembler.html#ab8d26f91062286a4e07d6d66943d4c36',1,'tinyblefs::Reassembler']]],
+  ['fileclient_1',['fileclient',['../classtinyblefs_1_1FileClient.html',1,'tinyblefs::FileClient'],['../classtinyblefs_1_1FileClient.html#a829bda263547fc28466ed43454d19354',1,'tinyblefs::FileClient::FileClient()']]],
+  ['filelocks_2',['FileLocks',['../classtinyblefs_1_1FileLocks.html',1,'tinyblefs']]],
+  ['fileserver_3',['fileserver',['../classtinyblefs_1_1FileServer.html',1,'tinyblefs::FileServer'],['../classtinyblefs_1_1FileServer.html#a4e491e38a36d3f97ef14fa05baaf659d',1,'tinyblefs::FileServer::FileServer()']]],
+  ['filet_4',['FileT',['../classtinyblefs_1_1ArduinoFsBackend.html#a5432528af61aa48181816cc55b06baee',1,'tinyblefs::ArduinoFsBackend']]],
+  ['flush_5',['flush',['../classtinyblefs_1_1RemoteFile.html#a04b318c1f4f228a670fcd1432cff706a',1,'tinyblefs::RemoteFile']]],
+  ['fs_6',['Tiny BLE FS',['../index.html',1,'']]],
+  ['fsbackend_7',['FsBackend',['../classtinyblefs_1_1FsBackend.html',1,'tinyblefs']]],
+  ['fsbackend_2eh_8',['FsBackend.h',['../FsBackend_8h.html',1,'']]],
+  ['fsentry_9',['FsEntry',['../structtinyblefs_1_1FsEntry.html',1,'tinyblefs']]],
+  ['fsfile_10',['FsFile',['../classtinyblefs_1_1FsFile.html',1,'tinyblefs']]],
+  ['future_20improvements_11',['Future improvements',['../index.html#autotoc_md6',1,'']]]
 ];

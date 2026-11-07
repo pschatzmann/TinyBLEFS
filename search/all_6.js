@@ -1,29 +1,7 @@
 var searchData=
 [
-  ['fat_20in_20internal_20flash_0',['FFat (FAT in internal flash)',['../md_docs_2filesystems.html#autotoc_md21',1,'']]],
-  ['fat_20on_20any_20storage_1',['TinyFATFS (FAT on any storage)',['../md_docs_2filesystems.html#autotoc_md30',1,'']]],
-  ['fatfs_20internal_20flash_2',['FatFS (internal flash)',['../md_docs_2filesystems.html#autotoc_md27',1,'']]],
-  ['feed_3',['feed',['../classtinyblefs_1_1Reassembler.html#ab8d26f91062286a4e07d6d66943d4c36',1,'tinyblefs::Reassembler']]],
-  ['ffat_20fat_20in_20internal_20flash_4',['FFat (FAT in internal flash)',['../md_docs_2filesystems.html#autotoc_md21',1,'']]],
-  ['file_5',['File',['../md_docs_2client-api.html#autotoc_md13',1,'']]],
-  ['file_20locking_6',['File locking',['../md_docs_2server-api.html#autotoc_md57',1,'']]],
-  ['file_20system_7',['Your own file system',['../md_docs_2filesystems.html#autotoc_md38',1,'']]],
-  ['file_20system_20backends_8',['File system backends',['../md_docs_2server-api.html#autotoc_md55',1,'']]],
-  ['file_20systems_9',['Limits that apply to all file systems',['../md_docs_2filesystems.html#autotoc_md39',1,'']]],
-  ['file_20systems_20and_20platforms_10',['File systems and platforms',['../md_docs_2filesystems.html',1,'']]],
-  ['fileclient_11',['fileclient',['../classtinyblefs_1_1FileClient.html#a829bda263547fc28466ed43454d19354',1,'tinyblefs::FileClient::FileClient()'],['../classtinyblefs_1_1FileClient.html',1,'tinyblefs::FileClient']]],
-  ['filelocks_12',['FileLocks',['../classtinyblefs_1_1FileLocks.html',1,'tinyblefs']]],
-  ['fileserver_13',['fileserver',['../classtinyblefs_1_1FileServer.html#a4e491e38a36d3f97ef14fa05baaf659d',1,'tinyblefs::FileServer::FileServer()'],['../classtinyblefs_1_1FileServer.html',1,'tinyblefs::FileServer']]],
-  ['filesystems_2emd_14',['filesystems.md',['../filesystems_8md.html',1,'']]],
-  ['filet_15',['FileT',['../classtinyblefs_1_1ArduinoFsBackend.html#a5432528af61aa48181816cc55b06baee',1,'tinyblefs::ArduinoFsBackend']]],
-  ['flash_16',['flash',['../md_docs_2filesystems.html#autotoc_md27',1,'FatFS (internal flash)'],['../md_docs_2filesystems.html#autotoc_md21',1,'FFat (FAT in internal flash)'],['../md_docs_2filesystems.html#autotoc_md26',1,'LittleFS (internal flash)']]],
-  ['flush_17',['flush',['../classtinyblefs_1_1RemoteFile.html#a04b318c1f4f228a670fcd1432cff706a',1,'tinyblefs::RemoteFile']]],
-  ['format_18',['Wire format',['../md_docs_2sessions.html#autotoc_md61',1,'']]],
-  ['fs_19',['Tiny BLE FS',['../index.html',1,'']]],
-  ['fsbackend_20',['FsBackend',['../classtinyblefs_1_1FsBackend.html',1,'tinyblefs']]],
-  ['fsbackend_2eh_21',['FsBackend.h',['../FsBackend_8h.html',1,'']]],
-  ['fsentry_22',['FsEntry',['../structtinyblefs_1_1FsEntry.html',1,'tinyblefs']]],
-  ['fsfile_23',['FsFile',['../classtinyblefs_1_1FsFile.html',1,'tinyblefs']]],
-  ['fuse_24',['Mounting as a directory: tinyblefs-fuse',['../md_docs_2tools.html#autotoc_md75',1,'']]],
-  ['future_20improvements_25',['Future improvements',['../index.html#autotoc_md6',1,'']]]
+  ['generation_0',['generation',['../classtinyblefs_1_1FileClient.html#af313ce753f6e0aad940774d094c30b81',1,'tinyblefs::FileClient::generation()'],['../classtinyblefs_1_1detail_1_1SessionLink.html#a3efced98fb9f1e90ecf9f5a74728152b',1,'tinyblefs::detail::SessionLink::generation()'],['../classtinyblefs_1_1Transport.html#ad35b5913aeb67d5ca27c6767728c2753',1,'tinyblefs::Transport::generation()']]],
+  ['get_1',['get',['../classtinyblefs_1_1Mounts.html#a61c92a9ae2f4c8a2e299df8db6b380c6',1,'tinyblefs::Mounts']]],
+  ['get16_2',['get16',['../namespacetinyblefs.html#a2dea386180abd61361c223a0cbcbf63e',1,'tinyblefs']]],
+  ['get32_3',['get32',['../namespacetinyblefs.html#af73508f1cede97048296b671d0e4003c',1,'tinyblefs']]]
 ];

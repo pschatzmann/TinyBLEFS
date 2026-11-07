@@ -1,12 +1,14 @@
 var searchData=
 [
-  ['w_20pico_202_20w_20arduino_20pico_0',['Raspberry Pi Pico W / Pico 2 W (arduino-pico)',['../md_docs_2filesystems.html#autotoc_md25',1,'']]],
-  ['warning_1',['Warning',['../namespacetinyblefs.html#acd19202154b2143561afcfb6b764193ea0eaadb4fcb48a0a0ed7bc9868be9fbaa',1,'tinyblefs']]],
-  ['why_20this_20library_2',['Why this library?',['../index.html#autotoc_md1',1,'']]],
-  ['windows_3a_20a_20directory_3',['Linux, macOS, Windows: a directory',['../md_docs_2filesystems.html#autotoc_md36',1,'']]],
-  ['wire_20format_4',['Wire format',['../md_docs_2sessions.html#autotoc_md61',1,'']]],
-  ['with_20the_20current_20code_5',['Not tested with the current code',['../md_docs_2test-results.html#autotoc_md68',1,'']]],
-  ['works_6',['How it works',['../md_docs_2getting-started.html#autotoc_md43',1,'']]],
-  ['write_7',['write',['../classtinyblefs_1_1StdFile.html#a513e46b674ba59cf3096da1cf743907c',1,'tinyblefs::StdFile::write()'],['../namespacetinyblefs.html#ae3dd53e5be6344da73b2b4c796a71718a1129c0e4d43f2d121652a7302712cff6',1,'tinyblefs::Write'],['../classtinyblefs_1_1RemoteFile.html#a242bafc0eb47cb969c8754ebb3f4b9f6',1,'tinyblefs::RemoteFile::write(uint8_t b)'],['../classtinyblefs_1_1RemoteFile.html#a67370c710d23e04e51603e6a85c352e0',1,'tinyblefs::RemoteFile::write(const uint8_t *src, size_t len)'],['../classtinyblefs_1_1StderrPrint.html#a340f5dad150e208bd6b0f8b231a4dd8c',1,'tinyblefs::StderrPrint::write()'],['../classtinyblefs_1_1LogPrint.html#a884320de68e35704e2a87f2388281445',1,'tinyblefs::LogPrint::write(uint8_t c)'],['../classtinyblefs_1_1LogPrint.html#ad2fadab92fb0a904db0e73593023a6d6',1,'tinyblefs::LogPrint::write(const uint8_t *data, size_t len)=0'],['../classtinyblefs_1_1FsFile.html#aacc4ac69b32e7fadc5d156282a04054c',1,'tinyblefs::FsFile::write()'],['../classtinyblefs_1_1FileClient.html#a3bc6a3389bc66f403cdc6915866d15c8',1,'tinyblefs::FileClient::write()']]],
-  ['writing_20an_20adapter_8',['Writing an adapter',['../md_docs_2transports.html#autotoc_md85',1,'']]]
+  ['_7earduinobleclienttransport_0',['~ArduinoBLEClientTransport',['../classtinyblefs_1_1ArduinoBLEClientTransport.html#a0245f6b980dadf1512a2b6d6d84140ab',1,'tinyblefs::ArduinoBLEClientTransport']]],
+  ['_7earduinofsbackend_1',['~ArduinoFsBackend',['../classtinyblefs_1_1ArduinoFsBackend.html#ac7506138b036675ef2eeaa878fa89ff2',1,'tinyblefs::ArduinoFsBackend']]],
+  ['_7efsbackend_2',['~FsBackend',['../classtinyblefs_1_1FsBackend.html#a124af808fa2a56b5db8baf48f3393d10',1,'tinyblefs::FsBackend']]],
+  ['_7efsfile_3',['~FsFile',['../classtinyblefs_1_1FsFile.html#a87da1fe6ee7102c591d1c35a2da39ace',1,'tinyblefs::FsFile']]],
+  ['_7elinkserver_4',['~LinkServer',['../classtinyblefs_1_1detail_1_1LinkServer.html#ae79b5481416cf039c24f0c095a84b48b',1,'tinyblefs::detail::LinkServer']]],
+  ['_7elogprint_5',['~LogPrint',['../classtinyblefs_1_1LogPrint.html#ab18dd270e069f19e9739606c6edaecc3',1,'tinyblefs::LogPrint']]],
+  ['_7enimbleclienttransport_6',['~NimBLEClientTransport',['../classtinyblefs_1_1NimBLEClientTransport.html#a7569ce9e45ee8500ba986a7770421131',1,'tinyblefs::NimBLEClientTransport']]],
+  ['_7epicowclienttransport_7',['~PicoWClientTransport',['../classtinyblefs_1_1PicoWClientTransport.html#a6be7674e5179dc06b8e3f565ab03b326',1,'tinyblefs::PicoWClientTransport']]],
+  ['_7esimplebleclienttransport_8',['~SimpleBLEClientTransport',['../classtinyblefs_1_1SimpleBLEClientTransport.html#ac619021c39bf399f9be75357b6154483',1,'tinyblefs::SimpleBLEClientTransport']]],
+  ['_7esimplebleservertransport_9',['~SimpleBLEServerTransport',['../classtinyblefs_1_1SimpleBLEServerTransport.html#ac70abf46b4230d000a9e79fbf713b367',1,'tinyblefs::SimpleBLEServerTransport']]],
+  ['_7etransport_10',['~Transport',['../classtinyblefs_1_1Transport.html#a2530bca901598a5abceec60ce6e0618a',1,'tinyblefs::Transport']]]
 ];

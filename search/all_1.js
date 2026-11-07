@@ -1,23 +1,12 @@
 var searchData=
 [
-  ['a_20directory_0',['Linux, macOS, Windows: a directory',['../md_docs_2filesystems.html#autotoc_md36',1,'']]],
-  ['a_20directory_3a_20tinyblefs_20fuse_1',['Mounting as a directory: tinyblefs-fuse',['../md_docs_2tools.html#autotoc_md75',1,'']]],
-  ['acquire_2',['acquire',['../classtinyblefs_1_1FileLocks.html#ab7f000f9d310a477ad5f39ecb76392f3',1,'tinyblefs::FileLocks']]],
-  ['adapter_3',['Writing an adapter',['../md_docs_2transports.html#autotoc_md85',1,'']]],
-  ['adapters_4',['Adapters',['../md_docs_2transports.html#autotoc_md84',1,'']]],
-  ['all_20file_20systems_5',['Limits that apply to all file systems',['../md_docs_2filesystems.html#autotoc_md39',1,'']]],
-  ['an_20adapter_6',['Writing an adapter',['../md_docs_2transports.html#autotoc_md85',1,'']]],
-  ['and_20locking_7',['Errors and locking',['../md_docs_2client-api.html#autotoc_md14',1,'']]],
-  ['and_20platforms_8',['File systems and platforms',['../md_docs_2filesystems.html',1,'']]],
-  ['any_20storage_9',['TinyFATFS (FAT on any storage)',['../md_docs_2filesystems.html#autotoc_md30',1,'']]],
-  ['api_10',['api',['../md_docs_2client-api.html',1,'Client API'],['../md_docs_2server-api.html',1,'Server API']]],
-  ['apply_20to_20all_20file_20systems_11',['Limits that apply to all file systems',['../md_docs_2filesystems.html#autotoc_md39',1,'']]],
-  ['arduino_20pico_12',['Raspberry Pi Pico W / Pico 2 W (arduino-pico)',['../md_docs_2filesystems.html#autotoc_md25',1,'']]],
-  ['arduinoble_2eh_13',['ArduinoBLE.h',['../ArduinoBLE_8h.html',1,'']]],
-  ['arduinobleclienttransport_14',['ArduinoBLEClientTransport',['../classtinyblefs_1_1ArduinoBLEClientTransport.html',1,'tinyblefs']]],
-  ['arduinobleservertransport_15',['arduinobleservertransport',['../classtinyblefs_1_1ArduinoBLEServerTransport.html#a919c980b16b45d53231f63f0d4847af8',1,'tinyblefs::ArduinoBLEServerTransport::ArduinoBLEServerTransport()'],['../classtinyblefs_1_1ArduinoBLEServerTransport.html',1,'tinyblefs::ArduinoBLEServerTransport']]],
-  ['arduinofs_2eh_16',['ArduinoFS.h',['../ArduinoFS_8h.html',1,'']]],
-  ['arduinofsbackend_17',['arduinofsbackend',['../classtinyblefs_1_1ArduinoFsBackend.html#a1ad57dfa4d29a392b2a105c4fc5a7f77',1,'tinyblefs::ArduinoFsBackend::ArduinoFsBackend()'],['../classtinyblefs_1_1ArduinoFsBackend.html',1,'tinyblefs::ArduinoFsBackend&lt; FS &gt;']]],
-  ['as_20a_20directory_3a_20tinyblefs_20fuse_18',['Mounting as a directory: tinyblefs-fuse',['../md_docs_2tools.html#autotoc_md75',1,'']]],
-  ['available_19',['available',['../classtinyblefs_1_1RemoteFile.html#aaf661fe451244df1e33e3e665cbb567f',1,'tinyblefs::RemoteFile']]]
+  ['badrequest_0',['BadRequest',['../namespacetinyblefs.html#aae88e6db3a81bca6a49aad9e31cc3046a9edf8fbf00a57d95a0af4923c9a1ec6f',1,'tinyblefs']]],
+  ['begin_1',['begin',['../classtinyblefs_1_1LoggerClass.html#a9597114f4f9e1adb7d70460da8e44310',1,'tinyblefs::LoggerClass::begin()'],['../classtinyblefs_1_1ArduinoBLEServerTransport.html#a66a8146ecaee95cbc8e35d8c3da460ce',1,'tinyblefs::ArduinoBLEServerTransport::begin()'],['../classtinyblefs_1_1NimBLEServerTransport.html#a395148a05b845cdff3b88a13823db7f8',1,'tinyblefs::NimBLEServerTransport::begin()'],['../classtinyblefs_1_1PicoWServerTransport.html#a29da48664a12b14950d71d618075720b',1,'tinyblefs::PicoWServerTransport::begin()'],['../classtinyblefs_1_1SimpleBLEServerTransport.html#ab7064ccd860831c0be7bd130a3d78e38',1,'tinyblefs::SimpleBLEServerTransport::begin()'],['../classtinyblefs_1_1SimpleBLEServerTransport.html#a265db5d621ebd715fc312d8d486e3a08',1,'tinyblefs::SimpleBLEServerTransport::begin(const char *deviceName)']]],
+  ['beginarduinoble_2',['beginArduinoBLE',['../namespacetinyblefs_1_1detail.html#ab005dffc3653abe5b7e26239f8aeff13',1,'tinyblefs::detail']]],
+  ['ble_20fs_3',['Tiny BLE FS',['../index.html',1,'']]],
+  ['bleclienttransport_4',['BLEClientTransport',['../namespacetinyblefs.html#a0da8025af36bc17163f3525fcd99046c',1,'tinyblefs']]],
+  ['blescanresult_5',['BLEScanResult',['../namespacetinyblefs.html#a80389c8425baa0eb04fd59954d042e05',1,'tinyblefs']]],
+  ['bleservertransport_6',['BLEServerTransport',['../namespacetinyblefs.html#a5420537a25cea68eb0df4a61c735f115',1,'tinyblefs']]],
+  ['bletransport_2eh_7',['BLETransport.h',['../BLETransport_8h.html',1,'']]],
+  ['busy_8',['Busy',['../namespacetinyblefs.html#aae88e6db3a81bca6a49aad9e31cc3046ad8a942ef2b04672adfafef0ad817a407',1,'tinyblefs']]]
 ];

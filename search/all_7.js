@@ -1,10 +1,13 @@
 var searchData=
 [
-  ['gatt_0',['GATT',['../md_docs_2protocol.html#autotoc_md48',1,'']]],
-  ['generation_1',['generation',['../classtinyblefs_1_1FileClient.html#af313ce753f6e0aad940774d094c30b81',1,'tinyblefs::FileClient::generation()'],['../classtinyblefs_1_1detail_1_1SessionLink.html#a3efced98fb9f1e90ecf9f5a74728152b',1,'tinyblefs::detail::SessionLink::generation()'],['../classtinyblefs_1_1Transport.html#ad35b5913aeb67d5ca27c6767728c2753',1,'tinyblefs::Transport::generation()']]],
-  ['get_2',['get',['../classtinyblefs_1_1Mounts.html#a61c92a9ae2f4c8a2e299df8db6b380c6',1,'tinyblefs::Mounts']]],
-  ['get16_3',['get16',['../namespacetinyblefs.html#a2dea386180abd61361c223a0cbcbf63e',1,'tinyblefs']]],
-  ['get32_4',['get32',['../namespacetinyblefs.html#af73508f1cede97048296b671d0e4003c',1,'tinyblefs']]],
-  ['getting_20started_5',['Getting started',['../md_docs_2getting-started.html',1,'']]],
-  ['getting_2dstarted_2emd_6',['getting-started.md',['../getting-started_8md.html',1,'']]]
+  ['id_0',['id',['../classtinyblefs_1_1detail_1_1SessionLink.html#a93e95be9cd3c1dca2bd9af00efaaaca3',1,'tinyblefs::detail::SessionLink']]],
+  ['improvements_1',['Future improvements',['../index.html#autotoc_md6',1,'']]],
+  ['info_2',['info',['../classtinyblefs_1_1FileClient.html#aee4fe0ee3416f31dfc30a345cd6e19a1',1,'tinyblefs::FileClient::info()'],['../namespacetinyblefs.html#acd19202154b2143561afcfb6b764193ea4059b0251f66a18cb56f544728796875',1,'tinyblefs::Info'],['../namespacetinyblefs.html#ae3dd53e5be6344da73b2b4c796a71718a4059b0251f66a18cb56f544728796875',1,'tinyblefs::Info']]],
+  ['ioerror_3',['IoError',['../namespacetinyblefs.html#aae88e6db3a81bca6a49aad9e31cc3046af05cfcbf5123775f7c73e520a8d861e1',1,'tinyblefs']]],
+  ['isbusy_4',['isBusy',['../classtinyblefs_1_1FileLocks.html#a75146271fe8bd43605b5b28b34da9dfe',1,'tinyblefs::FileLocks']]],
+  ['isdir_5',['isdir',['../structtinyblefs_1_1FsEntry.html#ad99632bdc2169e8580fd46a27d0c1e96',1,'tinyblefs::FsEntry::isDir'],['../structtinyblefs_1_1DirEntry.html#afd2ef3a99be8a7a1293d42a94b7a8028',1,'tinyblefs::DirEntry::isDir']]],
+  ['isdirectory_6',['isdirectory',['../classtinyblefs_1_1RemoteFile.html#acafdb90c860a52dc40c7c0255b0395c7',1,'tinyblefs::RemoteFile::isDirectory()'],['../namespacetinyblefs.html#aae88e6db3a81bca6a49aad9e31cc3046a55d41376c299624c303339e53b1cbf7a',1,'tinyblefs::IsDirectory']]],
+  ['isenabled_7',['isEnabled',['../classtinyblefs_1_1LoggerClass.html#aafb0dd533104b4d2bf7cd2abb5055538',1,'tinyblefs::LoggerClass']]],
+  ['isopen_8',['isOpen',['../classtinyblefs_1_1StdFile.html#af45477df7e66759825c70607010c4ce2',1,'tinyblefs::StdFile']]],
+  ['isreadonly_9',['isreadonly',['../classtinyblefs_1_1detail_1_1LinkServer.html#abe187693426380064828da0c95a2fe6f',1,'tinyblefs::detail::LinkServer::isReadOnly()'],['../classtinyblefs_1_1FileServer.html#a4711b9bc65c36f92668a32ea8bf3b9b2',1,'tinyblefs::FileServer::isReadOnly()']]]
 ];
